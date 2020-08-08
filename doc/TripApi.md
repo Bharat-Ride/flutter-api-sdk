@@ -5,11 +5,12 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**childTripsLatestGet**](TripApi.md#childTripsLatestGet) | **GET** /child-trips/latest/ | Returns array of latest trip for each child by user
+[**driverTripsLatestGet**](TripApi.md#driverTripsLatestGet) | **GET** /driver-trips/latest/ | Returns array of trips by driver
 [**tripEndPut**](TripApi.md#tripEndPut) | **PUT** /trip/end/ | Return number of trips ended
 [**tripStartPost**](TripApi.md#tripStartPost) | **POST** /trip/start/ | Return newly created trip
 [**tripsGroupsGroupIdGet**](TripApi.md#tripsGroupsGroupIdGet) | **GET** /trips/groups/{groupId}/ | Returns array of trips by groupId
@@ -48,6 +49,51 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**List<TripWithGroupAndDeviceAndUserResponse>**](TripWithGroupAndDeviceAndUserResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **driverTripsLatestGet**
+> List<TripResponse> driverTripsLatestGet()
+
+Returns array of trips by driver
+
+Get latest trips by driver
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+var api_instance = TripApi();
+
+try { 
+    var result = api_instance.driverTripsLatestGet();
+    print(result);
+} catch (e) {
+    print("Exception when calling TripApi->driverTripsLatestGet: $e\n");
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List<TripResponse>**](TripResponse.md)
 
 ### Authorization
 
