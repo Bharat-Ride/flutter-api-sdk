@@ -9,9 +9,59 @@ All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deviceIdDelete**](DeviceApi.md#deviceIdDelete) | **DELETE** /device/{id}/ | Returns number of device deleted
 [**devicePost**](DeviceApi.md#devicePost) | **POST** /device/ | Returns device object
 [**deviceUIdUIdGet**](DeviceApi.md#deviceUIdUIdGet) | **GET** /device/uId/{uId}/ | Returns device object
 
+
+# **deviceIdDelete**
+> DeviceResponse deviceIdDelete(id)
+
+Returns number of device deleted
+
+Delete a device for a user by id
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+var api_instance = DeviceApi();
+var id = 56; // int | Device id
+
+try { 
+    var result = api_instance.deviceIdDelete(id);
+    print(result);
+} catch (e) {
+    print("Exception when calling DeviceApi->deviceIdDelete: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| Device id | [default to null]
+
+### Return type
+
+[**DeviceResponse**](DeviceResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **devicePost**
 > DeviceResponse devicePost(createDeviceBody)
