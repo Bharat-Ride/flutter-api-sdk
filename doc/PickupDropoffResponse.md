@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **pickupLongitude** | **num** |  | [optional] [default to null]
 **dropoffLatitude** | **num** |  | [optional] [default to null]
 **dropoffLongitude** | **num** |  | [optional] [default to null]
+**isAbsent** | **bool** |  | [default to null]
 **createdAt** | **String** |  | [default to null]
 **updatedAt** | **String** |  | [default to null]
 

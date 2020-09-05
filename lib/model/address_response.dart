@@ -18,6 +18,10 @@ class AddressResponse {
   
   String postalCode = null;
   
+  num latitude = null;
+  
+  num longitude = null;
+  
   String createdAt = null;
   
   String updatedAt = null;
@@ -25,7 +29,7 @@ class AddressResponse {
 
   @override
   String toString() {
-    return 'AddressResponse[id=$id, address1=$address1, address2=$address2, address3=$address3, city=$city, state=$state, country=$country, postalCode=$postalCode, createdAt=$createdAt, updatedAt=$updatedAt, ]';
+    return 'AddressResponse[id=$id, address1=$address1, address2=$address2, address3=$address3, city=$city, state=$state, country=$country, postalCode=$postalCode, latitude=$latitude, longitude=$longitude, createdAt=$createdAt, updatedAt=$updatedAt, ]';
   }
 
   AddressResponse.fromJson(Map<String, dynamic> json) {
@@ -38,6 +42,8 @@ class AddressResponse {
     state = json['state'];
     country = json['country'];
     postalCode = json['postalCode'];
+    latitude = json['latitude'];
+    longitude = json['longitude'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
   }
@@ -60,6 +66,10 @@ class AddressResponse {
       json['country'] = country;
     if (postalCode != null)
       json['postalCode'] = postalCode;
+    if (latitude != null)
+      json['latitude'] = latitude;
+    if (longitude != null)
+      json['longitude'] = longitude;
     if (createdAt != null)
       json['createdAt'] = createdAt;
     if (updatedAt != null)

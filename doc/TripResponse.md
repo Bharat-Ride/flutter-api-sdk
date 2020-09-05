@@ -18,6 +18,9 @@ Name | Type | Description | Notes
 **startLongitude** | **num** |  | [optional] [default to null]
 **endLatitude** | **num** |  | [optional] [default to null]
 **endLongitude** | **num** |  | [optional] [default to null]
+**driverCurrentLatitude** | **num** |  | [optional] [default to null]
+**driverCurrentLongitude** | **num** |  | [optional] [default to null]
+**type** | **String** |  | [optional] [default to null]
 **createdAt** | **String** |  | [default to null]
 **updatedAt** | **String** |  | [default to null]
 

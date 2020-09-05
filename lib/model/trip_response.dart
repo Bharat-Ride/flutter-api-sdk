@@ -22,6 +22,13 @@ class TripResponse {
   
   num endLongitude = null;
   
+  num driverCurrentLatitude = null;
+  
+  num driverCurrentLongitude = null;
+  
+  String type = null;
+  //enum typeEnum {  TOWARDS,  FROMWARDS,  };{
+  
   String createdAt = null;
   
   String updatedAt = null;
@@ -29,7 +36,7 @@ class TripResponse {
 
   @override
   String toString() {
-    return 'TripResponse[id=$id, driverId=$driverId, groupId=$groupId, deviceId=$deviceId, startTime=$startTime, endTime=$endTime, startLatitude=$startLatitude, startLongitude=$startLongitude, endLatitude=$endLatitude, endLongitude=$endLongitude, createdAt=$createdAt, updatedAt=$updatedAt, ]';
+    return 'TripResponse[id=$id, driverId=$driverId, groupId=$groupId, deviceId=$deviceId, startTime=$startTime, endTime=$endTime, startLatitude=$startLatitude, startLongitude=$startLongitude, endLatitude=$endLatitude, endLongitude=$endLongitude, driverCurrentLatitude=$driverCurrentLatitude, driverCurrentLongitude=$driverCurrentLongitude, type=$type, createdAt=$createdAt, updatedAt=$updatedAt, ]';
   }
 
   TripResponse.fromJson(Map<String, dynamic> json) {
@@ -44,6 +51,9 @@ class TripResponse {
     startLongitude = json['startLongitude'];
     endLatitude = json['endLatitude'];
     endLongitude = json['endLongitude'];
+    driverCurrentLatitude = json['driverCurrentLatitude'];
+    driverCurrentLongitude = json['driverCurrentLongitude'];
+    type = json['type'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
   }
@@ -70,6 +80,12 @@ class TripResponse {
       json['endLatitude'] = endLatitude;
     if (endLongitude != null)
       json['endLongitude'] = endLongitude;
+    if (driverCurrentLatitude != null)
+      json['driverCurrentLatitude'] = driverCurrentLatitude;
+    if (driverCurrentLongitude != null)
+      json['driverCurrentLongitude'] = driverCurrentLongitude;
+    if (type != null)
+      json['type'] = type;
     if (createdAt != null)
       json['createdAt'] = createdAt;
     if (updatedAt != null)

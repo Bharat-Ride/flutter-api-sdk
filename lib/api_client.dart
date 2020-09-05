@@ -77,6 +77,8 @@ class ApiClient {
           return DriverGroupResponse.fromJson(value);
         case 'DriverGroupWithGroupAndUserResponse':
           return DriverGroupWithGroupAndUserResponse.fromJson(value);
+        case 'DriverLocationUpdateTripBody':
+          return DriverLocationUpdateTripBody.fromJson(value);
         case 'EndTripBody':
           return EndTripBody.fromJson(value);
         case 'ErrorResponse':

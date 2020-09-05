@@ -24,6 +24,13 @@ class TripWithGroupAndDeviceAndUserResponse {
   
   num endLongitude = null;
   
+  num driverCurrentLatitude = null;
+  
+  num driverCurrentLongitude = null;
+  
+  String type = null;
+  //enum typeEnum {  TOWARDS,  FROMWARDS,  };{
+  
   UserResponse driver = null;
   
   GroupResponse group = null;
@@ -37,7 +44,7 @@ class TripWithGroupAndDeviceAndUserResponse {
 
   @override
   String toString() {
-    return 'TripWithGroupAndDeviceAndUserResponse[id=$id, driverId=$driverId, groupId=$groupId, deviceId=$deviceId, startTime=$startTime, endTime=$endTime, childId=$childId, startLatitude=$startLatitude, startLongitude=$startLongitude, endLatitude=$endLatitude, endLongitude=$endLongitude, driver=$driver, group=$group, device=$device, createdAt=$createdAt, updatedAt=$updatedAt, ]';
+    return 'TripWithGroupAndDeviceAndUserResponse[id=$id, driverId=$driverId, groupId=$groupId, deviceId=$deviceId, startTime=$startTime, endTime=$endTime, childId=$childId, startLatitude=$startLatitude, startLongitude=$startLongitude, endLatitude=$endLatitude, endLongitude=$endLongitude, driverCurrentLatitude=$driverCurrentLatitude, driverCurrentLongitude=$driverCurrentLongitude, type=$type, driver=$driver, group=$group, device=$device, createdAt=$createdAt, updatedAt=$updatedAt, ]';
   }
 
   TripWithGroupAndDeviceAndUserResponse.fromJson(Map<String, dynamic> json) {
@@ -53,6 +60,9 @@ class TripWithGroupAndDeviceAndUserResponse {
     startLongitude = json['startLongitude'];
     endLatitude = json['endLatitude'];
     endLongitude = json['endLongitude'];
+    driverCurrentLatitude = json['driverCurrentLatitude'];
+    driverCurrentLongitude = json['driverCurrentLongitude'];
+    type = json['type'];
     driver = (json['driver'] == null) ?
       null :
       UserResponse.fromJson(json['driver']);
@@ -90,6 +100,12 @@ class TripWithGroupAndDeviceAndUserResponse {
       json['endLatitude'] = endLatitude;
     if (endLongitude != null)
       json['endLongitude'] = endLongitude;
+    if (driverCurrentLatitude != null)
+      json['driverCurrentLatitude'] = driverCurrentLatitude;
+    if (driverCurrentLongitude != null)
+      json['driverCurrentLongitude'] = driverCurrentLongitude;
+    if (type != null)
+      json['type'] = type;
     if (driver != null)
       json['driver'] = driver;
     if (group != null)

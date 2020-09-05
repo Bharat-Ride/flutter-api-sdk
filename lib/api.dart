@@ -40,6 +40,7 @@ part 'model/device_response.dart';
 part 'model/device_with_user_response.dart';
 part 'model/driver_group_response.dart';
 part 'model/driver_group_with_group_and_user_response.dart';
+part 'model/driver_location_update_trip_body.dart';
 part 'model/end_trip_body.dart';
 part 'model/error_response.dart';
 part 'model/group_response.dart';

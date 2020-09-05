@@ -84,8 +84,10 @@ Class | Method | HTTP request | Description
 *PickupDropoffApi* | [**tripsDropoffPut**](doc\/PickupDropoffApi.md#tripsdropoffput) | **PUT** /trips/dropoff/ | Returns number of children Dropoff
 *PickupDropoffApi* | [**tripsPickupPost**](doc\/PickupDropoffApi.md#tripspickuppost) | **POST** /trips/pickup/ | Returns array of pickupdropoff
 *TripApi* | [**childTripsLatestGet**](doc\/TripApi.md#childtripslatestget) | **GET** /child-trips/latest/ | Returns array of latest trip for each child by user
+*TripApi* | [**distanceActiveTripsGet**](doc\/TripApi.md#distanceactivetripsget) | **GET** /distance/active/trips/ | Update distance and duration for all the active trips
 *TripApi* | [**driverTripsLatestGet**](doc\/TripApi.md#drivertripslatestget) | **GET** /driver-trips/latest/ | Returns array of trips by driver
 *TripApi* | [**tripEndPut**](doc\/TripApi.md#tripendput) | **PUT** /trip/end/ | Return number of trips ended
+*TripApi* | [**tripLocationPatch**](doc\/TripApi.md#triplocationpatch) | **PATCH** /trip/location/ | Return number of trips updated
 *TripApi* | [**tripStartPost**](doc\/TripApi.md#tripstartpost) | **POST** /trip/start/ | Return newly created trip
 *TripApi* | [**tripsGroupsGroupIdGet**](doc\/TripApi.md#tripsgroupsgroupidget) | **GET** /trips/groups/{groupId}/ | Returns array of trips by groupId
 *UserApi* | [**userDelete**](doc\/UserApi.md#userdelete) | **DELETE** /user/ | Returns number of user deleted by phone number
@@ -115,6 +117,7 @@ Class | Method | HTTP request | Description
  - [DeviceWithUserResponse](doc\/DeviceWithUserResponse.md)
  - [DriverGroupResponse](doc\/DriverGroupResponse.md)
  - [DriverGroupWithGroupAndUserResponse](doc\/DriverGroupWithGroupAndUserResponse.md)
+ - [DriverLocationUpdateTripBody](doc\/DriverLocationUpdateTripBody.md)
  - [EndTripBody](doc\/EndTripBody.md)
  - [ErrorResponse](doc\/ErrorResponse.md)
  - [GroupResponse](doc\/GroupResponse.md)

@@ -15,11 +15,15 @@ class CreateAddressBody {
   String country = null;
   
   String postalCode = null;
+  
+  num latitude = null;
+  
+  num longitude = null;
   CreateAddressBody();
 
   @override
   String toString() {
-    return 'CreateAddressBody[address1=$address1, address2=$address2, address3=$address3, city=$city, state=$state, country=$country, postalCode=$postalCode, ]';
+    return 'CreateAddressBody[address1=$address1, address2=$address2, address3=$address3, city=$city, state=$state, country=$country, postalCode=$postalCode, latitude=$latitude, longitude=$longitude, ]';
   }
 
   CreateAddressBody.fromJson(Map<String, dynamic> json) {
@@ -31,6 +35,8 @@ class CreateAddressBody {
     state = json['state'];
     country = json['country'];
     postalCode = json['postalCode'];
+    latitude = json['latitude'];
+    longitude = json['longitude'];
   }
 
   Map<String, dynamic> toJson() {
@@ -49,6 +55,10 @@ class CreateAddressBody {
       json['country'] = country;
     if (postalCode != null)
       json['postalCode'] = postalCode;
+    if (latitude != null)
+      json['latitude'] = latitude;
+    if (longitude != null)
+      json['longitude'] = longitude;
     return json;
   }
 

@@ -6,6 +6,8 @@ class GroupResponse {
   
   num creatorId = null;
   
+  num addressId = null;
+  
   String name = null;
   
   bool isDeleted = null;
@@ -17,13 +19,14 @@ class GroupResponse {
 
   @override
   String toString() {
-    return 'GroupResponse[id=$id, creatorId=$creatorId, name=$name, isDeleted=$isDeleted, createdAt=$createdAt, updatedAt=$updatedAt, ]';
+    return 'GroupResponse[id=$id, creatorId=$creatorId, addressId=$addressId, name=$name, isDeleted=$isDeleted, createdAt=$createdAt, updatedAt=$updatedAt, ]';
   }
 
   GroupResponse.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
     id = json['id'];
     creatorId = json['creatorId'];
+    addressId = json['addressId'];
     name = json['name'];
     isDeleted = json['isDeleted'];
     createdAt = json['createdAt'];
@@ -36,6 +39,8 @@ class GroupResponse {
       json['id'] = id;
     if (creatorId != null)
       json['creatorId'] = creatorId;
+    if (addressId != null)
+      json['addressId'] = addressId;
     if (name != null)
       json['name'] = name;
     if (isDeleted != null)

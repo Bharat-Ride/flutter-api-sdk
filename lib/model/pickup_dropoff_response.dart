@@ -22,6 +22,8 @@ class PickupDropoffResponse {
   
   num dropoffLongitude = null;
   
+  bool isAbsent = null;
+  
   String createdAt = null;
   
   String updatedAt = null;
@@ -29,7 +31,7 @@ class PickupDropoffResponse {
 
   @override
   String toString() {
-    return 'PickupDropoffResponse[id=$id, driverId=$driverId, tripId=$tripId, childId=$childId, pickupTime=$pickupTime, dropoffTime=$dropoffTime, pickupLatitude=$pickupLatitude, pickupLongitude=$pickupLongitude, dropoffLatitude=$dropoffLatitude, dropoffLongitude=$dropoffLongitude, createdAt=$createdAt, updatedAt=$updatedAt, ]';
+    return 'PickupDropoffResponse[id=$id, driverId=$driverId, tripId=$tripId, childId=$childId, pickupTime=$pickupTime, dropoffTime=$dropoffTime, pickupLatitude=$pickupLatitude, pickupLongitude=$pickupLongitude, dropoffLatitude=$dropoffLatitude, dropoffLongitude=$dropoffLongitude, isAbsent=$isAbsent, createdAt=$createdAt, updatedAt=$updatedAt, ]';
   }
 
   PickupDropoffResponse.fromJson(Map<String, dynamic> json) {
@@ -44,6 +46,7 @@ class PickupDropoffResponse {
     pickupLongitude = json['pickupLongitude'];
     dropoffLatitude = json['dropoffLatitude'];
     dropoffLongitude = json['dropoffLongitude'];
+    isAbsent = json['isAbsent'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
   }
@@ -70,6 +73,8 @@ class PickupDropoffResponse {
       json['dropoffLatitude'] = dropoffLatitude;
     if (dropoffLongitude != null)
       json['dropoffLongitude'] = dropoffLongitude;
+    if (isAbsent != null)
+      json['isAbsent'] = isAbsent;
     if (createdAt != null)
       json['createdAt'] = createdAt;
     if (updatedAt != null)
