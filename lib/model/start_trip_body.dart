@@ -9,11 +9,14 @@ class StartTripBody {
   num startLatitude = null;
   
   num startLongitude = null;
+  
+  String type = null;
+  //enum typeEnum {  TOWARDS,  FROMWARDS,  };{
   StartTripBody();
 
   @override
   String toString() {
-    return 'StartTripBody[groupId=$groupId, uId=$uId, startLatitude=$startLatitude, startLongitude=$startLongitude, ]';
+    return 'StartTripBody[groupId=$groupId, uId=$uId, startLatitude=$startLatitude, startLongitude=$startLongitude, type=$type, ]';
   }
 
   StartTripBody.fromJson(Map<String, dynamic> json) {
@@ -22,6 +25,7 @@ class StartTripBody {
     uId = json['uId'];
     startLatitude = json['startLatitude'];
     startLongitude = json['startLongitude'];
+    type = json['type'];
   }
 
   Map<String, dynamic> toJson() {
@@ -34,6 +38,8 @@ class StartTripBody {
       json['startLatitude'] = startLatitude;
     if (startLongitude != null)
       json['startLongitude'] = startLongitude;
+    if (type != null)
+      json['type'] = type;
     return json;
   }
 
