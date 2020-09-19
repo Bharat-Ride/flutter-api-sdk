@@ -60,7 +60,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
+All URIs are relative to *https://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -81,6 +81,7 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**groupPost**](doc\/GroupApi.md#grouppost) | **POST** /group/ | Returns newly created group
 *GroupApi* | [**groupPut**](doc\/GroupApi.md#groupput) | **PUT** /group/ | Returns updated group
 *PickupDropoffApi* | [**pickupDropoffsTripsTripIdGet**](doc\/PickupDropoffApi.md#pickupdropoffstripstripidget) | **GET** /pickup-dropoffs/trips/{tripId}/ | Returns array of pickup-dropoff by tripId
+*PickupDropoffApi* | [**tripsAbsentPost**](doc\/PickupDropoffApi.md#tripsabsentpost) | **POST** /trips/absent/ | Returns array of pickupdropoff
 *PickupDropoffApi* | [**tripsDropoffPut**](doc\/PickupDropoffApi.md#tripsdropoffput) | **PUT** /trips/dropoff/ | Returns number of children Dropoff
 *PickupDropoffApi* | [**tripsPickupPost**](doc\/PickupDropoffApi.md#tripspickuppost) | **POST** /trips/pickup/ | Returns array of pickupdropoff
 *TripApi* | [**childTripsLatestGet**](doc\/TripApi.md#childtripslatestget) | **GET** /child-trips/latest/ | Returns array of latest trip for each child by user
@@ -105,6 +106,7 @@ Class | Method | HTTP request | Description
  - [ChildGroupResponse](doc\/ChildGroupResponse.md)
  - [ChildGroupWithChildWithGroupResponse](doc\/ChildGroupWithChildWithGroupResponse.md)
  - [ChildResponse](doc\/ChildResponse.md)
+ - [CreateAbsentBody](doc\/CreateAbsentBody.md)
  - [CreateAddressBody](doc\/CreateAddressBody.md)
  - [CreateChildBody](doc\/CreateChildBody.md)
  - [CreateDeviceBody](doc\/CreateDeviceBody.md)

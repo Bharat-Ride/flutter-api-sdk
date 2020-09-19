@@ -65,6 +65,64 @@ class PickupDropoffApi {
     }
   }
 
+  /// Returns array of pickupdropoff with HTTP info returned
+  ///
+  /// Absent childrens by tripId
+  Future<Response> tripsAbsentPostWithHttpInfo(CreateAbsentBody createAbsentBody) async {
+    Object postBody = createAbsentBody;
+
+    // verify required params are set
+    if(createAbsentBody == null) {
+     throw ApiException(400, "Missing required param: createAbsentBody");
+    }
+
+    // create path and map variables
+    String path = "/trips/absent/".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = ["application/json"];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'POST',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// Returns array of pickupdropoff
+  ///
+  /// Absent childrens by tripId
+  Future<List<PickupDropoffResponse>> tripsAbsentPost(CreateAbsentBody createAbsentBody) async {
+    Response response = await tripsAbsentPostWithHttpInfo(createAbsentBody);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<PickupDropoffResponse>') as List).map((item) => item as PickupDropoffResponse).toList();
+    } else {
+      return null;
+    }
+  }
+
   /// Returns number of children Dropoff with HTTP info returned
   ///
   /// Dropoff childrens by tripId

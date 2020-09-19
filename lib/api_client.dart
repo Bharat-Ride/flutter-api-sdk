@@ -53,6 +53,8 @@ class ApiClient {
           return ChildGroupWithChildWithGroupResponse.fromJson(value);
         case 'ChildResponse':
           return ChildResponse.fromJson(value);
+        case 'CreateAbsentBody':
+          return CreateAbsentBody.fromJson(value);
         case 'CreateAddressBody':
           return CreateAddressBody.fromJson(value);
         case 'CreateChildBody':

@@ -28,6 +28,7 @@ part 'model/child_group_child_ids_body.dart';
 part 'model/child_group_response.dart';
 part 'model/child_group_with_child_with_group_response.dart';
 part 'model/child_response.dart';
+part 'model/create_absent_body.dart';
 part 'model/create_address_body.dart';
 part 'model/create_child_body.dart';
 part 'model/create_device_body.dart';

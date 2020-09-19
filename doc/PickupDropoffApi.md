@@ -5,11 +5,12 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
+All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**pickupDropoffsTripsTripIdGet**](PickupDropoffApi.md#pickupDropoffsTripsTripIdGet) | **GET** /pickup-dropoffs/trips/{tripId}/ | Returns array of pickup-dropoff by tripId
+[**tripsAbsentPost**](PickupDropoffApi.md#tripsAbsentPost) | **POST** /trips/absent/ | Returns array of pickupdropoff
 [**tripsDropoffPut**](PickupDropoffApi.md#tripsDropoffPut) | **PUT** /trips/dropoff/ | Returns number of children Dropoff
 [**tripsPickupPost**](PickupDropoffApi.md#tripsPickupPost) | **POST** /trips/pickup/ | Returns array of pickupdropoff
 
@@ -59,6 +60,55 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **tripsAbsentPost**
+> List<PickupDropoffResponse> tripsAbsentPost(createAbsentBody)
+
+Returns array of pickupdropoff
+
+Absent childrens by tripId
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+var api_instance = PickupDropoffApi();
+var createAbsentBody = CreateAbsentBody(); // CreateAbsentBody | Group body
+
+try { 
+    var result = api_instance.tripsAbsentPost(createAbsentBody);
+    print(result);
+} catch (e) {
+    print("Exception when calling PickupDropoffApi->tripsAbsentPost: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createAbsentBody** | [**CreateAbsentBody**](CreateAbsentBody.md)| Group body | 
+
+### Return type
+
+[**List<PickupDropoffResponse>**](PickupDropoffResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
