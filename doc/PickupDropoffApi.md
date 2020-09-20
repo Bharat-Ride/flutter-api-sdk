@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**pickupDropoffsTripsTripIdGet**](PickupDropoffApi.md#pickupDropoffsTripsTripIdGet) | **GET** /pickup-dropoffs/trips/{tripId}/ | Returns array of pickup-dropoff by tripId
 [**tripsAbsentPost**](PickupDropoffApi.md#tripsAbsentPost) | **POST** /trips/absent/ | Returns array of pickupdropoff
 [**tripsDropoffPut**](PickupDropoffApi.md#tripsDropoffPut) | **PUT** /trips/dropoff/ | Returns number of children Dropoff
+[**tripsNotAbsentPost**](PickupDropoffApi.md#tripsNotAbsentPost) | **POST** /trips/not-absent/ | Returns number of children marked not absent
 [**tripsPickupPost**](PickupDropoffApi.md#tripsPickupPost) | **POST** /trips/pickup/ | Returns array of pickupdropoff
 
 
@@ -150,6 +151,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateRecordsResponse**](UpdateRecordsResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **tripsNotAbsentPost**
+> List<PickupDropoffResponse> tripsNotAbsentPost(createNotAbsentBody)
+
+Returns number of children marked not absent
+
+Delete absent childrens by tripId
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+var api_instance = PickupDropoffApi();
+var createNotAbsentBody = CreateNotAbsentBody(); // CreateNotAbsentBody | Group body
+
+try { 
+    var result = api_instance.tripsNotAbsentPost(createNotAbsentBody);
+    print(result);
+} catch (e) {
+    print("Exception when calling PickupDropoffApi->tripsNotAbsentPost: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createNotAbsentBody** | [**CreateNotAbsentBody**](CreateNotAbsentBody.md)| Group body | 
+
+### Return type
+
+[**List<PickupDropoffResponse>**](PickupDropoffResponse.md)
 
 ### Authorization
 

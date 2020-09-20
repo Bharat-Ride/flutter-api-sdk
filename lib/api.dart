@@ -34,6 +34,7 @@ part 'model/create_child_body.dart';
 part 'model/create_device_body.dart';
 part 'model/create_dropoff_body.dart';
 part 'model/create_group_body.dart';
+part 'model/create_not_absent_body.dart';
 part 'model/create_pickup_body.dart';
 part 'model/create_user_with_address_body.dart';
 part 'model/delete_records_response.dart';

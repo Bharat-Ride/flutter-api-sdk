@@ -65,6 +65,8 @@ class ApiClient {
           return CreateDropoffBody.fromJson(value);
         case 'CreateGroupBody':
           return CreateGroupBody.fromJson(value);
+        case 'CreateNotAbsentBody':
+          return CreateNotAbsentBody.fromJson(value);
         case 'CreatePickupBody':
           return CreatePickupBody.fromJson(value);
         case 'CreateUserWithAddressBody':
