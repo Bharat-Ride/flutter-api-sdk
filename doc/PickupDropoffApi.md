@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tripsNotAbsentPut**
-> List<PickupDropoffResponse> tripsNotAbsentPut(createNotAbsentBody)
+> UpdateRecordsResponse tripsNotAbsentPut(createNotAbsentBody)
 
 Returns number of children marked not absent
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<PickupDropoffResponse>**](PickupDropoffResponse.md)
+[**UpdateRecordsResponse**](UpdateRecordsResponse.md)
 
 ### Authorization
 

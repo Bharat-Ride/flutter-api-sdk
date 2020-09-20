@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 // tests for CreatePickupDropoffBody
 void main() {
-    var instance = new CreatePickupDropoffBody();
+  var instance = new CreatePickupDropoffBody();
 
   group('test CreatePickupDropoffBody', () {
     // num tripId (default value: null)
@@ -15,8 +15,5 @@ void main() {
     test('to test the property `childIds`', () async {
       // TODO
     });
-
-
   });
-
 }

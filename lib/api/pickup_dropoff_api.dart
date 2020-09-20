@@ -228,12 +228,12 @@ class PickupDropoffApi {
   /// Returns number of children marked not absent
   ///
   /// Delete absent childrens by tripId
-  Future<List<PickupDropoffResponse>> tripsNotAbsentPut(CreateNotAbsentBody createNotAbsentBody) async {
+  Future<UpdateRecordsResponse> tripsNotAbsentPut(CreateNotAbsentBody createNotAbsentBody) async {
     Response response = await tripsNotAbsentPutWithHttpInfo(createNotAbsentBody);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<PickupDropoffResponse>') as List).map((item) => item as PickupDropoffResponse).toList();
+      return apiClient.deserialize(_decodeBodyBytes(response), 'UpdateRecordsResponse') as UpdateRecordsResponse;
     } else {
       return null;
     }
