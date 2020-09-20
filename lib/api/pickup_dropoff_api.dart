@@ -184,7 +184,7 @@ class PickupDropoffApi {
   /// Returns number of children marked not absent with HTTP info returned
   ///
   /// Delete absent childrens by tripId
-  Future<Response> tripsNotAbsentPostWithHttpInfo(CreateNotAbsentBody createNotAbsentBody) async {
+  Future<Response> tripsNotAbsentPutWithHttpInfo(CreateNotAbsentBody createNotAbsentBody) async {
     Object postBody = createNotAbsentBody;
 
     // verify required params are set
@@ -215,7 +215,7 @@ class PickupDropoffApi {
     }
 
     var response = await apiClient.invokeAPI(path,
-                                             'POST',
+                                             'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
@@ -228,8 +228,8 @@ class PickupDropoffApi {
   /// Returns number of children marked not absent
   ///
   /// Delete absent childrens by tripId
-  Future<List<PickupDropoffResponse>> tripsNotAbsentPost(CreateNotAbsentBody createNotAbsentBody) async {
-    Response response = await tripsNotAbsentPostWithHttpInfo(createNotAbsentBody);
+  Future<List<PickupDropoffResponse>> tripsNotAbsentPut(CreateNotAbsentBody createNotAbsentBody) async {
+    Response response = await tripsNotAbsentPutWithHttpInfo(createNotAbsentBody);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {

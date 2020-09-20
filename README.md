@@ -83,7 +83,7 @@ Class | Method | HTTP request | Description
 *PickupDropoffApi* | [**pickupDropoffsTripsTripIdGet**](doc\/PickupDropoffApi.md#pickupdropoffstripstripidget) | **GET** /pickup-dropoffs/trips/{tripId}/ | Returns array of pickup-dropoff by tripId
 *PickupDropoffApi* | [**tripsAbsentPost**](doc\/PickupDropoffApi.md#tripsabsentpost) | **POST** /trips/absent/ | Returns array of pickupdropoff
 *PickupDropoffApi* | [**tripsDropoffPut**](doc\/PickupDropoffApi.md#tripsdropoffput) | **PUT** /trips/dropoff/ | Returns number of children Dropoff
-*PickupDropoffApi* | [**tripsNotAbsentPost**](doc\/PickupDropoffApi.md#tripsnotabsentpost) | **POST** /trips/not-absent/ | Returns number of children marked not absent
+*PickupDropoffApi* | [**tripsNotAbsentPut**](doc\/PickupDropoffApi.md#tripsnotabsentput) | **PUT** /trips/not-absent/ | Returns number of children marked not absent
 *PickupDropoffApi* | [**tripsPickupPost**](doc\/PickupDropoffApi.md#tripspickuppost) | **POST** /trips/pickup/ | Returns array of pickupdropoff
 *TripApi* | [**childTripsLatestGet**](doc\/TripApi.md#childtripslatestget) | **GET** /child-trips/latest/ | Returns array of latest trip for each child by user
 *TripApi* | [**distanceActiveTripsGet**](doc\/TripApi.md#distanceactivetripsget) | **GET** /distance/active/trips/ | Update distance and duration for all the active trips
