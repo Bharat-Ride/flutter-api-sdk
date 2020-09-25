@@ -88,6 +88,7 @@ Class | Method | HTTP request | Description
 *TripApi* | [**childTripsLatestGet**](doc\/TripApi.md#childtripslatestget) | **GET** /child-trips/latest/ | Returns array of latest trip for each child by user
 *TripApi* | [**distanceActiveTripsGet**](doc\/TripApi.md#distanceactivetripsget) | **GET** /distance/active/trips/ | Update distance and duration for all the active trips
 *TripApi* | [**driverTripsLatestGet**](doc\/TripApi.md#drivertripslatestget) | **GET** /driver-trips/latest/ | Returns array of trips by driver
+*TripApi* | [**inactiveTripsPatch**](doc\/TripApi.md#inactivetripspatch) | **PATCH** /inactive/trips/ | Return number of trips updated
 *TripApi* | [**tripEndPut**](doc\/TripApi.md#tripendput) | **PUT** /trip/end/ | Return number of trips ended
 *TripApi* | [**tripLocationPatch**](doc\/TripApi.md#triplocationpatch) | **PATCH** /trip/location/ | Return number of trips updated
 *TripApi* | [**tripStartPost**](doc\/TripApi.md#tripstartpost) | **POST** /trip/start/ | Return newly created trip

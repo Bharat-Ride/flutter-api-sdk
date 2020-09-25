@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**childTripsLatestGet**](TripApi.md#childTripsLatestGet) | **GET** /child-trips/latest/ | Returns array of latest trip for each child by user
 [**distanceActiveTripsGet**](TripApi.md#distanceActiveTripsGet) | **GET** /distance/active/trips/ | Update distance and duration for all the active trips
 [**driverTripsLatestGet**](TripApi.md#driverTripsLatestGet) | **GET** /driver-trips/latest/ | Returns array of trips by driver
+[**inactiveTripsPatch**](TripApi.md#inactiveTripsPatch) | **PATCH** /inactive/trips/ | Return number of trips updated
 [**tripEndPut**](TripApi.md#tripEndPut) | **PUT** /trip/end/ | Return number of trips ended
 [**tripLocationPatch**](TripApi.md#tripLocationPatch) | **PATCH** /trip/location/ | Return number of trips updated
 [**tripStartPost**](TripApi.md#tripStartPost) | **POST** /trip/start/ | Return newly created trip
@@ -140,6 +141,50 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**List<TripResponse>**](TripResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inactiveTripsPatch**
+> inactiveTripsPatch()
+
+Return number of trips updated
+
+End inactive trip that are not updated since last 2 hours
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+var api_instance = TripApi();
+
+try { 
+    api_instance.inactiveTripsPatch();
+} catch (e) {
+    print("Exception when calling TripApi->inactiveTripsPatch: $e\n");
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
