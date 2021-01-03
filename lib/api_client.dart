@@ -10,12 +10,18 @@
 part of openapi.api;
 
 class ApiClient {
-  ApiClient({this.basePath = 'https://localhost'}) {
+  ApiClient({
+    this.accessToken,
+    this.basePath = "https://production.user-api.api.findnemo.in",
+  }) {
     // Setup authentications (key: authentication name, value: authentication).
-    _authentications[r'BearerAuth'] = HttpBearerAuth();
+    if (this.accessToken != null && this.accessToken is String) {
+      _authentications['BearerAuth'] = OAuth(accessToken: this.accessToken);
+    }
   }
 
   final String basePath;
+  final String accessToken;
 
   var _client = Client();
 
@@ -38,7 +44,7 @@ class ApiClient {
   final _authentications = <String, Authentication>{};
 
   void addDefaultHeader(String key, String value) {
-     _defaultHeaderMap[key] = value;
+    _defaultHeaderMap[key] = value;
   }
 
   dynamic deserialize(String json, String targetType, {bool growable}) {
@@ -46,8 +52,9 @@ class ApiClient {
     targetType = targetType.replaceAll(' ', '');
 
     return targetType == 'String'
-      ? json
-      : _deserialize(jsonDecode(json), targetType, growable: true == growable);
+        ? json
+        : _deserialize(jsonDecode(json), targetType,
+            growable: true == growable);
   }
 
   String serialize(Object obj) => obj == null ? '' : json.encode(obj);
@@ -74,12 +81,12 @@ class ApiClient {
     headerParams.addAll(_defaultHeaderMap);
 
     final urlEncodedQueryParams = queryParams
-      .where((param) => param.value != null)
-      .map((param) => '$param');
+        .where((param) => param.value != null)
+        .map((param) => '$param');
 
     final queryString = urlEncodedQueryParams.isNotEmpty
-      ? '?${urlEncodedQueryParams.join('&')}'
-      : '';
+        ? '?${urlEncodedQueryParams.join('&')}'
+        : '';
 
     final url = '$basePath$path$queryString';
 
@@ -89,19 +96,20 @@ class ApiClient {
 
     try {
       // Special case for uploading a single file which isn’t a 'multipart/form-data'.
-      if (
-        body is MultipartFile && (nullableContentType == null ||
-        !nullableContentType.toLowerCase().startsWith('multipart/form-data'))
-      ) {
+      if (body is MultipartFile &&
+          (nullableContentType == null ||
+              !nullableContentType
+                  .toLowerCase()
+                  .startsWith('multipart/form-data'))) {
         final request = StreamedRequest(method, Uri.parse(url));
         request.headers.addAll(headerParams);
         request.contentLength = body.length;
         body.finalize().listen(
-          request.sink.add,
-          onDone: request.sink.close,
-          onError: (error, trace) => request.sink.close(),
-          cancelOnError: true,
-        );
+              request.sink.add,
+              onDone: request.sink.close,
+              onError: (error, trace) => request.sink.close(),
+              cancelOnError: true,
+            );
         final response = await _client.send(request);
         return Response.fromStream(response);
       }
@@ -117,31 +125,86 @@ class ApiClient {
       }
 
       final msgBody = nullableContentType == 'application/x-www-form-urlencoded'
-        ? formParams
-        : serialize(body);
+          ? formParams
+          : serialize(body);
       final nullableHeaderParams = headerParams.isEmpty ? null : headerParams;
 
-      switch(method) {
-        case 'POST': return await _client.post(url, headers: nullableHeaderParams, body: msgBody,);
-        case 'PUT': return await _client.put(url, headers: nullableHeaderParams, body: msgBody,);
-        case 'DELETE': return await _client.delete(url, headers: nullableHeaderParams,);
-        case 'PATCH': return await _client.patch(url, headers: nullableHeaderParams, body: msgBody,);
-        case 'HEAD': return await _client.head(url, headers: nullableHeaderParams,);
-        case 'GET': return await _client.get(url, headers: nullableHeaderParams,);
+      switch (method) {
+        case 'POST':
+          return await _client.post(
+            url,
+            headers: nullableHeaderParams,
+            body: msgBody,
+          );
+        case 'PUT':
+          return await _client.put(
+            url,
+            headers: nullableHeaderParams,
+            body: msgBody,
+          );
+        case 'DELETE':
+          return await _client.delete(
+            url,
+            headers: nullableHeaderParams,
+          );
+        case 'PATCH':
+          return await _client.patch(
+            url,
+            headers: nullableHeaderParams,
+            body: msgBody,
+          );
+        case 'HEAD':
+          return await _client.head(
+            url,
+            headers: nullableHeaderParams,
+          );
+        case 'GET':
+          return await _client.get(
+            url,
+            headers: nullableHeaderParams,
+          );
       }
     } on SocketException catch (e, trace) {
-      throw ApiException.withInner(HttpStatus.badRequest, 'Socket operation failed: $method $path', e, trace,);
+      throw ApiException.withInner(
+        HttpStatus.badRequest,
+        'Socket operation failed: $method $path',
+        e,
+        trace,
+      );
     } on TlsException catch (e, trace) {
-      throw ApiException.withInner(HttpStatus.badRequest, 'TLS/SSL communication failed: $method $path', e, trace,);
+      throw ApiException.withInner(
+        HttpStatus.badRequest,
+        'TLS/SSL communication failed: $method $path',
+        e,
+        trace,
+      );
     } on IOException catch (e, trace) {
-      throw ApiException.withInner(HttpStatus.badRequest, 'I/O operation failed: $method $path', e, trace,);
+      throw ApiException.withInner(
+        HttpStatus.badRequest,
+        'I/O operation failed: $method $path',
+        e,
+        trace,
+      );
     } on ClientException catch (e, trace) {
-      throw ApiException.withInner(HttpStatus.badRequest, 'HTTP connection failed: $method $path', e, trace,);
+      throw ApiException.withInner(
+        HttpStatus.badRequest,
+        'HTTP connection failed: $method $path',
+        e,
+        trace,
+      );
     } on Exception catch (e, trace) {
-      throw ApiException.withInner(HttpStatus.badRequest, 'Exception occurred: $method $path', e, trace,);
+      throw ApiException.withInner(
+        HttpStatus.badRequest,
+        'Exception occurred: $method $path',
+        e,
+        trace,
+      );
     }
 
-    throw ApiException(HttpStatus.badRequest, 'Invalid HTTP operation: $method $path',);
+    throw ApiException(
+      HttpStatus.badRequest,
+      'Invalid HTTP operation: $method $path',
+    );
   }
 
   dynamic _deserialize(dynamic value, String targetType, {bool growable}) {
@@ -238,25 +301,36 @@ class ApiClient {
           return UserWithAddressResponse.fromJson(value);
         default:
           Match match;
-          if (value is List && (match = _regList.firstMatch(targetType)) != null) {
+          if (value is List &&
+              (match = _regList.firstMatch(targetType)) != null) {
             final newTargetType = match[1];
             return value
-              .map((v) => _deserialize(v, newTargetType, growable: growable))
-              .toList(growable: true == growable);
+                .map((v) => _deserialize(v, newTargetType, growable: growable))
+                .toList(growable: true == growable);
           }
-          if (value is Map && (match = _regMap.firstMatch(targetType)) != null) {
+          if (value is Map &&
+              (match = _regMap.firstMatch(targetType)) != null) {
             final newTargetType = match[1];
             return Map.fromIterables(
               value.keys,
-              value.values.map((v) => _deserialize(v, newTargetType, growable: growable)),
+              value.values.map(
+                  (v) => _deserialize(v, newTargetType, growable: growable)),
             );
           }
           break;
       }
     } on Exception catch (e, stack) {
-      throw ApiException.withInner(HttpStatus.internalServerError, 'Exception during deserialization.', e, stack,);
+      throw ApiException.withInner(
+        HttpStatus.internalServerError,
+        'Exception during deserialization.',
+        e,
+        stack,
+      );
     }
-    throw ApiException(HttpStatus.internalServerError, 'Could not find a suitable class for deserialization',);
+    throw ApiException(
+      HttpStatus.internalServerError,
+      'Could not find a suitable class for deserialization',
+    );
   }
 
   /// Update query and header parameters based on authentication settings.
