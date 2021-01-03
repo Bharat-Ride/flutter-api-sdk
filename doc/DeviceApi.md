@@ -10,13 +10,12 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deviceIdDelete**](DeviceApi.md#deviceIdDelete) | **DELETE** /device/{id}/ | Returns number of device deleted
-[**deviceIdFcmTokenDelete**](DeviceApi.md#deviceIdFcmTokenDelete) | **DELETE** /device/{id}/fcm-token/ | Returns number of device deleted
 [**devicePost**](DeviceApi.md#devicePost) | **POST** /device/ | Returns device object
 [**deviceUIdUIdGet**](DeviceApi.md#deviceUIdUIdGet) | **GET** /device/uId/{uId}/ | Returns device object
 
 
 # **deviceIdDelete**
-> DeleteRecordsResponse deviceIdDelete(id)
+> DeviceResponse deviceIdDelete(id)
 
 Returns number of device deleted
 
@@ -32,14 +31,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = DeviceApi();
-var id = 56; // int | Device id
+final api_instance = DeviceApi();
+final id = 56; // int | Device id
 
 try { 
-    var result = api_instance.deviceIdDelete(id);
+    final result = api_instance.deviceIdDelete(id);
     print(result);
 } catch (e) {
-    print("Exception when calling DeviceApi->deviceIdDelete: $e\n");
+    print('Exception when calling DeviceApi->deviceIdDelete: $e\n');
 }
 ```
 
@@ -47,60 +46,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Device id | [default to null]
+ **id** | **int**| Device id | 
 
 ### Return type
 
-[**DeleteRecordsResponse**](DeleteRecordsResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **deviceIdFcmTokenDelete**
-> UpdateRecordsResponse deviceIdFcmTokenDelete(id)
-
-Returns number of device deleted
-
-Delete a device token for a user by id
-
-### Example 
-```dart
-import 'package:openapi/api.dart';
-// TODO Configure HTTP Bearer authorization: BearerAuth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
-
-var api_instance = DeviceApi();
-var id = 56; // int | Device id
-
-try { 
-    var result = api_instance.deviceIdFcmTokenDelete(id);
-    print(result);
-} catch (e) {
-    print("Exception when calling DeviceApi->deviceIdFcmTokenDelete: $e\n");
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| Device id | [default to null]
-
-### Return type
-
-[**UpdateRecordsResponse**](UpdateRecordsResponse.md)
+[**DeviceResponse**](DeviceResponse.md)
 
 ### Authorization
 
@@ -130,14 +80,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = DeviceApi();
-var createDeviceBody = CreateDeviceBody(); // CreateDeviceBody | Device body
+final api_instance = DeviceApi();
+final createDeviceBody = CreateDeviceBody(); // CreateDeviceBody | Device body
 
 try { 
-    var result = api_instance.devicePost(createDeviceBody);
+    final result = api_instance.devicePost(createDeviceBody);
     print(result);
 } catch (e) {
-    print("Exception when calling DeviceApi->devicePost: $e\n");
+    print('Exception when calling DeviceApi->devicePost: $e\n');
 }
 ```
 
@@ -179,14 +129,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = DeviceApi();
-var uId = uId_example; // String | Device uId
+final api_instance = DeviceApi();
+final uId = uId_example; // String | Device uId
 
 try { 
-    var result = api_instance.deviceUIdUIdGet(uId);
+    final result = api_instance.deviceUIdUIdGet(uId);
     print(result);
 } catch (e) {
-    print("Exception when calling DeviceApi->deviceUIdUIdGet: $e\n");
+    print('Exception when calling DeviceApi->deviceUIdUIdGet: $e\n');
 }
 ```
 
@@ -194,7 +144,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uId** | **String**| Device uId | [default to null]
+ **uId** | **String**| Device uId | 
 
 ### Return type
 

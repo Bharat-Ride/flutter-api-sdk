@@ -33,14 +33,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = PickupDropoffApi();
-var tripId = 56; // int | Trip id
+final api_instance = PickupDropoffApi();
+final tripId = 56; // int | Trip id
 
 try { 
-    var result = api_instance.pickupDropoffsTripsTripIdGet(tripId);
+    final result = api_instance.pickupDropoffsTripsTripIdGet(tripId);
     print(result);
 } catch (e) {
-    print("Exception when calling PickupDropoffApi->pickupDropoffsTripsTripIdGet: $e\n");
+    print('Exception when calling PickupDropoffApi->pickupDropoffsTripsTripIdGet: $e\n');
 }
 ```
 
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tripId** | **int**| Trip id | [default to null]
+ **tripId** | **int**| Trip id | 
 
 ### Return type
 
@@ -82,14 +82,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = PickupDropoffApi();
-var createAbsentBody = CreateAbsentBody(); // CreateAbsentBody | Group body
+final api_instance = PickupDropoffApi();
+final createAbsentBody = CreateAbsentBody(); // CreateAbsentBody | Group body
 
 try { 
-    var result = api_instance.tripsAbsentPost(createAbsentBody);
+    final result = api_instance.tripsAbsentPost(createAbsentBody);
     print(result);
 } catch (e) {
-    print("Exception when calling PickupDropoffApi->tripsAbsentPost: $e\n");
+    print('Exception when calling PickupDropoffApi->tripsAbsentPost: $e\n');
 }
 ```
 
@@ -131,14 +131,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = PickupDropoffApi();
-var createDropoffBody = CreateDropoffBody(); // CreateDropoffBody | Group body
+final api_instance = PickupDropoffApi();
+final createDropoffBody = CreateDropoffBody(); // CreateDropoffBody | Group body
 
 try { 
-    var result = api_instance.tripsDropoffPut(createDropoffBody);
+    final result = api_instance.tripsDropoffPut(createDropoffBody);
     print(result);
 } catch (e) {
-    print("Exception when calling PickupDropoffApi->tripsDropoffPut: $e\n");
+    print('Exception when calling PickupDropoffApi->tripsDropoffPut: $e\n');
 }
 ```
 
@@ -180,14 +180,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = PickupDropoffApi();
-var createNotAbsentBody = CreateNotAbsentBody(); // CreateNotAbsentBody | Group body
+final api_instance = PickupDropoffApi();
+final createNotAbsentBody = CreateNotAbsentBody(); // CreateNotAbsentBody | Group body
 
 try { 
-    var result = api_instance.tripsNotAbsentPut(createNotAbsentBody);
+    final result = api_instance.tripsNotAbsentPut(createNotAbsentBody);
     print(result);
 } catch (e) {
-    print("Exception when calling PickupDropoffApi->tripsNotAbsentPut: $e\n");
+    print('Exception when calling PickupDropoffApi->tripsNotAbsentPut: $e\n');
 }
 ```
 
@@ -229,14 +229,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = PickupDropoffApi();
-var createPickupBody = CreatePickupBody(); // CreatePickupBody | Group body
+final api_instance = PickupDropoffApi();
+final createPickupBody = CreatePickupBody(); // CreatePickupBody | Group body
 
 try { 
-    var result = api_instance.tripsPickupPost(createPickupBody);
+    final result = api_instance.tripsPickupPost(createPickupBody);
     print(result);
 } catch (e) {
-    print("Exception when calling PickupDropoffApi->tripsPickupPost: $e\n");
+    print('Exception when calling PickupDropoffApi->tripsPickupPost: $e\n');
 }
 ```
 

@@ -1,68 +1,98 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
 part of openapi.api;
 
 class CreateDeviceBody {
-  
-  String uId = null;
-  
-  String model = null;
-  
-  String make = null;
-  
-  String fcmToken = null;
-  
-  String locale = null;
-  CreateDeviceBody();
+  /// Returns a new [CreateDeviceBody] instance.
+  CreateDeviceBody({
+    @required this.uId,
+    this.model,
+    this.make,
+    this.fcmToken,
+  });
+
+  String uId;
+
+  String model;
+
+  String make;
+
+  String fcmToken;
 
   @override
-  String toString() {
-    return 'CreateDeviceBody[uId=$uId, model=$model, make=$make, fcmToken=$fcmToken, locale=$locale, ]';
-  }
+  bool operator ==(Object other) => identical(this, other) || other is CreateDeviceBody &&
+     other.uId == uId &&
+     other.model == model &&
+     other.make == make &&
+     other.fcmToken == fcmToken;
 
-  CreateDeviceBody.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    uId = json['uId'];
-    model = json['model'];
-    make = json['make'];
-    fcmToken = json['fcmToken'];
-    locale = json['locale'];
-  }
+  @override
+  int get hashCode =>
+    (uId == null ? 0 : uId.hashCode) +
+    (model == null ? 0 : model.hashCode) +
+    (make == null ? 0 : make.hashCode) +
+    (fcmToken == null ? 0 : fcmToken.hashCode);
+
+  @override
+  String toString() => 'CreateDeviceBody[uId=$uId, model=$model, make=$make, fcmToken=$fcmToken]';
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (uId != null)
-      json['uId'] = uId;
-    if (model != null)
-      json['model'] = model;
-    if (make != null)
-      json['make'] = make;
-    if (fcmToken != null)
-      json['fcmToken'] = fcmToken;
-    if (locale != null)
-      json['locale'] = locale;
+    final json = <String, dynamic>{};
+    if (uId != null) {
+      json[r'uId'] = uId;
+    }
+    if (model != null) {
+      json[r'model'] = model;
+    }
+    if (make != null) {
+      json[r'make'] = make;
+    }
+    if (fcmToken != null) {
+      json[r'fcmToken'] = fcmToken;
+    }
     return json;
   }
 
-  static List<CreateDeviceBody> listFromJson(List<dynamic> json) {
-    return json == null ? List<CreateDeviceBody>() : json.map((value) => CreateDeviceBody.fromJson(value)).toList();
-  }
+  /// Returns a new [CreateDeviceBody] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static CreateDeviceBody fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : CreateDeviceBody(
+        uId: json[r'uId'],
+        model: json[r'model'],
+        make: json[r'make'],
+        fcmToken: json[r'fcmToken'],
+    );
+
+  static List<CreateDeviceBody> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <CreateDeviceBody>[]
+      : json.map((v) => CreateDeviceBody.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, CreateDeviceBody> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, CreateDeviceBody>();
+    final map = <String, CreateDeviceBody>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = CreateDeviceBody.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = CreateDeviceBody.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of CreateDeviceBody-objects as value to a dart map
-  static Map<String, List<CreateDeviceBody>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<CreateDeviceBody>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = CreateDeviceBody.listFromJson(value);
-       });
-     }
-     return map;
+  static Map<String, List<CreateDeviceBody>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<CreateDeviceBody>>{};
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic v) {
+        map[key] = CreateDeviceBody.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+      });
+    }
+    return map;
   }
 }
 

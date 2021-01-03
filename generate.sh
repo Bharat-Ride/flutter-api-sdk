@@ -1,1 +1,1 @@
-openapi-generator generate -i http://localhost:8080/api -g dart -o ./
+openapi-generator-cli generate -i http://localhost:8080/api -g dart -o ./

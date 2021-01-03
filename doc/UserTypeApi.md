@@ -30,14 +30,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserTypeApi();
-var userAddRole = UserAddRole(); // UserAddRole | User with role
+final api_instance = UserTypeApi();
+final userAddRole = UserAddRole(); // UserAddRole | User with role
 
 try { 
-    var result = api_instance.userTypeAddRolePatch(userAddRole);
+    final result = api_instance.userTypeAddRolePatch(userAddRole);
     print(result);
 } catch (e) {
-    print("Exception when calling UserTypeApi->userTypeAddRolePatch: $e\n");
+    print('Exception when calling UserTypeApi->userTypeAddRolePatch: $e\n');
 }
 ```
 
@@ -79,13 +79,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserTypeApi();
+final api_instance = UserTypeApi();
 
 try { 
-    var result = api_instance.userTypeGet();
+    final result = api_instance.userTypeGet();
     print(result);
 } catch (e) {
-    print("Exception when calling UserTypeApi->userTypeGet: $e\n");
+    print('Exception when calling UserTypeApi->userTypeGet: $e\n');
 }
 ```
 

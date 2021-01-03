@@ -1,242 +1,241 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
 part of openapi.api;
 
 
-
 class DeviceApi {
-  final ApiClient apiClient;
-
   DeviceApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// Returns number of device deleted with HTTP info returned
+  final ApiClient apiClient;
+
+  /// Returns number of device deleted
   ///
   /// Delete a device for a user by id
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   Device id
   Future<Response> deviceIdDeleteWithHttpInfo(int id) async {
+    // Verify required params are set.
+    if (id == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
+    }
+
+    final path = '/device/{id}/'.replaceAll('{format}', 'json')
+      .replaceAll('{' + 'id' + '}', id.toString());
+
     Object postBody;
 
-    // verify required params are set
-    if(id == null) {
-     throw ApiException(400, "Missing required param: id");
-    }
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // create path and map variables
-    String path = "/device/{id}/".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+    final contentTypes = <String>[];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['BearerAuth'];
 
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
         postBody = mp;
-    }
-    else {
+      }
+    } else {
     }
 
-    var response = await apiClient.invokeAPI(path,
-                                             'DELETE',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return await apiClient.invokeAPI(
+      path,
+      'DELETE',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
   /// Returns number of device deleted
   ///
   /// Delete a device for a user by id
-  Future<DeleteRecordsResponse> deviceIdDelete(int id) async {
-    Response response = await deviceIdDeleteWithHttpInfo(id);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'DeleteRecordsResponse') as DeleteRecordsResponse;
-    } else {
-      return null;
-    }
-  }
-
-  /// Returns number of device deleted with HTTP info returned
   ///
-  /// Delete a device token for a user by id
-  Future<Response> deviceIdFcmTokenDeleteWithHttpInfo(int id) async {
-    Object postBody;
-
-    // verify required params are set
-    if(id == null) {
-     throw ApiException(400, "Missing required param: id");
-    }
-
-    // create path and map variables
-    String path = "/device/{id}/fcm-token/".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
-    }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'DELETE',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
-  }
-
-  /// Returns number of device deleted
+  /// Parameters:
   ///
-  /// Delete a device token for a user by id
-  Future<UpdateRecordsResponse> deviceIdFcmTokenDelete(int id) async {
-    Response response = await deviceIdFcmTokenDeleteWithHttpInfo(id);
-    if(response.statusCode >= 400) {
+  /// * [int] id (required):
+  ///   Device id
+  Future<DeviceResponse> deviceIdDelete(int id) async {
+    final response = await deviceIdDeleteWithHttpInfo(id);
+    if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'UpdateRecordsResponse') as UpdateRecordsResponse;
-    } else {
-      return null;
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'DeviceResponse') as DeviceResponse;
+    }
+    return null;
   }
 
-  /// Returns device object with HTTP info returned
+  /// Returns device object
   ///
   /// Create a device for a user
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [CreateDeviceBody] createDeviceBody (required):
+  ///   Device body
   Future<Response> devicePostWithHttpInfo(CreateDeviceBody createDeviceBody) async {
+    // Verify required params are set.
+    if (createDeviceBody == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: createDeviceBody');
+    }
+
+    final path = '/device/'.replaceAll('{format}', 'json');
+
     Object postBody = createDeviceBody;
 
-    // verify required params are set
-    if(createDeviceBody == null) {
-     throw ApiException(400, "Missing required param: createDeviceBody");
-    }
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // create path and map variables
-    String path = "/device/".replaceAll("{format}","json");
+    final contentTypes = <String>['application/json'];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['BearerAuth'];
 
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
         postBody = mp;
-    }
-    else {
+      }
+    } else {
     }
 
-    var response = await apiClient.invokeAPI(path,
-                                             'POST',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
   /// Returns device object
   ///
   /// Create a device for a user
-  Future<DeviceResponse> devicePost(CreateDeviceBody createDeviceBody) async {
-    Response response = await devicePostWithHttpInfo(createDeviceBody);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'DeviceResponse') as DeviceResponse;
-    } else {
-      return null;
-    }
-  }
-
-  /// Returns device object with HTTP info returned
   ///
-  /// Get a device for a user by uId
-  Future<Response> deviceUIdUIdGetWithHttpInfo(String uId) async {
-    Object postBody;
-
-    // verify required params are set
-    if(uId == null) {
-     throw ApiException(400, "Missing required param: uId");
+  /// Parameters:
+  ///
+  /// * [CreateDeviceBody] createDeviceBody (required):
+  ///   Device body
+  Future<DeviceResponse> devicePost(CreateDeviceBody createDeviceBody) async {
+    final response = await devicePostWithHttpInfo(createDeviceBody);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
-
-    // create path and map variables
-    String path = "/device/uId/{uId}/".replaceAll("{format}","json").replaceAll("{" + "uId" + "}", uId.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'DeviceResponse') as DeviceResponse;
     }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns device object
   ///
   /// Get a device for a user by uId
-  Future<DeviceWithUserResponse> deviceUIdUIdGet(String uId) async {
-    Response response = await deviceUIdUIdGetWithHttpInfo(uId);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'DeviceWithUserResponse') as DeviceWithUserResponse;
-    } else {
-      return null;
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] uId (required):
+  ///   Device uId
+  Future<Response> deviceUIdUIdGetWithHttpInfo(String uId) async {
+    // Verify required params are set.
+    if (uId == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: uId');
     }
+
+    final path = '/device/uId/{uId}/'.replaceAll('{format}', 'json')
+      .replaceAll('{' + 'uId' + '}', uId.toString());
+
+    Object postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    final contentTypes = <String>[];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['BearerAuth'];
+
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
+      bool hasFields = false;
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
+        postBody = mp;
+      }
+    } else {
+    }
+
+    return await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
+  /// Returns device object
+  ///
+  /// Get a device for a user by uId
+  ///
+  /// Parameters:
+  ///
+  /// * [String] uId (required):
+  ///   Device uId
+  Future<DeviceWithUserResponse> deviceUIdUIdGet(String uId) async {
+    final response = await deviceUIdUIdGetWithHttpInfo(uId);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'DeviceWithUserResponse') as DeviceWithUserResponse;
+    }
+    return null;
+  }
 }

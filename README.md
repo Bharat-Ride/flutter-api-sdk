@@ -46,14 +46,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = ChildApi();
-var id = 8.14; // num | Child id
+final api_instance = ChildApi();
+final id = 8.14; // num | Child id
 
 try {
-    var result = api_instance.childIdDelete(id);
+    final result = api_instance.childIdDelete(id);
     print(result);
 } catch (e) {
-    print("Exception when calling ChildApi->childIdDelete: $e\n");
+    print('Exception when calling ChildApi->childIdDelete: $e\n');
 }
 
 ```
@@ -74,7 +74,6 @@ Class | Method | HTTP request | Description
 *ChildGroupApi* | [**childsGroupsGroupIdDeletePut**](doc\/ChildGroupApi.md#childsgroupsgroupiddeleteput) | **PUT** /childs/groups/{groupId}/delete/ | Returns number of child removed from the group
 *ChildGroupApi* | [**childsGroupsGroupIdGet**](doc\/ChildGroupApi.md#childsgroupsgroupidget) | **GET** /childs/groups/{groupId}/ | Returns array of child-group by groupId
 *DeviceApi* | [**deviceIdDelete**](doc\/DeviceApi.md#deviceiddelete) | **DELETE** /device/{id}/ | Returns number of device deleted
-*DeviceApi* | [**deviceIdFcmTokenDelete**](doc\/DeviceApi.md#deviceidfcmtokendelete) | **DELETE** /device/{id}/fcm-token/ | Returns number of device deleted
 *DeviceApi* | [**devicePost**](doc\/DeviceApi.md#devicepost) | **POST** /device/ | Returns device object
 *DeviceApi* | [**deviceUIdUIdGet**](doc\/DeviceApi.md#deviceuiduidget) | **GET** /device/uId/{uId}/ | Returns device object
 *DriverGroupApi* | [**driverGroupsGet**](doc\/DriverGroupApi.md#drivergroupsget) | **GET** /driver-groups/ | Returns array of group by driverId
@@ -96,8 +95,8 @@ Class | Method | HTTP request | Description
 *TripApi* | [**tripsGroupsGroupIdGet**](doc\/TripApi.md#tripsgroupsgroupidget) | **GET** /trips/groups/{groupId}/ | Returns array of trips by groupId
 *UserApi* | [**userDelete**](doc\/UserApi.md#userdelete) | **DELETE** /user/ | Returns number of user deleted by phone number
 *UserApi* | [**userGet**](doc\/UserApi.md#userget) | **GET** /user/ | Returns user object by phone number
+*UserApi* | [**userPatch**](doc\/UserApi.md#userpatch) | **PATCH** /user/ | Returns number of user updated
 *UserApi* | [**userPost**](doc\/UserApi.md#userpost) | **POST** /user/ | Returns user object
-*UserApi* | [**userPut**](doc\/UserApi.md#userput) | **PUT** /user/ | Returns number of user updated
 *UserTypeApi* | [**userTypeAddRolePatch**](doc\/UserTypeApi.md#usertypeaddrolepatch) | **PATCH** /user-type/add-role/ | Returns true indicating the role has been added to the user
 *UserTypeApi* | [**userTypeGet**](doc\/UserTypeApi.md#usertypeget) | **GET** /user-type/ | Returns user-type object by phone number
 

@@ -8,9 +8,9 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **num** |  | [default to null]
-**endLatitude** | **num** |  | [default to null]
-**endLongitude** | **num** |  | [default to null]
+**id** | **num** |  | 
+**endLatitude** | **num** |  | 
+**endLongitude** | **num** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

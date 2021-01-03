@@ -11,8 +11,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**userDelete**](UserApi.md#userDelete) | **DELETE** /user/ | Returns number of user deleted by phone number
 [**userGet**](UserApi.md#userGet) | **GET** /user/ | Returns user object by phone number
+[**userPatch**](UserApi.md#userPatch) | **PATCH** /user/ | Returns number of user updated
 [**userPost**](UserApi.md#userPost) | **POST** /user/ | Returns user object
-[**userPut**](UserApi.md#userPut) | **PUT** /user/ | Returns number of user updated
 
 
 # **userDelete**
@@ -32,13 +32,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserApi();
+final api_instance = UserApi();
 
 try { 
-    var result = api_instance.userDelete();
+    final result = api_instance.userDelete();
     print(result);
 } catch (e) {
-    print("Exception when calling UserApi->userDelete: $e\n");
+    print('Exception when calling UserApi->userDelete: $e\n');
 }
 ```
 
@@ -77,13 +77,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserApi();
+final api_instance = UserApi();
 
 try { 
-    var result = api_instance.userGet();
+    final result = api_instance.userGet();
     print(result);
 } catch (e) {
-    print("Exception when calling UserApi->userGet: $e\n");
+    print('Exception when calling UserApi->userGet: $e\n');
 }
 ```
 
@@ -105,6 +105,55 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **userPatch**
+> UpdateRecordsResponse userPatch(updateUserWithAddressBody)
+
+Returns number of user updated
+
+Update a user as driver and/or parent
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+final api_instance = UserApi();
+final updateUserWithAddressBody = UpdateUserWithAddressBody(); // UpdateUserWithAddressBody | User body with address
+
+try { 
+    final result = api_instance.userPatch(updateUserWithAddressBody);
+    print(result);
+} catch (e) {
+    print('Exception when calling UserApi->userPatch: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **updateUserWithAddressBody** | [**UpdateUserWithAddressBody**](UpdateUserWithAddressBody.md)| User body with address | 
+
+### Return type
+
+[**UpdateRecordsResponse**](UpdateRecordsResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **userPost**
 > UserResponse userPost(createUserWithAddressBody)
 
@@ -122,14 +171,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserApi();
-var createUserWithAddressBody = CreateUserWithAddressBody(); // CreateUserWithAddressBody | User body with address
+final api_instance = UserApi();
+final createUserWithAddressBody = CreateUserWithAddressBody(); // CreateUserWithAddressBody | User body with address
 
 try { 
-    var result = api_instance.userPost(createUserWithAddressBody);
+    final result = api_instance.userPost(createUserWithAddressBody);
     print(result);
 } catch (e) {
-    print("Exception when calling UserApi->userPost: $e\n");
+    print('Exception when calling UserApi->userPost: $e\n');
 }
 ```
 
@@ -142,55 +191,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserResponse**](UserResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **userPut**
-> UpdateRecordsResponse userPut(updateUserWithAddressBody)
-
-Returns number of user updated
-
-Update a user as driver and/or parent
-
-### Example 
-```dart
-import 'package:openapi/api.dart';
-// TODO Configure HTTP Bearer authorization: BearerAuth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
-
-var api_instance = UserApi();
-var updateUserWithAddressBody = UpdateUserWithAddressBody(); // UpdateUserWithAddressBody | User body with address
-
-try { 
-    var result = api_instance.userPut(updateUserWithAddressBody);
-    print(result);
-} catch (e) {
-    print("Exception when calling UserApi->userPut: $e\n");
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updateUserWithAddressBody** | [**UpdateUserWithAddressBody**](UpdateUserWithAddressBody.md)| User body with address | 
-
-### Return type
-
-[**UpdateRecordsResponse**](UpdateRecordsResponse.md)
 
 ### Authorization
 

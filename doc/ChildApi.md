@@ -32,14 +32,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = ChildApi();
-var id = 8.14; // num | Child id
+final api_instance = ChildApi();
+final id = 8.14; // num | Child id
 
 try { 
-    var result = api_instance.childIdDelete(id);
+    final result = api_instance.childIdDelete(id);
     print(result);
 } catch (e) {
-    print("Exception when calling ChildApi->childIdDelete: $e\n");
+    print('Exception when calling ChildApi->childIdDelete: $e\n');
 }
 ```
 
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **num**| Child id | [default to null]
+ **id** | **num**| Child id | 
 
 ### Return type
 
@@ -81,14 +81,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = ChildApi();
-var createChildBody = CreateChildBody(); // CreateChildBody | Child body
+final api_instance = ChildApi();
+final createChildBody = CreateChildBody(); // CreateChildBody | Child body
 
 try { 
-    var result = api_instance.childPost(createChildBody);
+    final result = api_instance.childPost(createChildBody);
     print(result);
 } catch (e) {
-    print("Exception when calling ChildApi->childPost: $e\n");
+    print('Exception when calling ChildApi->childPost: $e\n');
 }
 ```
 
@@ -130,14 +130,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = ChildApi();
-var updateChildBody = UpdateChildBody(); // UpdateChildBody | Child body
+final api_instance = ChildApi();
+final updateChildBody = UpdateChildBody(); // UpdateChildBody | Child body
 
 try { 
-    var result = api_instance.childPut(updateChildBody);
+    final result = api_instance.childPut(updateChildBody);
     print(result);
 } catch (e) {
-    print("Exception when calling ChildApi->childPut: $e\n");
+    print('Exception when calling ChildApi->childPut: $e\n');
 }
 ```
 
@@ -179,13 +179,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = ChildApi();
+final api_instance = ChildApi();
 
 try { 
-    var result = api_instance.childsGet();
+    final result = api_instance.childsGet();
     print(result);
 } catch (e) {
-    print("Exception when calling ChildApi->childsGet: $e\n");
+    print('Exception when calling ChildApi->childsGet: $e\n');
 }
 ```
 

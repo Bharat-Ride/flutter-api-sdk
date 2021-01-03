@@ -8,12 +8,12 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **num** |  | [default to null]
-**userId** | **num** |  | [default to null]
-**isDriver** | **bool** |  | [default to null]
-**isParent** | **bool** |  | [default to null]
-**updatedAt** | **String** |  | [default to null]
-**createdAt** | **String** |  | [default to null]
+**id** | **num** |  | 
+**userId** | **num** |  | 
+**isDriver** | **bool** |  | 
+**isParent** | **bool** |  | 
+**updatedAt** | **String** |  | 
+**createdAt** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
