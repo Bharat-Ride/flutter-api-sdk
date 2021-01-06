@@ -1,78 +1,65 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.0
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: lines_longer_than_80_chars
-
 part of openapi.api;
 
 
-class DriverGroupApi {
-  DriverGroupApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
+class DriverGroupApi {
   final ApiClient apiClient;
 
-  /// Returns array of group by driverId
+  DriverGroupApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  /// Returns array of group by driverId with HTTP info returned
   ///
   /// Get groups by driverId
-  ///
-  /// Note: This method returns the HTTP [Response].
   Future<Response> driverGroupsGetWithHttpInfo() async {
-    final path = '/driver-groups/'.replaceAll('{format}', 'json');
-
     Object postBody;
 
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
+    // verify required params are set
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['BearerAuth'];
+    // create path and map variables
+    String path = "/driver-groups/".replaceAll("{format}","json");
 
-    if (
-      nullableContentType != null &&
-      nullableContentType.toLowerCase().startsWith('multipart/form-data')
-    ) {
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      final mp = MultipartRequest(null, null);
-      if (hasFields) {
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
         postBody = mp;
-      }
-    } else {
+    }
+    else {
     }
 
-    return await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      nullableContentType,
-      authNames,
-    );
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
   }
 
   /// Returns array of group by driverId
   ///
   /// Get groups by driverId
   Future<List<DriverGroupWithGroupAndUserResponse>> driverGroupsGet() async {
-    final response = await driverGroupsGetWithHttpInfo();
-    if (response.statusCode >= HttpStatus.badRequest) {
+    Response response = await driverGroupsGetWithHttpInfo();
+    if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<DriverGroupWithGroupAndUserResponse>') as List).map((item) => item as DriverGroupWithGroupAndUserResponse).toList();
+    } else {
+      return null;
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<DriverGroupWithGroupAndUserResponse>') as List)
-        .map((item) => item as DriverGroupWithGroupAndUserResponse)
-        .toList(growable: false);
-    }
-    return null;
   }
+
 }

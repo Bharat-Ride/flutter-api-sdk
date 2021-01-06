@@ -1,147 +1,90 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.0
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: lines_longer_than_80_chars
-
 part of openapi.api;
 
 class DeviceResponse {
-  /// Returns a new [DeviceResponse] instance.
-  DeviceResponse({
-    @required this.id,
-    @required this.uId,
-    this.model,
-    this.make,
-    @required this.userId,
-    this.fcmToken,
-    this.user,
-    this.updatedAt,
-    this.createdAt,
-  });
-
-  num id;
-
-  String uId;
-
-  String model;
-
-  String make;
-
-  num userId;
-
-  String fcmToken;
-
-  UserResponse user;
-
-  String updatedAt;
-
-  String createdAt;
+  
+  num id = null;
+  
+  String uId = null;
+  
+  String model = null;
+  
+  String make = null;
+  
+  num userId = null;
+  
+  String fcmToken = null;
+  
+  UserResponse user = null;
+  
+  String updatedAt = null;
+  
+  String createdAt = null;
+  DeviceResponse();
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is DeviceResponse &&
-     other.id == id &&
-     other.uId == uId &&
-     other.model == model &&
-     other.make == make &&
-     other.userId == userId &&
-     other.fcmToken == fcmToken &&
-     other.user == user &&
-     other.updatedAt == updatedAt &&
-     other.createdAt == createdAt;
+  String toString() {
+    return 'DeviceResponse[id=$id, uId=$uId, model=$model, make=$make, userId=$userId, fcmToken=$fcmToken, user=$user, updatedAt=$updatedAt, createdAt=$createdAt, ]';
+  }
 
-  @override
-  int get hashCode =>
-    (id == null ? 0 : id.hashCode) +
-    (uId == null ? 0 : uId.hashCode) +
-    (model == null ? 0 : model.hashCode) +
-    (make == null ? 0 : make.hashCode) +
-    (userId == null ? 0 : userId.hashCode) +
-    (fcmToken == null ? 0 : fcmToken.hashCode) +
-    (user == null ? 0 : user.hashCode) +
-    (updatedAt == null ? 0 : updatedAt.hashCode) +
-    (createdAt == null ? 0 : createdAt.hashCode);
-
-  @override
-  String toString() => 'DeviceResponse[id=$id, uId=$uId, model=$model, make=$make, userId=$userId, fcmToken=$fcmToken, user=$user, updatedAt=$updatedAt, createdAt=$createdAt]';
+  DeviceResponse.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    id = json['id'];
+    uId = json['uId'];
+    model = json['model'];
+    make = json['make'];
+    userId = json['userId'];
+    fcmToken = json['fcmToken'];
+    user = (json['user'] == null) ?
+      null :
+      UserResponse.fromJson(json['user']);
+    updatedAt = json['updatedAt'];
+    createdAt = json['createdAt'];
+  }
 
   Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-    if (id != null) {
-      json[r'id'] = id;
-    }
-    if (uId != null) {
-      json[r'uId'] = uId;
-    }
-    if (model != null) {
-      json[r'model'] = model;
-    }
-    if (make != null) {
-      json[r'make'] = make;
-    }
-    if (userId != null) {
-      json[r'userId'] = userId;
-    }
-    if (fcmToken != null) {
-      json[r'fcmToken'] = fcmToken;
-    }
-    if (user != null) {
-      json[r'user'] = user;
-    }
-    if (updatedAt != null) {
-      json[r'updatedAt'] = updatedAt;
-    }
-    if (createdAt != null) {
-      json[r'createdAt'] = createdAt;
-    }
+    Map <String, dynamic> json = {};
+    if (id != null)
+      json['id'] = id;
+    if (uId != null)
+      json['uId'] = uId;
+    if (model != null)
+      json['model'] = model;
+    if (make != null)
+      json['make'] = make;
+    if (userId != null)
+      json['userId'] = userId;
+    if (fcmToken != null)
+      json['fcmToken'] = fcmToken;
+    if (user != null)
+      json['user'] = user;
+    if (updatedAt != null)
+      json['updatedAt'] = updatedAt;
+    if (createdAt != null)
+      json['createdAt'] = createdAt;
     return json;
   }
 
-  /// Returns a new [DeviceResponse] instance and imports its values from
-  /// [json] if it's non-null, null if [json] is null.
-  static DeviceResponse fromJson(Map<String, dynamic> json) => json == null
-    ? null
-    : DeviceResponse(
-        id: json[r'id'] == null ?
-          null :
-          json[r'id'].toDouble(),
-        uId: json[r'uId'],
-        model: json[r'model'],
-        make: json[r'make'],
-        userId: json[r'userId'] == null ?
-          null :
-          json[r'userId'].toDouble(),
-        fcmToken: json[r'fcmToken'],
-        user: UserResponse.fromJson(json[r'user']),
-        updatedAt: json[r'updatedAt'],
-        createdAt: json[r'createdAt'],
-    );
-
-  static List<DeviceResponse> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <DeviceResponse>[]
-      : json.map((v) => DeviceResponse.fromJson(v)).toList(growable: true == growable);
+  static List<DeviceResponse> listFromJson(List<dynamic> json) {
+    return json == null ? List<DeviceResponse>() : json.map((value) => DeviceResponse.fromJson(value)).toList();
+  }
 
   static Map<String, DeviceResponse> mapFromJson(Map<String, dynamic> json) {
-    final map = <String, DeviceResponse>{};
+    var map = Map<String, DeviceResponse>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = DeviceResponse.fromJson(v));
+      json.forEach((String key, dynamic value) => map[key] = DeviceResponse.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of DeviceResponse-objects as value to a dart map
-  static Map<String, List<DeviceResponse>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
-    final map = <String, List<DeviceResponse>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = DeviceResponse.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
-      });
-    }
-    return map;
+  static Map<String, List<DeviceResponse>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<DeviceResponse>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = DeviceResponse.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

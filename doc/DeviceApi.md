@@ -31,14 +31,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = DeviceApi();
-final id = 56; // int | Device id
+var api_instance = DeviceApi();
+var id = 56; // int | Device id
 
 try { 
-    final result = api_instance.deviceIdDelete(id);
+    var result = api_instance.deviceIdDelete(id);
     print(result);
 } catch (e) {
-    print('Exception when calling DeviceApi->deviceIdDelete: $e\n');
+    print("Exception when calling DeviceApi->deviceIdDelete: $e\n");
 }
 ```
 
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Device id | 
+ **id** | **int**| Device id | [default to null]
 
 ### Return type
 
@@ -80,14 +80,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = DeviceApi();
-final createDeviceBody = CreateDeviceBody(); // CreateDeviceBody | Device body
+var api_instance = DeviceApi();
+var createDeviceBody = CreateDeviceBody(); // CreateDeviceBody | Device body
 
 try { 
-    final result = api_instance.devicePost(createDeviceBody);
+    var result = api_instance.devicePost(createDeviceBody);
     print(result);
 } catch (e) {
-    print('Exception when calling DeviceApi->devicePost: $e\n');
+    print("Exception when calling DeviceApi->devicePost: $e\n");
 }
 ```
 
@@ -129,14 +129,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = DeviceApi();
-final uId = uId_example; // String | Device uId
+var api_instance = DeviceApi();
+var uId = uId_example; // String | Device uId
 
 try { 
-    final result = api_instance.deviceUIdUIdGet(uId);
+    var result = api_instance.deviceUIdUIdGet(uId);
     print(result);
 } catch (e) {
-    print('Exception when calling DeviceApi->deviceUIdUIdGet: $e\n');
+    print("Exception when calling DeviceApi->deviceUIdUIdGet: $e\n");
 }
 ```
 
@@ -144,7 +144,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uId** | **String**| Device uId | 
+ **uId** | **String**| Device uId | [default to null]
 
 ### Return type
 

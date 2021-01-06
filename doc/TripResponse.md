@@ -8,21 +8,21 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **num** |  | 
-**driverId** | **num** |  | 
-**groupId** | **num** |  | 
-**deviceId** | **num** |  | 
-**startTime** | **String** |  | [optional] 
-**endTime** | **String** |  | [optional] 
-**startLatitude** | **num** |  | [optional] 
-**startLongitude** | **num** |  | [optional] 
-**endLatitude** | **num** |  | [optional] 
-**endLongitude** | **num** |  | [optional] 
-**driverCurrentLatitude** | **num** |  | [optional] 
-**driverCurrentLongitude** | **num** |  | [optional] 
-**type** | **String** |  | [optional] 
-**createdAt** | **String** |  | 
-**updatedAt** | **String** |  | 
+**id** | **num** |  | [default to null]
+**driverId** | **num** |  | [default to null]
+**groupId** | **num** |  | [default to null]
+**deviceId** | **num** |  | [default to null]
+**startTime** | **String** |  | [optional] [default to null]
+**endTime** | **String** |  | [optional] [default to null]
+**startLatitude** | **num** |  | [optional] [default to null]
+**startLongitude** | **num** |  | [optional] [default to null]
+**endLatitude** | **num** |  | [optional] [default to null]
+**endLongitude** | **num** |  | [optional] [default to null]
+**driverCurrentLatitude** | **num** |  | [optional] [default to null]
+**driverCurrentLongitude** | **num** |  | [optional] [default to null]
+**type** | **String** |  | [optional] [default to null]
+**createdAt** | **String** |  | [default to null]
+**updatedAt** | **String** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

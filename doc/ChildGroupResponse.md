@@ -8,12 +8,12 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**childId** | **num** |  | 
-**groupId** | **num** |  | 
-**child** | [**ChildResponse**](ChildResponse.md) |  | [optional] 
-**group** | [**GroupResponse**](GroupResponse.md) |  | [optional] 
-**createdAt** | **String** |  | 
-**updatedAt** | **String** |  | 
+**childId** | **num** |  | [default to null]
+**groupId** | **num** |  | [default to null]
+**child** | [**ChildResponse**](ChildResponse.md) |  | [optional] [default to null]
+**group** | [**GroupResponse**](GroupResponse.md) |  | [optional] [default to null]
+**createdAt** | **String** |  | [default to null]
+**updatedAt** | **String** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

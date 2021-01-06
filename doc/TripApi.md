@@ -36,13 +36,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = TripApi();
+var api_instance = TripApi();
 
 try { 
-    final result = api_instance.childTripsLatestGet();
+    var result = api_instance.childTripsLatestGet();
     print(result);
 } catch (e) {
-    print('Exception when calling TripApi->childTripsLatestGet: $e\n');
+    print("Exception when calling TripApi->childTripsLatestGet: $e\n");
 }
 ```
 
@@ -81,12 +81,12 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = TripApi();
+var api_instance = TripApi();
 
 try { 
     api_instance.distanceActiveTripsGet();
 } catch (e) {
-    print('Exception when calling TripApi->distanceActiveTripsGet: $e\n');
+    print("Exception when calling TripApi->distanceActiveTripsGet: $e\n");
 }
 ```
 
@@ -125,13 +125,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = TripApi();
+var api_instance = TripApi();
 
 try { 
-    final result = api_instance.driverTripsLatestGet();
+    var result = api_instance.driverTripsLatestGet();
     print(result);
 } catch (e) {
-    print('Exception when calling TripApi->driverTripsLatestGet: $e\n');
+    print("Exception when calling TripApi->driverTripsLatestGet: $e\n");
 }
 ```
 
@@ -170,12 +170,12 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = TripApi();
+var api_instance = TripApi();
 
 try { 
     api_instance.inactiveTripsPatch();
 } catch (e) {
-    print('Exception when calling TripApi->inactiveTripsPatch: $e\n');
+    print("Exception when calling TripApi->inactiveTripsPatch: $e\n");
 }
 ```
 
@@ -214,14 +214,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = TripApi();
-final endTripBody = EndTripBody(); // EndTripBody | Group body
+var api_instance = TripApi();
+var endTripBody = EndTripBody(); // EndTripBody | Group body
 
 try { 
-    final result = api_instance.tripEndPut(endTripBody);
+    var result = api_instance.tripEndPut(endTripBody);
     print(result);
 } catch (e) {
-    print('Exception when calling TripApi->tripEndPut: $e\n');
+    print("Exception when calling TripApi->tripEndPut: $e\n");
 }
 ```
 
@@ -263,14 +263,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = TripApi();
-final driverLocationUpdateTripBody = DriverLocationUpdateTripBody(); // DriverLocationUpdateTripBody | Group body
+var api_instance = TripApi();
+var driverLocationUpdateTripBody = DriverLocationUpdateTripBody(); // DriverLocationUpdateTripBody | Group body
 
 try { 
-    final result = api_instance.tripLocationPatch(driverLocationUpdateTripBody);
+    var result = api_instance.tripLocationPatch(driverLocationUpdateTripBody);
     print(result);
 } catch (e) {
-    print('Exception when calling TripApi->tripLocationPatch: $e\n');
+    print("Exception when calling TripApi->tripLocationPatch: $e\n");
 }
 ```
 
@@ -312,14 +312,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = TripApi();
-final startTripBody = StartTripBody(); // StartTripBody | Group body
+var api_instance = TripApi();
+var startTripBody = StartTripBody(); // StartTripBody | Group body
 
 try { 
-    final result = api_instance.tripStartPost(startTripBody);
+    var result = api_instance.tripStartPost(startTripBody);
     print(result);
 } catch (e) {
-    print('Exception when calling TripApi->tripStartPost: $e\n');
+    print("Exception when calling TripApi->tripStartPost: $e\n");
 }
 ```
 
@@ -361,14 +361,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = TripApi();
-final groupId = 56; // int | Group id
+var api_instance = TripApi();
+var groupId = 56; // int | Group id
 
 try { 
-    final result = api_instance.tripsGroupsGroupIdGet(groupId);
+    var result = api_instance.tripsGroupsGroupIdGet(groupId);
     print(result);
 } catch (e) {
-    print('Exception when calling TripApi->tripsGroupsGroupIdGet: $e\n');
+    print("Exception when calling TripApi->tripsGroupsGroupIdGet: $e\n");
 }
 ```
 
@@ -376,7 +376,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **int**| Group id | 
+ **groupId** | **int**| Group id | [default to null]
 
 ### Return type
 

@@ -32,13 +32,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = UserApi();
+var api_instance = UserApi();
 
 try { 
-    final result = api_instance.userDelete();
+    var result = api_instance.userDelete();
     print(result);
 } catch (e) {
-    print('Exception when calling UserApi->userDelete: $e\n');
+    print("Exception when calling UserApi->userDelete: $e\n");
 }
 ```
 
@@ -77,13 +77,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = UserApi();
+var api_instance = UserApi();
 
 try { 
-    final result = api_instance.userGet();
+    var result = api_instance.userGet();
     print(result);
 } catch (e) {
-    print('Exception when calling UserApi->userGet: $e\n');
+    print("Exception when calling UserApi->userGet: $e\n");
 }
 ```
 
@@ -122,14 +122,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = UserApi();
-final updateUserWithAddressBody = UpdateUserWithAddressBody(); // UpdateUserWithAddressBody | User body with address
+var api_instance = UserApi();
+var updateUserWithAddressBody = UpdateUserWithAddressBody(); // UpdateUserWithAddressBody | User body with address
 
 try { 
-    final result = api_instance.userPatch(updateUserWithAddressBody);
+    var result = api_instance.userPatch(updateUserWithAddressBody);
     print(result);
 } catch (e) {
-    print('Exception when calling UserApi->userPatch: $e\n');
+    print("Exception when calling UserApi->userPatch: $e\n");
 }
 ```
 
@@ -171,14 +171,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = UserApi();
-final createUserWithAddressBody = CreateUserWithAddressBody(); // CreateUserWithAddressBody | User body with address
+var api_instance = UserApi();
+var createUserWithAddressBody = CreateUserWithAddressBody(); // CreateUserWithAddressBody | User body with address
 
 try { 
-    final result = api_instance.userPost(createUserWithAddressBody);
+    var result = api_instance.userPost(createUserWithAddressBody);
     print(result);
 } catch (e) {
-    print('Exception when calling UserApi->userPost: $e\n');
+    print("Exception when calling UserApi->userPost: $e\n");
 }
 ```
 

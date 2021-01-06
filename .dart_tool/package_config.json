@@ -104,12 +104,6 @@
       "languageVersion": "2.3"
     },
     {
-      "name": "intl",
-      "rootUri": "file:///C:/Users/vishv/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/intl-0.16.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.5"
-    },
-    {
       "name": "io",
       "rootUri": "file:///C:/Users/vishv/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/io-0.3.4",
       "packageUri": "lib/",
@@ -320,7 +314,7 @@
       "languageVersion": "2.0"
     }
   ],
-  "generated": "2021-01-03T01:53:22.616995Z",
+  "generated": "2021-01-06T23:14:00.858896Z",
   "generator": "pub",
   "generatorVersion": "2.10.4"
 }

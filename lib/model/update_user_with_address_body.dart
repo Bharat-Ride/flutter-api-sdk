@@ -1,127 +1,80 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.0
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: lines_longer_than_80_chars
-
 part of openapi.api;
 
 class UpdateUserWithAddressBody {
-  /// Returns a new [UpdateUserWithAddressBody] instance.
-  UpdateUserWithAddressBody({
-    this.fullName,
-    this.profileImageUrl,
-    this.photoIdUrl,
-    this.email,
-    this.dateOfBirth,
-    this.addressId,
-    this.address,
-  });
-
-  String fullName;
-
-  String profileImageUrl;
-
-  String photoIdUrl;
-
-  String email;
-
-  String dateOfBirth;
-
-  num addressId;
-
-  CreateAddressBody address;
+  
+  String fullName = null;
+  
+  String profileImageUrl = null;
+  
+  String photoIdUrl = null;
+  
+  String email = null;
+  
+  String dateOfBirth = null;
+  
+  num addressId = null;
+  
+  CreateAddressBody address = null;
+  UpdateUserWithAddressBody();
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UpdateUserWithAddressBody &&
-     other.fullName == fullName &&
-     other.profileImageUrl == profileImageUrl &&
-     other.photoIdUrl == photoIdUrl &&
-     other.email == email &&
-     other.dateOfBirth == dateOfBirth &&
-     other.addressId == addressId &&
-     other.address == address;
+  String toString() {
+    return 'UpdateUserWithAddressBody[fullName=$fullName, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, address=$address, ]';
+  }
 
-  @override
-  int get hashCode =>
-    (fullName == null ? 0 : fullName.hashCode) +
-    (profileImageUrl == null ? 0 : profileImageUrl.hashCode) +
-    (photoIdUrl == null ? 0 : photoIdUrl.hashCode) +
-    (email == null ? 0 : email.hashCode) +
-    (dateOfBirth == null ? 0 : dateOfBirth.hashCode) +
-    (addressId == null ? 0 : addressId.hashCode) +
-    (address == null ? 0 : address.hashCode);
-
-  @override
-  String toString() => 'UpdateUserWithAddressBody[fullName=$fullName, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, address=$address]';
+  UpdateUserWithAddressBody.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    fullName = json['fullName'];
+    profileImageUrl = json['profileImageUrl'];
+    photoIdUrl = json['photoIdUrl'];
+    email = json['email'];
+    dateOfBirth = json['dateOfBirth'];
+    addressId = json['addressId'];
+    address = (json['address'] == null) ?
+      null :
+      CreateAddressBody.fromJson(json['address']);
+  }
 
   Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-    if (fullName != null) {
-      json[r'fullName'] = fullName;
-    }
-    if (profileImageUrl != null) {
-      json[r'profileImageUrl'] = profileImageUrl;
-    }
-    if (photoIdUrl != null) {
-      json[r'photoIdUrl'] = photoIdUrl;
-    }
-    if (email != null) {
-      json[r'email'] = email;
-    }
-    if (dateOfBirth != null) {
-      json[r'dateOfBirth'] = dateOfBirth;
-    }
-    if (addressId != null) {
-      json[r'addressId'] = addressId;
-    }
-    if (address != null) {
-      json[r'address'] = address;
-    }
+    Map <String, dynamic> json = {};
+    if (fullName != null)
+      json['fullName'] = fullName;
+    if (profileImageUrl != null)
+      json['profileImageUrl'] = profileImageUrl;
+    if (photoIdUrl != null)
+      json['photoIdUrl'] = photoIdUrl;
+    if (email != null)
+      json['email'] = email;
+    if (dateOfBirth != null)
+      json['dateOfBirth'] = dateOfBirth;
+    if (addressId != null)
+      json['addressId'] = addressId;
+    if (address != null)
+      json['address'] = address;
     return json;
   }
 
-  /// Returns a new [UpdateUserWithAddressBody] instance and imports its values from
-  /// [json] if it's non-null, null if [json] is null.
-  static UpdateUserWithAddressBody fromJson(Map<String, dynamic> json) => json == null
-    ? null
-    : UpdateUserWithAddressBody(
-        fullName: json[r'fullName'],
-        profileImageUrl: json[r'profileImageUrl'],
-        photoIdUrl: json[r'photoIdUrl'],
-        email: json[r'email'],
-        dateOfBirth: json[r'dateOfBirth'],
-        addressId: json[r'addressId'] == null ?
-          null :
-          json[r'addressId'].toDouble(),
-        address: CreateAddressBody.fromJson(json[r'address']),
-    );
-
-  static List<UpdateUserWithAddressBody> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <UpdateUserWithAddressBody>[]
-      : json.map((v) => UpdateUserWithAddressBody.fromJson(v)).toList(growable: true == growable);
+  static List<UpdateUserWithAddressBody> listFromJson(List<dynamic> json) {
+    return json == null ? List<UpdateUserWithAddressBody>() : json.map((value) => UpdateUserWithAddressBody.fromJson(value)).toList();
+  }
 
   static Map<String, UpdateUserWithAddressBody> mapFromJson(Map<String, dynamic> json) {
-    final map = <String, UpdateUserWithAddressBody>{};
+    var map = Map<String, UpdateUserWithAddressBody>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = UpdateUserWithAddressBody.fromJson(v));
+      json.forEach((String key, dynamic value) => map[key] = UpdateUserWithAddressBody.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of UpdateUserWithAddressBody-objects as value to a dart map
-  static Map<String, List<UpdateUserWithAddressBody>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
-    final map = <String, List<UpdateUserWithAddressBody>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = UpdateUserWithAddressBody.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
-      });
-    }
-    return map;
+  static Map<String, List<UpdateUserWithAddressBody>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<UpdateUserWithAddressBody>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = UpdateUserWithAddressBody.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

@@ -31,14 +31,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = GroupApi();
-final id = 56; // int | Group id
+var api_instance = GroupApi();
+var id = 56; // int | Group id
 
 try { 
-    final result = api_instance.groupIdDelete(id);
+    var result = api_instance.groupIdDelete(id);
     print(result);
 } catch (e) {
-    print('Exception when calling GroupApi->groupIdDelete: $e\n');
+    print("Exception when calling GroupApi->groupIdDelete: $e\n");
 }
 ```
 
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Group id | 
+ **id** | **int**| Group id | [default to null]
 
 ### Return type
 
@@ -80,14 +80,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = GroupApi();
-final createGroupBody = CreateGroupBody(); // CreateGroupBody | Group body
+var api_instance = GroupApi();
+var createGroupBody = CreateGroupBody(); // CreateGroupBody | Group body
 
 try { 
-    final result = api_instance.groupPost(createGroupBody);
+    var result = api_instance.groupPost(createGroupBody);
     print(result);
 } catch (e) {
-    print('Exception when calling GroupApi->groupPost: $e\n');
+    print("Exception when calling GroupApi->groupPost: $e\n");
 }
 ```
 
@@ -129,14 +129,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = GroupApi();
-final updateGroupBody = UpdateGroupBody(); // UpdateGroupBody | Group body
+var api_instance = GroupApi();
+var updateGroupBody = UpdateGroupBody(); // UpdateGroupBody | Group body
 
 try { 
-    final result = api_instance.groupPut(updateGroupBody);
+    var result = api_instance.groupPut(updateGroupBody);
     print(result);
 } catch (e) {
-    print('Exception when calling GroupApi->groupPut: $e\n');
+    print("Exception when calling GroupApi->groupPut: $e\n");
 }
 ```
 

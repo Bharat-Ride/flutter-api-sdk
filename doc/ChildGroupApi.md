@@ -33,14 +33,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
-final childId = 56; // int | ChildId Id
+var api_instance = ChildGroupApi();
+var childId = 56; // int | ChildId Id
 
 try { 
-    final result = api_instance.childGroupsChildIdGet(childId);
+    var result = api_instance.childGroupsChildIdGet(childId);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childGroupsChildIdGet: $e\n');
+    print("Exception when calling ChildGroupApi->childGroupsChildIdGet: $e\n");
 }
 ```
 
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **childId** | **int**| ChildId Id | 
+ **childId** | **int**| ChildId Id | [default to null]
 
 ### Return type
 
@@ -82,13 +82,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
+var api_instance = ChildGroupApi();
 
 try { 
-    final result = api_instance.childGroupsGet();
+    var result = api_instance.childGroupsGet();
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childGroupsGet: $e\n');
+    print("Exception when calling ChildGroupApi->childGroupsGet: $e\n");
 }
 ```
 
@@ -127,15 +127,15 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
-final groupId = 56; // int | Group Id
-final childGroupChildIdsBody = ChildGroupChildIdsBody(); // ChildGroupChildIdsBody | ChildIds body
+var api_instance = ChildGroupApi();
+var groupId = 56; // int | Group Id
+var childGroupChildIdsBody = ChildGroupChildIdsBody(); // ChildGroupChildIdsBody | ChildIds body
 
 try { 
-    final result = api_instance.childsGroupsGroupIdAddPost(groupId, childGroupChildIdsBody);
+    var result = api_instance.childsGroupsGroupIdAddPost(groupId, childGroupChildIdsBody);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childsGroupsGroupIdAddPost: $e\n');
+    print("Exception when calling ChildGroupApi->childsGroupsGroupIdAddPost: $e\n");
 }
 ```
 
@@ -143,7 +143,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **int**| Group Id | 
+ **groupId** | **int**| Group Id | [default to null]
  **childGroupChildIdsBody** | [**ChildGroupChildIdsBody**](ChildGroupChildIdsBody.md)| ChildIds body | 
 
 ### Return type
@@ -178,15 +178,15 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
-final groupId = 56; // int | Group Id
-final childGroupChildIdsBody = ChildGroupChildIdsBody(); // ChildGroupChildIdsBody | ChildIds body
+var api_instance = ChildGroupApi();
+var groupId = 56; // int | Group Id
+var childGroupChildIdsBody = ChildGroupChildIdsBody(); // ChildGroupChildIdsBody | ChildIds body
 
 try { 
-    final result = api_instance.childsGroupsGroupIdDeletePut(groupId, childGroupChildIdsBody);
+    var result = api_instance.childsGroupsGroupIdDeletePut(groupId, childGroupChildIdsBody);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childsGroupsGroupIdDeletePut: $e\n');
+    print("Exception when calling ChildGroupApi->childsGroupsGroupIdDeletePut: $e\n");
 }
 ```
 
@@ -194,7 +194,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **int**| Group Id | 
+ **groupId** | **int**| Group Id | [default to null]
  **childGroupChildIdsBody** | [**ChildGroupChildIdsBody**](ChildGroupChildIdsBody.md)| ChildIds body | 
 
 ### Return type
@@ -229,14 +229,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
-final groupId = 56; // int | Group Id
+var api_instance = ChildGroupApi();
+var groupId = 56; // int | Group Id
 
 try { 
-    final result = api_instance.childsGroupsGroupIdGet(groupId);
+    var result = api_instance.childsGroupsGroupIdGet(groupId);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childsGroupsGroupIdGet: $e\n');
+    print("Exception when calling ChildGroupApi->childsGroupsGroupIdGet: $e\n");
 }
 ```
 
@@ -244,7 +244,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **int**| Group Id | 
+ **groupId** | **int**| Group Id | [default to null]
 
 ### Return type
 

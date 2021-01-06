@@ -29,13 +29,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = DriverGroupApi();
+var api_instance = DriverGroupApi();
 
 try { 
-    final result = api_instance.driverGroupsGet();
+    var result = api_instance.driverGroupsGet();
     print(result);
 } catch (e) {
-    print('Exception when calling DriverGroupApi->driverGroupsGet: $e\n');
+    print("Exception when calling DriverGroupApi->driverGroupsGet: $e\n");
 }
 ```
 

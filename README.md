@@ -46,14 +46,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildApi();
-final id = 8.14; // num | Child id
+var api_instance = ChildApi();
+var id = 8.14; // num | Child id
 
 try {
-    final result = api_instance.childIdDelete(id);
+    var result = api_instance.childIdDelete(id);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildApi->childIdDelete: $e\n');
+    print("Exception when calling ChildApi->childIdDelete: $e\n");
 }
 
 ```

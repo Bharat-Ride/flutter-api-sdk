@@ -12,3 +12,29 @@
 
   final String basePath;
   final String accessToken;
+
+
+
+  -------------------------
+
+  Old stuff
+
+  String basePath;
+  String accessToken;
+  var client = Client();
+
+  Map<String, String> _defaultHeaderMap = {};
+  Map<String, Authentication> _authentications = {};
+
+  final _regList = RegExp(r'^List<(.*)>$');
+  final _regMap = RegExp(r'^Map<String,(.*)>$');
+
+  ApiClient({
+    this.accessToken,
+    this.basePath = "https://production.user-api.api.findnemo.in",
+  }) {
+    // Setup authentications (key: authentication name, value: authentication).
+    if (this.accessToken != null && this.accessToken is String) {
+      _authentications['BearerAuth'] = OAuth(accessToken: this.accessToken);
+    }
+  }
