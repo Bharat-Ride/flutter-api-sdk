@@ -58,5 +58,5 @@ git push origin master 2>&1 | grep -v 'To https'
 
 git_tag=$(date +"%Y%m%d_%H%M%S")
 git tag ${git_tag}
-git push --tags
+git push origin ${git_tag}
 
