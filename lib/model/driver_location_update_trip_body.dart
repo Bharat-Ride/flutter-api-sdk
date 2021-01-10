@@ -4,9 +4,9 @@ class DriverLocationUpdateTripBody {
   
   int id = null;
   
-  int driverCurrentLatitude = null;
+  num driverCurrentLatitude = null;
   
-  int driverCurrentLongitude = null;
+  num driverCurrentLongitude = null;
   DriverLocationUpdateTripBody();
 
   @override

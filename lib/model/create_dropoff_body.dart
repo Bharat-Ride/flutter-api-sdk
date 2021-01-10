@@ -4,9 +4,9 @@ class CreateDropoffBody {
   
   int tripId = null;
   
-  int dropoffLatitude = null;
+  num dropoffLatitude = null;
   
-  int dropoffLongitude = null;
+  num dropoffLongitude = null;
   
   List<int> childIds = [];
   CreateDropoffBody();

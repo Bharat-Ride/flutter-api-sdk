@@ -4,9 +4,9 @@ class EndTripBody {
   
   int id = null;
   
-  int endLatitude = null;
+  num endLatitude = null;
   
-  int endLongitude = null;
+  num endLongitude = null;
   EndTripBody();
 
   @override

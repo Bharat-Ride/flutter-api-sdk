@@ -18,9 +18,9 @@ class AddressResponse {
   
   String postalCode = null;
   
-  int latitude = null;
+  num latitude = null;
   
-  int longitude = null;
+  num longitude = null;
   
   String createdAt = null;
   

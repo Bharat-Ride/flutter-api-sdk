@@ -14,17 +14,17 @@ class TripResponse {
   
   String endTime = null;
   
-  int startLatitude = null;
+  num startLatitude = null;
   
-  int startLongitude = null;
+  num startLongitude = null;
   
-  int endLatitude = null;
+  num endLatitude = null;
   
-  int endLongitude = null;
+  num endLongitude = null;
   
-  int driverCurrentLatitude = null;
+  num driverCurrentLatitude = null;
   
-  int driverCurrentLongitude = null;
+  num driverCurrentLongitude = null;
   
   String type = null;
   //enum typeEnum {  TOWARDS,  FROMWARDS,  };{

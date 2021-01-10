@@ -6,9 +6,9 @@ class StartTripBody {
   
   String uId = null;
   
-  int startLatitude = null;
+  num startLatitude = null;
   
-  int startLongitude = null;
+  num startLongitude = null;
   
   String type = null;
   //enum typeEnum {  TOWARDS,  FROMWARDS,  };{

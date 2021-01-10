@@ -4,9 +4,9 @@ class CreatePickupBody {
   
   int tripId = null;
   
-  int pickupLatitude = null;
+  num pickupLatitude = null;
   
-  int pickupLongitude = null;
+  num pickupLongitude = null;
   
   List<int> childIds = [];
   CreatePickupBody();

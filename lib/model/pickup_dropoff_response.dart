@@ -14,13 +14,13 @@ class PickupDropoffResponse {
   
   String dropoffTime = null;
   
-  int pickupLatitude = null;
+  num pickupLatitude = null;
   
-  int pickupLongitude = null;
+  num pickupLongitude = null;
   
-  int dropoffLatitude = null;
+  num dropoffLatitude = null;
   
-  int dropoffLongitude = null;
+  num dropoffLongitude = null;
   
   bool isAbsent = null;
   
