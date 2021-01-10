@@ -56,7 +56,7 @@ git pull origin master
 echo "Git pushing to https://${git_host}/${git_user_id}/${git_repo_id}.git"
 git push origin master 2>&1 | grep -v 'To https'
 
-git_tag=(date +%Y%m%d_%H%M%S)
+git_tag=date +%Y%m%d_%H%M%S
 git tag ${git_tag}
 git push --tags
 
