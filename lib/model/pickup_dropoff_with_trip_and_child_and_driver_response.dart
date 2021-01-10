@@ -2,25 +2,25 @@ part of openapi.api;
 
 class PickupDropoffWithTripAndChildAndDriverResponse {
   
-  num id = null;
+  int id = null;
   
-  num driverId = null;
+  int driverId = null;
   
-  num tripId = null;
+  int tripId = null;
   
-  num childId = null;
+  int childId = null;
   
   String pickupTime = null;
   
   String dropoffTime = null;
   
-  num pickupLatitude = null;
+  int pickupLatitude = null;
   
-  num pickupLongitude = null;
+  int pickupLongitude = null;
   
-  num dropoffLatitude = null;
+  int dropoffLatitude = null;
   
-  num dropoffLongitude = null;
+  int dropoffLongitude = null;
   
   bool isAbsent = null;
   

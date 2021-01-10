@@ -8,11 +8,11 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **num** |  | [default to null]
+**id** | **int** |  | [default to null]
 **uId** | **String** |  | [default to null]
 **model** | **String** |  | [optional] [default to null]
 **make** | **String** |  | [optional] [default to null]
-**userId** | **num** |  | [default to null]
+**userId** | **int** |  | [default to null]
 **fcmToken** | **String** |  | [optional] [default to null]
 **user** | [**UserResponse**](UserResponse.md) |  | [default to null]
 **updatedAt** | **String** |  | [optional] [default to null]

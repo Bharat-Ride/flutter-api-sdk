@@ -2,13 +2,13 @@ part of openapi.api;
 
 class StartTripBody {
   
-  num groupId = null;
+  int groupId = null;
   
   String uId = null;
   
-  num startLatitude = null;
+  int startLatitude = null;
   
-  num startLongitude = null;
+  int startLongitude = null;
   
   String type = null;
   //enum typeEnum {  TOWARDS,  FROMWARDS,  };{

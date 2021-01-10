@@ -6,7 +6,7 @@ class CreateChildBody {
   
   String phoneNumber = null;
   
-  num addressId = null;
+  int addressId = null;
   CreateChildBody();
 
   @override

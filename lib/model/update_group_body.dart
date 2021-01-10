@@ -2,7 +2,7 @@ part of openapi.api;
 
 class UpdateGroupBody {
   
-  num id = null;
+  int id = null;
   
   String name = null;
   UpdateGroupBody();

@@ -2,7 +2,7 @@ part of openapi.api;
 
 class DeviceWithUserResponse {
   
-  num id = null;
+  int id = null;
   
   String uId = null;
   
@@ -10,7 +10,7 @@ class DeviceWithUserResponse {
   
   String make = null;
   
-  num userId = null;
+  int userId = null;
   
   String fcmToken = null;
   

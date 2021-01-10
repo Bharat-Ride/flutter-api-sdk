@@ -2,13 +2,13 @@ part of openapi.api;
 
 class CreateDropoffBody {
   
-  num tripId = null;
+  int tripId = null;
   
-  num dropoffLatitude = null;
+  int dropoffLatitude = null;
   
-  num dropoffLongitude = null;
+  int dropoffLongitude = null;
   
-  List<num> childIds = [];
+  List<int> childIds = [];
   CreateDropoffBody();
 
   @override
@@ -23,7 +23,7 @@ class CreateDropoffBody {
     dropoffLongitude = json['dropoffLongitude'];
     childIds = (json['childIds'] == null) ?
       null :
-      (json['childIds'] as List).cast<num>();
+      (json['childIds'] as List).cast<int>();
   }
 
   Map<String, dynamic> toJson() {

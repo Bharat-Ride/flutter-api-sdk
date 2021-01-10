@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **photoIdUrl** | **String** |  | [optional] [default to null]
 **email** | **String** |  | [optional] [default to null]
 **dateOfBirth** | **String** |  | [optional] [default to null]
-**addressId** | **num** |  | [optional] [default to null]
+**addressId** | **int** |  | [optional] [default to null]
 **role** | **String** |  | [default to null]
 **address** | [**CreateAddressBody**](CreateAddressBody.md) |  | [optional] [default to null]
 

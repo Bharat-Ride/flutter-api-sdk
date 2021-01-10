@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **state** | **String** |  | [default to null]
 **country** | **String** |  | [default to null]
 **postalCode** | **String** |  | [default to null]
-**latitude** | **num** |  | [default to null]
-**longitude** | **num** |  | [default to null]
+**latitude** | **int** |  | [default to null]
+**longitude** | **int** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

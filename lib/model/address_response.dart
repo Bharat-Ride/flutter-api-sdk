@@ -2,7 +2,7 @@ part of openapi.api;
 
 class AddressResponse {
   
-  num id = null;
+  int id = null;
   
   String address1 = null;
   
@@ -18,9 +18,9 @@ class AddressResponse {
   
   String postalCode = null;
   
-  num latitude = null;
+  int latitude = null;
   
-  num longitude = null;
+  int longitude = null;
   
   String createdAt = null;
   

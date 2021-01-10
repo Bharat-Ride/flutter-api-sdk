@@ -8,10 +8,10 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **num** |  | [default to null]
+**id** | **int** |  | [default to null]
 **fullName** | **String** |  | [default to null]
-**parentId** | **num** |  | [default to null]
-**addressId** | **num** |  | [optional] [default to null]
+**parentId** | **int** |  | [default to null]
+**addressId** | **int** |  | [optional] [default to null]
 **createdAt** | **String** |  | [default to null]
 **updatedAt** | **String** |  | [default to null]
 **parent** | [**UserResponse**](UserResponse.md) |  | [default to null]

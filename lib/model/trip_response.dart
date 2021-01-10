@@ -2,29 +2,29 @@ part of openapi.api;
 
 class TripResponse {
   
-  num id = null;
+  int id = null;
   
-  num driverId = null;
+  int driverId = null;
   
-  num groupId = null;
+  int groupId = null;
   
-  num deviceId = null;
+  int deviceId = null;
   
   String startTime = null;
   
   String endTime = null;
   
-  num startLatitude = null;
+  int startLatitude = null;
   
-  num startLongitude = null;
+  int startLongitude = null;
   
-  num endLatitude = null;
+  int endLatitude = null;
   
-  num endLongitude = null;
+  int endLongitude = null;
   
-  num driverCurrentLatitude = null;
+  int driverCurrentLatitude = null;
   
-  num driverCurrentLongitude = null;
+  int driverCurrentLongitude = null;
   
   String type = null;
   //enum typeEnum {  TOWARDS,  FROMWARDS,  };{

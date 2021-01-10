@@ -69,6 +69,8 @@ class ApiClient {
           return CreateNotAbsentBody.fromJson(value);
         case 'CreatePickupBody':
           return CreatePickupBody.fromJson(value);
+        case 'CreateSchoolBody':
+          return CreateSchoolBody.fromJson(value);
         case 'CreateUserWithAddressBody':
           return CreateUserWithAddressBody.fromJson(value);
         case 'DeleteRecordsResponse':
@@ -93,6 +95,14 @@ class ApiClient {
           return PickupDropoffResponse.fromJson(value);
         case 'PickupDropoffWithTripAndChildAndDriverResponse':
           return PickupDropoffWithTripAndChildAndDriverResponse.fromJson(value);
+        case 'SchoolResponse':
+          return SchoolResponse.fromJson(value);
+        case 'SchoolWithAddressResponse':
+          return SchoolWithAddressResponse.fromJson(value);
+        case 'SchoolWithUserAndAddressResponse':
+          return SchoolWithUserAndAddressResponse.fromJson(value);
+        case 'SchoolWithUserResponse':
+          return SchoolWithUserResponse.fromJson(value);
         case 'StartTripBody':
           return StartTripBody.fromJson(value);
         case 'TripResponse':

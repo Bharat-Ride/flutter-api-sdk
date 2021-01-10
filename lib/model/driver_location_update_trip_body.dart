@@ -2,11 +2,11 @@ part of openapi.api;
 
 class DriverLocationUpdateTripBody {
   
-  num id = null;
+  int id = null;
   
-  num driverCurrentLatitude = null;
+  int driverCurrentLatitude = null;
   
-  num driverCurrentLongitude = null;
+  int driverCurrentLongitude = null;
   DriverLocationUpdateTripBody();
 
   @override

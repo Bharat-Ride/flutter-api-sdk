@@ -8,8 +8,8 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**driverId** | **num** |  | [default to null]
-**groupId** | **num** |  | [default to null]
+**driverId** | **int** |  | [default to null]
+**groupId** | **int** |  | [default to null]
 **permission** | **String** |  | [default to null]
 **createdAt** | **String** |  | [default to null]
 **updatedAt** | **String** |  | [default to null]

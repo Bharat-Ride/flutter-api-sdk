@@ -16,9 +16,9 @@ class CreateAddressBody {
   
   String postalCode = null;
   
-  num latitude = null;
+  int latitude = null;
   
-  num longitude = null;
+  int longitude = null;
   CreateAddressBody();
 
   @override

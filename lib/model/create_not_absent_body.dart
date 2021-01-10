@@ -2,9 +2,9 @@ part of openapi.api;
 
 class CreateNotAbsentBody {
   
-  num tripId = null;
+  int tripId = null;
   
-  List<num> childIds = [];
+  List<int> childIds = [];
   CreateNotAbsentBody();
 
   @override
@@ -17,7 +17,7 @@ class CreateNotAbsentBody {
     tripId = json['tripId'];
     childIds = (json['childIds'] == null) ?
       null :
-      (json['childIds'] as List).cast<num>();
+      (json['childIds'] as List).cast<int>();
   }
 
   Map<String, dynamic> toJson() {

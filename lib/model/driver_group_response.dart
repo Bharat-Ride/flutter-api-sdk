@@ -2,9 +2,9 @@ part of openapi.api;
 
 class DriverGroupResponse {
   
-  num driverId = null;
+  int driverId = null;
   
-  num groupId = null;
+  int groupId = null;
   
   String permission = null;
   

@@ -2,9 +2,9 @@ part of openapi.api;
 
 class UserTypeWithUserResponse {
   
-  num id = null;
+  int id = null;
   
-  num userId = null;
+  int userId = null;
   
   bool isDriver = null;
   

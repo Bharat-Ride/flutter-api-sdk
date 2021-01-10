@@ -12,7 +12,7 @@ class UpdateUserWithAddressBody {
   
   String dateOfBirth = null;
   
-  num addressId = null;
+  int addressId = null;
   
   CreateAddressBody address = null;
   UpdateUserWithAddressBody();

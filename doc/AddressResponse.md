@@ -8,7 +8,7 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **num** |  | [default to null]
+**id** | **int** |  | [default to null]
 **address1** | **String** |  | [default to null]
 **address2** | **String** |  | [optional] [default to null]
 **address3** | **String** |  | [optional] [default to null]
@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **state** | **String** |  | [default to null]
 **country** | **String** |  | [default to null]
 **postalCode** | **String** |  | [default to null]
-**latitude** | **num** |  | [default to null]
-**longitude** | **num** |  | [default to null]
+**latitude** | **int** |  | [default to null]
+**longitude** | **int** |  | [default to null]
 **createdAt** | **String** |  | [default to null]
 **updatedAt** | **String** |  | [default to null]
 

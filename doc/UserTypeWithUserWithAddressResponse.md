@@ -8,8 +8,8 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **num** |  | [default to null]
-**userId** | **num** |  | [default to null]
+**id** | **int** |  | [default to null]
+**userId** | **int** |  | [default to null]
 **isDriver** | **bool** |  | [default to null]
 **isParent** | **bool** |  | [default to null]
 **user** | [**UserWithAddressResponse**](UserWithAddressResponse.md) |  | [default to null]

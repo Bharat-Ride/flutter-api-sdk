@@ -2,9 +2,9 @@ part of openapi.api;
 
 class ChildGroupResponse {
   
-  num childId = null;
+  int childId = null;
   
-  num groupId = null;
+  int groupId = null;
   
   ChildResponse child = null;
   

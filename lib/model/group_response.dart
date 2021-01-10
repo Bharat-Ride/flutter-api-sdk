@@ -2,11 +2,11 @@ part of openapi.api;
 
 class GroupResponse {
   
-  num id = null;
+  int id = null;
   
-  num creatorId = null;
+  int creatorId = null;
   
-  num addressId = null;
+  int addressId = null;
   
   String name = null;
   

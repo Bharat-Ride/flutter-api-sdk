@@ -2,7 +2,7 @@ part of openapi.api;
 
 class UserResponse {
   
-  num id = null;
+  int id = null;
   
   String fullName = null;
   
@@ -16,7 +16,7 @@ class UserResponse {
   
   String dateOfBirth = null;
   
-  num addressId = null;
+  int addressId = null;
   
   String updatedAt = null;
   

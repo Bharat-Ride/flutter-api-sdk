@@ -2,13 +2,13 @@ part of openapi.api;
 
 class CreatePickupBody {
   
-  num tripId = null;
+  int tripId = null;
   
-  num pickupLatitude = null;
+  int pickupLatitude = null;
   
-  num pickupLongitude = null;
+  int pickupLongitude = null;
   
-  List<num> childIds = [];
+  List<int> childIds = [];
   CreatePickupBody();
 
   @override
@@ -23,7 +23,7 @@ class CreatePickupBody {
     pickupLongitude = json['pickupLongitude'];
     childIds = (json['childIds'] == null) ?
       null :
-      (json['childIds'] as List).cast<num>();
+      (json['childIds'] as List).cast<int>();
   }
 
   Map<String, dynamic> toJson() {

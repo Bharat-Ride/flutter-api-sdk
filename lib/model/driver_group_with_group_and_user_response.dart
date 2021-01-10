@@ -2,9 +2,9 @@ part of openapi.api;
 
 class DriverGroupWithGroupAndUserResponse {
   
-  num driverId = null;
+  int driverId = null;
   
-  num groupId = null;
+  int groupId = null;
   
   UserResponse driver = null;
   

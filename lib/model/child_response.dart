@@ -2,13 +2,13 @@ part of openapi.api;
 
 class ChildResponse {
   
-  num id = null;
+  int id = null;
   
   String fullName = null;
   
-  num parentId = null;
+  int parentId = null;
   
-  num addressId = null;
+  int addressId = null;
   
   String createdAt = null;
   

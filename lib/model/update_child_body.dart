@@ -2,11 +2,11 @@ part of openapi.api;
 
 class UpdateChildBody {
   
-  num id = null;
+  int id = null;
   
   String fullName = null;
   
-  num addressId = null;
+  int addressId = null;
   UpdateChildBody();
 
   @override

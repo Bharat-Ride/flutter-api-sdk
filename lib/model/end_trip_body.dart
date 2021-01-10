@@ -2,11 +2,11 @@ part of openapi.api;
 
 class EndTripBody {
   
-  num id = null;
+  int id = null;
   
-  num endLatitude = null;
+  int endLatitude = null;
   
-  num endLongitude = null;
+  int endLongitude = null;
   EndTripBody();
 
   @override

@@ -2,7 +2,7 @@ part of openapi.api;
 
 class DeleteRecordsResponse {
   
-  num deleted = null;
+  int deleted = null;
   DeleteRecordsResponse();
 
   @override

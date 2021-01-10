@@ -2,7 +2,7 @@ part of openapi.api;
 
 class UpdateRecordsResponse {
   
-  num updated = null;
+  int updated = null;
   UpdateRecordsResponse();
 
   @override

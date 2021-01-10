@@ -85,6 +85,8 @@ Class | Method | HTTP request | Description
 *PickupDropoffApi* | [**tripsDropoffPut**](doc\/PickupDropoffApi.md#tripsdropoffput) | **PUT** /trips/dropoff/ | Returns number of children Dropoff
 *PickupDropoffApi* | [**tripsNotAbsentPut**](doc\/PickupDropoffApi.md#tripsnotabsentput) | **PUT** /trips/not-absent/ | Returns number of children marked not absent
 *PickupDropoffApi* | [**tripsPickupPost**](doc\/PickupDropoffApi.md#tripspickuppost) | **POST** /trips/pickup/ | Returns array of pickupdropoff
+*SchoolApi* | [**schoolGet**](doc\/SchoolApi.md#schoolget) | **GET** /school/ | Returns array of school by name
+*SchoolApi* | [**schoolPost**](doc\/SchoolApi.md#schoolpost) | **POST** /school/ | Returns a newly created school
 *TripApi* | [**childTripsLatestGet**](doc\/TripApi.md#childtripslatestget) | **GET** /child-trips/latest/ | Returns array of latest trip for each child by user
 *TripApi* | [**distanceActiveTripsGet**](doc\/TripApi.md#distanceactivetripsget) | **GET** /distance/active/trips/ | Update distance and duration for all the active trips
 *TripApi* | [**driverTripsLatestGet**](doc\/TripApi.md#drivertripslatestget) | **GET** /driver-trips/latest/ | Returns array of trips by driver
@@ -116,6 +118,7 @@ Class | Method | HTTP request | Description
  - [CreateGroupBody](doc\/CreateGroupBody.md)
  - [CreateNotAbsentBody](doc\/CreateNotAbsentBody.md)
  - [CreatePickupBody](doc\/CreatePickupBody.md)
+ - [CreateSchoolBody](doc\/CreateSchoolBody.md)
  - [CreateUserWithAddressBody](doc\/CreateUserWithAddressBody.md)
  - [DeleteRecordsResponse](doc\/DeleteRecordsResponse.md)
  - [DeviceResponse](doc\/DeviceResponse.md)
@@ -128,6 +131,10 @@ Class | Method | HTTP request | Description
  - [GroupResponse](doc\/GroupResponse.md)
  - [PickupDropoffResponse](doc\/PickupDropoffResponse.md)
  - [PickupDropoffWithTripAndChildAndDriverResponse](doc\/PickupDropoffWithTripAndChildAndDriverResponse.md)
+ - [SchoolResponse](doc\/SchoolResponse.md)
+ - [SchoolWithAddressResponse](doc\/SchoolWithAddressResponse.md)
+ - [SchoolWithUserAndAddressResponse](doc\/SchoolWithUserAndAddressResponse.md)
+ - [SchoolWithUserResponse](doc\/SchoolWithUserResponse.md)
  - [StartTripBody](doc\/StartTripBody.md)
  - [TripResponse](doc\/TripResponse.md)
  - [TripWithGroupAndDeviceAndUserResponse](doc\/TripWithGroupAndDeviceAndUserResponse.md)

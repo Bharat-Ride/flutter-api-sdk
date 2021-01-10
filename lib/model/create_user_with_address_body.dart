@@ -12,7 +12,7 @@ class CreateUserWithAddressBody {
   
   String dateOfBirth = null;
   
-  num addressId = null;
+  int addressId = null;
   
   String role = null;
   //enum roleEnum {  driver,  parent,  both,  };{
