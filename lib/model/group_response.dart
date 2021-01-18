@@ -6,11 +6,15 @@ class GroupResponse {
   
   int creatorId = null;
   
-  int addressId = null;
+  int schoolId = null;
   
   String name = null;
   
   bool isDeleted = null;
+  
+  String toTime = null;
+  
+  String fromTime = null;
   
   String createdAt = null;
   
@@ -19,16 +23,18 @@ class GroupResponse {
 
   @override
   String toString() {
-    return 'GroupResponse[id=$id, creatorId=$creatorId, addressId=$addressId, name=$name, isDeleted=$isDeleted, createdAt=$createdAt, updatedAt=$updatedAt, ]';
+    return 'GroupResponse[id=$id, creatorId=$creatorId, schoolId=$schoolId, name=$name, isDeleted=$isDeleted, toTime=$toTime, fromTime=$fromTime, createdAt=$createdAt, updatedAt=$updatedAt, ]';
   }
 
   GroupResponse.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
     id = json['id'];
     creatorId = json['creatorId'];
-    addressId = json['addressId'];
+    schoolId = json['schoolId'];
     name = json['name'];
     isDeleted = json['isDeleted'];
+    toTime = json['toTime'];
+    fromTime = json['fromTime'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
   }
@@ -39,12 +45,16 @@ class GroupResponse {
       json['id'] = id;
     if (creatorId != null)
       json['creatorId'] = creatorId;
-    if (addressId != null)
-      json['addressId'] = addressId;
+    if (schoolId != null)
+      json['schoolId'] = schoolId;
     if (name != null)
       json['name'] = name;
     if (isDeleted != null)
       json['isDeleted'] = isDeleted;
+    if (toTime != null)
+      json['toTime'] = toTime;
+    if (fromTime != null)
+      json['fromTime'] = fromTime;
     if (createdAt != null)
       json['createdAt'] = createdAt;
     if (updatedAt != null)

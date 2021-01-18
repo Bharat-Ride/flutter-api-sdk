@@ -10,9 +10,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [default to null]
 **creatorId** | **int** |  | [default to null]
-**addressId** | **int** |  | [optional] [default to null]
+**schoolId** | **int** |  | [default to null]
 **name** | **String** |  | [default to null]
 **isDeleted** | **bool** |  | [default to null]
+**toTime** | **String** |  | [optional] [default to null]
+**fromTime** | **String** |  | [optional] [default to null]
 **createdAt** | **String** |  | [default to null]
 **updatedAt** | **String** |  | [default to null]
 

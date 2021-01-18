@@ -3,22 +3,37 @@ part of openapi.api;
 class CreateGroupBody {
   
   String name = null;
+  
+  int schoolId = null;
+  
+  String toTime = null;
+  
+  String fromTime = null;
   CreateGroupBody();
 
   @override
   String toString() {
-    return 'CreateGroupBody[name=$name, ]';
+    return 'CreateGroupBody[name=$name, schoolId=$schoolId, toTime=$toTime, fromTime=$fromTime, ]';
   }
 
   CreateGroupBody.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
     name = json['name'];
+    schoolId = json['schoolId'];
+    toTime = json['toTime'];
+    fromTime = json['fromTime'];
   }
 
   Map<String, dynamic> toJson() {
     Map <String, dynamic> json = {};
     if (name != null)
       json['name'] = name;
+    if (schoolId != null)
+      json['schoolId'] = schoolId;
+    if (toTime != null)
+      json['toTime'] = toTime;
+    if (fromTime != null)
+      json['fromTime'] = fromTime;
     return json;
   }
 
