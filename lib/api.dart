@@ -24,6 +24,7 @@ part 'api/trip_api.dart';
 part 'api/user_api.dart';
 part 'api/user_type_api.dart';
 
+part 'model/add_driver_to_group_body.dart';
 part 'model/address_response.dart';
 part 'model/child_group_child_ids_body.dart';
 part 'model/child_group_response.dart';

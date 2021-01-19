@@ -77,6 +77,7 @@ Class | Method | HTTP request | Description
 *DeviceApi* | [**devicePost**](doc//DeviceApi.md#devicepost) | **POST** /device/ | Returns device object
 *DeviceApi* | [**deviceUIdUIdGet**](doc//DeviceApi.md#deviceuiduidget) | **GET** /device/uId/{uId}/ | Returns device object
 *DriverGroupApi* | [**driverGroupsGet**](doc//DriverGroupApi.md#drivergroupsget) | **GET** /driver-groups/ | Returns array of group by driverId
+*DriverGroupApi* | [**driverGroupsPost**](doc//DriverGroupApi.md#drivergroupspost) | **POST** /driver-groups/ | Returns boolean indicating whether the driver was added to the group
 *GroupApi* | [**groupIdDelete**](doc//GroupApi.md#groupiddelete) | **DELETE** /group/{id}/ | Returns number of groups deleted
 *GroupApi* | [**groupPost**](doc//GroupApi.md#grouppost) | **POST** /group/ | Returns newly created group
 *GroupApi* | [**groupPut**](doc//GroupApi.md#groupput) | **PUT** /group/ | Returns updated group
@@ -105,6 +106,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AddDriverToGroupBody](doc//AddDriverToGroupBody.md)
  - [AddressResponse](doc//AddressResponse.md)
  - [ChildGroupChildIdsBody](doc//ChildGroupChildIdsBody.md)
  - [ChildGroupResponse](doc//ChildGroupResponse.md)
