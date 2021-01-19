@@ -43,6 +43,8 @@ class ApiClient {
           return value is bool ? value : '$value'.toLowerCase() == 'true';
         case 'double':
           return value is double ? value : double.parse('$value');
+        case 'AddDriverToGroupBody':
+          return AddDriverToGroupBody.fromJson(value);
         case 'AddressResponse':
           return AddressResponse.fromJson(value);
         case 'ChildGroupChildIdsBody':
