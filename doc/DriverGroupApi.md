@@ -10,6 +10,7 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**driverGroupsDriverDriverIdGroupGroupIdDelete**](DriverGroupApi.md#driverGroupsDriverDriverIdGroupGroupIdDelete) | **DELETE** /driver-groups/driver/{driverId}/group/{groupId}/ | Returns boolean indicating whether the driver was deleted from the group
+[**driverGroupsDriversGroupGroupIdGet**](DriverGroupApi.md#driverGroupsDriversGroupGroupIdGet) | **GET** /driver-groups/drivers/group/{groupId}/ | Returns array of drivers by groupId
 [**driverGroupsGet**](DriverGroupApi.md#driverGroupsGet) | **GET** /driver-groups/ | Returns array of group by driverId
 [**driverGroupsPost**](DriverGroupApi.md#driverGroupsPost) | **POST** /driver-groups/ | Returns boolean indicating whether the driver was added to the group
 
@@ -53,6 +54,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeleteRecordsResponse**](DeleteRecordsResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **driverGroupsDriversGroupGroupIdGet**
+> List<DriverGroupWithUserResponse> driverGroupsDriversGroupGroupIdGet(groupId)
+
+Returns array of drivers by groupId
+
+Get groups by driverId
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+var api_instance = DriverGroupApi();
+var groupId = 56; // int | Group id
+
+try { 
+    var result = api_instance.driverGroupsDriversGroupGroupIdGet(groupId);
+    print(result);
+} catch (e) {
+    print("Exception when calling DriverGroupApi->driverGroupsDriversGroupGroupIdGet: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **int**| Group id | [default to null]
+
+### Return type
+
+[**List<DriverGroupWithUserResponse>**](DriverGroupWithUserResponse.md)
 
 ### Authorization
 
