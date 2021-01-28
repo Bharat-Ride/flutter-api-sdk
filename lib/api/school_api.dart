@@ -121,12 +121,12 @@ class SchoolApi {
   /// Returns a newly created school
   ///
   /// Create a new school
-  Future<List<SchoolResponse>> schoolPost(CreateSchoolBody createSchoolBody) async {
+  Future<SchoolResponse> schoolPost(CreateSchoolBody createSchoolBody) async {
     Response response = await schoolPostWithHttpInfo(createSchoolBody);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<SchoolResponse>') as List).map((item) => item as SchoolResponse).toList();
+      return apiClient.deserialize(_decodeBodyBytes(response), 'SchoolResponse') as SchoolResponse;
     } else {
       return null;
     }

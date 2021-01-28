@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **schoolPost**
-> List<SchoolResponse> schoolPost(createSchoolBody)
+> SchoolResponse schoolPost(createSchoolBody)
 
 Returns a newly created school
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<SchoolResponse>**](SchoolResponse.md)
+[**SchoolResponse**](SchoolResponse.md)
 
 ### Authorization
 
