@@ -113,6 +113,8 @@ class ApiClient {
           return TripResponse.fromJson(value);
         case 'TripWithGroupAndDeviceAndUserResponse':
           return TripWithGroupAndDeviceAndUserResponse.fromJson(value);
+        case 'UpdateAddressBody':
+          return UpdateAddressBody.fromJson(value);
         case 'UpdateChildBody':
           return UpdateChildBody.fromJson(value);
         case 'UpdateGroupBody':

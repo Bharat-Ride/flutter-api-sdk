@@ -13,6 +13,7 @@ part 'auth/oauth.dart';
 part 'auth/http_basic_auth.dart';
 part 'auth/http_bearer_auth.dart';
 
+part 'api/address_api.dart';
 part 'api/child_api.dart';
 part 'api/child_group_api.dart';
 part 'api/device_api.dart';
@@ -59,6 +60,7 @@ part 'model/school_with_user_response.dart';
 part 'model/start_trip_body.dart';
 part 'model/trip_response.dart';
 part 'model/trip_with_group_and_device_and_user_response.dart';
+part 'model/update_address_body.dart';
 part 'model/update_child_body.dart';
 part 'model/update_group_body.dart';
 part 'model/update_records_response.dart';

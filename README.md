@@ -46,14 +46,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = ChildApi();
-var id = 8.14; // num | Child id
+var api_instance = AddressApi();
+var id = 8.14; // num | Address id
 
 try {
-    var result = api_instance.childIdDelete(id);
+    var result = api_instance.addressIdDelete(id);
     print(result);
 } catch (e) {
-    print("Exception when calling ChildApi->childIdDelete: $e\n");
+    print("Exception when calling AddressApi->addressIdDelete: $e\n");
 }
 
 ```
@@ -64,6 +64,10 @@ All URIs are relative to *https://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AddressApi* | [**addressIdDelete**](doc\/AddressApi.md#addressiddelete) | **DELETE** /address/{id}/ | Returns number of address deleted by id
+*AddressApi* | [**addressIdGet**](doc\/AddressApi.md#addressidget) | **GET** /address/{id}/ | Returns address object by id
+*AddressApi* | [**addressPost**](doc\/AddressApi.md#addresspost) | **POST** /address/ | Returns address object
+*AddressApi* | [**addressPut**](doc\/AddressApi.md#addressput) | **PUT** /address/ | Returns number of address updated
 *ChildApi* | [**childIdDelete**](doc\/ChildApi.md#childiddelete) | **DELETE** /child/{id} | Returns number of child deleted
 *ChildApi* | [**childPost**](doc\/ChildApi.md#childpost) | **POST** /child/ | Returns newly created child
 *ChildApi* | [**childPut**](doc\/ChildApi.md#childput) | **PUT** /child/ | Returns number of child updated
@@ -143,6 +147,7 @@ Class | Method | HTTP request | Description
  - [StartTripBody](doc\/StartTripBody.md)
  - [TripResponse](doc\/TripResponse.md)
  - [TripWithGroupAndDeviceAndUserResponse](doc\/TripWithGroupAndDeviceAndUserResponse.md)
+ - [UpdateAddressBody](doc\/UpdateAddressBody.md)
  - [UpdateChildBody](doc\/UpdateChildBody.md)
  - [UpdateGroupBody](doc\/UpdateGroupBody.md)
  - [UpdateRecordsResponse](doc\/UpdateRecordsResponse.md)
