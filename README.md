@@ -92,7 +92,9 @@ Class | Method | HTTP request | Description
 *PickupDropoffApi* | [**tripsDropoffPut**](doc\/PickupDropoffApi.md#tripsdropoffput) | **PUT** /trips/dropoff/ | Returns number of children Dropoff
 *PickupDropoffApi* | [**tripsNotAbsentPut**](doc\/PickupDropoffApi.md#tripsnotabsentput) | **PUT** /trips/not-absent/ | Returns number of children marked not absent
 *PickupDropoffApi* | [**tripsPickupPost**](doc\/PickupDropoffApi.md#tripspickuppost) | **POST** /trips/pickup/ | Returns array of pickupdropoff
+*SchoolApi* | [**driverSchoolsGet**](doc\/SchoolApi.md#driverschoolsget) | **GET** /driver-schools/ | Returns array of schools by driverId
 *SchoolApi* | [**schoolGet**](doc\/SchoolApi.md#schoolget) | **GET** /school/ | Returns array of school by name
+*SchoolApi* | [**schoolIdGet**](doc\/SchoolApi.md#schoolidget) | **GET** /school/{id}/ | Returns array of school by id
 *SchoolApi* | [**schoolPost**](doc\/SchoolApi.md#schoolpost) | **POST** /school/ | Returns a newly created school
 *TripApi* | [**childTripsLatestGet**](doc\/TripApi.md#childtripslatestget) | **GET** /child-trips/latest/ | Returns array of latest trip for each child by user
 *TripApi* | [**distanceActiveTripsGet**](doc\/TripApi.md#distanceactivetripsget) | **GET** /distance/active/trips/ | Update distance and duration for all the active trips

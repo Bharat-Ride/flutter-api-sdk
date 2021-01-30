@@ -7,6 +7,69 @@ class SchoolApi {
 
   SchoolApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
+  /// Returns array of schools by driverId with HTTP info returned
+  ///
+  /// Get schools by driverId
+  Future<Response> driverSchoolsGetWithHttpInfo(String includeCreator, String includeAddress) async {
+    Object postBody;
+
+    // verify required params are set
+    if(includeCreator == null) {
+     throw ApiException(400, "Missing required param: includeCreator");
+    }
+    if(includeAddress == null) {
+     throw ApiException(400, "Missing required param: includeAddress");
+    }
+
+    // create path and map variables
+    String path = "/driver-schools/".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+      queryParams.addAll(_convertParametersForCollectionFormat("", "includeCreator", includeCreator));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "includeAddress", includeAddress));
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// Returns array of schools by driverId
+  ///
+  /// Get schools by driverId
+  Future<List<SchoolResponse>> driverSchoolsGet(String includeCreator, String includeAddress) async {
+    Response response = await driverSchoolsGetWithHttpInfo(includeCreator, includeAddress);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<SchoolResponse>') as List).map((item) => item as SchoolResponse).toList();
+    } else {
+      return null;
+    }
+  }
+
   /// Returns array of school by name with HTTP info returned
   ///
   /// Get schools by name
@@ -69,6 +132,72 @@ class SchoolApi {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
       return (apiClient.deserialize(_decodeBodyBytes(response), 'List<SchoolResponse>') as List).map((item) => item as SchoolResponse).toList();
+    } else {
+      return null;
+    }
+  }
+
+  /// Returns array of school by id with HTTP info returned
+  ///
+  /// Get schools by id
+  Future<Response> schoolIdGetWithHttpInfo(int id, String includeCreator, String includeAddress) async {
+    Object postBody;
+
+    // verify required params are set
+    if(id == null) {
+     throw ApiException(400, "Missing required param: id");
+    }
+    if(includeCreator == null) {
+     throw ApiException(400, "Missing required param: includeCreator");
+    }
+    if(includeAddress == null) {
+     throw ApiException(400, "Missing required param: includeAddress");
+    }
+
+    // create path and map variables
+    String path = "/school/{id}/".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+      queryParams.addAll(_convertParametersForCollectionFormat("", "includeCreator", includeCreator));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "includeAddress", includeAddress));
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// Returns array of school by id
+  ///
+  /// Get schools by id
+  Future<SchoolResponse> schoolIdGet(int id, String includeCreator, String includeAddress) async {
+    Response response = await schoolIdGetWithHttpInfo(id, includeCreator, includeAddress);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'SchoolResponse') as SchoolResponse;
     } else {
       return null;
     }
