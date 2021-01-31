@@ -14,7 +14,7 @@ class SchoolWithAddressResponse {
   
   String createdAt = null;
   
-  CreateAddressBody address = null;
+  AddressResponse address = null;
   SchoolWithAddressResponse();
 
   @override
@@ -32,7 +32,7 @@ class SchoolWithAddressResponse {
     createdAt = json['createdAt'];
     address = (json['address'] == null) ?
       null :
-      CreateAddressBody.fromJson(json['address']);
+      AddressResponse.fromJson(json['address']);
   }
 
   Map<String, dynamic> toJson() {
