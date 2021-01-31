@@ -14,7 +14,7 @@ class SchoolResponse {
   
   String createdAt = null;
   
-  CreateAddressBody address = null;
+  AddressResponse address = null;
   
   UserResponse creator = null;
   SchoolResponse();
@@ -34,7 +34,7 @@ class SchoolResponse {
     createdAt = json['createdAt'];
     address = (json['address'] == null) ?
       null :
-      CreateAddressBody.fromJson(json['address']);
+      AddressResponse.fromJson(json['address']);
     creator = (json['creator'] == null) ?
       null :
       UserResponse.fromJson(json['creator']);
