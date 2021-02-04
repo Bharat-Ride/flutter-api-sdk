@@ -2,48 +2,33 @@ part of openapi.api;
 
 class CreateParentChildBody {
   
-  int id = null;
-  
   String fullName = null;
   
-  int parentId = null;
+  String parentFullName = null;
   
-  int addressId = null;
-  
-  String createdAt = null;
-  
-  String updatedAt = null;
+  String parentPhoneNumber = null;
   CreateParentChildBody();
 
   @override
   String toString() {
-    return 'CreateParentChildBody[id=$id, fullName=$fullName, parentId=$parentId, addressId=$addressId, createdAt=$createdAt, updatedAt=$updatedAt, ]';
+    return 'CreateParentChildBody[fullName=$fullName, parentFullName=$parentFullName, parentPhoneNumber=$parentPhoneNumber, ]';
   }
 
   CreateParentChildBody.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    id = json['id'];
     fullName = json['fullName'];
-    parentId = json['parentId'];
-    addressId = json['addressId'];
-    createdAt = json['createdAt'];
-    updatedAt = json['updatedAt'];
+    parentFullName = json['parentFullName'];
+    parentPhoneNumber = json['parentPhoneNumber'];
   }
 
   Map<String, dynamic> toJson() {
     Map <String, dynamic> json = {};
-    if (id != null)
-      json['id'] = id;
     if (fullName != null)
       json['fullName'] = fullName;
-    if (parentId != null)
-      json['parentId'] = parentId;
-    if (addressId != null)
-      json['addressId'] = addressId;
-    if (createdAt != null)
-      json['createdAt'] = createdAt;
-    if (updatedAt != null)
-      json['updatedAt'] = updatedAt;
+    if (parentFullName != null)
+      json['parentFullName'] = parentFullName;
+    if (parentPhoneNumber != null)
+      json['parentPhoneNumber'] = parentPhoneNumber;
     return json;
   }
 
