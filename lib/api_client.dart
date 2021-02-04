@@ -69,6 +69,8 @@ class ApiClient {
           return CreateGroupBody.fromJson(value);
         case 'CreateNotAbsentBody':
           return CreateNotAbsentBody.fromJson(value);
+        case 'CreateParentChildBody':
+          return CreateParentChildBody.fromJson(value);
         case 'CreatePickupBody':
           return CreatePickupBody.fromJson(value);
         case 'CreateSchoolBody':

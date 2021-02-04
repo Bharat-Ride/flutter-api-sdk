@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**childsGroupsGroupIdAddPost**](ChildGroupApi.md#childsGroupsGroupIdAddPost) | **POST** /childs/groups/{groupId}/add/ | Returns added child to the group
 [**childsGroupsGroupIdDeletePut**](ChildGroupApi.md#childsGroupsGroupIdDeletePut) | **PUT** /childs/groups/{groupId}/delete/ | Returns number of child removed from the group
 [**childsGroupsGroupIdGet**](ChildGroupApi.md#childsGroupsGroupIdGet) | **GET** /childs/groups/{groupId}/ | Returns array of child-group by groupId
+[**childsGroupsGroupIdPost**](ChildGroupApi.md#childsGroupsGroupIdPost) | **POST** /childs/groups/{groupId}/ | Returns added child to the group
 
 
 # **childGroupsChildIdGet**
@@ -129,7 +130,7 @@ import 'package:openapi/api.dart';
 
 var api_instance = ChildGroupApi();
 var groupId = 56; // int | Group Id
-var childGroupChildIdsBody = ChildGroupChildIdsBody(); // ChildGroupChildIdsBody | ChildIds body
+var childGroupChildIdsBody = [List&lt;ChildGroupChildIdsBody&gt;()]; // List<ChildGroupChildIdsBody> | ChildIds body
 
 try { 
     var result = api_instance.childsGroupsGroupIdAddPost(groupId, childGroupChildIdsBody);
@@ -144,7 +145,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **int**| Group Id | [default to null]
- **childGroupChildIdsBody** | [**ChildGroupChildIdsBody**](ChildGroupChildIdsBody.md)| ChildIds body | 
+ **childGroupChildIdsBody** | [**List&lt;ChildGroupChildIdsBody&gt;**](ChildGroupChildIdsBody.md)| ChildIds body | 
 
 ### Return type
 
@@ -257,6 +258,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **childsGroupsGroupIdPost**
+> ChildResponse childsGroupsGroupIdPost(groupId, createParentChildBody)
+
+Returns added child to the group
+
+Add child to group
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+var api_instance = ChildGroupApi();
+var groupId = 56; // int | Group Id
+var createParentChildBody = CreateParentChildBody(); // CreateParentChildBody | Child body
+
+try { 
+    var result = api_instance.childsGroupsGroupIdPost(groupId, createParentChildBody);
+    print(result);
+} catch (e) {
+    print("Exception when calling ChildGroupApi->childsGroupsGroupIdPost: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **int**| Group Id | [default to null]
+ **createParentChildBody** | [**CreateParentChildBody**](CreateParentChildBody.md)| Child body | 
+
+### Return type
+
+[**ChildResponse**](ChildResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

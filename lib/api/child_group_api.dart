@@ -123,7 +123,7 @@ class ChildGroupApi {
   /// Returns added child to the group with HTTP info returned
   ///
   /// Add childs to group
-  Future<Response> childsGroupsGroupIdAddPostWithHttpInfo(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody) async {
+  Future<Response> childsGroupsGroupIdAddPostWithHttpInfo(int groupId, List<ChildGroupChildIdsBody> childGroupChildIdsBody) async {
     Object postBody = childGroupChildIdsBody;
 
     // verify required params are set
@@ -170,7 +170,7 @@ class ChildGroupApi {
   /// Returns added child to the group
   ///
   /// Add childs to group
-  Future<ChildGroupResponse> childsGroupsGroupIdAddPost(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody) async {
+  Future<ChildGroupResponse> childsGroupsGroupIdAddPost(int groupId, List<ChildGroupChildIdsBody> childGroupChildIdsBody) async {
     Response response = await childsGroupsGroupIdAddPostWithHttpInfo(groupId, childGroupChildIdsBody);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -295,6 +295,67 @@ class ChildGroupApi {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
       return (apiClient.deserialize(_decodeBodyBytes(response), 'List<ChildGroupWithChildWithGroupResponse>') as List).map((item) => item as ChildGroupWithChildWithGroupResponse).toList();
+    } else {
+      return null;
+    }
+  }
+
+  /// Returns added child to the group with HTTP info returned
+  ///
+  /// Add child to group
+  Future<Response> childsGroupsGroupIdPostWithHttpInfo(int groupId, CreateParentChildBody createParentChildBody) async {
+    Object postBody = createParentChildBody;
+
+    // verify required params are set
+    if(groupId == null) {
+     throw ApiException(400, "Missing required param: groupId");
+    }
+    if(createParentChildBody == null) {
+     throw ApiException(400, "Missing required param: createParentChildBody");
+    }
+
+    // create path and map variables
+    String path = "/childs/groups/{groupId}/".replaceAll("{format}","json").replaceAll("{" + "groupId" + "}", groupId.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = ["application/json"];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'POST',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// Returns added child to the group
+  ///
+  /// Add child to group
+  Future<ChildResponse> childsGroupsGroupIdPost(int groupId, CreateParentChildBody createParentChildBody) async {
+    Response response = await childsGroupsGroupIdPostWithHttpInfo(groupId, createParentChildBody);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'ChildResponse') as ChildResponse;
     } else {
       return null;
     }

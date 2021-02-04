@@ -77,6 +77,7 @@ Class | Method | HTTP request | Description
 *ChildGroupApi* | [**childsGroupsGroupIdAddPost**](doc\/ChildGroupApi.md#childsgroupsgroupidaddpost) | **POST** /childs/groups/{groupId}/add/ | Returns added child to the group
 *ChildGroupApi* | [**childsGroupsGroupIdDeletePut**](doc\/ChildGroupApi.md#childsgroupsgroupiddeleteput) | **PUT** /childs/groups/{groupId}/delete/ | Returns number of child removed from the group
 *ChildGroupApi* | [**childsGroupsGroupIdGet**](doc\/ChildGroupApi.md#childsgroupsgroupidget) | **GET** /childs/groups/{groupId}/ | Returns array of child-group by groupId
+*ChildGroupApi* | [**childsGroupsGroupIdPost**](doc\/ChildGroupApi.md#childsgroupsgroupidpost) | **POST** /childs/groups/{groupId}/ | Returns added child to the group
 *DeviceApi* | [**deviceIdDelete**](doc\/DeviceApi.md#deviceiddelete) | **DELETE** /device/{id}/ | Returns number of device deleted
 *DeviceApi* | [**devicePost**](doc\/DeviceApi.md#devicepost) | **POST** /device/ | Returns device object
 *DeviceApi* | [**deviceUIdUIdGet**](doc\/DeviceApi.md#deviceuiduidget) | **GET** /device/uId/{uId}/ | Returns device object
@@ -127,6 +128,7 @@ Class | Method | HTTP request | Description
  - [CreateDropoffBody](doc\/CreateDropoffBody.md)
  - [CreateGroupBody](doc\/CreateGroupBody.md)
  - [CreateNotAbsentBody](doc\/CreateNotAbsentBody.md)
+ - [CreateParentChildBody](doc\/CreateParentChildBody.md)
  - [CreatePickupBody](doc\/CreatePickupBody.md)
  - [CreateSchoolBody](doc\/CreateSchoolBody.md)
  - [CreateUserWithAddressBody](doc\/CreateUserWithAddressBody.md)
