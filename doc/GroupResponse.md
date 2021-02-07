@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [default to null]
 **isDeleted** | **bool** |  | [default to null]
 **toTime** | **String** |  | [optional] [default to null]
+**publicId** | **String** |  | [default to null]
 **fromTime** | **String** |  | [optional] [default to null]
 **createdAt** | **String** |  | [default to null]
 **updatedAt** | **String** |  | [default to null]
