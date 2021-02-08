@@ -8,6 +8,8 @@ class ChildResponse {
   
   int parentId = null;
   
+  String profileImageUrl = null;
+  
   int addressId = null;
   
   String createdAt = null;
@@ -21,7 +23,7 @@ class ChildResponse {
 
   @override
   String toString() {
-    return 'ChildResponse[id=$id, fullName=$fullName, parentId=$parentId, addressId=$addressId, createdAt=$createdAt, updatedAt=$updatedAt, parent=$parent, address=$address, ]';
+    return 'ChildResponse[id=$id, fullName=$fullName, parentId=$parentId, profileImageUrl=$profileImageUrl, addressId=$addressId, createdAt=$createdAt, updatedAt=$updatedAt, parent=$parent, address=$address, ]';
   }
 
   ChildResponse.fromJson(Map<String, dynamic> json) {
@@ -29,6 +31,7 @@ class ChildResponse {
     id = json['id'];
     fullName = json['fullName'];
     parentId = json['parentId'];
+    profileImageUrl = json['profileImageUrl'];
     addressId = json['addressId'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
@@ -48,6 +51,8 @@ class ChildResponse {
       json['fullName'] = fullName;
     if (parentId != null)
       json['parentId'] = parentId;
+    if (profileImageUrl != null)
+      json['profileImageUrl'] = profileImageUrl;
     if (addressId != null)
       json['addressId'] = addressId;
     if (createdAt != null)

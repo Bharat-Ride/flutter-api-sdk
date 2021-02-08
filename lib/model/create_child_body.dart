@@ -6,18 +6,21 @@ class CreateChildBody {
   
   String phoneNumber = null;
   
+  String profileImageUrl = null;
+  
   int addressId = null;
   CreateChildBody();
 
   @override
   String toString() {
-    return 'CreateChildBody[fullName=$fullName, phoneNumber=$phoneNumber, addressId=$addressId, ]';
+    return 'CreateChildBody[fullName=$fullName, phoneNumber=$phoneNumber, profileImageUrl=$profileImageUrl, addressId=$addressId, ]';
   }
 
   CreateChildBody.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
     fullName = json['fullName'];
     phoneNumber = json['phoneNumber'];
+    profileImageUrl = json['profileImageUrl'];
     addressId = json['addressId'];
   }
 
@@ -27,6 +30,8 @@ class CreateChildBody {
       json['fullName'] = fullName;
     if (phoneNumber != null)
       json['phoneNumber'] = phoneNumber;
+    if (profileImageUrl != null)
+      json['profileImageUrl'] = profileImageUrl;
     if (addressId != null)
       json['addressId'] = addressId;
     return json;

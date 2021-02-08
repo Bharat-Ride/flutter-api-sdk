@@ -6,18 +6,21 @@ class UpdateChildBody {
   
   String fullName = null;
   
+  String profileImageUrl = null;
+  
   int addressId = null;
   UpdateChildBody();
 
   @override
   String toString() {
-    return 'UpdateChildBody[id=$id, fullName=$fullName, addressId=$addressId, ]';
+    return 'UpdateChildBody[id=$id, fullName=$fullName, profileImageUrl=$profileImageUrl, addressId=$addressId, ]';
   }
 
   UpdateChildBody.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
     id = json['id'];
     fullName = json['fullName'];
+    profileImageUrl = json['profileImageUrl'];
     addressId = json['addressId'];
   }
 
@@ -27,6 +30,8 @@ class UpdateChildBody {
       json['id'] = id;
     if (fullName != null)
       json['fullName'] = fullName;
+    if (profileImageUrl != null)
+      json['profileImageUrl'] = profileImageUrl;
     if (addressId != null)
       json['addressId'] = addressId;
     return json;
