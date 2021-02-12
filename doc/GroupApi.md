@@ -11,7 +11,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**groupIdDelete**](GroupApi.md#groupIdDelete) | **DELETE** /group/{id}/ | Returns number of groups deleted
 [**groupPost**](GroupApi.md#groupPost) | **POST** /group/ | Returns newly created group
+[**groupPublicIdPublicIdGet**](GroupApi.md#groupPublicIdPublicIdGet) | **GET** /group/publicId/{publicId} | Returns a group by publicIp
 [**groupPut**](GroupApi.md#groupPut) | **PUT** /group/ | Returns updated group
+[**groupsPhoneNumberPhoneNumberGet**](GroupApi.md#groupsPhoneNumberPhoneNumberGet) | **GET** /groups/phoneNumber/{phoneNumber} | Returns a list of group by phoneNumber
 
 
 # **groupIdDelete**
@@ -112,6 +114,55 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **groupPublicIdPublicIdGet**
+> GroupResponse groupPublicIdPublicIdGet(publicId)
+
+Returns a group by publicIp
+
+Get group by publicIp
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+var api_instance = GroupApi();
+var publicId = publicId_example; // String | Public id
+
+try { 
+    var result = api_instance.groupPublicIdPublicIdGet(publicId);
+    print(result);
+} catch (e) {
+    print("Exception when calling GroupApi->groupPublicIdPublicIdGet: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **publicId** | **String**| Public id | [default to null]
+
+### Return type
+
+[**GroupResponse**](GroupResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **groupPut**
 > UpdateRecordsResponse groupPut(updateGroupBody)
 
@@ -157,6 +208,55 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **groupsPhoneNumberPhoneNumberGet**
+> List<GroupResponse> groupsPhoneNumberPhoneNumberGet(phoneNumber)
+
+Returns a list of group by phoneNumber
+
+Get groups by phoneNumber
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+var api_instance = GroupApi();
+var phoneNumber = phoneNumber_example; // String | Phone Number with country prefix
+
+try { 
+    var result = api_instance.groupsPhoneNumberPhoneNumberGet(phoneNumber);
+    print(result);
+} catch (e) {
+    print("Exception when calling GroupApi->groupsPhoneNumberPhoneNumberGet: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **phoneNumber** | **String**| Phone Number with country prefix | [default to null]
+
+### Return type
+
+[**List<GroupResponse>**](GroupResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

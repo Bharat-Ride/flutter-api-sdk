@@ -87,7 +87,9 @@ Class | Method | HTTP request | Description
 *DriverGroupApi* | [**driverGroupsPost**](doc\/DriverGroupApi.md#drivergroupspost) | **POST** /driver-groups/ | Returns boolean indicating whether the driver was added to the group
 *GroupApi* | [**groupIdDelete**](doc\/GroupApi.md#groupiddelete) | **DELETE** /group/{id}/ | Returns number of groups deleted
 *GroupApi* | [**groupPost**](doc\/GroupApi.md#grouppost) | **POST** /group/ | Returns newly created group
+*GroupApi* | [**groupPublicIdPublicIdGet**](doc\/GroupApi.md#grouppublicidpublicidget) | **GET** /group/publicId/{publicId} | Returns a group by publicIp
 *GroupApi* | [**groupPut**](doc\/GroupApi.md#groupput) | **PUT** /group/ | Returns updated group
+*GroupApi* | [**groupsPhoneNumberPhoneNumberGet**](doc\/GroupApi.md#groupsphonenumberphonenumberget) | **GET** /groups/phoneNumber/{phoneNumber} | Returns a list of group by phoneNumber
 *PickupDropoffApi* | [**pickupDropoffsTripsTripIdGet**](doc\/PickupDropoffApi.md#pickupdropoffstripstripidget) | **GET** /pickup-dropoffs/trips/{tripId}/ | Returns array of pickup-dropoff by tripId
 *PickupDropoffApi* | [**tripsAbsentPost**](doc\/PickupDropoffApi.md#tripsabsentpost) | **POST** /trips/absent/ | Returns array of pickupdropoff
 *PickupDropoffApi* | [**tripsDropoffPut**](doc\/PickupDropoffApi.md#tripsdropoffput) | **PUT** /trips/dropoff/ | Returns number of children Dropoff

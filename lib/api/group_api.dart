@@ -123,6 +123,64 @@ class GroupApi {
     }
   }
 
+  /// Returns a group by publicIp with HTTP info returned
+  ///
+  /// Get group by publicIp
+  Future<Response> groupPublicIdPublicIdGetWithHttpInfo(String publicId) async {
+    Object postBody;
+
+    // verify required params are set
+    if(publicId == null) {
+     throw ApiException(400, "Missing required param: publicId");
+    }
+
+    // create path and map variables
+    String path = "/group/publicId/{publicId}".replaceAll("{format}","json").replaceAll("{" + "publicId" + "}", publicId.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// Returns a group by publicIp
+  ///
+  /// Get group by publicIp
+  Future<GroupResponse> groupPublicIdPublicIdGet(String publicId) async {
+    Response response = await groupPublicIdPublicIdGetWithHttpInfo(publicId);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'GroupResponse') as GroupResponse;
+    } else {
+      return null;
+    }
+  }
+
   /// Returns updated group with HTTP info returned
   ///
   /// Update group
@@ -176,6 +234,64 @@ class GroupApi {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
       return apiClient.deserialize(_decodeBodyBytes(response), 'UpdateRecordsResponse') as UpdateRecordsResponse;
+    } else {
+      return null;
+    }
+  }
+
+  /// Returns a list of group by phoneNumber with HTTP info returned
+  ///
+  /// Get groups by phoneNumber
+  Future<Response> groupsPhoneNumberPhoneNumberGetWithHttpInfo(String phoneNumber) async {
+    Object postBody;
+
+    // verify required params are set
+    if(phoneNumber == null) {
+     throw ApiException(400, "Missing required param: phoneNumber");
+    }
+
+    // create path and map variables
+    String path = "/groups/phoneNumber/{phoneNumber}".replaceAll("{format}","json").replaceAll("{" + "phoneNumber" + "}", phoneNumber.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// Returns a list of group by phoneNumber
+  ///
+  /// Get groups by phoneNumber
+  Future<List<GroupResponse>> groupsPhoneNumberPhoneNumberGet(String phoneNumber) async {
+    Response response = await groupsPhoneNumberPhoneNumberGetWithHttpInfo(phoneNumber);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<GroupResponse>') as List).map((item) => item as GroupResponse).toList();
     } else {
       return null;
     }
