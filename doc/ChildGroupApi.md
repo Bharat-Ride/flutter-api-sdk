@@ -112,7 +112,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **childsGroupsGroupIdAddPost**
-> ChildGroupResponse childsGroupsGroupIdAddPost(groupId, childGroupChildIdsBody)
+> ChildGroupResponse childsGroupsGroupIdAddPost(groupId, requestBody)
 
 Returns added child to the group
 
@@ -130,10 +130,10 @@ import 'package:openapi/api.dart';
 
 var api_instance = ChildGroupApi();
 var groupId = 56; // int | Group Id
-var childGroupChildIdsBody = [List&lt;ChildGroupChildIdsBody&gt;()]; // List<ChildGroupChildIdsBody> | ChildIds body
+var requestBody = [List&lt;int&gt;()]; // List<int> | ChildIds body
 
 try { 
-    var result = api_instance.childsGroupsGroupIdAddPost(groupId, childGroupChildIdsBody);
+    var result = api_instance.childsGroupsGroupIdAddPost(groupId, requestBody);
     print(result);
 } catch (e) {
     print("Exception when calling ChildGroupApi->childsGroupsGroupIdAddPost: $e\n");
@@ -145,7 +145,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **int**| Group Id | [default to null]
- **childGroupChildIdsBody** | [**List&lt;ChildGroupChildIdsBody&gt;**](ChildGroupChildIdsBody.md)| ChildIds body | 
+ **requestBody** | [**List&lt;int&gt;**](int.md)| ChildIds body | 
 
 ### Return type
 
