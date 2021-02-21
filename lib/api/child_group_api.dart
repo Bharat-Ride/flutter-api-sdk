@@ -170,12 +170,12 @@ class ChildGroupApi {
   /// Returns added child to the group
   ///
   /// Add childs to group
-  Future<ChildGroupResponse> childsGroupsGroupIdAddPost(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody) async {
+  Future<List<ChildGroupResponse>> childsGroupsGroupIdAddPost(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody) async {
     Response response = await childsGroupsGroupIdAddPostWithHttpInfo(groupId, childGroupChildIdsBody);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'ChildGroupResponse') as ChildGroupResponse;
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<ChildGroupResponse>') as List).map((item) => item as ChildGroupResponse).toList();
     } else {
       return null;
     }

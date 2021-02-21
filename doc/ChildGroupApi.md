@@ -112,7 +112,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **childsGroupsGroupIdAddPost**
-> ChildGroupResponse childsGroupsGroupIdAddPost(groupId, childGroupChildIdsBody)
+> List<ChildGroupResponse> childsGroupsGroupIdAddPost(groupId, childGroupChildIdsBody)
 
 Returns added child to the group
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ChildGroupResponse**](ChildGroupResponse.md)
+[**List<ChildGroupResponse>**](ChildGroupResponse.md)
 
 ### Authorization
 
