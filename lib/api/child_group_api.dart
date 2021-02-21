@@ -123,15 +123,15 @@ class ChildGroupApi {
   /// Returns added child to the group with HTTP info returned
   ///
   /// Add childs to group
-  Future<Response> childsGroupsGroupIdAddPostWithHttpInfo(int groupId, List<int> requestBody) async {
-    Object postBody = requestBody;
+  Future<Response> childsGroupsGroupIdAddPostWithHttpInfo(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody) async {
+    Object postBody = childGroupChildIdsBody;
 
     // verify required params are set
     if(groupId == null) {
      throw ApiException(400, "Missing required param: groupId");
     }
-    if(requestBody == null) {
-     throw ApiException(400, "Missing required param: requestBody");
+    if(childGroupChildIdsBody == null) {
+     throw ApiException(400, "Missing required param: childGroupChildIdsBody");
     }
 
     // create path and map variables
@@ -170,8 +170,8 @@ class ChildGroupApi {
   /// Returns added child to the group
   ///
   /// Add childs to group
-  Future<ChildGroupResponse> childsGroupsGroupIdAddPost(int groupId, List<int> requestBody) async {
-    Response response = await childsGroupsGroupIdAddPostWithHttpInfo(groupId, requestBody);
+  Future<ChildGroupResponse> childsGroupsGroupIdAddPost(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody) async {
+    Response response = await childsGroupsGroupIdAddPostWithHttpInfo(groupId, childGroupChildIdsBody);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
