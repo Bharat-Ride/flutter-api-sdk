@@ -2,7 +2,7 @@ part of openapi.api;
 
 class UpdateAddressBody {
   
-  String id = null;
+  int id = null;
   
   String address1 = null;
   
