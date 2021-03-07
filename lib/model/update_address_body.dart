@@ -2,6 +2,8 @@ part of openapi.api;
 
 class UpdateAddressBody {
   
+  String id = null;
+  
   String address1 = null;
   
   String address2 = null;
@@ -23,11 +25,12 @@ class UpdateAddressBody {
 
   @override
   String toString() {
-    return 'UpdateAddressBody[address1=$address1, address2=$address2, address3=$address3, city=$city, state=$state, country=$country, postalCode=$postalCode, latitude=$latitude, longitude=$longitude, ]';
+    return 'UpdateAddressBody[id=$id, address1=$address1, address2=$address2, address3=$address3, city=$city, state=$state, country=$country, postalCode=$postalCode, latitude=$latitude, longitude=$longitude, ]';
   }
 
   UpdateAddressBody.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
+    id = json['id'];
     address1 = json['address1'];
     address2 = json['address2'];
     address3 = json['address3'];
@@ -41,6 +44,8 @@ class UpdateAddressBody {
 
   Map<String, dynamic> toJson() {
     Map <String, dynamic> json = {};
+    if (id != null)
+      json['id'] = id;
     if (address1 != null)
       json['address1'] = address1;
     if (address2 != null)
