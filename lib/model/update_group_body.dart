@@ -8,6 +8,8 @@ class UpdateGroupBody {
   
   int schoolId = null;
   
+  num monthlyFees = null;
+  
   String toTime = null;
   
   String fromTime = null;
@@ -15,7 +17,7 @@ class UpdateGroupBody {
 
   @override
   String toString() {
-    return 'UpdateGroupBody[id=$id, name=$name, schoolId=$schoolId, toTime=$toTime, fromTime=$fromTime, ]';
+    return 'UpdateGroupBody[id=$id, name=$name, schoolId=$schoolId, monthlyFees=$monthlyFees, toTime=$toTime, fromTime=$fromTime, ]';
   }
 
   UpdateGroupBody.fromJson(Map<String, dynamic> json) {
@@ -23,6 +25,7 @@ class UpdateGroupBody {
     id = json['id'];
     name = json['name'];
     schoolId = json['schoolId'];
+    monthlyFees = json['monthlyFees'];
     toTime = json['toTime'];
     fromTime = json['fromTime'];
   }
@@ -35,6 +38,8 @@ class UpdateGroupBody {
       json['name'] = name;
     if (schoolId != null)
       json['schoolId'] = schoolId;
+    if (monthlyFees != null)
+      json['monthlyFees'] = monthlyFees;
     if (toTime != null)
       json['toTime'] = toTime;
     if (fromTime != null)

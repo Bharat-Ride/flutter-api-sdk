@@ -18,6 +18,8 @@ class GroupResponse {
   
   String fromTime = null;
   
+  num monthlyFees = null;
+  
   String createdAt = null;
   
   String updatedAt = null;
@@ -25,7 +27,7 @@ class GroupResponse {
 
   @override
   String toString() {
-    return 'GroupResponse[id=$id, creatorId=$creatorId, schoolId=$schoolId, name=$name, isDeleted=$isDeleted, toTime=$toTime, publicId=$publicId, fromTime=$fromTime, createdAt=$createdAt, updatedAt=$updatedAt, ]';
+    return 'GroupResponse[id=$id, creatorId=$creatorId, schoolId=$schoolId, name=$name, isDeleted=$isDeleted, toTime=$toTime, publicId=$publicId, fromTime=$fromTime, monthlyFees=$monthlyFees, createdAt=$createdAt, updatedAt=$updatedAt, ]';
   }
 
   GroupResponse.fromJson(Map<String, dynamic> json) {
@@ -38,6 +40,7 @@ class GroupResponse {
     toTime = json['toTime'];
     publicId = json['publicId'];
     fromTime = json['fromTime'];
+    monthlyFees = json['monthlyFees'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
   }
@@ -60,6 +63,8 @@ class GroupResponse {
       json['publicId'] = publicId;
     if (fromTime != null)
       json['fromTime'] = fromTime;
+    if (monthlyFees != null)
+      json['monthlyFees'] = monthlyFees;
     if (createdAt != null)
       json['createdAt'] = createdAt;
     if (updatedAt != null)

@@ -120,6 +120,7 @@ Class | Method | HTTP request | Description
  - [AddDriverToGroupBody](doc\/AddDriverToGroupBody.md)
  - [AddressResponse](doc\/AddressResponse.md)
  - [ChildGroupChildIdsBody](doc\/ChildGroupChildIdsBody.md)
+ - [ChildGroupMonthlyFeesBody](doc\/ChildGroupMonthlyFeesBody.md)
  - [ChildGroupResponse](doc\/ChildGroupResponse.md)
  - [ChildGroupWithChildWithGroupResponse](doc\/ChildGroupWithChildWithGroupResponse.md)
  - [ChildResponse](doc\/ChildResponse.md)

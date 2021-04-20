@@ -6,6 +6,8 @@ class ChildGroupResponse {
   
   int groupId = null;
   
+  num monthlyFees = null;
+  
   ChildResponse child = null;
   
   GroupResponse group = null;
@@ -17,13 +19,14 @@ class ChildGroupResponse {
 
   @override
   String toString() {
-    return 'ChildGroupResponse[childId=$childId, groupId=$groupId, child=$child, group=$group, createdAt=$createdAt, updatedAt=$updatedAt, ]';
+    return 'ChildGroupResponse[childId=$childId, groupId=$groupId, monthlyFees=$monthlyFees, child=$child, group=$group, createdAt=$createdAt, updatedAt=$updatedAt, ]';
   }
 
   ChildGroupResponse.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
     childId = json['childId'];
     groupId = json['groupId'];
+    monthlyFees = json['monthlyFees'];
     child = (json['child'] == null) ?
       null :
       ChildResponse.fromJson(json['child']);
@@ -40,6 +43,8 @@ class ChildGroupResponse {
       json['childId'] = childId;
     if (groupId != null)
       json['groupId'] = groupId;
+    if (monthlyFees != null)
+      json['monthlyFees'] = monthlyFees;
     if (child != null)
       json['child'] = child;
     if (group != null)

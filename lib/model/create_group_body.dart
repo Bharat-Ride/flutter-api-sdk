@@ -8,12 +8,14 @@ class CreateGroupBody {
   
   String toTime = null;
   
+  num monthlyFees = null;
+  
   String fromTime = null;
   CreateGroupBody();
 
   @override
   String toString() {
-    return 'CreateGroupBody[name=$name, schoolId=$schoolId, toTime=$toTime, fromTime=$fromTime, ]';
+    return 'CreateGroupBody[name=$name, schoolId=$schoolId, toTime=$toTime, monthlyFees=$monthlyFees, fromTime=$fromTime, ]';
   }
 
   CreateGroupBody.fromJson(Map<String, dynamic> json) {
@@ -21,6 +23,7 @@ class CreateGroupBody {
     name = json['name'];
     schoolId = json['schoolId'];
     toTime = json['toTime'];
+    monthlyFees = json['monthlyFees'];
     fromTime = json['fromTime'];
   }
 
@@ -32,6 +35,8 @@ class CreateGroupBody {
       json['schoolId'] = schoolId;
     if (toTime != null)
       json['toTime'] = toTime;
+    if (monthlyFees != null)
+      json['monthlyFees'] = monthlyFees;
     if (fromTime != null)
       json['fromTime'] = fromTime;
     return json;
