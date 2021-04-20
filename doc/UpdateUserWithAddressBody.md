@@ -8,9 +8,7 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [default to null]
-**fullName** | **String** |  | [default to null]
-**phoneNumber** | **String** |  | [default to null]
+**fullName** | **String** |  | [optional] [default to null]
 **profileImageUrl** | **String** |  | [optional] [default to null]
 **photoIdUrl** | **String** |  | [optional] [default to null]
 **email** | **String** |  | [optional] [default to null]

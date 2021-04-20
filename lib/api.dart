@@ -13,6 +13,14 @@ part 'auth/oauth.dart';
 part 'auth/http_basic_auth.dart';
 part 'auth/http_bearer_auth.dart';
 
+part 'api/address_api.dart';
+part 'api/child_group_api.dart';
+part 'api/device_api.dart';
+part 'api/driver_group_api.dart';
+part 'api/group_api.dart';
+part 'api/pickup_dropoff_api.dart';
+part 'api/school_api.dart';
+part 'api/trip_api.dart';
 
 part 'model/add_driver_to_group_body.dart';
 part 'model/address_response.dart';

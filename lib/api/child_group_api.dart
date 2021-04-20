@@ -120,6 +120,61 @@ class ChildGroupApi {
     }
   }
 
+  /// Returns number of child-group items updated with HTTP info returned
+  ///
+  /// Update the child-group monthly fees
+  Future<Response> childGroupsMonthlyFeesPutWithHttpInfo() async {
+    Object postBody;
+
+    // verify required params are set
+
+    // create path and map variables
+    String path = "/child-groups/monthly-fees/".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'PUT',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// Returns number of child-group items updated
+  ///
+  /// Update the child-group monthly fees
+  Future<List<UpdateRecordsResponse>> childGroupsMonthlyFeesPut() async {
+    Response response = await childGroupsMonthlyFeesPutWithHttpInfo();
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<UpdateRecordsResponse>') as List).map((item) => item as UpdateRecordsResponse).toList();
+    } else {
+      return null;
+    }
+  }
+
   /// Returns added child to the group with HTTP info returned
   ///
   /// Add childs to group

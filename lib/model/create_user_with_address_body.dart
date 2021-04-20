@@ -4,8 +4,6 @@ class CreateUserWithAddressBody {
   
   String fullName = null;
   
-  String phoneNumber = null;
-  
   String profileImageUrl = null;
   
   String photoIdUrl = null;
@@ -24,13 +22,12 @@ class CreateUserWithAddressBody {
 
   @override
   String toString() {
-    return 'CreateUserWithAddressBody[fullName=$fullName, phoneNumber=$phoneNumber, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, role=$role, address=$address, ]';
+    return 'CreateUserWithAddressBody[fullName=$fullName, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, role=$role, address=$address, ]';
   }
 
   CreateUserWithAddressBody.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
     fullName = json['fullName'];
-    phoneNumber = json['phoneNumber'];
     profileImageUrl = json['profileImageUrl'];
     photoIdUrl = json['photoIdUrl'];
     email = json['email'];
@@ -46,8 +43,6 @@ class CreateUserWithAddressBody {
     Map <String, dynamic> json = {};
     if (fullName != null)
       json['fullName'] = fullName;
-    if (phoneNumber != null)
-      json['phoneNumber'] = phoneNumber;
     if (profileImageUrl != null)
       json['profileImageUrl'] = profileImageUrl;
     if (photoIdUrl != null)

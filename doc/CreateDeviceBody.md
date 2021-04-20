@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **model** | **String** |  | [optional] [default to null]
 **make** | **String** |  | [optional] [default to null]
 **fcmToken** | **String** |  | [optional] [default to null]
-**locale** | **String** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

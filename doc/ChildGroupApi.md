@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**childGroupsChildIdGet**](ChildGroupApi.md#childGroupsChildIdGet) | **GET** /child-groups/{childId}/ | Returns array of child-group by childId
 [**childGroupsGet**](ChildGroupApi.md#childGroupsGet) | **GET** /child-groups/ | Returns array of child-group by user
+[**childGroupsMonthlyFeesPut**](ChildGroupApi.md#childGroupsMonthlyFeesPut) | **PUT** /child-groups/monthly-fees/ | Returns number of child-group items updated
 [**childsGroupsGroupIdAddPost**](ChildGroupApi.md#childsGroupsGroupIdAddPost) | **POST** /childs/groups/{groupId}/add/ | Returns added child to the group
 [**childsGroupsGroupIdDeletePut**](ChildGroupApi.md#childsGroupsGroupIdDeletePut) | **PUT** /childs/groups/{groupId}/delete/ | Returns number of child removed from the group
 [**childsGroupsGroupIdGet**](ChildGroupApi.md#childsGroupsGroupIdGet) | **GET** /childs/groups/{groupId}/ | Returns array of child-group by groupId
@@ -99,6 +100,51 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**List<ChildGroupWithChildWithGroupResponse>**](ChildGroupWithChildWithGroupResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **childGroupsMonthlyFeesPut**
+> List<UpdateRecordsResponse> childGroupsMonthlyFeesPut()
+
+Returns number of child-group items updated
+
+Update the child-group monthly fees
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+var api_instance = ChildGroupApi();
+
+try { 
+    var result = api_instance.childGroupsMonthlyFeesPut();
+    print(result);
+} catch (e) {
+    print("Exception when calling ChildGroupApi->childGroupsMonthlyFeesPut: $e\n");
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List<UpdateRecordsResponse>**](UpdateRecordsResponse.md)
 
 ### Authorization
 

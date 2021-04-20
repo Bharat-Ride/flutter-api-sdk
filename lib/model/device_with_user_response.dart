@@ -14,8 +14,6 @@ class DeviceWithUserResponse {
   
   String fcmToken = null;
   
-  String locale = null;
-  
   UserResponse user = null;
   
   String updatedAt = null;
@@ -25,7 +23,7 @@ class DeviceWithUserResponse {
 
   @override
   String toString() {
-    return 'DeviceWithUserResponse[id=$id, uId=$uId, model=$model, make=$make, userId=$userId, fcmToken=$fcmToken, locale=$locale, user=$user, updatedAt=$updatedAt, createdAt=$createdAt, ]';
+    return 'DeviceWithUserResponse[id=$id, uId=$uId, model=$model, make=$make, userId=$userId, fcmToken=$fcmToken, user=$user, updatedAt=$updatedAt, createdAt=$createdAt, ]';
   }
 
   DeviceWithUserResponse.fromJson(Map<String, dynamic> json) {
@@ -36,7 +34,6 @@ class DeviceWithUserResponse {
     make = json['make'];
     userId = json['userId'];
     fcmToken = json['fcmToken'];
-    locale = json['locale'];
     user = (json['user'] == null) ?
       null :
       UserResponse.fromJson(json['user']);
@@ -58,8 +55,6 @@ class DeviceWithUserResponse {
       json['userId'] = userId;
     if (fcmToken != null)
       json['fcmToken'] = fcmToken;
-    if (locale != null)
-      json['locale'] = locale;
     if (user != null)
       json['user'] = user;
     if (updatedAt != null)
