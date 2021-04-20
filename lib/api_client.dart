@@ -73,6 +73,8 @@ class ApiClient {
           return CreateNotAbsentBody.fromJson(value);
         case 'CreateParentChildBody':
           return CreateParentChildBody.fromJson(value);
+        case 'CreatePaymentBody':
+          return CreatePaymentBody.fromJson(value);
         case 'CreatePickupBody':
           return CreatePickupBody.fromJson(value);
         case 'CreateSchoolBody':
@@ -99,6 +101,8 @@ class ApiClient {
           return ErrorResponse.fromJson(value);
         case 'GroupResponse':
           return GroupResponse.fromJson(value);
+        case 'PaymentResponse':
+          return PaymentResponse.fromJson(value);
         case 'PickupDropoffResponse':
           return PickupDropoffResponse.fromJson(value);
         case 'PickupDropoffWithTripAndChildAndDriverResponse':
@@ -123,6 +127,8 @@ class ApiClient {
           return UpdateChildBody.fromJson(value);
         case 'UpdateGroupBody':
           return UpdateGroupBody.fromJson(value);
+        case 'UpdatePaymentBody':
+          return UpdatePaymentBody.fromJson(value);
         case 'UpdateRecordsResponse':
           return UpdateRecordsResponse.fromJson(value);
         case 'UpdateUserWithAddressBody':
