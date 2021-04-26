@@ -68,6 +68,10 @@ Class | Method | HTTP request | Description
 *AddressApi* | [**addressIdGet**](doc\/AddressApi.md#addressidget) | **GET** /address/{id}/ | Returns address object by id
 *AddressApi* | [**addressPost**](doc\/AddressApi.md#addresspost) | **POST** /address/ | Returns address object
 *AddressApi* | [**addressPut**](doc\/AddressApi.md#addressput) | **PUT** /address/ | Returns number of address updated
+*ChildApi* | [**childIdDelete**](doc\/ChildApi.md#childiddelete) | **DELETE** /child/{id} | Returns number of child deleted
+*ChildApi* | [**childPost**](doc\/ChildApi.md#childpost) | **POST** /child/ | Returns newly created child
+*ChildApi* | [**childPut**](doc\/ChildApi.md#childput) | **PUT** /child/ | Returns number of child updated
+*ChildApi* | [**childsGet**](doc\/ChildApi.md#childsget) | **GET** /childs/ | Returns an array of child object by phone number
 *ChildGroupApi* | [**childGroupsChildIdGet**](doc\/ChildGroupApi.md#childgroupschildidget) | **GET** /child-groups/{childId}/ | Returns array of child-group by childId
 *ChildGroupApi* | [**childGroupsGet**](doc\/ChildGroupApi.md#childgroupsget) | **GET** /child-groups/ | Returns array of child-group by user
 *ChildGroupApi* | [**childGroupsMonthlyFeesPut**](doc\/ChildGroupApi.md#childgroupsmonthlyfeesput) | **PUT** /child-groups/monthly-fees/ | Returns number of child-group items updated
@@ -111,6 +115,12 @@ Class | Method | HTTP request | Description
 *TripApi* | [**tripLocationPatch**](doc\/TripApi.md#triplocationpatch) | **PATCH** /trip/location/ | Return number of trips updated
 *TripApi* | [**tripStartPost**](doc\/TripApi.md#tripstartpost) | **POST** /trip/start/ | Return newly created trip
 *TripApi* | [**tripsGroupsGroupIdGet**](doc\/TripApi.md#tripsgroupsgroupidget) | **GET** /trips/groups/{groupId}/ | Returns array of trips by groupId
+*UserApi* | [**userDelete**](doc\/UserApi.md#userdelete) | **DELETE** /user/ | Returns number of user deleted by phone number
+*UserApi* | [**userGet**](doc\/UserApi.md#userget) | **GET** /user/ | Returns user object by phone number
+*UserApi* | [**userPatch**](doc\/UserApi.md#userpatch) | **PATCH** /user/ | Returns number of user updated
+*UserApi* | [**userPost**](doc\/UserApi.md#userpost) | **POST** /user/ | Returns user object
+*UserTypeApi* | [**userTypeAddRolePatch**](doc\/UserTypeApi.md#usertypeaddrolepatch) | **PATCH** /user-type/add-role/ | Returns true indicating the role has been added to the user
+*UserTypeApi* | [**userTypeGet**](doc\/UserTypeApi.md#usertypeget) | **GET** /user-type/ | Returns user-type object by phone number
 
 
 ## Documentation For Models
