@@ -19,19 +19,18 @@ class PaymentResponse {
   String dates = null;
   
   String status = null;
+  //enum statusEnum {  CREATED,  UPDATED,  DELETED,  };{
   
   int creatorId = null;
   
   String createdAt = null;
-  
-  String deletedAt = null;
   
   String notes = null;
   PaymentResponse();
 
   @override
   String toString() {
-    return 'PaymentResponse[id=$id, uId=$uId, driverId=$driverId, childId=$childId, amount=$amount, hasDriverAccepted=$hasDriverAccepted, hasParentAccepted=$hasParentAccepted, dates=$dates, status=$status, creatorId=$creatorId, createdAt=$createdAt, deletedAt=$deletedAt, notes=$notes, ]';
+    return 'PaymentResponse[id=$id, uId=$uId, driverId=$driverId, childId=$childId, amount=$amount, hasDriverAccepted=$hasDriverAccepted, hasParentAccepted=$hasParentAccepted, dates=$dates, status=$status, creatorId=$creatorId, createdAt=$createdAt, notes=$notes, ]';
   }
 
   PaymentResponse.fromJson(Map<String, dynamic> json) {
@@ -47,7 +46,6 @@ class PaymentResponse {
     status = json['status'];
     creatorId = json['creatorId'];
     createdAt = json['createdAt'];
-    deletedAt = json['deletedAt'];
     notes = json['notes'];
   }
 
@@ -75,8 +73,6 @@ class PaymentResponse {
       json['creatorId'] = creatorId;
     if (createdAt != null)
       json['createdAt'] = createdAt;
-    if (deletedAt != null)
-      json['deletedAt'] = deletedAt;
     if (notes != null)
       json['notes'] = notes;
     return json;

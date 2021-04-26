@@ -2,7 +2,11 @@ part of openapi.api;
 
 class UpdateUserWithAddressBody {
   
+  int id = null;
+  
   String fullName = null;
+  
+  String phoneNumber = null;
   
   String profileImageUrl = null;
   
@@ -19,12 +23,14 @@ class UpdateUserWithAddressBody {
 
   @override
   String toString() {
-    return 'UpdateUserWithAddressBody[fullName=$fullName, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, address=$address, ]';
+    return 'UpdateUserWithAddressBody[id=$id, fullName=$fullName, phoneNumber=$phoneNumber, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, address=$address, ]';
   }
 
   UpdateUserWithAddressBody.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
+    id = json['id'];
     fullName = json['fullName'];
+    phoneNumber = json['phoneNumber'];
     profileImageUrl = json['profileImageUrl'];
     photoIdUrl = json['photoIdUrl'];
     email = json['email'];
@@ -37,8 +43,12 @@ class UpdateUserWithAddressBody {
 
   Map<String, dynamic> toJson() {
     Map <String, dynamic> json = {};
+    if (id != null)
+      json['id'] = id;
     if (fullName != null)
       json['fullName'] = fullName;
+    if (phoneNumber != null)
+      json['phoneNumber'] = phoneNumber;
     if (profileImageUrl != null)
       json['profileImageUrl'] = profileImageUrl;
     if (photoIdUrl != null)

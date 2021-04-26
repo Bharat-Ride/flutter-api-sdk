@@ -12,22 +12,14 @@ class CreatePaymentBody {
   
   num amount = null;
   
-  bool hasDriverAccepted = null;
-  
-  bool hasParentAccepted = null;
-  
   String dates = null;
-  
-  String status = null;
-  
-  int creatorId = null;
   
   String notes = null;
   CreatePaymentBody();
 
   @override
   String toString() {
-    return 'CreatePaymentBody[id=$id, uId=$uId, driverId=$driverId, childId=$childId, amount=$amount, hasDriverAccepted=$hasDriverAccepted, hasParentAccepted=$hasParentAccepted, dates=$dates, status=$status, creatorId=$creatorId, notes=$notes, ]';
+    return 'CreatePaymentBody[id=$id, uId=$uId, driverId=$driverId, childId=$childId, amount=$amount, dates=$dates, notes=$notes, ]';
   }
 
   CreatePaymentBody.fromJson(Map<String, dynamic> json) {
@@ -37,11 +29,7 @@ class CreatePaymentBody {
     driverId = json['driverId'];
     childId = json['childId'];
     amount = json['amount'];
-    hasDriverAccepted = json['hasDriverAccepted'];
-    hasParentAccepted = json['hasParentAccepted'];
     dates = json['dates'];
-    status = json['status'];
-    creatorId = json['creatorId'];
     notes = json['notes'];
   }
 
@@ -57,16 +45,8 @@ class CreatePaymentBody {
       json['childId'] = childId;
     if (amount != null)
       json['amount'] = amount;
-    if (hasDriverAccepted != null)
-      json['hasDriverAccepted'] = hasDriverAccepted;
-    if (hasParentAccepted != null)
-      json['hasParentAccepted'] = hasParentAccepted;
     if (dates != null)
       json['dates'] = dates;
-    if (status != null)
-      json['status'] = status;
-    if (creatorId != null)
-      json['creatorId'] = creatorId;
     if (notes != null)
       json['notes'] = notes;
     return json;

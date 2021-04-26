@@ -87,6 +87,13 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**groupPublicIdPublicIdGet**](doc\/GroupApi.md#grouppublicidpublicidget) | **GET** /group/publicId/{publicId} | Returns a group by publicIp
 *GroupApi* | [**groupPut**](doc\/GroupApi.md#groupput) | **PUT** /group/ | Returns updated group
 *GroupApi* | [**groupsPhoneNumberPhoneNumberGet**](doc\/GroupApi.md#groupsphonenumberphonenumberget) | **GET** /groups/phoneNumber/{phoneNumber} | Returns a list of group by phoneNumber
+*PaymentApi* | [**paymentChildChildIdGet**](doc\/PaymentApi.md#paymentchildchildidget) | **GET** /payment/child/{childId}/ | Returns list of payment by child Id
+*PaymentApi* | [**paymentDelete**](doc\/PaymentApi.md#paymentdelete) | **DELETE** /payment/ | Returns deleted payment record
+*PaymentApi* | [**paymentDriverConfirmIdIdPatch**](doc\/PaymentApi.md#paymentdriverconfirmididpatch) | **PATCH** /payment/driver-confirm/id/{id}/ | Returns the number of records updated
+*PaymentApi* | [**paymentDriverDriverIdGet**](doc\/PaymentApi.md#paymentdriverdriveridget) | **GET** /payment/driver/{driverId}/ | Returns list of payment by driver Id
+*PaymentApi* | [**paymentParentConfirmIdIdPatch**](doc\/PaymentApi.md#paymentparentconfirmididpatch) | **PATCH** /payment/parent-confirm/id/{id}/ | Returns the number of records updated
+*PaymentApi* | [**paymentPost**](doc\/PaymentApi.md#paymentpost) | **POST** /payment/ | Returns newly created payment record
+*PaymentApi* | [**paymentPut**](doc\/PaymentApi.md#paymentput) | **PUT** /payment/ | Returns updated payment record
 *PickupDropoffApi* | [**pickupDropoffsTripsTripIdGet**](doc\/PickupDropoffApi.md#pickupdropoffstripstripidget) | **GET** /pickup-dropoffs/trips/{tripId}/ | Returns array of pickup-dropoff by tripId
 *PickupDropoffApi* | [**tripsAbsentPost**](doc\/PickupDropoffApi.md#tripsabsentpost) | **POST** /trips/absent/ | Returns array of pickupdropoff
 *PickupDropoffApi* | [**tripsDropoffPut**](doc\/PickupDropoffApi.md#tripsdropoffput) | **PUT** /trips/dropoff/ | Returns number of children Dropoff

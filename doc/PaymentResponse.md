@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **status** | **String** |  | [default to null]
 **creatorId** | **int** |  | [default to null]
 **createdAt** | **String** |  | [default to null]
-**deletedAt** | **String** |  | [default to null]
 **notes** | **String** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

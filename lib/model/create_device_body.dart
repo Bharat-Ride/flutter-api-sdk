@@ -9,11 +9,13 @@ class CreateDeviceBody {
   String make = null;
   
   String fcmToken = null;
+  
+  String locale = null;
   CreateDeviceBody();
 
   @override
   String toString() {
-    return 'CreateDeviceBody[uId=$uId, model=$model, make=$make, fcmToken=$fcmToken, ]';
+    return 'CreateDeviceBody[uId=$uId, model=$model, make=$make, fcmToken=$fcmToken, locale=$locale, ]';
   }
 
   CreateDeviceBody.fromJson(Map<String, dynamic> json) {
@@ -22,6 +24,7 @@ class CreateDeviceBody {
     model = json['model'];
     make = json['make'];
     fcmToken = json['fcmToken'];
+    locale = json['locale'];
   }
 
   Map<String, dynamic> toJson() {
@@ -34,6 +37,8 @@ class CreateDeviceBody {
       json['make'] = make;
     if (fcmToken != null)
       json['fcmToken'] = fcmToken;
+    if (locale != null)
+      json['locale'] = locale;
     return json;
   }
 

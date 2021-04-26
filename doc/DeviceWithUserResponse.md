@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **make** | **String** |  | [optional] [default to null]
 **userId** | **int** |  | [default to null]
 **fcmToken** | **String** |  | [optional] [default to null]
+**locale** | **String** |  | [optional] [default to null]
 **user** | [**UserResponse**](UserResponse.md) |  | [default to null]
 **updatedAt** | **String** |  | [optional] [default to null]
 **createdAt** | **String** |  | [optional] [default to null]
