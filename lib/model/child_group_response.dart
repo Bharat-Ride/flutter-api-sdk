@@ -6,7 +6,7 @@ class ChildGroupResponse {
   
   int groupId = null;
   
-  num monthlyFees = null;
+  String monthlyFees = null;
   
   ChildResponse child = null;
   

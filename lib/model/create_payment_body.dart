@@ -10,7 +10,7 @@ class CreatePaymentBody {
   
   int childId = null;
   
-  num amount = null;
+  String amount = null;
   
   String dates = null;
   

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [default to null]
 **name** | **String** |  | [optional] [default to null]
 **schoolId** | **int** |  | [optional] [default to null]
-**monthlyFees** | **num** |  | [optional] [default to null]
+**monthlyFees** | **String** |  | [optional] [default to null]
 **toTime** | **String** |  | [optional] [default to null]
 **fromTime** | **String** |  | [optional] [default to null]
 
