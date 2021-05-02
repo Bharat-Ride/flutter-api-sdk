@@ -123,10 +123,13 @@ class ChildGroupApi {
   /// Returns number of child-group items updated with HTTP info returned
   ///
   /// Update the child-group monthly fees
-  Future<Response> childGroupsMonthlyFeesPutWithHttpInfo() async {
-    Object postBody;
+  Future<Response> childGroupsMonthlyFeesPutWithHttpInfo(ChildGroupMonthlyFeesBody childGroupMonthlyFeesBody) async {
+    Object postBody = childGroupMonthlyFeesBody;
 
     // verify required params are set
+    if(childGroupMonthlyFeesBody == null) {
+     throw ApiException(400, "Missing required param: childGroupMonthlyFeesBody");
+    }
 
     // create path and map variables
     String path = "/child-groups/monthly-fees/".replaceAll("{format}","json");
@@ -136,7 +139,7 @@ class ChildGroupApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
 
-    List<String> contentTypes = [];
+    List<String> contentTypes = ["application/json"];
 
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["BearerAuth"];
@@ -164,8 +167,8 @@ class ChildGroupApi {
   /// Returns number of child-group items updated
   ///
   /// Update the child-group monthly fees
-  Future<List<UpdateRecordsResponse>> childGroupsMonthlyFeesPut() async {
-    Response response = await childGroupsMonthlyFeesPutWithHttpInfo();
+  Future<List<UpdateRecordsResponse>> childGroupsMonthlyFeesPut(ChildGroupMonthlyFeesBody childGroupMonthlyFeesBody) async {
+    Response response = await childGroupsMonthlyFeesPutWithHttpInfo(childGroupMonthlyFeesBody);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {

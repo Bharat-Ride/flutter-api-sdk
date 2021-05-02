@@ -113,7 +113,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **childGroupsMonthlyFeesPut**
-> List<UpdateRecordsResponse> childGroupsMonthlyFeesPut()
+> List<UpdateRecordsResponse> childGroupsMonthlyFeesPut(childGroupMonthlyFeesBody)
 
 Returns number of child-group items updated
 
@@ -130,9 +130,10 @@ import 'package:openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
 var api_instance = ChildGroupApi();
+var childGroupMonthlyFeesBody = ChildGroupMonthlyFeesBody(); // ChildGroupMonthlyFeesBody | Child Group body
 
 try { 
-    var result = api_instance.childGroupsMonthlyFeesPut();
+    var result = api_instance.childGroupsMonthlyFeesPut(childGroupMonthlyFeesBody);
     print(result);
 } catch (e) {
     print("Exception when calling ChildGroupApi->childGroupsMonthlyFeesPut: $e\n");
@@ -140,7 +141,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **childGroupMonthlyFeesBody** | [**ChildGroupMonthlyFeesBody**](ChildGroupMonthlyFeesBody.md)| Child Group body | 
 
 ### Return type
 
@@ -152,7 +156,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
