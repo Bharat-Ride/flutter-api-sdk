@@ -8,7 +8,7 @@ class UpdateGroupBody {
   
   int schoolId = null;
   
-  String monthlyFees = null;
+  num monthlyFees = null;
   
   String toTime = null;
   

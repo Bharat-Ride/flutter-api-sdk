@@ -18,7 +18,7 @@ class GroupResponse {
   
   String fromTime = null;
   
-  String monthlyFees = null;
+  num monthlyFees = null;
   
   String createdAt = null;
   

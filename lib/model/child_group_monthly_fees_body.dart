@@ -6,7 +6,7 @@ class ChildGroupMonthlyFeesBody {
   
   int groupId = null;
   
-  String monthlyFees = null;
+  num monthlyFees = null;
   ChildGroupMonthlyFeesBody();
 
   @override

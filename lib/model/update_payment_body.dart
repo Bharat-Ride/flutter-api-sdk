@@ -4,7 +4,7 @@ class UpdatePaymentBody {
   
   String uId = null;
   
-  String amount = null;
+  num amount = null;
   
   String dates = null;
   

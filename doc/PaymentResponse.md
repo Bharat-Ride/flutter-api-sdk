@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **uId** | **String** |  | [default to null]
 **driverId** | **int** |  | [default to null]
 **childId** | **int** |  | [default to null]
-**amount** | **String** |  | [default to null]
+**amount** | **num** |  | [default to null]
 **hasDriverAccepted** | **bool** |  | [default to null]
 **hasParentAccepted** | **bool** |  | [default to null]
 **dates** | **String** |  | [default to null]

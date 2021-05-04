@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **toTime** | **String** |  | [optional] [default to null]
 **publicId** | **String** |  | [default to null]
 **fromTime** | **String** |  | [optional] [default to null]
-**monthlyFees** | **String** |  | [optional] [default to null]
+**monthlyFees** | **num** |  | [optional] [default to null]
 **createdAt** | **String** |  | [default to null]
 **updatedAt** | **String** |  | [default to null]
 

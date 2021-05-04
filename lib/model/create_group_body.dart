@@ -8,7 +8,7 @@ class CreateGroupBody {
   
   String toTime = null;
   
-  String monthlyFees = null;
+  num monthlyFees = null;
   
   String fromTime = null;
   CreateGroupBody();

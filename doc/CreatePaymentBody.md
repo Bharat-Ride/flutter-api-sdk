@@ -8,11 +8,9 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] [default to null]
-**uId** | **String** |  | [optional] [default to null]
 **driverId** | **int** |  | [default to null]
 **childId** | **int** |  | [default to null]
-**amount** | **String** |  | [default to null]
+**amount** | **num** |  | [default to null]
 **dates** | **String** |  | [default to null]
 **notes** | **String** |  | [optional] [default to null]
 

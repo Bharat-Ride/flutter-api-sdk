@@ -2,15 +2,11 @@ part of openapi.api;
 
 class CreatePaymentBody {
   
-  int id = null;
-  
-  String uId = null;
-  
   int driverId = null;
   
   int childId = null;
   
-  String amount = null;
+  num amount = null;
   
   String dates = null;
   
@@ -19,13 +15,11 @@ class CreatePaymentBody {
 
   @override
   String toString() {
-    return 'CreatePaymentBody[id=$id, uId=$uId, driverId=$driverId, childId=$childId, amount=$amount, dates=$dates, notes=$notes, ]';
+    return 'CreatePaymentBody[driverId=$driverId, childId=$childId, amount=$amount, dates=$dates, notes=$notes, ]';
   }
 
   CreatePaymentBody.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    id = json['id'];
-    uId = json['uId'];
     driverId = json['driverId'];
     childId = json['childId'];
     amount = json['amount'];
@@ -35,10 +29,6 @@ class CreatePaymentBody {
 
   Map<String, dynamic> toJson() {
     Map <String, dynamic> json = {};
-    if (id != null)
-      json['id'] = id;
-    if (uId != null)
-      json['uId'] = uId;
     if (driverId != null)
       json['driverId'] = driverId;
     if (childId != null)
