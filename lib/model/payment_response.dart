@@ -10,7 +10,7 @@ class PaymentResponse {
   
   int childId = null;
   
-  num amount = null;
+  String amount = null;
   
   bool hasDriverAccepted = null;
   
