@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**userGet**](UserApi.md#userGet) | **GET** /user/ | Returns user object by phone number
 [**userPatch**](UserApi.md#userPatch) | **PATCH** /user/ | Returns number of user updated
 [**userPost**](UserApi.md#userPost) | **POST** /user/ | Returns user object
+[**usersPost**](UserApi.md#usersPost) | **POST** /users/ | Returns user object by ids
 
 
 # **userDelete**
@@ -191,6 +192,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserResponse**](UserResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersPost**
+> List<UserResponse> usersPost(getUserByIds)
+
+Returns user object by ids
+
+Get the user by ids
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP Bearer authorization: BearerAuth
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
+
+var api_instance = UserApi();
+var getUserByIds = GetUserByIds(); // GetUserByIds | User ids
+
+try { 
+    var result = api_instance.usersPost(getUserByIds);
+    print(result);
+} catch (e) {
+    print("Exception when calling UserApi->usersPost: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **getUserByIds** | [**GetUserByIds**](GetUserByIds.md)| User ids | 
+
+### Return type
+
+[**List<UserResponse>**](UserResponse.md)
 
 ### Authorization
 

@@ -119,6 +119,7 @@ Class | Method | HTTP request | Description
 *UserApi* | [**userGet**](doc\/UserApi.md#userget) | **GET** /user/ | Returns user object by phone number
 *UserApi* | [**userPatch**](doc\/UserApi.md#userpatch) | **PATCH** /user/ | Returns number of user updated
 *UserApi* | [**userPost**](doc\/UserApi.md#userpost) | **POST** /user/ | Returns user object
+*UserApi* | [**usersPost**](doc\/UserApi.md#userspost) | **POST** /users/ | Returns user object by ids
 *UserTypeApi* | [**userTypeAddRolePatch**](doc\/UserTypeApi.md#usertypeaddrolepatch) | **PATCH** /user-type/add-role/ | Returns true indicating the role has been added to the user
 *UserTypeApi* | [**userTypeGet**](doc\/UserTypeApi.md#usertypeget) | **GET** /user-type/ | Returns user-type object by phone number
 
@@ -153,6 +154,7 @@ Class | Method | HTTP request | Description
  - [DriverLocationUpdateTripBody](doc\/DriverLocationUpdateTripBody.md)
  - [EndTripBody](doc\/EndTripBody.md)
  - [ErrorResponse](doc\/ErrorResponse.md)
+ - [GetUserByIds](doc\/GetUserByIds.md)
  - [GroupResponse](doc\/GroupResponse.md)
  - [PaymentResponse](doc\/PaymentResponse.md)
  - [PickupDropoffResponse](doc\/PickupDropoffResponse.md)

@@ -233,4 +233,62 @@ class UserApi {
     }
   }
 
+  /// Returns user object by ids with HTTP info returned
+  ///
+  /// Get the user by ids
+  Future<Response> usersPostWithHttpInfo(GetUserByIds getUserByIds) async {
+    Object postBody = getUserByIds;
+
+    // verify required params are set
+    if(getUserByIds == null) {
+     throw ApiException(400, "Missing required param: getUserByIds");
+    }
+
+    // create path and map variables
+    String path = "/users/".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = ["application/json"];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'POST',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// Returns user object by ids
+  ///
+  /// Get the user by ids
+  Future<List<UserResponse>> usersPost(GetUserByIds getUserByIds) async {
+    Response response = await usersPostWithHttpInfo(getUserByIds);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<UserResponse>') as List).map((item) => item as UserResponse).toList();
+    } else {
+      return null;
+    }
+  }
+
 }

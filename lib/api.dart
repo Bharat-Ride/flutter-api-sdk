@@ -54,6 +54,7 @@ part 'model/driver_group_with_user_response.dart';
 part 'model/driver_location_update_trip_body.dart';
 part 'model/end_trip_body.dart';
 part 'model/error_response.dart';
+part 'model/get_user_by_ids.dart';
 part 'model/group_response.dart';
 part 'model/payment_response.dart';
 part 'model/pickup_dropoff_response.dart';
