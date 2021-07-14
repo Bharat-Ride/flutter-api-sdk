@@ -115,6 +115,7 @@ Class | Method | HTTP request | Description
 *TripApi* | [**tripLocationPatch**](doc\/TripApi.md#triplocationpatch) | **PATCH** /trip/location/ | Return number of trips updated
 *TripApi* | [**tripStartPost**](doc\/TripApi.md#tripstartpost) | **POST** /trip/start/ | Return newly created trip
 *TripApi* | [**tripsGroupsGroupIdGet**](doc\/TripApi.md#tripsgroupsgroupidget) | **GET** /trips/groups/{groupId}/ | Returns array of trips by groupId
+*UserApi* | [**childDriversGet**](doc\/UserApi.md#childdriversget) | **GET** /child-drivers/ | Returns child drivers object by phone number
 *UserApi* | [**userDelete**](doc\/UserApi.md#userdelete) | **DELETE** /user/ | Returns number of user deleted by phone number
 *UserApi* | [**userGet**](doc\/UserApi.md#userget) | **GET** /user/ | Returns user object by phone number
 *UserApi* | [**userPatch**](doc\/UserApi.md#userpatch) | **PATCH** /user/ | Returns number of user updated

@@ -7,6 +7,61 @@ class UserApi {
 
   UserApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
+  /// Returns child drivers object by phone number with HTTP info returned
+  ///
+  /// Get the child drivers by phone number
+  Future<Response> childDriversGetWithHttpInfo() async {
+    Object postBody;
+
+    // verify required params are set
+
+    // create path and map variables
+    String path = "/child-drivers/".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// Returns child drivers object by phone number
+  ///
+  /// Get the child drivers by phone number
+  Future<List<UserResponse>> childDriversGet() async {
+    Response response = await childDriversGetWithHttpInfo();
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<UserResponse>') as List).map((item) => item as UserResponse).toList();
+    } else {
+      return null;
+    }
+  }
+
   /// Returns number of user deleted by phone number with HTTP info returned
   ///
   /// Delete the user by phone number
