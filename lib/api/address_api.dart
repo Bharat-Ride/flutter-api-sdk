@@ -1,252 +1,242 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
 part of openapi.api;
 
 
-class AddressApi {
-  AddressApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
+class AddressApi {
   final ApiClient apiClient;
 
-  /// Returns number of address deleted by id
+  AddressApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  /// Returns number of address deleted by id with HTTP info returned
   ///
   /// Delete the address by id
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [num] id (required):
-  ///   Address id
-  Future<Response> addressIdDeleteWithHttpInfo(num id,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/address/{id}/'
-      .replaceAll('{id}', id.toString());
+  Future<Response> addressIdDeleteWithHttpInfo(num id) async {
+    Object postBody;
 
-    // ignore: prefer_final_locals
-    Object? postBody;
+    // verify required params are set
+    if(id == null) {
+     throw ApiException(400, "Missing required param: id");
+    }
 
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
+    // create path and map variables
+    String path = "/address/{id}/".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
 
-    const contentTypes = <String>[];
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
 
+    List<String> contentTypes = [];
 
-    return apiClient.invokeAPI(
-      path,
-      'DELETE',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'DELETE',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
   }
 
   /// Returns number of address deleted by id
   ///
   /// Delete the address by id
-  ///
-  /// Parameters:
-  ///
-  /// * [num] id (required):
-  ///   Address id
-  Future<DeleteRecordsResponse?> addressIdDelete(num id,) async {
-    final response = await addressIdDeleteWithHttpInfo(id,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+  Future<DeleteRecordsResponse> addressIdDelete(num id) async {
+    Response response = await addressIdDeleteWithHttpInfo(id);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'DeleteRecordsResponse') as DeleteRecordsResponse;
+    } else {
+      return null;
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'DeleteRecordsResponse',) as DeleteRecordsResponse;
-    
+  }
+
+  /// Returns address object by id with HTTP info returned
+  ///
+  /// Get the address by id
+  Future<Response> addressIdGetWithHttpInfo(num id) async {
+    Object postBody;
+
+    // verify required params are set
+    if(id == null) {
+     throw ApiException(400, "Missing required param: id");
     }
-    return null;
+
+    // create path and map variables
+    String path = "/address/{id}/".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
   }
 
   /// Returns address object by id
   ///
   /// Get the address by id
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [num] id (required):
-  ///   Address id
-  Future<Response> addressIdGetWithHttpInfo(num id,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/address/{id}/'
-      .replaceAll('{id}', id.toString());
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
+  Future<AddressResponse> addressIdGet(num id) async {
+    Response response = await addressIdGetWithHttpInfo(id);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'AddressResponse') as AddressResponse;
+    } else {
+      return null;
+    }
   }
 
-  /// Returns address object by id
+  /// Returns address object with HTTP info returned
   ///
-  /// Get the address by id
-  ///
-  /// Parameters:
-  ///
-  /// * [num] id (required):
-  ///   Address id
-  Future<AddressResponse?> addressIdGet(num id,) async {
-    final response = await addressIdGetWithHttpInfo(id,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+  /// Create an address
+  Future<Response> addressPostWithHttpInfo(CreateAddressBody createAddressBody) async {
+    Object postBody = createAddressBody;
+
+    // verify required params are set
+    if(createAddressBody == null) {
+     throw ApiException(400, "Missing required param: createAddressBody");
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AddressResponse',) as AddressResponse;
-    
+
+    // create path and map variables
+    String path = "/address/".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = ["application/json"];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
     }
-    return null;
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'POST',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
   }
 
   /// Returns address object
   ///
   /// Create an address
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [CreateAddressBody] createAddressBody (required):
-  ///   Address body
-  Future<Response> addressPostWithHttpInfo(CreateAddressBody createAddressBody,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/address/';
-
-    // ignore: prefer_final_locals
-    Object? postBody = createAddressBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const contentTypes = <String>['application/json'];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
+  Future<AddressResponse> addressPost(CreateAddressBody createAddressBody) async {
+    Response response = await addressPostWithHttpInfo(createAddressBody);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'AddressResponse') as AddressResponse;
+    } else {
+      return null;
+    }
   }
 
-  /// Returns address object
+  /// Returns number of address updated with HTTP info returned
   ///
-  /// Create an address
-  ///
-  /// Parameters:
-  ///
-  /// * [CreateAddressBody] createAddressBody (required):
-  ///   Address body
-  Future<AddressResponse?> addressPost(CreateAddressBody createAddressBody,) async {
-    final response = await addressPostWithHttpInfo(createAddressBody,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+  /// Update an address
+  Future<Response> addressPutWithHttpInfo(UpdateAddressBody updateAddressBody) async {
+    Object postBody = updateAddressBody;
+
+    // verify required params are set
+    if(updateAddressBody == null) {
+     throw ApiException(400, "Missing required param: updateAddressBody");
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AddressResponse',) as AddressResponse;
-    
+
+    // create path and map variables
+    String path = "/address/".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = ["application/json"];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["BearerAuth"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
     }
-    return null;
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'PUT',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
   }
 
   /// Returns number of address updated
   ///
   /// Update an address
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [UpdateAddressBody] updateAddressBody (required):
-  ///   Address body
-  Future<Response> addressPutWithHttpInfo(UpdateAddressBody updateAddressBody,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/address/';
-
-    // ignore: prefer_final_locals
-    Object? postBody = updateAddressBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const contentTypes = <String>['application/json'];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'PUT',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
+  Future<UpdateRecordsResponse> addressPut(UpdateAddressBody updateAddressBody) async {
+    Response response = await addressPutWithHttpInfo(updateAddressBody);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'UpdateRecordsResponse') as UpdateRecordsResponse;
+    } else {
+      return null;
+    }
   }
 
-  /// Returns number of address updated
-  ///
-  /// Update an address
-  ///
-  /// Parameters:
-  ///
-  /// * [UpdateAddressBody] updateAddressBody (required):
-  ///   Address body
-  Future<UpdateRecordsResponse?> addressPut(UpdateAddressBody updateAddressBody,) async {
-    final response = await addressPutWithHttpInfo(updateAddressBody,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UpdateRecordsResponse',) as UpdateRecordsResponse;
-    
-    }
-    return null;
-  }
 }

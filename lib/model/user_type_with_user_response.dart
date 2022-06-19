@@ -1,159 +1,80 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
 part of openapi.api;
 
 class UserTypeWithUserResponse {
-  /// Returns a new [UserTypeWithUserResponse] instance.
-  UserTypeWithUserResponse({
-    required this.id,
-    required this.userId,
-    required this.isDriver,
-    required this.isParent,
-    required this.user,
-    required this.updatedAt,
-    required this.createdAt,
-  });
-
-  int id;
-
-  int userId;
-
-  bool isDriver;
-
-  bool isParent;
-
-  UserResponse user;
-
-  String updatedAt;
-
-  String createdAt;
+  
+  int id = null;
+  
+  int userId = null;
+  
+  bool isDriver = null;
+  
+  bool isParent = null;
+  
+  UserResponse user = null;
+  
+  String updatedAt = null;
+  
+  String createdAt = null;
+  UserTypeWithUserResponse();
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UserTypeWithUserResponse &&
-     other.id == id &&
-     other.userId == userId &&
-     other.isDriver == isDriver &&
-     other.isParent == isParent &&
-     other.user == user &&
-     other.updatedAt == updatedAt &&
-     other.createdAt == createdAt;
+  String toString() {
+    return 'UserTypeWithUserResponse[id=$id, userId=$userId, isDriver=$isDriver, isParent=$isParent, user=$user, updatedAt=$updatedAt, createdAt=$createdAt, ]';
+  }
 
-  @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (id.hashCode) +
-    (userId.hashCode) +
-    (isDriver.hashCode) +
-    (isParent.hashCode) +
-    (user.hashCode) +
-    (updatedAt.hashCode) +
-    (createdAt.hashCode);
-
-  @override
-  String toString() => 'UserTypeWithUserResponse[id=$id, userId=$userId, isDriver=$isDriver, isParent=$isParent, user=$user, updatedAt=$updatedAt, createdAt=$createdAt]';
+  UserTypeWithUserResponse.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    id = json['id'];
+    userId = json['userId'];
+    isDriver = json['isDriver'];
+    isParent = json['isParent'];
+    user = (json['user'] == null) ?
+      null :
+      UserResponse.fromJson(json['user']);
+    updatedAt = json['updatedAt'];
+    createdAt = json['createdAt'];
+  }
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'userId'] = userId;
-      _json[r'isDriver'] = isDriver;
-      _json[r'isParent'] = isParent;
-      _json[r'user'] = user;
-      _json[r'updatedAt'] = updatedAt;
-      _json[r'createdAt'] = createdAt;
-    return _json;
+    Map <String, dynamic> json = {};
+    if (id != null)
+      json['id'] = id;
+    if (userId != null)
+      json['userId'] = userId;
+    if (isDriver != null)
+      json['isDriver'] = isDriver;
+    if (isParent != null)
+      json['isParent'] = isParent;
+    if (user != null)
+      json['user'] = user;
+    if (updatedAt != null)
+      json['updatedAt'] = updatedAt;
+    if (createdAt != null)
+      json['createdAt'] = createdAt;
+    return json;
   }
 
-  /// Returns a new [UserTypeWithUserResponse] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static UserTypeWithUserResponse? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UserTypeWithUserResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UserTypeWithUserResponse[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return UserTypeWithUserResponse(
-        id: mapValueOfType<int>(json, r'id')!,
-        userId: mapValueOfType<int>(json, r'userId')!,
-        isDriver: mapValueOfType<bool>(json, r'isDriver')!,
-        isParent: mapValueOfType<bool>(json, r'isParent')!,
-        user: UserResponse.fromJson(json[r'user'])!,
-        updatedAt: mapValueOfType<String>(json, r'updatedAt')!,
-        createdAt: mapValueOfType<String>(json, r'createdAt')!,
-      );
-    }
-    return null;
+  static List<UserTypeWithUserResponse> listFromJson(List<dynamic> json) {
+    return json == null ? List<UserTypeWithUserResponse>() : json.map((value) => UserTypeWithUserResponse.fromJson(value)).toList();
   }
 
-  static List<UserTypeWithUserResponse>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <UserTypeWithUserResponse>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = UserTypeWithUserResponse.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, UserTypeWithUserResponse> mapFromJson(dynamic json) {
-    final map = <String, UserTypeWithUserResponse>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = UserTypeWithUserResponse.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
+  static Map<String, UserTypeWithUserResponse> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, UserTypeWithUserResponse>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = UserTypeWithUserResponse.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of UserTypeWithUserResponse-objects as value to a dart map
-  static Map<String, List<UserTypeWithUserResponse>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<UserTypeWithUserResponse>>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = UserTypeWithUserResponse.listFromJson(entry.value, growable: growable,);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
+  static Map<String, List<UserTypeWithUserResponse>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<UserTypeWithUserResponse>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = UserTypeWithUserResponse.listFromJson(value);
+       });
+     }
+     return map;
   }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'id',
-    'userId',
-    'isDriver',
-    'isParent',
-    'user',
-    'updatedAt',
-    'createdAt',
-  };
 }
 

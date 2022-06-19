@@ -9,13 +9,13 @@ All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**childGroupsChildIdGet**](ChildGroupApi.md#childgroupschildidget) | **GET** /child-groups/{childId}/ | Returns array of child-group by childId
-[**childGroupsGet**](ChildGroupApi.md#childgroupsget) | **GET** /child-groups/ | Returns array of child-group by user
-[**childGroupsMonthlyFeesPut**](ChildGroupApi.md#childgroupsmonthlyfeesput) | **PUT** /child-groups/monthly-fees/ | Returns number of child-group items updated
-[**childsGroupsGroupIdAddPost**](ChildGroupApi.md#childsgroupsgroupidaddpost) | **POST** /childs/groups/{groupId}/add/ | Returns added child to the group
-[**childsGroupsGroupIdDeletePut**](ChildGroupApi.md#childsgroupsgroupiddeleteput) | **PUT** /childs/groups/{groupId}/delete/ | Returns number of child removed from the group
-[**childsGroupsGroupIdGet**](ChildGroupApi.md#childsgroupsgroupidget) | **GET** /childs/groups/{groupId}/ | Returns array of child-group by groupId
-[**childsGroupsGroupIdPost**](ChildGroupApi.md#childsgroupsgroupidpost) | **POST** /childs/groups/{groupId}/ | Returns added child to the group
+[**childGroupsChildIdGet**](ChildGroupApi.md#childGroupsChildIdGet) | **GET** /child-groups/{childId}/ | Returns array of child-group by childId
+[**childGroupsGet**](ChildGroupApi.md#childGroupsGet) | **GET** /child-groups/ | Returns array of child-group by user
+[**childGroupsMonthlyFeesPut**](ChildGroupApi.md#childGroupsMonthlyFeesPut) | **PUT** /child-groups/monthly-fees/ | Returns number of child-group items updated
+[**childsGroupsGroupIdAddPost**](ChildGroupApi.md#childsGroupsGroupIdAddPost) | **POST** /childs/groups/{groupId}/add/ | Returns added child to the group
+[**childsGroupsGroupIdDeletePut**](ChildGroupApi.md#childsGroupsGroupIdDeletePut) | **PUT** /childs/groups/{groupId}/delete/ | Returns number of child removed from the group
+[**childsGroupsGroupIdGet**](ChildGroupApi.md#childsGroupsGroupIdGet) | **GET** /childs/groups/{groupId}/ | Returns array of child-group by groupId
+[**childsGroupsGroupIdPost**](ChildGroupApi.md#childsGroupsGroupIdPost) | **POST** /childs/groups/{groupId}/ | Returns added child to the group
 
 
 # **childGroupsChildIdGet**
@@ -25,7 +25,7 @@ Returns array of child-group by childId
 
 Get childs by childId
 
-### Example
+### Example 
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -35,14 +35,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
-final childId = 56; // int | ChildId Id
+var api_instance = ChildGroupApi();
+var childId = 56; // int | ChildId Id
 
-try {
-    final result = api_instance.childGroupsChildIdGet(childId);
+try { 
+    var result = api_instance.childGroupsChildIdGet(childId);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childGroupsChildIdGet: $e\n');
+    print("Exception when calling ChildGroupApi->childGroupsChildIdGet: $e\n");
 }
 ```
 
@@ -50,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **childId** | **int**| ChildId Id | 
+ **childId** | **int**| ChildId Id | [default to null]
 
 ### Return type
 
@@ -74,7 +74,7 @@ Returns array of child-group by user
 
 Get childs by user
 
-### Example
+### Example 
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -84,13 +84,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
+var api_instance = ChildGroupApi();
 
-try {
-    final result = api_instance.childGroupsGet();
+try { 
+    var result = api_instance.childGroupsGet();
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childGroupsGet: $e\n');
+    print("Exception when calling ChildGroupApi->childGroupsGet: $e\n");
 }
 ```
 
@@ -119,7 +119,7 @@ Returns number of child-group items updated
 
 Update the child-group monthly fees
 
-### Example
+### Example 
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -129,14 +129,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
-final childGroupMonthlyFeesBody = ChildGroupMonthlyFeesBody(); // ChildGroupMonthlyFeesBody | Child Group body
+var api_instance = ChildGroupApi();
+var childGroupMonthlyFeesBody = ChildGroupMonthlyFeesBody(); // ChildGroupMonthlyFeesBody | Child Group body
 
-try {
-    final result = api_instance.childGroupsMonthlyFeesPut(childGroupMonthlyFeesBody);
+try { 
+    var result = api_instance.childGroupsMonthlyFeesPut(childGroupMonthlyFeesBody);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childGroupsMonthlyFeesPut: $e\n');
+    print("Exception when calling ChildGroupApi->childGroupsMonthlyFeesPut: $e\n");
 }
 ```
 
@@ -168,7 +168,7 @@ Returns added child to the group
 
 Add childs to group
 
-### Example
+### Example 
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -178,15 +178,15 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
-final groupId = 56; // int | Group Id
-final childGroupChildIdsBody = ChildGroupChildIdsBody(); // ChildGroupChildIdsBody | ChildIds body
+var api_instance = ChildGroupApi();
+var groupId = 56; // int | Group Id
+var childGroupChildIdsBody = ChildGroupChildIdsBody(); // ChildGroupChildIdsBody | ChildIds body
 
-try {
-    final result = api_instance.childsGroupsGroupIdAddPost(groupId, childGroupChildIdsBody);
+try { 
+    var result = api_instance.childsGroupsGroupIdAddPost(groupId, childGroupChildIdsBody);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childsGroupsGroupIdAddPost: $e\n');
+    print("Exception when calling ChildGroupApi->childsGroupsGroupIdAddPost: $e\n");
 }
 ```
 
@@ -194,7 +194,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **int**| Group Id | 
+ **groupId** | **int**| Group Id | [default to null]
  **childGroupChildIdsBody** | [**ChildGroupChildIdsBody**](ChildGroupChildIdsBody.md)| ChildIds body | 
 
 ### Return type
@@ -219,7 +219,7 @@ Returns number of child removed from the group
 
 Removes childs from group
 
-### Example
+### Example 
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -229,15 +229,15 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
-final groupId = 56; // int | Group Id
-final childGroupChildIdsBody = ChildGroupChildIdsBody(); // ChildGroupChildIdsBody | ChildIds body
+var api_instance = ChildGroupApi();
+var groupId = 56; // int | Group Id
+var childGroupChildIdsBody = ChildGroupChildIdsBody(); // ChildGroupChildIdsBody | ChildIds body
 
-try {
-    final result = api_instance.childsGroupsGroupIdDeletePut(groupId, childGroupChildIdsBody);
+try { 
+    var result = api_instance.childsGroupsGroupIdDeletePut(groupId, childGroupChildIdsBody);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childsGroupsGroupIdDeletePut: $e\n');
+    print("Exception when calling ChildGroupApi->childsGroupsGroupIdDeletePut: $e\n");
 }
 ```
 
@@ -245,7 +245,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **int**| Group Id | 
+ **groupId** | **int**| Group Id | [default to null]
  **childGroupChildIdsBody** | [**ChildGroupChildIdsBody**](ChildGroupChildIdsBody.md)| ChildIds body | 
 
 ### Return type
@@ -270,7 +270,7 @@ Returns array of child-group by groupId
 
 Get childs by groupId
 
-### Example
+### Example 
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -280,14 +280,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
-final groupId = 56; // int | Group Id
+var api_instance = ChildGroupApi();
+var groupId = 56; // int | Group Id
 
-try {
-    final result = api_instance.childsGroupsGroupIdGet(groupId);
+try { 
+    var result = api_instance.childsGroupsGroupIdGet(groupId);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childsGroupsGroupIdGet: $e\n');
+    print("Exception when calling ChildGroupApi->childsGroupsGroupIdGet: $e\n");
 }
 ```
 
@@ -295,7 +295,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **int**| Group Id | 
+ **groupId** | **int**| Group Id | [default to null]
 
 ### Return type
 
@@ -319,7 +319,7 @@ Returns added child to the group
 
 Add child to group
 
-### Example
+### Example 
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -329,15 +329,15 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildGroupApi();
-final groupId = 56; // int | Group Id
-final createParentChildBody = CreateParentChildBody(); // CreateParentChildBody | Child body
+var api_instance = ChildGroupApi();
+var groupId = 56; // int | Group Id
+var createParentChildBody = CreateParentChildBody(); // CreateParentChildBody | Child body
 
-try {
-    final result = api_instance.childsGroupsGroupIdPost(groupId, createParentChildBody);
+try { 
+    var result = api_instance.childsGroupsGroupIdPost(groupId, createParentChildBody);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildGroupApi->childsGroupsGroupIdPost: $e\n');
+    print("Exception when calling ChildGroupApi->childsGroupsGroupIdPost: $e\n");
 }
 ```
 
@@ -345,7 +345,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **int**| Group Id | 
+ **groupId** | **int**| Group Id | [default to null]
  **createParentChildBody** | [**CreateParentChildBody**](CreateParentChildBody.md)| Child body | 
 
 ### Return type

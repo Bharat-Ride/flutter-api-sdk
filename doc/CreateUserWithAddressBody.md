@@ -8,15 +8,15 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fullName** | **String** |  | 
-**phoneNumber** | **String** |  | [optional] 
-**profileImageUrl** | **String** |  | [optional] 
-**photoIdUrl** | **String** |  | [optional] 
-**email** | **String** |  | [optional] 
-**dateOfBirth** | **String** |  | [optional] 
-**addressId** | **int** |  | [optional] 
-**role** | **String** |  | [optional] 
-**address** | [**CreateAddressBody**](CreateAddressBody.md) |  | [optional] 
+**fullName** | **String** |  | [default to null]
+**phoneNumber** | **String** |  | [optional] [default to null]
+**profileImageUrl** | **String** |  | [optional] [default to null]
+**photoIdUrl** | **String** |  | [optional] [default to null]
+**email** | **String** |  | [optional] [default to null]
+**dateOfBirth** | **String** |  | [optional] [default to null]
+**addressId** | **int** |  | [optional] [default to null]
+**role** | **String** |  | [optional] [default to null]
+**address** | [**CreateAddressBody**](CreateAddressBody.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

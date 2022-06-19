@@ -9,9 +9,9 @@ All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deviceIdDelete**](DeviceApi.md#deviceiddelete) | **DELETE** /device/{id}/ | Returns number of device deleted
-[**devicePost**](DeviceApi.md#devicepost) | **POST** /device/ | Returns device object
-[**deviceUIdUIdGet**](DeviceApi.md#deviceuiduidget) | **GET** /device/uId/{uId}/ | Returns device object
+[**deviceIdDelete**](DeviceApi.md#deviceIdDelete) | **DELETE** /device/{id}/ | Returns number of device deleted
+[**devicePost**](DeviceApi.md#devicePost) | **POST** /device/ | Returns device object
+[**deviceUIdUIdGet**](DeviceApi.md#deviceUIdUIdGet) | **GET** /device/uId/{uId}/ | Returns device object
 
 
 # **deviceIdDelete**
@@ -21,7 +21,7 @@ Returns number of device deleted
 
 Delete a device for a user by id
 
-### Example
+### Example 
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -31,14 +31,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = DeviceApi();
-final id = 56; // int | Device id
+var api_instance = DeviceApi();
+var id = 56; // int | Device id
 
-try {
-    final result = api_instance.deviceIdDelete(id);
+try { 
+    var result = api_instance.deviceIdDelete(id);
     print(result);
 } catch (e) {
-    print('Exception when calling DeviceApi->deviceIdDelete: $e\n');
+    print("Exception when calling DeviceApi->deviceIdDelete: $e\n");
 }
 ```
 
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Device id | 
+ **id** | **int**| Device id | [default to null]
 
 ### Return type
 
@@ -70,7 +70,7 @@ Returns device object
 
 Create a device for a user
 
-### Example
+### Example 
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -80,14 +80,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = DeviceApi();
-final createDeviceBody = CreateDeviceBody(); // CreateDeviceBody | Device body
+var api_instance = DeviceApi();
+var createDeviceBody = CreateDeviceBody(); // CreateDeviceBody | Device body
 
-try {
-    final result = api_instance.devicePost(createDeviceBody);
+try { 
+    var result = api_instance.devicePost(createDeviceBody);
     print(result);
 } catch (e) {
-    print('Exception when calling DeviceApi->devicePost: $e\n');
+    print("Exception when calling DeviceApi->devicePost: $e\n");
 }
 ```
 
@@ -119,7 +119,7 @@ Returns device object
 
 Get a device for a user by uId
 
-### Example
+### Example 
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -129,14 +129,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = DeviceApi();
-final uId = uId_example; // String | Device uId
+var api_instance = DeviceApi();
+var uId = uId_example; // String | Device uId
 
-try {
-    final result = api_instance.deviceUIdUIdGet(uId);
+try { 
+    var result = api_instance.deviceUIdUIdGet(uId);
     print(result);
 } catch (e) {
-    print('Exception when calling DeviceApi->deviceUIdUIdGet: $e\n');
+    print("Exception when calling DeviceApi->deviceUIdUIdGet: $e\n");
 }
 ```
 
@@ -144,7 +144,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uId** | **String**| Device uId | 
+ **uId** | **String**| Device uId | [default to null]
 
 ### Return type
 

@@ -8,12 +8,12 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | 
-**name** | **String** |  | [optional] 
-**schoolId** | **int** |  | [optional] 
-**monthlyFees** | **num** |  | [optional] 
-**toTime** | **String** |  | [optional] 
-**fromTime** | **String** |  | [optional] 
+**id** | **int** |  | [default to null]
+**name** | **String** |  | [optional] [default to null]
+**schoolId** | **int** |  | [optional] [default to null]
+**monthlyFees** | **num** |  | [optional] [default to null]
+**toTime** | **String** |  | [optional] [default to null]
+**fromTime** | **String** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
