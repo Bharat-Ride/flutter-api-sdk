@@ -13,14 +13,16 @@ part of openapi.api;
 class ApiClient {
   ApiClient(
       {this.basePath = 'https://staging.presentation-api.api.findnemo.in',
-      required this.accessToken,
+      this.accessToken,
       this.authentication}) {
-    _defaultHeaderMap['BearerAuth'] =
-        OAuth(accessToken: this.accessToken).toString();
+    if (this.accessToken != null && this.accessToken is String) {
+      _defaultHeaderMap['BearerAuth'] =
+          OAuth(accessToken: this.accessToken!).toString();
+    }
   }
 
   final String basePath;
-  final String accessToken;
+  String? accessToken;
 
   var _client = Client();
 
