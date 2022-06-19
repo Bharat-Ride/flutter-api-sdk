@@ -1,50 +1,113 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 part of openapi.api;
 
 class ChildGroupChildIdsBody {
-  
-  List<num> childIds = [];
-  ChildGroupChildIdsBody();
+  /// Returns a new [ChildGroupChildIdsBody] instance.
+  ChildGroupChildIdsBody({
+    this.childIds = const [],
+  });
+
+  List<num> childIds;
 
   @override
-  String toString() {
-    return 'ChildGroupChildIdsBody[childIds=$childIds, ]';
-  }
+  bool operator ==(Object other) => identical(this, other) || other is ChildGroupChildIdsBody &&
+     other.childIds == childIds;
 
-  ChildGroupChildIdsBody.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    childIds = (json['childIds'] == null) ?
-      null :
-      (json['childIds'] as List).cast<num>();
-  }
+  @override
+  int get hashCode =>
+    // ignore: unnecessary_parenthesis
+    (childIds.hashCode);
+
+  @override
+  String toString() => 'ChildGroupChildIdsBody[childIds=$childIds]';
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (childIds != null)
-      json['childIds'] = childIds;
-    return json;
+    final _json = <String, dynamic>{};
+      _json[r'childIds'] = childIds;
+    return _json;
   }
 
-  static List<ChildGroupChildIdsBody> listFromJson(List<dynamic> json) {
-    return json == null ? List<ChildGroupChildIdsBody>() : json.map((value) => ChildGroupChildIdsBody.fromJson(value)).toList();
+  /// Returns a new [ChildGroupChildIdsBody] instance and imports its values from
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static ChildGroupChildIdsBody? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "ChildGroupChildIdsBody[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "ChildGroupChildIdsBody[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return ChildGroupChildIdsBody(
+        childIds: json[r'childIds'] is List
+            ? (json[r'childIds'] as List).cast<num>()
+            : const [],
+      );
+    }
+    return null;
   }
 
-  static Map<String, ChildGroupChildIdsBody> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ChildGroupChildIdsBody>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ChildGroupChildIdsBody.fromJson(value));
+  static List<ChildGroupChildIdsBody>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <ChildGroupChildIdsBody>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = ChildGroupChildIdsBody.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
+
+  static Map<String, ChildGroupChildIdsBody> mapFromJson(dynamic json) {
+    final map = <String, ChildGroupChildIdsBody>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ChildGroupChildIdsBody.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of ChildGroupChildIdsBody-objects as value to a dart map
-  static Map<String, List<ChildGroupChildIdsBody>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<ChildGroupChildIdsBody>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = ChildGroupChildIdsBody.listFromJson(value);
-       });
-     }
-     return map;
+  static Map<String, List<ChildGroupChildIdsBody>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<ChildGroupChildIdsBody>>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ChildGroupChildIdsBody.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
+    }
+    return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+    'childIds',
+  };
 }
 

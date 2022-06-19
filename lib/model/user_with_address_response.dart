@@ -1,100 +1,233 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 part of openapi.api;
 
 class UserWithAddressResponse {
-  
-  int id = null;
-  
-  String fullName = null;
-  
-  String phoneNumber = null;
-  
-  String profileImageUrl = null;
-  
-  String photoIdUrl = null;
-  
-  String email = null;
-  
-  String dateOfBirth = null;
-  
-  int addressId = null;
-  
-  AddressResponse address = null;
-  
-  String updatedAt = null;
-  
-  String createdAt = null;
-  UserWithAddressResponse();
+  /// Returns a new [UserWithAddressResponse] instance.
+  UserWithAddressResponse({
+    required this.id,
+    required this.fullName,
+    required this.phoneNumber,
+    this.profileImageUrl,
+    this.photoIdUrl,
+    this.email,
+    this.dateOfBirth,
+    this.addressId,
+    this.address,
+    required this.updatedAt,
+    required this.createdAt,
+  });
+
+  int id;
+
+  String fullName;
+
+  String phoneNumber;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? profileImageUrl;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? photoIdUrl;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? email;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? dateOfBirth;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? addressId;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  AddressResponse? address;
+
+  String updatedAt;
+
+  String createdAt;
 
   @override
-  String toString() {
-    return 'UserWithAddressResponse[id=$id, fullName=$fullName, phoneNumber=$phoneNumber, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, address=$address, updatedAt=$updatedAt, createdAt=$createdAt, ]';
-  }
+  bool operator ==(Object other) => identical(this, other) || other is UserWithAddressResponse &&
+     other.id == id &&
+     other.fullName == fullName &&
+     other.phoneNumber == phoneNumber &&
+     other.profileImageUrl == profileImageUrl &&
+     other.photoIdUrl == photoIdUrl &&
+     other.email == email &&
+     other.dateOfBirth == dateOfBirth &&
+     other.addressId == addressId &&
+     other.address == address &&
+     other.updatedAt == updatedAt &&
+     other.createdAt == createdAt;
 
-  UserWithAddressResponse.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    id = json['id'];
-    fullName = json['fullName'];
-    phoneNumber = json['phoneNumber'];
-    profileImageUrl = json['profileImageUrl'];
-    photoIdUrl = json['photoIdUrl'];
-    email = json['email'];
-    dateOfBirth = json['dateOfBirth'];
-    addressId = json['addressId'];
-    address = (json['address'] == null) ?
-      null :
-      AddressResponse.fromJson(json['address']);
-    updatedAt = json['updatedAt'];
-    createdAt = json['createdAt'];
-  }
+  @override
+  int get hashCode =>
+    // ignore: unnecessary_parenthesis
+    (id.hashCode) +
+    (fullName.hashCode) +
+    (phoneNumber.hashCode) +
+    (profileImageUrl == null ? 0 : profileImageUrl!.hashCode) +
+    (photoIdUrl == null ? 0 : photoIdUrl!.hashCode) +
+    (email == null ? 0 : email!.hashCode) +
+    (dateOfBirth == null ? 0 : dateOfBirth!.hashCode) +
+    (addressId == null ? 0 : addressId!.hashCode) +
+    (address == null ? 0 : address!.hashCode) +
+    (updatedAt.hashCode) +
+    (createdAt.hashCode);
+
+  @override
+  String toString() => 'UserWithAddressResponse[id=$id, fullName=$fullName, phoneNumber=$phoneNumber, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, address=$address, updatedAt=$updatedAt, createdAt=$createdAt]';
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (id != null)
-      json['id'] = id;
-    if (fullName != null)
-      json['fullName'] = fullName;
-    if (phoneNumber != null)
-      json['phoneNumber'] = phoneNumber;
-    if (profileImageUrl != null)
-      json['profileImageUrl'] = profileImageUrl;
-    if (photoIdUrl != null)
-      json['photoIdUrl'] = photoIdUrl;
-    if (email != null)
-      json['email'] = email;
-    if (dateOfBirth != null)
-      json['dateOfBirth'] = dateOfBirth;
-    if (addressId != null)
-      json['addressId'] = addressId;
-    if (address != null)
-      json['address'] = address;
-    if (updatedAt != null)
-      json['updatedAt'] = updatedAt;
-    if (createdAt != null)
-      json['createdAt'] = createdAt;
-    return json;
+    final _json = <String, dynamic>{};
+      _json[r'id'] = id;
+      _json[r'fullName'] = fullName;
+      _json[r'phoneNumber'] = phoneNumber;
+    if (profileImageUrl != null) {
+      _json[r'profileImageUrl'] = profileImageUrl;
+    }
+    if (photoIdUrl != null) {
+      _json[r'photoIdUrl'] = photoIdUrl;
+    }
+    if (email != null) {
+      _json[r'email'] = email;
+    }
+    if (dateOfBirth != null) {
+      _json[r'dateOfBirth'] = dateOfBirth;
+    }
+    if (addressId != null) {
+      _json[r'addressId'] = addressId;
+    }
+    if (address != null) {
+      _json[r'address'] = address;
+    }
+      _json[r'updatedAt'] = updatedAt;
+      _json[r'createdAt'] = createdAt;
+    return _json;
   }
 
-  static List<UserWithAddressResponse> listFromJson(List<dynamic> json) {
-    return json == null ? List<UserWithAddressResponse>() : json.map((value) => UserWithAddressResponse.fromJson(value)).toList();
+  /// Returns a new [UserWithAddressResponse] instance and imports its values from
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static UserWithAddressResponse? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UserWithAddressResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UserWithAddressResponse[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return UserWithAddressResponse(
+        id: mapValueOfType<int>(json, r'id')!,
+        fullName: mapValueOfType<String>(json, r'fullName')!,
+        phoneNumber: mapValueOfType<String>(json, r'phoneNumber')!,
+        profileImageUrl: mapValueOfType<String>(json, r'profileImageUrl'),
+        photoIdUrl: mapValueOfType<String>(json, r'photoIdUrl'),
+        email: mapValueOfType<String>(json, r'email'),
+        dateOfBirth: mapValueOfType<String>(json, r'dateOfBirth'),
+        addressId: mapValueOfType<int>(json, r'addressId'),
+        address: AddressResponse.fromJson(json[r'address']),
+        updatedAt: mapValueOfType<String>(json, r'updatedAt')!,
+        createdAt: mapValueOfType<String>(json, r'createdAt')!,
+      );
+    }
+    return null;
   }
 
-  static Map<String, UserWithAddressResponse> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, UserWithAddressResponse>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = UserWithAddressResponse.fromJson(value));
+  static List<UserWithAddressResponse>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <UserWithAddressResponse>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = UserWithAddressResponse.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
+
+  static Map<String, UserWithAddressResponse> mapFromJson(dynamic json) {
+    final map = <String, UserWithAddressResponse>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UserWithAddressResponse.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of UserWithAddressResponse-objects as value to a dart map
-  static Map<String, List<UserWithAddressResponse>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<UserWithAddressResponse>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = UserWithAddressResponse.listFromJson(value);
-       });
-     }
-     return map;
+  static Map<String, List<UserWithAddressResponse>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<UserWithAddressResponse>>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UserWithAddressResponse.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
+    }
+    return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+    'id',
+    'fullName',
+    'phoneNumber',
+    'updatedAt',
+    'createdAt',
+  };
 }
 

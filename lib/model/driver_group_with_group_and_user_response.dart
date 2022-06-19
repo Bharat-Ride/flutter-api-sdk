@@ -1,89 +1,174 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 part of openapi.api;
 
 class DriverGroupWithGroupAndUserResponse {
-  
-  int driverId = null;
-  
-  int groupId = null;
-  
-  UserResponse driver = null;
-  
-  GroupResponse group = null;
-  
-  TripResponse latestTrip = null;
-  
-  String permission = null;
-  
-  String createdAt = null;
-  
-  String updatedAt = null;
-  DriverGroupWithGroupAndUserResponse();
+  /// Returns a new [DriverGroupWithGroupAndUserResponse] instance.
+  DriverGroupWithGroupAndUserResponse({
+    required this.driverId,
+    required this.groupId,
+    required this.driver,
+    required this.group,
+    this.latestTrip,
+    required this.permission,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+
+  int driverId;
+
+  int groupId;
+
+  UserResponse driver;
+
+  GroupResponse group;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  TripResponse? latestTrip;
+
+  String permission;
+
+  String createdAt;
+
+  String updatedAt;
 
   @override
-  String toString() {
-    return 'DriverGroupWithGroupAndUserResponse[driverId=$driverId, groupId=$groupId, driver=$driver, group=$group, latestTrip=$latestTrip, permission=$permission, createdAt=$createdAt, updatedAt=$updatedAt, ]';
-  }
+  bool operator ==(Object other) => identical(this, other) || other is DriverGroupWithGroupAndUserResponse &&
+     other.driverId == driverId &&
+     other.groupId == groupId &&
+     other.driver == driver &&
+     other.group == group &&
+     other.latestTrip == latestTrip &&
+     other.permission == permission &&
+     other.createdAt == createdAt &&
+     other.updatedAt == updatedAt;
 
-  DriverGroupWithGroupAndUserResponse.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    driverId = json['driverId'];
-    groupId = json['groupId'];
-    driver = (json['driver'] == null) ?
-      null :
-      UserResponse.fromJson(json['driver']);
-    group = (json['group'] == null) ?
-      null :
-      GroupResponse.fromJson(json['group']);
-    latestTrip = (json['latestTrip'] == null) ?
-      null :
-      TripResponse.fromJson(json['latestTrip']);
-    permission = json['permission'];
-    createdAt = json['createdAt'];
-    updatedAt = json['updatedAt'];
-  }
+  @override
+  int get hashCode =>
+    // ignore: unnecessary_parenthesis
+    (driverId.hashCode) +
+    (groupId.hashCode) +
+    (driver.hashCode) +
+    (group.hashCode) +
+    (latestTrip == null ? 0 : latestTrip!.hashCode) +
+    (permission.hashCode) +
+    (createdAt.hashCode) +
+    (updatedAt.hashCode);
+
+  @override
+  String toString() => 'DriverGroupWithGroupAndUserResponse[driverId=$driverId, groupId=$groupId, driver=$driver, group=$group, latestTrip=$latestTrip, permission=$permission, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (driverId != null)
-      json['driverId'] = driverId;
-    if (groupId != null)
-      json['groupId'] = groupId;
-    if (driver != null)
-      json['driver'] = driver;
-    if (group != null)
-      json['group'] = group;
-    if (latestTrip != null)
-      json['latestTrip'] = latestTrip;
-    if (permission != null)
-      json['permission'] = permission;
-    if (createdAt != null)
-      json['createdAt'] = createdAt;
-    if (updatedAt != null)
-      json['updatedAt'] = updatedAt;
-    return json;
+    final _json = <String, dynamic>{};
+      _json[r'driverId'] = driverId;
+      _json[r'groupId'] = groupId;
+      _json[r'driver'] = driver;
+      _json[r'group'] = group;
+    if (latestTrip != null) {
+      _json[r'latestTrip'] = latestTrip;
+    }
+      _json[r'permission'] = permission;
+      _json[r'createdAt'] = createdAt;
+      _json[r'updatedAt'] = updatedAt;
+    return _json;
   }
 
-  static List<DriverGroupWithGroupAndUserResponse> listFromJson(List<dynamic> json) {
-    return json == null ? List<DriverGroupWithGroupAndUserResponse>() : json.map((value) => DriverGroupWithGroupAndUserResponse.fromJson(value)).toList();
+  /// Returns a new [DriverGroupWithGroupAndUserResponse] instance and imports its values from
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static DriverGroupWithGroupAndUserResponse? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "DriverGroupWithGroupAndUserResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "DriverGroupWithGroupAndUserResponse[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return DriverGroupWithGroupAndUserResponse(
+        driverId: mapValueOfType<int>(json, r'driverId')!,
+        groupId: mapValueOfType<int>(json, r'groupId')!,
+        driver: UserResponse.fromJson(json[r'driver'])!,
+        group: GroupResponse.fromJson(json[r'group'])!,
+        latestTrip: TripResponse.fromJson(json[r'latestTrip']),
+        permission: mapValueOfType<String>(json, r'permission')!,
+        createdAt: mapValueOfType<String>(json, r'createdAt')!,
+        updatedAt: mapValueOfType<String>(json, r'updatedAt')!,
+      );
+    }
+    return null;
   }
 
-  static Map<String, DriverGroupWithGroupAndUserResponse> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DriverGroupWithGroupAndUserResponse>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = DriverGroupWithGroupAndUserResponse.fromJson(value));
+  static List<DriverGroupWithGroupAndUserResponse>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <DriverGroupWithGroupAndUserResponse>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = DriverGroupWithGroupAndUserResponse.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
+
+  static Map<String, DriverGroupWithGroupAndUserResponse> mapFromJson(dynamic json) {
+    final map = <String, DriverGroupWithGroupAndUserResponse>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = DriverGroupWithGroupAndUserResponse.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of DriverGroupWithGroupAndUserResponse-objects as value to a dart map
-  static Map<String, List<DriverGroupWithGroupAndUserResponse>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<DriverGroupWithGroupAndUserResponse>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = DriverGroupWithGroupAndUserResponse.listFromJson(value);
-       });
-     }
-     return map;
+  static Map<String, List<DriverGroupWithGroupAndUserResponse>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<DriverGroupWithGroupAndUserResponse>>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = DriverGroupWithGroupAndUserResponse.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
+    }
+    return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+    'driverId',
+    'groupId',
+    'driver',
+    'group',
+    'permission',
+    'createdAt',
+    'updatedAt',
+  };
 }
 

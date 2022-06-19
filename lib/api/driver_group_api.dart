@@ -1,242 +1,255 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 part of openapi.api;
 
 
-
 class DriverGroupApi {
+  DriverGroupApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
   final ApiClient apiClient;
 
-  DriverGroupApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
-
-  /// Returns boolean indicating whether the driver was deleted from the group with HTTP info returned
+  /// Returns boolean indicating whether the driver was deleted from the group
   ///
   /// Delete driver from group
-  Future<Response> driverGroupsDriverDriverIdGroupGroupIdDeleteWithHttpInfo(int groupId, int driverId) async {
-    Object postBody;
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group id
+  ///
+  /// * [int] driverId (required):
+  ///   Driver id
+  Future<Response> driverGroupsDriverDriverIdGroupGroupIdDeleteWithHttpInfo(int groupId, int driverId,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/driver-groups/driver/{driverId}/group/{groupId}/'
+      .replaceAll('{groupId}', groupId.toString())
+      .replaceAll('{driverId}', driverId.toString());
 
-    // verify required params are set
-    if(groupId == null) {
-     throw ApiException(400, "Missing required param: groupId");
-    }
-    if(driverId == null) {
-     throw ApiException(400, "Missing required param: driverId");
-    }
+    // ignore: prefer_final_locals
+    Object? postBody;
 
-    // create path and map variables
-    String path = "/driver-groups/driver/{driverId}/group/{groupId}/".replaceAll("{format}","json").replaceAll("{" + "groupId" + "}", groupId.toString()).replaceAll("{" + "driverId" + "}", driverId.toString());
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    const contentTypes = <String>[];
 
-    List<String> contentTypes = [];
 
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
-    }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'DELETE',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return apiClient.invokeAPI(
+      path,
+      'DELETE',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
   /// Returns boolean indicating whether the driver was deleted from the group
   ///
   /// Delete driver from group
-  Future<DeleteRecordsResponse> driverGroupsDriverDriverIdGroupGroupIdDelete(int groupId, int driverId) async {
-    Response response = await driverGroupsDriverDriverIdGroupGroupIdDeleteWithHttpInfo(groupId, driverId);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'DeleteRecordsResponse') as DeleteRecordsResponse;
-    } else {
-      return null;
-    }
-  }
-
-  /// Returns array of drivers by groupId with HTTP info returned
   ///
-  /// Get groups by driverId
-  Future<Response> driverGroupsDriversGroupGroupIdGetWithHttpInfo(int groupId) async {
-    Object postBody;
-
-    // verify required params are set
-    if(groupId == null) {
-     throw ApiException(400, "Missing required param: groupId");
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group id
+  ///
+  /// * [int] driverId (required):
+  ///   Driver id
+  Future<DeleteRecordsResponse?> driverGroupsDriverDriverIdGroupGroupIdDelete(int groupId, int driverId,) async {
+    final response = await driverGroupsDriverDriverIdGroupGroupIdDeleteWithHttpInfo(groupId, driverId,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-
-    // create path and map variables
-    String path = "/driver-groups/drivers/group/{groupId}/".replaceAll("{format}","json").replaceAll("{" + "groupId" + "}", groupId.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'DeleteRecordsResponse',) as DeleteRecordsResponse;
+    
     }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns array of drivers by groupId
   ///
   /// Get groups by driverId
-  Future<List<DriverGroupWithUserResponse>> driverGroupsDriversGroupGroupIdGet(int groupId) async {
-    Response response = await driverGroupsDriversGroupGroupIdGetWithHttpInfo(groupId);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<DriverGroupWithUserResponse>') as List).map((item) => item as DriverGroupWithUserResponse).toList();
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group id
+  Future<Response> driverGroupsDriversGroupGroupIdGetWithHttpInfo(int groupId,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/driver-groups/drivers/group/{groupId}/'
+      .replaceAll('{groupId}', groupId.toString());
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
-  /// Returns array of group by driverId with HTTP info returned
+  /// Returns array of drivers by groupId
   ///
   /// Get groups by driverId
-  Future<Response> driverGroupsGetWithHttpInfo() async {
-    Object postBody;
-
-    // verify required params are set
-
-    // create path and map variables
-    String path = "/driver-groups/".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
+  ///
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group id
+  Future<List<DriverGroupWithUserResponse>?> driverGroupsDriversGroupGroupIdGet(int groupId,) async {
+    final response = await driverGroupsDriversGroupGroupIdGetWithHttpInfo(groupId,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    else {
-    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<DriverGroupWithUserResponse>') as List)
+        .cast<DriverGroupWithUserResponse>()
+        .toList();
 
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    }
+    return null;
   }
 
   /// Returns array of group by driverId
   ///
   /// Get groups by driverId
-  Future<List<DriverGroupWithGroupAndUserResponse>> driverGroupsGet() async {
-    Response response = await driverGroupsGetWithHttpInfo();
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<DriverGroupWithGroupAndUserResponse>') as List).map((item) => item as DriverGroupWithGroupAndUserResponse).toList();
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  Future<Response> driverGroupsGetWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/driver-groups/';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
-  /// Returns boolean indicating whether the driver was added to the group with HTTP info returned
+  /// Returns array of group by driverId
   ///
-  /// Add drivers to the group
-  Future<Response> driverGroupsPostWithHttpInfo(AddDriverToGroupBody addDriverToGroupBody) async {
-    Object postBody = addDriverToGroupBody;
-
-    // verify required params are set
-    if(addDriverToGroupBody == null) {
-     throw ApiException(400, "Missing required param: addDriverToGroupBody");
+  /// Get groups by driverId
+  Future<List<DriverGroupWithGroupAndUserResponse>?> driverGroupsGet() async {
+    final response = await driverGroupsGetWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<DriverGroupWithGroupAndUserResponse>') as List)
+        .cast<DriverGroupWithGroupAndUserResponse>()
+        .toList();
 
-    // create path and map variables
-    String path = "/driver-groups/".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
     }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'POST',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns boolean indicating whether the driver was added to the group
   ///
   /// Add drivers to the group
-  Future<DriverGroupResponse> driverGroupsPost(AddDriverToGroupBody addDriverToGroupBody) async {
-    Response response = await driverGroupsPostWithHttpInfo(addDriverToGroupBody);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'DriverGroupResponse') as DriverGroupResponse;
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [AddDriverToGroupBody] addDriverToGroupBody (required):
+  ///   Group body
+  Future<Response> driverGroupsPostWithHttpInfo(AddDriverToGroupBody addDriverToGroupBody,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/driver-groups/';
+
+    // ignore: prefer_final_locals
+    Object? postBody = addDriverToGroupBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
+  /// Returns boolean indicating whether the driver was added to the group
+  ///
+  /// Add drivers to the group
+  ///
+  /// Parameters:
+  ///
+  /// * [AddDriverToGroupBody] addDriverToGroupBody (required):
+  ///   Group body
+  Future<DriverGroupResponse?> driverGroupsPost(AddDriverToGroupBody addDriverToGroupBody,) async {
+    final response = await driverGroupsPostWithHttpInfo(addDriverToGroupBody,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'DriverGroupResponse',) as DriverGroupResponse;
+    
+    }
+    return null;
+  }
 }

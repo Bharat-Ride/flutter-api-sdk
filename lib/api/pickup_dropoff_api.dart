@@ -1,300 +1,318 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 part of openapi.api;
 
 
-
 class PickupDropoffApi {
+  PickupDropoffApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
   final ApiClient apiClient;
 
-  PickupDropoffApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
-
-  /// Returns array of pickup-dropoff by tripId with HTTP info returned
+  /// Returns array of pickup-dropoff by tripId
   ///
   /// Get pickup-dropoff by tripId
-  Future<Response> pickupDropoffsTripsTripIdGetWithHttpInfo(int tripId) async {
-    Object postBody;
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] tripId (required):
+  ///   Trip id
+  Future<Response> pickupDropoffsTripsTripIdGetWithHttpInfo(int tripId,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/pickup-dropoffs/trips/{tripId}/'
+      .replaceAll('{tripId}', tripId.toString());
 
-    // verify required params are set
-    if(tripId == null) {
-     throw ApiException(400, "Missing required param: tripId");
-    }
+    // ignore: prefer_final_locals
+    Object? postBody;
 
-    // create path and map variables
-    String path = "/pickup-dropoffs/trips/{tripId}/".replaceAll("{format}","json").replaceAll("{" + "tripId" + "}", tripId.toString());
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    const contentTypes = <String>[];
 
-    List<String> contentTypes = [];
 
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
-    }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
   /// Returns array of pickup-dropoff by tripId
   ///
   /// Get pickup-dropoff by tripId
-  Future<List<PickupDropoffWithTripAndChildAndDriverResponse>> pickupDropoffsTripsTripIdGet(int tripId) async {
-    Response response = await pickupDropoffsTripsTripIdGetWithHttpInfo(tripId);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<PickupDropoffWithTripAndChildAndDriverResponse>') as List).map((item) => item as PickupDropoffWithTripAndChildAndDriverResponse).toList();
-    } else {
-      return null;
-    }
-  }
-
-  /// Returns array of pickupdropoff with HTTP info returned
   ///
-  /// Absent childrens by tripId
-  Future<Response> tripsAbsentPostWithHttpInfo(CreateAbsentBody createAbsentBody) async {
-    Object postBody = createAbsentBody;
-
-    // verify required params are set
-    if(createAbsentBody == null) {
-     throw ApiException(400, "Missing required param: createAbsentBody");
+  /// Parameters:
+  ///
+  /// * [int] tripId (required):
+  ///   Trip id
+  Future<List<PickupDropoffWithTripAndChildAndDriverResponse>?> pickupDropoffsTripsTripIdGet(int tripId,) async {
+    final response = await pickupDropoffsTripsTripIdGetWithHttpInfo(tripId,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<PickupDropoffWithTripAndChildAndDriverResponse>') as List)
+        .cast<PickupDropoffWithTripAndChildAndDriverResponse>()
+        .toList();
 
-    // create path and map variables
-    String path = "/trips/absent/".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
     }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'POST',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns array of pickupdropoff
   ///
   /// Absent childrens by tripId
-  Future<List<PickupDropoffResponse>> tripsAbsentPost(CreateAbsentBody createAbsentBody) async {
-    Response response = await tripsAbsentPostWithHttpInfo(createAbsentBody);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<PickupDropoffResponse>') as List).map((item) => item as PickupDropoffResponse).toList();
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [CreateAbsentBody] createAbsentBody (required):
+  ///   Group body
+  Future<Response> tripsAbsentPostWithHttpInfo(CreateAbsentBody createAbsentBody,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/trips/absent/';
+
+    // ignore: prefer_final_locals
+    Object? postBody = createAbsentBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
-  /// Returns number of children Dropoff with HTTP info returned
+  /// Returns array of pickupdropoff
   ///
-  /// Dropoff childrens by tripId
-  Future<Response> tripsDropoffPutWithHttpInfo(CreateDropoffBody createDropoffBody) async {
-    Object postBody = createDropoffBody;
-
-    // verify required params are set
-    if(createDropoffBody == null) {
-     throw ApiException(400, "Missing required param: createDropoffBody");
+  /// Absent childrens by tripId
+  ///
+  /// Parameters:
+  ///
+  /// * [CreateAbsentBody] createAbsentBody (required):
+  ///   Group body
+  Future<List<PickupDropoffResponse>?> tripsAbsentPost(CreateAbsentBody createAbsentBody,) async {
+    final response = await tripsAbsentPostWithHttpInfo(createAbsentBody,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<PickupDropoffResponse>') as List)
+        .cast<PickupDropoffResponse>()
+        .toList();
 
-    // create path and map variables
-    String path = "/trips/dropoff/".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
     }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'PUT',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns number of children Dropoff
   ///
   /// Dropoff childrens by tripId
-  Future<UpdateRecordsResponse> tripsDropoffPut(CreateDropoffBody createDropoffBody) async {
-    Response response = await tripsDropoffPutWithHttpInfo(createDropoffBody);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'UpdateRecordsResponse') as UpdateRecordsResponse;
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [CreateDropoffBody] createDropoffBody (required):
+  ///   Group body
+  Future<Response> tripsDropoffPutWithHttpInfo(CreateDropoffBody createDropoffBody,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/trips/dropoff/';
+
+    // ignore: prefer_final_locals
+    Object? postBody = createDropoffBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'PUT',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
-  /// Returns number of children marked not absent with HTTP info returned
+  /// Returns number of children Dropoff
   ///
-  /// Delete absent childrens by tripId
-  Future<Response> tripsNotAbsentPutWithHttpInfo(CreateNotAbsentBody createNotAbsentBody) async {
-    Object postBody = createNotAbsentBody;
-
-    // verify required params are set
-    if(createNotAbsentBody == null) {
-     throw ApiException(400, "Missing required param: createNotAbsentBody");
+  /// Dropoff childrens by tripId
+  ///
+  /// Parameters:
+  ///
+  /// * [CreateDropoffBody] createDropoffBody (required):
+  ///   Group body
+  Future<UpdateRecordsResponse?> tripsDropoffPut(CreateDropoffBody createDropoffBody,) async {
+    final response = await tripsDropoffPutWithHttpInfo(createDropoffBody,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-
-    // create path and map variables
-    String path = "/trips/not-absent/".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UpdateRecordsResponse',) as UpdateRecordsResponse;
+    
     }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'PUT',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns number of children marked not absent
   ///
   /// Delete absent childrens by tripId
-  Future<UpdateRecordsResponse> tripsNotAbsentPut(CreateNotAbsentBody createNotAbsentBody) async {
-    Response response = await tripsNotAbsentPutWithHttpInfo(createNotAbsentBody);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'UpdateRecordsResponse') as UpdateRecordsResponse;
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [CreateNotAbsentBody] createNotAbsentBody (required):
+  ///   Group body
+  Future<Response> tripsNotAbsentPutWithHttpInfo(CreateNotAbsentBody createNotAbsentBody,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/trips/not-absent/';
+
+    // ignore: prefer_final_locals
+    Object? postBody = createNotAbsentBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'PUT',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
-  /// Returns array of pickupdropoff with HTTP info returned
+  /// Returns number of children marked not absent
   ///
-  /// Pickup childrens by tripId
-  Future<Response> tripsPickupPostWithHttpInfo(CreatePickupBody createPickupBody) async {
-    Object postBody = createPickupBody;
-
-    // verify required params are set
-    if(createPickupBody == null) {
-     throw ApiException(400, "Missing required param: createPickupBody");
+  /// Delete absent childrens by tripId
+  ///
+  /// Parameters:
+  ///
+  /// * [CreateNotAbsentBody] createNotAbsentBody (required):
+  ///   Group body
+  Future<UpdateRecordsResponse?> tripsNotAbsentPut(CreateNotAbsentBody createNotAbsentBody,) async {
+    final response = await tripsNotAbsentPutWithHttpInfo(createNotAbsentBody,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-
-    // create path and map variables
-    String path = "/trips/pickup/".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UpdateRecordsResponse',) as UpdateRecordsResponse;
+    
     }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'POST',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns array of pickupdropoff
   ///
   /// Pickup childrens by tripId
-  Future<List<PickupDropoffResponse>> tripsPickupPost(CreatePickupBody createPickupBody) async {
-    Response response = await tripsPickupPostWithHttpInfo(createPickupBody);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<PickupDropoffResponse>') as List).map((item) => item as PickupDropoffResponse).toList();
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [CreatePickupBody] createPickupBody (required):
+  ///   Group body
+  Future<Response> tripsPickupPostWithHttpInfo(CreatePickupBody createPickupBody,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/trips/pickup/';
+
+    // ignore: prefer_final_locals
+    Object? postBody = createPickupBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
+  /// Returns array of pickupdropoff
+  ///
+  /// Pickup childrens by tripId
+  ///
+  /// Parameters:
+  ///
+  /// * [CreatePickupBody] createPickupBody (required):
+  ///   Group body
+  Future<List<PickupDropoffResponse>?> tripsPickupPost(CreatePickupBody createPickupBody,) async {
+    final response = await tripsPickupPostWithHttpInfo(createPickupBody,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<PickupDropoffResponse>') as List)
+        .cast<PickupDropoffResponse>()
+        .toList();
+
+    }
+    return null;
+  }
 }

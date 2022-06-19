@@ -9,14 +9,14 @@ All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**childTripsLatestGet**](TripApi.md#childTripsLatestGet) | **GET** /child-trips/latest/ | Returns array of latest trip for each child by user
-[**distanceActiveTripsGet**](TripApi.md#distanceActiveTripsGet) | **GET** /distance/active/trips/ | Update distance and duration for all the active trips
-[**driverTripsLatestGet**](TripApi.md#driverTripsLatestGet) | **GET** /driver-trips/latest/ | Returns array of trips by driver
-[**inactiveTripsPatch**](TripApi.md#inactiveTripsPatch) | **PATCH** /inactive/trips/ | Return number of trips updated
-[**tripEndPut**](TripApi.md#tripEndPut) | **PUT** /trip/end/ | Return number of trips ended
-[**tripLocationPatch**](TripApi.md#tripLocationPatch) | **PATCH** /trip/location/ | Return number of trips updated
-[**tripStartPost**](TripApi.md#tripStartPost) | **POST** /trip/start/ | Return newly created trip
-[**tripsGroupsGroupIdGet**](TripApi.md#tripsGroupsGroupIdGet) | **GET** /trips/groups/{groupId}/ | Returns array of trips by groupId
+[**childTripsLatestGet**](TripApi.md#childtripslatestget) | **GET** /child-trips/latest/ | Returns array of latest trip for each child by user
+[**distanceActiveTripsGet**](TripApi.md#distanceactivetripsget) | **GET** /distance/active/trips/ | Update distance and duration for all the active trips
+[**driverTripsLatestGet**](TripApi.md#drivertripslatestget) | **GET** /driver-trips/latest/ | Returns array of trips by driver
+[**inactiveTripsPatch**](TripApi.md#inactivetripspatch) | **PATCH** /inactive/trips/ | Return number of trips updated
+[**tripEndPut**](TripApi.md#tripendput) | **PUT** /trip/end/ | Return number of trips ended
+[**tripLocationPatch**](TripApi.md#triplocationpatch) | **PATCH** /trip/location/ | Return number of trips updated
+[**tripStartPost**](TripApi.md#tripstartpost) | **POST** /trip/start/ | Return newly created trip
+[**tripsGroupsGroupIdGet**](TripApi.md#tripsgroupsgroupidget) | **GET** /trips/groups/{groupId}/ | Returns array of trips by groupId
 
 
 # **childTripsLatestGet**
@@ -26,7 +26,7 @@ Returns array of latest trip for each child by user
 
 Get latest trips for each child by user
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -36,13 +36,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = TripApi();
+final api_instance = TripApi();
 
-try { 
-    var result = api_instance.childTripsLatestGet();
+try {
+    final result = api_instance.childTripsLatestGet();
     print(result);
 } catch (e) {
-    print("Exception when calling TripApi->childTripsLatestGet: $e\n");
+    print('Exception when calling TripApi->childTripsLatestGet: $e\n');
 }
 ```
 
@@ -71,7 +71,7 @@ Update distance and duration for all the active trips
 
 Update active trip distance
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -81,12 +81,12 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = TripApi();
+final api_instance = TripApi();
 
-try { 
+try {
     api_instance.distanceActiveTripsGet();
 } catch (e) {
-    print("Exception when calling TripApi->distanceActiveTripsGet: $e\n");
+    print('Exception when calling TripApi->distanceActiveTripsGet: $e\n');
 }
 ```
 
@@ -115,7 +115,7 @@ Returns array of trips by driver
 
 Get latest trips by driver
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -125,13 +125,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = TripApi();
+final api_instance = TripApi();
 
-try { 
-    var result = api_instance.driverTripsLatestGet();
+try {
+    final result = api_instance.driverTripsLatestGet();
     print(result);
 } catch (e) {
-    print("Exception when calling TripApi->driverTripsLatestGet: $e\n");
+    print('Exception when calling TripApi->driverTripsLatestGet: $e\n');
 }
 ```
 
@@ -160,7 +160,7 @@ Return number of trips updated
 
 End inactive trip that are not updated since last 2 hours
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -170,12 +170,12 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = TripApi();
+final api_instance = TripApi();
 
-try { 
+try {
     api_instance.inactiveTripsPatch();
 } catch (e) {
-    print("Exception when calling TripApi->inactiveTripsPatch: $e\n");
+    print('Exception when calling TripApi->inactiveTripsPatch: $e\n');
 }
 ```
 
@@ -204,7 +204,7 @@ Return number of trips ended
 
 End a trip
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -214,14 +214,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = TripApi();
-var endTripBody = EndTripBody(); // EndTripBody | Group body
+final api_instance = TripApi();
+final endTripBody = EndTripBody(); // EndTripBody | Group body
 
-try { 
-    var result = api_instance.tripEndPut(endTripBody);
+try {
+    final result = api_instance.tripEndPut(endTripBody);
     print(result);
 } catch (e) {
-    print("Exception when calling TripApi->tripEndPut: $e\n");
+    print('Exception when calling TripApi->tripEndPut: $e\n');
 }
 ```
 
@@ -253,7 +253,7 @@ Return number of trips updated
 
 Update trip current driver location
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -263,14 +263,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = TripApi();
-var driverLocationUpdateTripBody = DriverLocationUpdateTripBody(); // DriverLocationUpdateTripBody | Group body
+final api_instance = TripApi();
+final driverLocationUpdateTripBody = DriverLocationUpdateTripBody(); // DriverLocationUpdateTripBody | Group body
 
-try { 
-    var result = api_instance.tripLocationPatch(driverLocationUpdateTripBody);
+try {
+    final result = api_instance.tripLocationPatch(driverLocationUpdateTripBody);
     print(result);
 } catch (e) {
-    print("Exception when calling TripApi->tripLocationPatch: $e\n");
+    print('Exception when calling TripApi->tripLocationPatch: $e\n');
 }
 ```
 
@@ -302,7 +302,7 @@ Return newly created trip
 
 Start a new trip
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -312,14 +312,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = TripApi();
-var startTripBody = StartTripBody(); // StartTripBody | Group body
+final api_instance = TripApi();
+final startTripBody = StartTripBody(); // StartTripBody | Group body
 
-try { 
-    var result = api_instance.tripStartPost(startTripBody);
+try {
+    final result = api_instance.tripStartPost(startTripBody);
     print(result);
 } catch (e) {
-    print("Exception when calling TripApi->tripStartPost: $e\n");
+    print('Exception when calling TripApi->tripStartPost: $e\n');
 }
 ```
 
@@ -351,7 +351,7 @@ Returns array of trips by groupId
 
 Get trips by groupId
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -361,14 +361,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = TripApi();
-var groupId = 56; // int | Group id
+final api_instance = TripApi();
+final groupId = 56; // int | Group id
 
-try { 
-    var result = api_instance.tripsGroupsGroupIdGet(groupId);
+try {
+    final result = api_instance.tripsGroupsGroupIdGet(groupId);
     print(result);
 } catch (e) {
-    print("Exception when calling TripApi->tripsGroupsGroupIdGet: $e\n");
+    print('Exception when calling TripApi->tripsGroupsGroupIdGet: $e\n');
 }
 ```
 
@@ -376,7 +376,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **int**| Group id | [default to null]
+ **groupId** | **int**| Group id | 
 
 ### Return type
 

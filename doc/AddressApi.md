@@ -9,10 +9,10 @@ All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addressIdDelete**](AddressApi.md#addressIdDelete) | **DELETE** /address/{id}/ | Returns number of address deleted by id
-[**addressIdGet**](AddressApi.md#addressIdGet) | **GET** /address/{id}/ | Returns address object by id
-[**addressPost**](AddressApi.md#addressPost) | **POST** /address/ | Returns address object
-[**addressPut**](AddressApi.md#addressPut) | **PUT** /address/ | Returns number of address updated
+[**addressIdDelete**](AddressApi.md#addressiddelete) | **DELETE** /address/{id}/ | Returns number of address deleted by id
+[**addressIdGet**](AddressApi.md#addressidget) | **GET** /address/{id}/ | Returns address object by id
+[**addressPost**](AddressApi.md#addresspost) | **POST** /address/ | Returns address object
+[**addressPut**](AddressApi.md#addressput) | **PUT** /address/ | Returns number of address updated
 
 
 # **addressIdDelete**
@@ -22,7 +22,7 @@ Returns number of address deleted by id
 
 Delete the address by id
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -32,14 +32,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = AddressApi();
-var id = 8.14; // num | Address id
+final api_instance = AddressApi();
+final id = 8.14; // num | Address id
 
-try { 
-    var result = api_instance.addressIdDelete(id);
+try {
+    final result = api_instance.addressIdDelete(id);
     print(result);
 } catch (e) {
-    print("Exception when calling AddressApi->addressIdDelete: $e\n");
+    print('Exception when calling AddressApi->addressIdDelete: $e\n');
 }
 ```
 
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **num**| Address id | [default to null]
+ **id** | **num**| Address id | 
 
 ### Return type
 
@@ -71,7 +71,7 @@ Returns address object by id
 
 Get the address by id
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -81,14 +81,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = AddressApi();
-var id = 8.14; // num | Address id
+final api_instance = AddressApi();
+final id = 8.14; // num | Address id
 
-try { 
-    var result = api_instance.addressIdGet(id);
+try {
+    final result = api_instance.addressIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling AddressApi->addressIdGet: $e\n");
+    print('Exception when calling AddressApi->addressIdGet: $e\n');
 }
 ```
 
@@ -96,7 +96,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **num**| Address id | [default to null]
+ **id** | **num**| Address id | 
 
 ### Return type
 
@@ -120,7 +120,7 @@ Returns address object
 
 Create an address
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -130,14 +130,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = AddressApi();
-var createAddressBody = CreateAddressBody(); // CreateAddressBody | Address body
+final api_instance = AddressApi();
+final createAddressBody = CreateAddressBody(); // CreateAddressBody | Address body
 
-try { 
-    var result = api_instance.addressPost(createAddressBody);
+try {
+    final result = api_instance.addressPost(createAddressBody);
     print(result);
 } catch (e) {
-    print("Exception when calling AddressApi->addressPost: $e\n");
+    print('Exception when calling AddressApi->addressPost: $e\n');
 }
 ```
 
@@ -169,7 +169,7 @@ Returns number of address updated
 
 Update an address
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -179,14 +179,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = AddressApi();
-var updateAddressBody = UpdateAddressBody(); // UpdateAddressBody | Address body
+final api_instance = AddressApi();
+final updateAddressBody = UpdateAddressBody(); // UpdateAddressBody | Address body
 
-try { 
-    var result = api_instance.addressPut(updateAddressBody);
+try {
+    final result = api_instance.addressPut(updateAddressBody);
     print(result);
 } catch (e) {
-    print("Exception when calling AddressApi->addressPut: $e\n");
+    print('Exception when calling AddressApi->addressPut: $e\n');
 }
 ```
 

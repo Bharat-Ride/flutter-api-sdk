@@ -38,6 +38,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "clock",
+      "rootUri": "file:///Users/vishvajitkher/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "collection",
       "rootUri": "file:///Users/vishvajitkher/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0",
       "packageUri": "lib/",
@@ -88,6 +94,12 @@
     {
       "name": "http_parser",
       "rootUri": "file:///Users/vishvajitkher/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///Users/vishvajitkher/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -287,10 +299,10 @@
       "name": "openapi",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-06-19T21:16:16.764663Z",
+  "generated": "2022-06-19T22:16:47.510257Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }

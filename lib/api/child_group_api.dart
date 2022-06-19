@@ -1,422 +1,452 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 part of openapi.api;
 
 
-
 class ChildGroupApi {
+  ChildGroupApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
   final ApiClient apiClient;
 
-  ChildGroupApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
-
-  /// Returns array of child-group by childId with HTTP info returned
+  /// Returns array of child-group by childId
   ///
   /// Get childs by childId
-  Future<Response> childGroupsChildIdGetWithHttpInfo(int childId) async {
-    Object postBody;
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] childId (required):
+  ///   ChildId Id
+  Future<Response> childGroupsChildIdGetWithHttpInfo(int childId,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/child-groups/{childId}/'
+      .replaceAll('{childId}', childId.toString());
 
-    // verify required params are set
-    if(childId == null) {
-     throw ApiException(400, "Missing required param: childId");
-    }
+    // ignore: prefer_final_locals
+    Object? postBody;
 
-    // create path and map variables
-    String path = "/child-groups/{childId}/".replaceAll("{format}","json").replaceAll("{" + "childId" + "}", childId.toString());
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    const contentTypes = <String>[];
 
-    List<String> contentTypes = [];
 
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
-    }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
   /// Returns array of child-group by childId
   ///
   /// Get childs by childId
-  Future<List<ChildGroupWithChildWithGroupResponse>> childGroupsChildIdGet(int childId) async {
-    Response response = await childGroupsChildIdGetWithHttpInfo(childId);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<ChildGroupWithChildWithGroupResponse>') as List).map((item) => item as ChildGroupWithChildWithGroupResponse).toList();
-    } else {
-      return null;
-    }
-  }
-
-  /// Returns array of child-group by user with HTTP info returned
   ///
-  /// Get childs by user
-  Future<Response> childGroupsGetWithHttpInfo() async {
-    Object postBody;
-
-    // verify required params are set
-
-    // create path and map variables
-    String path = "/child-groups/".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
+  /// Parameters:
+  ///
+  /// * [int] childId (required):
+  ///   ChildId Id
+  Future<List<ChildGroupWithChildWithGroupResponse>?> childGroupsChildIdGet(int childId,) async {
+    final response = await childGroupsChildIdGetWithHttpInfo(childId,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    else {
-    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<ChildGroupWithChildWithGroupResponse>') as List)
+        .cast<ChildGroupWithChildWithGroupResponse>()
+        .toList();
 
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    }
+    return null;
   }
 
   /// Returns array of child-group by user
   ///
   /// Get childs by user
-  Future<List<ChildGroupWithChildWithGroupResponse>> childGroupsGet() async {
-    Response response = await childGroupsGetWithHttpInfo();
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<ChildGroupWithChildWithGroupResponse>') as List).map((item) => item as ChildGroupWithChildWithGroupResponse).toList();
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  Future<Response> childGroupsGetWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/child-groups/';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
-  /// Returns number of child-group items updated with HTTP info returned
+  /// Returns array of child-group by user
   ///
-  /// Update the child-group monthly fees
-  Future<Response> childGroupsMonthlyFeesPutWithHttpInfo(ChildGroupMonthlyFeesBody childGroupMonthlyFeesBody) async {
-    Object postBody = childGroupMonthlyFeesBody;
-
-    // verify required params are set
-    if(childGroupMonthlyFeesBody == null) {
-     throw ApiException(400, "Missing required param: childGroupMonthlyFeesBody");
+  /// Get childs by user
+  Future<List<ChildGroupWithChildWithGroupResponse>?> childGroupsGet() async {
+    final response = await childGroupsGetWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<ChildGroupWithChildWithGroupResponse>') as List)
+        .cast<ChildGroupWithChildWithGroupResponse>()
+        .toList();
 
-    // create path and map variables
-    String path = "/child-groups/monthly-fees/".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
     }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'PUT',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns number of child-group items updated
   ///
   /// Update the child-group monthly fees
-  Future<List<UpdateRecordsResponse>> childGroupsMonthlyFeesPut(ChildGroupMonthlyFeesBody childGroupMonthlyFeesBody) async {
-    Response response = await childGroupsMonthlyFeesPutWithHttpInfo(childGroupMonthlyFeesBody);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<UpdateRecordsResponse>') as List).map((item) => item as UpdateRecordsResponse).toList();
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [ChildGroupMonthlyFeesBody] childGroupMonthlyFeesBody (required):
+  ///   Child Group body
+  Future<Response> childGroupsMonthlyFeesPutWithHttpInfo(ChildGroupMonthlyFeesBody childGroupMonthlyFeesBody,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/child-groups/monthly-fees/';
+
+    // ignore: prefer_final_locals
+    Object? postBody = childGroupMonthlyFeesBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'PUT',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
-  /// Returns added child to the group with HTTP info returned
+  /// Returns number of child-group items updated
   ///
-  /// Add childs to group
-  Future<Response> childsGroupsGroupIdAddPostWithHttpInfo(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody) async {
-    Object postBody = childGroupChildIdsBody;
-
-    // verify required params are set
-    if(groupId == null) {
-     throw ApiException(400, "Missing required param: groupId");
+  /// Update the child-group monthly fees
+  ///
+  /// Parameters:
+  ///
+  /// * [ChildGroupMonthlyFeesBody] childGroupMonthlyFeesBody (required):
+  ///   Child Group body
+  Future<List<UpdateRecordsResponse>?> childGroupsMonthlyFeesPut(ChildGroupMonthlyFeesBody childGroupMonthlyFeesBody,) async {
+    final response = await childGroupsMonthlyFeesPutWithHttpInfo(childGroupMonthlyFeesBody,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    if(childGroupChildIdsBody == null) {
-     throw ApiException(400, "Missing required param: childGroupChildIdsBody");
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<UpdateRecordsResponse>') as List)
+        .cast<UpdateRecordsResponse>()
+        .toList();
+
     }
-
-    // create path and map variables
-    String path = "/childs/groups/{groupId}/add/".replaceAll("{format}","json").replaceAll("{" + "groupId" + "}", groupId.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
-    }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'POST',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns added child to the group
   ///
   /// Add childs to group
-  Future<List<ChildGroupResponse>> childsGroupsGroupIdAddPost(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody) async {
-    Response response = await childsGroupsGroupIdAddPostWithHttpInfo(groupId, childGroupChildIdsBody);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<ChildGroupResponse>') as List).map((item) => item as ChildGroupResponse).toList();
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group Id
+  ///
+  /// * [ChildGroupChildIdsBody] childGroupChildIdsBody (required):
+  ///   ChildIds body
+  Future<Response> childsGroupsGroupIdAddPostWithHttpInfo(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/childs/groups/{groupId}/add/'
+      .replaceAll('{groupId}', groupId.toString());
+
+    // ignore: prefer_final_locals
+    Object? postBody = childGroupChildIdsBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
-  /// Returns number of child removed from the group with HTTP info returned
+  /// Returns added child to the group
   ///
-  /// Removes childs from group
-  Future<Response> childsGroupsGroupIdDeletePutWithHttpInfo(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody) async {
-    Object postBody = childGroupChildIdsBody;
-
-    // verify required params are set
-    if(groupId == null) {
-     throw ApiException(400, "Missing required param: groupId");
+  /// Add childs to group
+  ///
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group Id
+  ///
+  /// * [ChildGroupChildIdsBody] childGroupChildIdsBody (required):
+  ///   ChildIds body
+  Future<List<ChildGroupResponse>?> childsGroupsGroupIdAddPost(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody,) async {
+    final response = await childsGroupsGroupIdAddPostWithHttpInfo(groupId, childGroupChildIdsBody,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    if(childGroupChildIdsBody == null) {
-     throw ApiException(400, "Missing required param: childGroupChildIdsBody");
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<ChildGroupResponse>') as List)
+        .cast<ChildGroupResponse>()
+        .toList();
+
     }
-
-    // create path and map variables
-    String path = "/childs/groups/{groupId}/delete/".replaceAll("{format}","json").replaceAll("{" + "groupId" + "}", groupId.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
-    }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'PUT',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns number of child removed from the group
   ///
   /// Removes childs from group
-  Future<UpdateRecordsResponse> childsGroupsGroupIdDeletePut(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody) async {
-    Response response = await childsGroupsGroupIdDeletePutWithHttpInfo(groupId, childGroupChildIdsBody);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'UpdateRecordsResponse') as UpdateRecordsResponse;
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group Id
+  ///
+  /// * [ChildGroupChildIdsBody] childGroupChildIdsBody (required):
+  ///   ChildIds body
+  Future<Response> childsGroupsGroupIdDeletePutWithHttpInfo(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/childs/groups/{groupId}/delete/'
+      .replaceAll('{groupId}', groupId.toString());
+
+    // ignore: prefer_final_locals
+    Object? postBody = childGroupChildIdsBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'PUT',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
-  /// Returns array of child-group by groupId with HTTP info returned
+  /// Returns number of child removed from the group
   ///
-  /// Get childs by groupId
-  Future<Response> childsGroupsGroupIdGetWithHttpInfo(int groupId) async {
-    Object postBody;
-
-    // verify required params are set
-    if(groupId == null) {
-     throw ApiException(400, "Missing required param: groupId");
+  /// Removes childs from group
+  ///
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group Id
+  ///
+  /// * [ChildGroupChildIdsBody] childGroupChildIdsBody (required):
+  ///   ChildIds body
+  Future<UpdateRecordsResponse?> childsGroupsGroupIdDeletePut(int groupId, ChildGroupChildIdsBody childGroupChildIdsBody,) async {
+    final response = await childsGroupsGroupIdDeletePutWithHttpInfo(groupId, childGroupChildIdsBody,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-
-    // create path and map variables
-    String path = "/childs/groups/{groupId}/".replaceAll("{format}","json").replaceAll("{" + "groupId" + "}", groupId.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UpdateRecordsResponse',) as UpdateRecordsResponse;
+    
     }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns array of child-group by groupId
   ///
   /// Get childs by groupId
-  Future<List<ChildGroupWithChildWithGroupResponse>> childsGroupsGroupIdGet(int groupId) async {
-    Response response = await childsGroupsGroupIdGetWithHttpInfo(groupId);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<ChildGroupWithChildWithGroupResponse>') as List).map((item) => item as ChildGroupWithChildWithGroupResponse).toList();
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group Id
+  Future<Response> childsGroupsGroupIdGetWithHttpInfo(int groupId,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/childs/groups/{groupId}/'
+      .replaceAll('{groupId}', groupId.toString());
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
-  /// Returns added child to the group with HTTP info returned
+  /// Returns array of child-group by groupId
   ///
-  /// Add child to group
-  Future<Response> childsGroupsGroupIdPostWithHttpInfo(int groupId, CreateParentChildBody createParentChildBody) async {
-    Object postBody = createParentChildBody;
-
-    // verify required params are set
-    if(groupId == null) {
-     throw ApiException(400, "Missing required param: groupId");
+  /// Get childs by groupId
+  ///
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group Id
+  Future<List<ChildGroupWithChildWithGroupResponse>?> childsGroupsGroupIdGet(int groupId,) async {
+    final response = await childsGroupsGroupIdGetWithHttpInfo(groupId,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    if(createParentChildBody == null) {
-     throw ApiException(400, "Missing required param: createParentChildBody");
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<ChildGroupWithChildWithGroupResponse>') as List)
+        .cast<ChildGroupWithChildWithGroupResponse>()
+        .toList();
+
     }
-
-    // create path and map variables
-    String path = "/childs/groups/{groupId}/".replaceAll("{format}","json").replaceAll("{" + "groupId" + "}", groupId.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
-    }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'POST',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns added child to the group
   ///
   /// Add child to group
-  Future<ChildResponse> childsGroupsGroupIdPost(int groupId, CreateParentChildBody createParentChildBody) async {
-    Response response = await childsGroupsGroupIdPostWithHttpInfo(groupId, createParentChildBody);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'ChildResponse') as ChildResponse;
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group Id
+  ///
+  /// * [CreateParentChildBody] createParentChildBody (required):
+  ///   Child body
+  Future<Response> childsGroupsGroupIdPostWithHttpInfo(int groupId, CreateParentChildBody createParentChildBody,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/childs/groups/{groupId}/'
+      .replaceAll('{groupId}', groupId.toString());
+
+    // ignore: prefer_final_locals
+    Object? postBody = createParentChildBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
+  /// Returns added child to the group
+  ///
+  /// Add child to group
+  ///
+  /// Parameters:
+  ///
+  /// * [int] groupId (required):
+  ///   Group Id
+  ///
+  /// * [CreateParentChildBody] createParentChildBody (required):
+  ///   Child body
+  Future<ChildResponse?> childsGroupsGroupIdPost(int groupId, CreateParentChildBody createParentChildBody,) async {
+    final response = await childsGroupsGroupIdPostWithHttpInfo(groupId, createParentChildBody,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ChildResponse',) as ChildResponse;
+    
+    }
+    return null;
+  }
 }

@@ -1,123 +1,124 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 part of openapi.api;
 
 
-
 class UserTypeApi {
+  UserTypeApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
   final ApiClient apiClient;
 
-  UserTypeApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
-
-  /// Returns true indicating the role has been added to the user with HTTP info returned
+  /// Returns true indicating the role has been added to the user
   ///
   /// Add a new role to the user
-  Future<Response> userTypeAddRolePatchWithHttpInfo(UserAddRole userAddRole) async {
-    Object postBody = userAddRole;
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [UserAddRole] userAddRole (required):
+  ///   User with role
+  Future<Response> userTypeAddRolePatchWithHttpInfo(UserAddRole userAddRole,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/user-type/add-role/';
 
-    // verify required params are set
-    if(userAddRole == null) {
-     throw ApiException(400, "Missing required param: userAddRole");
-    }
+    // ignore: prefer_final_locals
+    Object? postBody = userAddRole;
 
-    // create path and map variables
-    String path = "/user-type/add-role/".replaceAll("{format}","json");
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
+    const contentTypes = <String>['application/json'];
 
-    List<String> contentTypes = ["application/json"];
 
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
-    }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'PATCH',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return apiClient.invokeAPI(
+      path,
+      'PATCH',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
   /// Returns true indicating the role has been added to the user
   ///
   /// Add a new role to the user
-  Future<UpdateRecordsResponse> userTypeAddRolePatch(UserAddRole userAddRole) async {
-    Response response = await userTypeAddRolePatchWithHttpInfo(userAddRole);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'UpdateRecordsResponse') as UpdateRecordsResponse;
-    } else {
-      return null;
-    }
-  }
-
-  /// Returns user-type object by phone number with HTTP info returned
   ///
-  /// Get the user-type by phone number
-  Future<Response> userTypeGetWithHttpInfo() async {
-    Object postBody;
-
-    // verify required params are set
-
-    // create path and map variables
-    String path = "/user-type/".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["BearerAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
+  /// Parameters:
+  ///
+  /// * [UserAddRole] userAddRole (required):
+  ///   User with role
+  Future<UpdateRecordsResponse?> userTypeAddRolePatch(UserAddRole userAddRole,) async {
+    final response = await userTypeAddRolePatchWithHttpInfo(userAddRole,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    else {
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UpdateRecordsResponse',) as UpdateRecordsResponse;
+    
     }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// Returns user-type object by phone number
   ///
   /// Get the user-type by phone number
-  Future<UserTypeWithUserWithAddressResponse> userTypeGet() async {
-    Response response = await userTypeGetWithHttpInfo();
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'UserTypeWithUserWithAddressResponse') as UserTypeWithUserWithAddressResponse;
-    } else {
-      return null;
-    }
+  ///
+  /// Note: This method returns the HTTP [Response].
+  Future<Response> userTypeGetWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/user-type/';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
   }
 
+  /// Returns user-type object by phone number
+  ///
+  /// Get the user-type by phone number
+  Future<UserTypeWithUserWithAddressResponse?> userTypeGet() async {
+    final response = await userTypeGetWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserTypeWithUserWithAddressResponse',) as UserTypeWithUserWithAddressResponse;
+    
+    }
+    return null;
+  }
 }
