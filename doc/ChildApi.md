@@ -5,14 +5,14 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**childIdDelete**](ChildApi.md#childIdDelete) | **DELETE** /child/{id} | Returns number of child deleted
-[**childPost**](ChildApi.md#childPost) | **POST** /child/ | Returns newly created child
-[**childPut**](ChildApi.md#childPut) | **PUT** /child/ | Returns number of child updated
-[**childsGet**](ChildApi.md#childsGet) | **GET** /childs/ | Returns an array of child object by phone number
+[**childIdDelete**](ChildApi.md#childiddelete) | **DELETE** /child/{id} | Returns number of child deleted
+[**childPost**](ChildApi.md#childpost) | **POST** /child/ | Returns newly created child
+[**childPut**](ChildApi.md#childput) | **PUT** /child/ | Returns number of child updated
+[**childsGet**](ChildApi.md#childsget) | **GET** /childs/ | Returns an array of child object by phone number
 
 
 # **childIdDelete**
@@ -22,7 +22,7 @@ Returns number of child deleted
 
 Delete a child by id
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -32,14 +32,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = ChildApi();
-var id = 8.14; // num | Child id
+final api_instance = ChildApi();
+final id = 8.14; // num | Child id
 
-try { 
-    var result = api_instance.childIdDelete(id);
+try {
+    final result = api_instance.childIdDelete(id);
     print(result);
 } catch (e) {
-    print("Exception when calling ChildApi->childIdDelete: $e\n");
+    print('Exception when calling ChildApi->childIdDelete: $e\n');
 }
 ```
 
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **num**| Child id | [default to null]
+ **id** | **num**| Child id | 
 
 ### Return type
 
@@ -71,7 +71,7 @@ Returns newly created child
 
 Create a child for a parent
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -81,14 +81,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = ChildApi();
-var createChildBody = CreateChildBody(); // CreateChildBody | Child body
+final api_instance = ChildApi();
+final createChildBody = CreateChildBody(); // CreateChildBody | Child body
 
-try { 
-    var result = api_instance.childPost(createChildBody);
+try {
+    final result = api_instance.childPost(createChildBody);
     print(result);
 } catch (e) {
-    print("Exception when calling ChildApi->childPost: $e\n");
+    print('Exception when calling ChildApi->childPost: $e\n');
 }
 ```
 
@@ -120,7 +120,7 @@ Returns number of child updated
 
 Update a child for a parent
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -130,14 +130,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = ChildApi();
-var updateChildBody = UpdateChildBody(); // UpdateChildBody | Child body
+final api_instance = ChildApi();
+final updateChildBody = UpdateChildBody(); // UpdateChildBody | Child body
 
-try { 
-    var result = api_instance.childPut(updateChildBody);
+try {
+    final result = api_instance.childPut(updateChildBody);
     print(result);
 } catch (e) {
-    print("Exception when calling ChildApi->childPut: $e\n");
+    print('Exception when calling ChildApi->childPut: $e\n');
 }
 ```
 
@@ -169,7 +169,7 @@ Returns an array of child object by phone number
 
 Get all the childs by phone number
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -179,13 +179,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = ChildApi();
+final api_instance = ChildApi();
 
-try { 
-    var result = api_instance.childsGet();
+try {
+    final result = api_instance.childsGet();
     print(result);
 } catch (e) {
-    print("Exception when calling ChildApi->childsGet: $e\n");
+    print('Exception when calling ChildApi->childsGet: $e\n');
 }
 ```
 

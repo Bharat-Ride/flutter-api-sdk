@@ -5,16 +5,16 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**childDriversGet**](UserApi.md#childDriversGet) | **GET** /child-drivers/ | Returns child drivers object by phone number
-[**userDelete**](UserApi.md#userDelete) | **DELETE** /user/ | Returns number of user deleted by phone number
-[**userGet**](UserApi.md#userGet) | **GET** /user/ | Returns user object by phone number
-[**userPatch**](UserApi.md#userPatch) | **PATCH** /user/ | Returns number of user updated
-[**userPost**](UserApi.md#userPost) | **POST** /user/ | Returns user object
-[**usersPost**](UserApi.md#usersPost) | **POST** /users/ | Returns user object by ids
+[**childDriversGet**](UserApi.md#childdriversget) | **GET** /child-drivers/ | Returns child drivers object by phone number
+[**userDelete**](UserApi.md#userdelete) | **DELETE** /user/ | Returns number of user deleted by phone number
+[**userGet**](UserApi.md#userget) | **GET** /user/ | Returns user object by phone number
+[**userPatch**](UserApi.md#userpatch) | **PATCH** /user/ | Returns number of user updated
+[**userPost**](UserApi.md#userpost) | **POST** /user/ | Returns user object
+[**usersPost**](UserApi.md#userspost) | **POST** /users/ | Returns user object by ids
 
 
 # **childDriversGet**
@@ -24,7 +24,7 @@ Returns child drivers object by phone number
 
 Get the child drivers by phone number
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -34,13 +34,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserApi();
+final api_instance = UserApi();
 
-try { 
-    var result = api_instance.childDriversGet();
+try {
+    final result = api_instance.childDriversGet();
     print(result);
 } catch (e) {
-    print("Exception when calling UserApi->childDriversGet: $e\n");
+    print('Exception when calling UserApi->childDriversGet: $e\n');
 }
 ```
 
@@ -69,7 +69,7 @@ Returns number of user deleted by phone number
 
 Delete the user by phone number
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -79,13 +79,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserApi();
+final api_instance = UserApi();
 
-try { 
-    var result = api_instance.userDelete();
+try {
+    final result = api_instance.userDelete();
     print(result);
 } catch (e) {
-    print("Exception when calling UserApi->userDelete: $e\n");
+    print('Exception when calling UserApi->userDelete: $e\n');
 }
 ```
 
@@ -114,7 +114,7 @@ Returns user object by phone number
 
 Get the user by phone number
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -124,13 +124,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserApi();
+final api_instance = UserApi();
 
-try { 
-    var result = api_instance.userGet();
+try {
+    final result = api_instance.userGet();
     print(result);
 } catch (e) {
-    print("Exception when calling UserApi->userGet: $e\n");
+    print('Exception when calling UserApi->userGet: $e\n');
 }
 ```
 
@@ -159,7 +159,7 @@ Returns number of user updated
 
 Update a user as driver and/or parent
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -169,14 +169,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserApi();
-var updateUserWithAddressBody = UpdateUserWithAddressBody(); // UpdateUserWithAddressBody | User body with address
+final api_instance = UserApi();
+final updateUserWithAddressBody = UpdateUserWithAddressBody(); // UpdateUserWithAddressBody | User body with address
 
-try { 
-    var result = api_instance.userPatch(updateUserWithAddressBody);
+try {
+    final result = api_instance.userPatch(updateUserWithAddressBody);
     print(result);
 } catch (e) {
-    print("Exception when calling UserApi->userPatch: $e\n");
+    print('Exception when calling UserApi->userPatch: $e\n');
 }
 ```
 
@@ -208,7 +208,7 @@ Returns user object
 
 Create a user as driver and/or parent
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -218,14 +218,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserApi();
-var createUserWithAddressBody = CreateUserWithAddressBody(); // CreateUserWithAddressBody | User body with address
+final api_instance = UserApi();
+final createUserWithAddressBody = CreateUserWithAddressBody(); // CreateUserWithAddressBody | User body with address
 
-try { 
-    var result = api_instance.userPost(createUserWithAddressBody);
+try {
+    final result = api_instance.userPost(createUserWithAddressBody);
     print(result);
 } catch (e) {
-    print("Exception when calling UserApi->userPost: $e\n");
+    print('Exception when calling UserApi->userPost: $e\n');
 }
 ```
 
@@ -257,7 +257,7 @@ Returns user object by ids
 
 Get the user by ids
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -267,14 +267,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserApi();
-var getUserByIds = GetUserByIds(); // GetUserByIds | User ids
+final api_instance = UserApi();
+final getUserByIds = GetUserByIds(); // GetUserByIds | User ids
 
-try { 
-    var result = api_instance.usersPost(getUserByIds);
+try {
+    final result = api_instance.usersPost(getUserByIds);
     print(result);
 } catch (e) {
-    print("Exception when calling UserApi->usersPost: $e\n");
+    print('Exception when calling UserApi->usersPost: $e\n');
 }
 ```
 

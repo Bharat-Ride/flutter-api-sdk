@@ -5,12 +5,12 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**userTypeAddRolePatch**](UserTypeApi.md#userTypeAddRolePatch) | **PATCH** /user-type/add-role/ | Returns true indicating the role has been added to the user
-[**userTypeGet**](UserTypeApi.md#userTypeGet) | **GET** /user-type/ | Returns user-type object by phone number
+[**userTypeAddRolePatch**](UserTypeApi.md#usertypeaddrolepatch) | **PATCH** /user-type/add-role/ | Returns true indicating the role has been added to the user
+[**userTypeGet**](UserTypeApi.md#usertypeget) | **GET** /user-type/ | Returns user-type object by phone number
 
 
 # **userTypeAddRolePatch**
@@ -20,7 +20,7 @@ Returns true indicating the role has been added to the user
 
 Add a new role to the user
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -30,14 +30,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserTypeApi();
-var userAddRole = UserAddRole(); // UserAddRole | User with role
+final api_instance = UserTypeApi();
+final userAddRole = UserAddRole(); // UserAddRole | User with role
 
-try { 
-    var result = api_instance.userTypeAddRolePatch(userAddRole);
+try {
+    final result = api_instance.userTypeAddRolePatch(userAddRole);
     print(result);
 } catch (e) {
-    print("Exception when calling UserTypeApi->userTypeAddRolePatch: $e\n");
+    print('Exception when calling UserTypeApi->userTypeAddRolePatch: $e\n');
 }
 ```
 
@@ -69,7 +69,7 @@ Returns user-type object by phone number
 
 Get the user-type by phone number
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -79,13 +79,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = UserTypeApi();
+final api_instance = UserTypeApi();
 
-try { 
-    var result = api_instance.userTypeGet();
+try {
+    final result = api_instance.userTypeGet();
     print(result);
 } catch (e) {
-    print("Exception when calling UserTypeApi->userTypeGet: $e\n");
+    print('Exception when calling UserTypeApi->userTypeGet: $e\n');
 }
 ```
 

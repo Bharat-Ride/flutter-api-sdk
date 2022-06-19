@@ -1,58 +1,131 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 part of openapi.api;
 
 class EndTripBody {
-  
-  int id = null;
-  
-  num endLatitude = null;
-  
-  num endLongitude = null;
-  EndTripBody();
+  /// Returns a new [EndTripBody] instance.
+  EndTripBody({
+    required this.id,
+    required this.endLatitude,
+    required this.endLongitude,
+  });
+
+  int id;
+
+  num endLatitude;
+
+  num endLongitude;
 
   @override
-  String toString() {
-    return 'EndTripBody[id=$id, endLatitude=$endLatitude, endLongitude=$endLongitude, ]';
-  }
+  bool operator ==(Object other) => identical(this, other) || other is EndTripBody &&
+     other.id == id &&
+     other.endLatitude == endLatitude &&
+     other.endLongitude == endLongitude;
 
-  EndTripBody.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    id = json['id'];
-    endLatitude = json['endLatitude'];
-    endLongitude = json['endLongitude'];
-  }
+  @override
+  int get hashCode =>
+    // ignore: unnecessary_parenthesis
+    (id.hashCode) +
+    (endLatitude.hashCode) +
+    (endLongitude.hashCode);
+
+  @override
+  String toString() => 'EndTripBody[id=$id, endLatitude=$endLatitude, endLongitude=$endLongitude]';
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (id != null)
-      json['id'] = id;
-    if (endLatitude != null)
-      json['endLatitude'] = endLatitude;
-    if (endLongitude != null)
-      json['endLongitude'] = endLongitude;
-    return json;
+    final _json = <String, dynamic>{};
+      _json[r'id'] = id;
+      _json[r'endLatitude'] = endLatitude;
+      _json[r'endLongitude'] = endLongitude;
+    return _json;
   }
 
-  static List<EndTripBody> listFromJson(List<dynamic> json) {
-    return json == null ? List<EndTripBody>() : json.map((value) => EndTripBody.fromJson(value)).toList();
+  /// Returns a new [EndTripBody] instance and imports its values from
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static EndTripBody? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "EndTripBody[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "EndTripBody[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return EndTripBody(
+        id: mapValueOfType<int>(json, r'id')!,
+        endLatitude: json[r'endLatitude'] == null
+            ? null
+            : num.parse(json[r'endLatitude'].toString()),
+        endLongitude: json[r'endLongitude'] == null
+            ? null
+            : num.parse(json[r'endLongitude'].toString()),
+      );
+    }
+    return null;
   }
 
-  static Map<String, EndTripBody> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, EndTripBody>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = EndTripBody.fromJson(value));
+  static List<EndTripBody>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <EndTripBody>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = EndTripBody.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
+
+  static Map<String, EndTripBody> mapFromJson(dynamic json) {
+    final map = <String, EndTripBody>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = EndTripBody.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of EndTripBody-objects as value to a dart map
-  static Map<String, List<EndTripBody>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<EndTripBody>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = EndTripBody.listFromJson(value);
-       });
-     }
-     return map;
+  static Map<String, List<EndTripBody>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<EndTripBody>>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = EndTripBody.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
+    }
+    return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+    'id',
+    'endLatitude',
+    'endLongitude',
+  };
 }
 

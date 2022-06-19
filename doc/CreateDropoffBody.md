@@ -8,10 +8,10 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tripId** | **int** |  | [default to null]
-**dropoffLatitude** | **num** |  | [default to null]
-**dropoffLongitude** | **num** |  | [default to null]
-**childIds** | **List&lt;int&gt;** |  | [default to []]
+**tripId** | **int** |  | 
+**dropoffLatitude** | **num** |  | 
+**dropoffLongitude** | **num** |  | 
+**childIds** | **List<int>** |  | [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

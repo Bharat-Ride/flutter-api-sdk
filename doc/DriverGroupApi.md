@@ -5,14 +5,14 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**driverGroupsDriverDriverIdGroupGroupIdDelete**](DriverGroupApi.md#driverGroupsDriverDriverIdGroupGroupIdDelete) | **DELETE** /driver-groups/driver/{driverId}/group/{groupId}/ | Returns boolean indicating whether the driver was deleted from the group
-[**driverGroupsDriversGroupGroupIdGet**](DriverGroupApi.md#driverGroupsDriversGroupGroupIdGet) | **GET** /driver-groups/drivers/group/{groupId}/ | Returns array of drivers by groupId
-[**driverGroupsGet**](DriverGroupApi.md#driverGroupsGet) | **GET** /driver-groups/ | Returns array of group by driverId
-[**driverGroupsPost**](DriverGroupApi.md#driverGroupsPost) | **POST** /driver-groups/ | Returns boolean indicating whether the driver was added to the group
+[**driverGroupsDriverDriverIdGroupGroupIdDelete**](DriverGroupApi.md#drivergroupsdriverdriveridgroupgroupiddelete) | **DELETE** /driver-groups/driver/{driverId}/group/{groupId}/ | Returns boolean indicating whether the driver was deleted from the group
+[**driverGroupsDriversGroupGroupIdGet**](DriverGroupApi.md#drivergroupsdriversgroupgroupidget) | **GET** /driver-groups/drivers/group/{groupId}/ | Returns array of drivers by groupId
+[**driverGroupsGet**](DriverGroupApi.md#drivergroupsget) | **GET** /driver-groups/ | Returns array of group by driverId
+[**driverGroupsPost**](DriverGroupApi.md#drivergroupspost) | **POST** /driver-groups/ | Returns boolean indicating whether the driver was added to the group
 
 
 # **driverGroupsDriverDriverIdGroupGroupIdDelete**
@@ -22,7 +22,7 @@ Returns boolean indicating whether the driver was deleted from the group
 
 Delete driver from group
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -32,15 +32,15 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = DriverGroupApi();
-var groupId = 56; // int | Group id
-var driverId = 56; // int | Driver id
+final api_instance = DriverGroupApi();
+final groupId = 56; // int | Group id
+final driverId = 56; // int | Driver id
 
-try { 
-    var result = api_instance.driverGroupsDriverDriverIdGroupGroupIdDelete(groupId, driverId);
+try {
+    final result = api_instance.driverGroupsDriverDriverIdGroupGroupIdDelete(groupId, driverId);
     print(result);
 } catch (e) {
-    print("Exception when calling DriverGroupApi->driverGroupsDriverDriverIdGroupGroupIdDelete: $e\n");
+    print('Exception when calling DriverGroupApi->driverGroupsDriverDriverIdGroupGroupIdDelete: $e\n');
 }
 ```
 
@@ -48,8 +48,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **int**| Group id | [default to null]
- **driverId** | **int**| Driver id | [default to null]
+ **groupId** | **int**| Group id | 
+ **driverId** | **int**| Driver id | 
 
 ### Return type
 
@@ -73,7 +73,7 @@ Returns array of drivers by groupId
 
 Get groups by driverId
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -83,14 +83,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = DriverGroupApi();
-var groupId = 56; // int | Group id
+final api_instance = DriverGroupApi();
+final groupId = 56; // int | Group id
 
-try { 
-    var result = api_instance.driverGroupsDriversGroupGroupIdGet(groupId);
+try {
+    final result = api_instance.driverGroupsDriversGroupGroupIdGet(groupId);
     print(result);
 } catch (e) {
-    print("Exception when calling DriverGroupApi->driverGroupsDriversGroupGroupIdGet: $e\n");
+    print('Exception when calling DriverGroupApi->driverGroupsDriversGroupGroupIdGet: $e\n');
 }
 ```
 
@@ -98,7 +98,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **int**| Group id | [default to null]
+ **groupId** | **int**| Group id | 
 
 ### Return type
 
@@ -122,7 +122,7 @@ Returns array of group by driverId
 
 Get groups by driverId
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -132,13 +132,13 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = DriverGroupApi();
+final api_instance = DriverGroupApi();
 
-try { 
-    var result = api_instance.driverGroupsGet();
+try {
+    final result = api_instance.driverGroupsGet();
     print(result);
 } catch (e) {
-    print("Exception when calling DriverGroupApi->driverGroupsGet: $e\n");
+    print('Exception when calling DriverGroupApi->driverGroupsGet: $e\n');
 }
 ```
 
@@ -167,7 +167,7 @@ Returns boolean indicating whether the driver was added to the group
 
 Add drivers to the group
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -177,14 +177,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = DriverGroupApi();
-var addDriverToGroupBody = AddDriverToGroupBody(); // AddDriverToGroupBody | Group body
+final api_instance = DriverGroupApi();
+final addDriverToGroupBody = AddDriverToGroupBody(); // AddDriverToGroupBody | Group body
 
-try { 
-    var result = api_instance.driverGroupsPost(addDriverToGroupBody);
+try {
+    final result = api_instance.driverGroupsPost(addDriverToGroupBody);
     print(result);
 } catch (e) {
-    print("Exception when calling DriverGroupApi->driverGroupsPost: $e\n");
+    print('Exception when calling DriverGroupApi->driverGroupsPost: $e\n');
 }
 ```
 

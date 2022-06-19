@@ -5,15 +5,15 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**groupIdDelete**](GroupApi.md#groupIdDelete) | **DELETE** /group/{id}/ | Returns number of groups deleted
-[**groupPost**](GroupApi.md#groupPost) | **POST** /group/ | Returns newly created group
-[**groupPublicIdPublicIdGet**](GroupApi.md#groupPublicIdPublicIdGet) | **GET** /group/publicId/{publicId} | Returns a group by publicIp
-[**groupPut**](GroupApi.md#groupPut) | **PUT** /group/ | Returns updated group
-[**groupsPhoneNumberPhoneNumberGet**](GroupApi.md#groupsPhoneNumberPhoneNumberGet) | **GET** /groups/phoneNumber/{phoneNumber} | Returns a list of group by phoneNumber
+[**groupIdDelete**](GroupApi.md#groupiddelete) | **DELETE** /group/{id}/ | Returns number of groups deleted
+[**groupPost**](GroupApi.md#grouppost) | **POST** /group/ | Returns newly created group
+[**groupPublicIdPublicIdGet**](GroupApi.md#grouppublicidpublicidget) | **GET** /group/publicId/{publicId} | Returns a group by publicIp
+[**groupPut**](GroupApi.md#groupput) | **PUT** /group/ | Returns updated group
+[**groupsPhoneNumberPhoneNumberGet**](GroupApi.md#groupsphonenumberphonenumberget) | **GET** /groups/phoneNumber/{phoneNumber} | Returns a list of group by phoneNumber
 
 
 # **groupIdDelete**
@@ -23,7 +23,7 @@ Returns number of groups deleted
 
 Delete group
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -33,14 +33,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = GroupApi();
-var id = 56; // int | Group id
+final api_instance = GroupApi();
+final id = 56; // int | Group id
 
-try { 
-    var result = api_instance.groupIdDelete(id);
+try {
+    final result = api_instance.groupIdDelete(id);
     print(result);
 } catch (e) {
-    print("Exception when calling GroupApi->groupIdDelete: $e\n");
+    print('Exception when calling GroupApi->groupIdDelete: $e\n');
 }
 ```
 
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Group id | [default to null]
+ **id** | **int**| Group id | 
 
 ### Return type
 
@@ -72,7 +72,7 @@ Returns newly created group
 
 Create group
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -82,14 +82,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = GroupApi();
-var createGroupBody = CreateGroupBody(); // CreateGroupBody | Group body
+final api_instance = GroupApi();
+final createGroupBody = CreateGroupBody(); // CreateGroupBody | Group body
 
-try { 
-    var result = api_instance.groupPost(createGroupBody);
+try {
+    final result = api_instance.groupPost(createGroupBody);
     print(result);
 } catch (e) {
-    print("Exception when calling GroupApi->groupPost: $e\n");
+    print('Exception when calling GroupApi->groupPost: $e\n');
 }
 ```
 
@@ -121,7 +121,7 @@ Returns a group by publicIp
 
 Get group by publicIp
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -131,14 +131,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = GroupApi();
-var publicId = publicId_example; // String | Public id
+final api_instance = GroupApi();
+final publicId = publicId_example; // String | Public id
 
-try { 
-    var result = api_instance.groupPublicIdPublicIdGet(publicId);
+try {
+    final result = api_instance.groupPublicIdPublicIdGet(publicId);
     print(result);
 } catch (e) {
-    print("Exception when calling GroupApi->groupPublicIdPublicIdGet: $e\n");
+    print('Exception when calling GroupApi->groupPublicIdPublicIdGet: $e\n');
 }
 ```
 
@@ -146,7 +146,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **publicId** | **String**| Public id | [default to null]
+ **publicId** | **String**| Public id | 
 
 ### Return type
 
@@ -170,7 +170,7 @@ Returns updated group
 
 Update group
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -180,14 +180,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = GroupApi();
-var updateGroupBody = UpdateGroupBody(); // UpdateGroupBody | Group body
+final api_instance = GroupApi();
+final updateGroupBody = UpdateGroupBody(); // UpdateGroupBody | Group body
 
-try { 
-    var result = api_instance.groupPut(updateGroupBody);
+try {
+    final result = api_instance.groupPut(updateGroupBody);
     print(result);
 } catch (e) {
-    print("Exception when calling GroupApi->groupPut: $e\n");
+    print('Exception when calling GroupApi->groupPut: $e\n');
 }
 ```
 
@@ -219,7 +219,7 @@ Returns a list of group by phoneNumber
 
 Get groups by phoneNumber
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -229,14 +229,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = GroupApi();
-var phoneNumber = phoneNumber_example; // String | Phone Number with country prefix
+final api_instance = GroupApi();
+final phoneNumber = phoneNumber_example; // String | Phone Number with country prefix
 
-try { 
-    var result = api_instance.groupsPhoneNumberPhoneNumberGet(phoneNumber);
+try {
+    final result = api_instance.groupsPhoneNumberPhoneNumberGet(phoneNumber);
     print(result);
 } catch (e) {
-    print("Exception when calling GroupApi->groupsPhoneNumberPhoneNumberGet: $e\n");
+    print('Exception when calling GroupApi->groupsPhoneNumberPhoneNumberGet: $e\n');
 }
 ```
 
@@ -244,7 +244,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phoneNumber** | **String**| Phone Number with country prefix | [default to null]
+ **phoneNumber** | **String**| Phone Number with country prefix | 
 
 ### Return type
 

@@ -8,15 +8,15 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address1** | **String** |  | [default to null]
-**address2** | **String** |  | [optional] [default to null]
-**address3** | **String** |  | [optional] [default to null]
-**city** | **String** |  | [default to null]
-**state** | **String** |  | [default to null]
-**country** | **String** |  | [default to null]
-**postalCode** | **String** |  | [default to null]
-**latitude** | **num** |  | [default to null]
-**longitude** | **num** |  | [default to null]
+**address1** | **String** |  | 
+**address2** | **String** |  | [optional] 
+**address3** | **String** |  | [optional] 
+**city** | **String** |  | 
+**state** | **String** |  | 
+**country** | **String** |  | 
+**postalCode** | **String** |  | 
+**latitude** | **num** |  | 
+**longitude** | **num** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

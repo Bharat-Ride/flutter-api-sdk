@@ -5,15 +5,15 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**pickupDropoffsTripsTripIdGet**](PickupDropoffApi.md#pickupDropoffsTripsTripIdGet) | **GET** /pickup-dropoffs/trips/{tripId}/ | Returns array of pickup-dropoff by tripId
-[**tripsAbsentPost**](PickupDropoffApi.md#tripsAbsentPost) | **POST** /trips/absent/ | Returns array of pickupdropoff
-[**tripsDropoffPut**](PickupDropoffApi.md#tripsDropoffPut) | **PUT** /trips/dropoff/ | Returns number of children Dropoff
-[**tripsNotAbsentPut**](PickupDropoffApi.md#tripsNotAbsentPut) | **PUT** /trips/not-absent/ | Returns number of children marked not absent
-[**tripsPickupPost**](PickupDropoffApi.md#tripsPickupPost) | **POST** /trips/pickup/ | Returns array of pickupdropoff
+[**pickupDropoffsTripsTripIdGet**](PickupDropoffApi.md#pickupdropoffstripstripidget) | **GET** /pickup-dropoffs/trips/{tripId}/ | Returns array of pickup-dropoff by tripId
+[**tripsAbsentPost**](PickupDropoffApi.md#tripsabsentpost) | **POST** /trips/absent/ | Returns array of pickupdropoff
+[**tripsDropoffPut**](PickupDropoffApi.md#tripsdropoffput) | **PUT** /trips/dropoff/ | Returns number of children Dropoff
+[**tripsNotAbsentPut**](PickupDropoffApi.md#tripsnotabsentput) | **PUT** /trips/not-absent/ | Returns number of children marked not absent
+[**tripsPickupPost**](PickupDropoffApi.md#tripspickuppost) | **POST** /trips/pickup/ | Returns array of pickupdropoff
 
 
 # **pickupDropoffsTripsTripIdGet**
@@ -23,7 +23,7 @@ Returns array of pickup-dropoff by tripId
 
 Get pickup-dropoff by tripId
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -33,14 +33,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = PickupDropoffApi();
-var tripId = 56; // int | Trip id
+final api_instance = PickupDropoffApi();
+final tripId = 56; // int | Trip id
 
-try { 
-    var result = api_instance.pickupDropoffsTripsTripIdGet(tripId);
+try {
+    final result = api_instance.pickupDropoffsTripsTripIdGet(tripId);
     print(result);
 } catch (e) {
-    print("Exception when calling PickupDropoffApi->pickupDropoffsTripsTripIdGet: $e\n");
+    print('Exception when calling PickupDropoffApi->pickupDropoffsTripsTripIdGet: $e\n');
 }
 ```
 
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tripId** | **int**| Trip id | [default to null]
+ **tripId** | **int**| Trip id | 
 
 ### Return type
 
@@ -72,7 +72,7 @@ Returns array of pickupdropoff
 
 Absent childrens by tripId
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -82,14 +82,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = PickupDropoffApi();
-var createAbsentBody = CreateAbsentBody(); // CreateAbsentBody | Group body
+final api_instance = PickupDropoffApi();
+final createAbsentBody = CreateAbsentBody(); // CreateAbsentBody | Group body
 
-try { 
-    var result = api_instance.tripsAbsentPost(createAbsentBody);
+try {
+    final result = api_instance.tripsAbsentPost(createAbsentBody);
     print(result);
 } catch (e) {
-    print("Exception when calling PickupDropoffApi->tripsAbsentPost: $e\n");
+    print('Exception when calling PickupDropoffApi->tripsAbsentPost: $e\n');
 }
 ```
 
@@ -121,7 +121,7 @@ Returns number of children Dropoff
 
 Dropoff childrens by tripId
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -131,14 +131,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = PickupDropoffApi();
-var createDropoffBody = CreateDropoffBody(); // CreateDropoffBody | Group body
+final api_instance = PickupDropoffApi();
+final createDropoffBody = CreateDropoffBody(); // CreateDropoffBody | Group body
 
-try { 
-    var result = api_instance.tripsDropoffPut(createDropoffBody);
+try {
+    final result = api_instance.tripsDropoffPut(createDropoffBody);
     print(result);
 } catch (e) {
-    print("Exception when calling PickupDropoffApi->tripsDropoffPut: $e\n");
+    print('Exception when calling PickupDropoffApi->tripsDropoffPut: $e\n');
 }
 ```
 
@@ -170,7 +170,7 @@ Returns number of children marked not absent
 
 Delete absent childrens by tripId
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -180,14 +180,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = PickupDropoffApi();
-var createNotAbsentBody = CreateNotAbsentBody(); // CreateNotAbsentBody | Group body
+final api_instance = PickupDropoffApi();
+final createNotAbsentBody = CreateNotAbsentBody(); // CreateNotAbsentBody | Group body
 
-try { 
-    var result = api_instance.tripsNotAbsentPut(createNotAbsentBody);
+try {
+    final result = api_instance.tripsNotAbsentPut(createNotAbsentBody);
     print(result);
 } catch (e) {
-    print("Exception when calling PickupDropoffApi->tripsNotAbsentPut: $e\n");
+    print('Exception when calling PickupDropoffApi->tripsNotAbsentPut: $e\n');
 }
 ```
 
@@ -219,7 +219,7 @@ Returns array of pickupdropoff
 
 Pickup childrens by tripId
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -229,14 +229,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = PickupDropoffApi();
-var createPickupBody = CreatePickupBody(); // CreatePickupBody | Group body
+final api_instance = PickupDropoffApi();
+final createPickupBody = CreatePickupBody(); // CreatePickupBody | Group body
 
-try { 
-    var result = api_instance.tripsPickupPost(createPickupBody);
+try {
+    final result = api_instance.tripsPickupPost(createPickupBody);
     print(result);
 } catch (e) {
-    print("Exception when calling PickupDropoffApi->tripsPickupPost: $e\n");
+    print('Exception when calling PickupDropoffApi->tripsPickupPost: $e\n');
 }
 ```
 

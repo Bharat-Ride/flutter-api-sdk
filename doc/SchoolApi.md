@@ -5,14 +5,14 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**driverSchoolsGet**](SchoolApi.md#driverSchoolsGet) | **GET** /driver-schools/ | Returns array of schools by driverId
-[**schoolGet**](SchoolApi.md#schoolGet) | **GET** /school/ | Returns array of school by name
-[**schoolIdGet**](SchoolApi.md#schoolIdGet) | **GET** /school/{id}/ | Returns array of school by id
-[**schoolPost**](SchoolApi.md#schoolPost) | **POST** /school/ | Returns a newly created school
+[**driverSchoolsGet**](SchoolApi.md#driverschoolsget) | **GET** /driver-schools/ | Returns array of schools by driverId
+[**schoolGet**](SchoolApi.md#schoolget) | **GET** /school/ | Returns array of school by name
+[**schoolIdGet**](SchoolApi.md#schoolidget) | **GET** /school/{id}/ | Returns array of school by id
+[**schoolPost**](SchoolApi.md#schoolpost) | **POST** /school/ | Returns a newly created school
 
 
 # **driverSchoolsGet**
@@ -22,7 +22,7 @@ Returns array of schools by driverId
 
 Get schools by driverId
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -32,15 +32,15 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = SchoolApi();
-var includeCreator = includeCreator_example; // String | School name
-var includeAddress = includeAddress_example; // String | School name
+final api_instance = SchoolApi();
+final includeCreator = includeCreator_example; // String | School name
+final includeAddress = includeAddress_example; // String | School name
 
-try { 
-    var result = api_instance.driverSchoolsGet(includeCreator, includeAddress);
+try {
+    final result = api_instance.driverSchoolsGet(includeCreator, includeAddress);
     print(result);
 } catch (e) {
-    print("Exception when calling SchoolApi->driverSchoolsGet: $e\n");
+    print('Exception when calling SchoolApi->driverSchoolsGet: $e\n');
 }
 ```
 
@@ -48,8 +48,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **includeCreator** | **String**| School name | [default to null]
- **includeAddress** | **String**| School name | [default to null]
+ **includeCreator** | **String**| School name | 
+ **includeAddress** | **String**| School name | 
 
 ### Return type
 
@@ -73,7 +73,7 @@ Returns array of school by name
 
 Get schools by name
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -83,16 +83,16 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = SchoolApi();
-var fullName = fullName_example; // String | School name
-var includeCreator = includeCreator_example; // String | School name
-var includeAddress = includeAddress_example; // String | School name
+final api_instance = SchoolApi();
+final fullName = fullName_example; // String | School name
+final includeCreator = includeCreator_example; // String | School name
+final includeAddress = includeAddress_example; // String | School name
 
-try { 
-    var result = api_instance.schoolGet(fullName, includeCreator, includeAddress);
+try {
+    final result = api_instance.schoolGet(fullName, includeCreator, includeAddress);
     print(result);
 } catch (e) {
-    print("Exception when calling SchoolApi->schoolGet: $e\n");
+    print('Exception when calling SchoolApi->schoolGet: $e\n');
 }
 ```
 
@@ -100,9 +100,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fullName** | **String**| School name | [default to null]
- **includeCreator** | **String**| School name | [default to null]
- **includeAddress** | **String**| School name | [default to null]
+ **fullName** | **String**| School name | 
+ **includeCreator** | **String**| School name | 
+ **includeAddress** | **String**| School name | 
 
 ### Return type
 
@@ -126,7 +126,7 @@ Returns array of school by id
 
 Get schools by id
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -136,16 +136,16 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = SchoolApi();
-var id = 56; // int | School id
-var includeCreator = includeCreator_example; // String | School name
-var includeAddress = includeAddress_example; // String | School name
+final api_instance = SchoolApi();
+final id = 56; // int | School id
+final includeCreator = includeCreator_example; // String | School name
+final includeAddress = includeAddress_example; // String | School name
 
-try { 
-    var result = api_instance.schoolIdGet(id, includeCreator, includeAddress);
+try {
+    final result = api_instance.schoolIdGet(id, includeCreator, includeAddress);
     print(result);
 } catch (e) {
-    print("Exception when calling SchoolApi->schoolIdGet: $e\n");
+    print('Exception when calling SchoolApi->schoolIdGet: $e\n');
 }
 ```
 
@@ -153,9 +153,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| School id | [default to null]
- **includeCreator** | **String**| School name | [default to null]
- **includeAddress** | **String**| School name | [default to null]
+ **id** | **int**| School id | 
+ **includeCreator** | **String**| School name | 
+ **includeAddress** | **String**| School name | 
 
 ### Return type
 
@@ -179,7 +179,7 @@ Returns a newly created school
 
 Create a new school
 
-### Example 
+### Example
 ```dart
 import 'package:openapi/api.dart';
 // TODO Configure HTTP Bearer authorization: BearerAuth
@@ -189,14 +189,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-var api_instance = SchoolApi();
-var createSchoolBody = CreateSchoolBody(); // CreateSchoolBody | School body
+final api_instance = SchoolApi();
+final createSchoolBody = CreateSchoolBody(); // CreateSchoolBody | School body
 
-try { 
-    var result = api_instance.schoolPost(createSchoolBody);
+try {
+    final result = api_instance.schoolPost(createSchoolBody);
     print(result);
 } catch (e) {
-    print("Exception when calling SchoolApi->schoolPost: $e\n");
+    print('Exception when calling SchoolApi->schoolPost: $e\n');
 }
 ```
 
