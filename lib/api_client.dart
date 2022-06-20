@@ -11,16 +11,6 @@
 part of openapi.api;
 
 class ApiClient {
-  ApiClient(
-      {this.basePath = 'https://staging.presentation-api.api.findnemo.in',
-      this.accessToken,
-      this.authentication}) {
-    if (this.accessToken != null && this.accessToken is String) {
-      _defaultHeaderMap['BearerAuth'] =
-          OAuth(accessToken: this.accessToken!).toString();
-    }
-  }
-
   final String basePath;
   String? accessToken;
 
@@ -38,6 +28,16 @@ class ApiClient {
 
   final _defaultHeaderMap = <String, String>{};
   final Authentication? authentication;
+
+  ApiClient(
+      {this.basePath = 'https://staging.presentation-api.api.findnemo.in',
+      this.accessToken,
+      this.authentication}) {
+    if (this.accessToken != null && this.accessToken is String) {
+      addDefaultHeader(
+          'BearerAuth', OAuth(accessToken: this.accessToken!).toString());
+    }
+  }
 
   void addDefaultHeader(String key, String value) {
     _defaultHeaderMap[key] = value;
