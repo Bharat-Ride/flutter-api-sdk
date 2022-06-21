@@ -13,7 +13,9 @@ part of openapi.api;
 class UpdateUserWithAddressBody {
   /// Returns a new [UpdateUserWithAddressBody] instance.
   UpdateUserWithAddressBody({
+    this.id,
     this.fullName,
+    this.phoneNumber,
     this.profileImageUrl,
     this.photoIdUrl,
     this.email,
@@ -28,7 +30,23 @@ class UpdateUserWithAddressBody {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
+  int? id;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? fullName;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? phoneNumber;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -80,7 +98,9 @@ class UpdateUserWithAddressBody {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateUserWithAddressBody &&
+     other.id == id &&
      other.fullName == fullName &&
+     other.phoneNumber == phoneNumber &&
      other.profileImageUrl == profileImageUrl &&
      other.photoIdUrl == photoIdUrl &&
      other.email == email &&
@@ -91,7 +111,9 @@ class UpdateUserWithAddressBody {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
     (fullName == null ? 0 : fullName!.hashCode) +
+    (phoneNumber == null ? 0 : phoneNumber!.hashCode) +
     (profileImageUrl == null ? 0 : profileImageUrl!.hashCode) +
     (photoIdUrl == null ? 0 : photoIdUrl!.hashCode) +
     (email == null ? 0 : email!.hashCode) +
@@ -100,12 +122,18 @@ class UpdateUserWithAddressBody {
     (address == null ? 0 : address!.hashCode);
 
   @override
-  String toString() => 'UpdateUserWithAddressBody[fullName=$fullName, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, address=$address]';
+  String toString() => 'UpdateUserWithAddressBody[id=$id, fullName=$fullName, phoneNumber=$phoneNumber, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, address=$address]';
 
   Map<String, dynamic> toJson() {
     final _json = <String, dynamic>{};
+    if (id != null) {
+      _json[r'id'] = id;
+    }
     if (fullName != null) {
       _json[r'fullName'] = fullName;
+    }
+    if (phoneNumber != null) {
+      _json[r'phoneNumber'] = phoneNumber;
     }
     if (profileImageUrl != null) {
       _json[r'profileImageUrl'] = profileImageUrl;
@@ -147,7 +175,9 @@ class UpdateUserWithAddressBody {
       }());
 
       return UpdateUserWithAddressBody(
+        id: mapValueOfType<int>(json, r'id'),
         fullName: mapValueOfType<String>(json, r'fullName'),
+        phoneNumber: mapValueOfType<String>(json, r'phoneNumber'),
         profileImageUrl: mapValueOfType<String>(json, r'profileImageUrl'),
         photoIdUrl: mapValueOfType<String>(json, r'photoIdUrl'),
         email: mapValueOfType<String>(json, r'email'),
