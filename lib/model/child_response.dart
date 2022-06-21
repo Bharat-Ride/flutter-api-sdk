@@ -20,7 +20,7 @@ class ChildResponse {
     this.addressId,
     required this.createdAt,
     required this.updatedAt,
-    required this.parent,
+    this.parent,
     this.address,
   });
 
@@ -50,7 +50,13 @@ class ChildResponse {
 
   String updatedAt;
 
-  UserResponse parent;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  UserResponse? parent;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -82,7 +88,7 @@ class ChildResponse {
     (addressId == null ? 0 : addressId!.hashCode) +
     (createdAt.hashCode) +
     (updatedAt.hashCode) +
-    (parent.hashCode) +
+    (parent == null ? 0 : parent!.hashCode) +
     (address == null ? 0 : address!.hashCode);
 
   @override
@@ -101,7 +107,9 @@ class ChildResponse {
     }
       _json[r'createdAt'] = createdAt;
       _json[r'updatedAt'] = updatedAt;
+    if (parent != null) {
       _json[r'parent'] = parent;
+    }
     if (address != null) {
       _json[r'address'] = address;
     }
@@ -134,7 +142,7 @@ class ChildResponse {
         addressId: mapValueOfType<int>(json, r'addressId'),
         createdAt: mapValueOfType<String>(json, r'createdAt')!,
         updatedAt: mapValueOfType<String>(json, r'updatedAt')!,
-        parent: UserResponse.fromJson(json[r'parent'])!,
+        parent: UserResponse.fromJson(json[r'parent']),
         address: AddressResponse.fromJson(json[r'address']),
       );
     }
@@ -190,7 +198,6 @@ class ChildResponse {
     'parentId',
     'createdAt',
     'updatedAt',
-    'parent',
   };
 }
 
