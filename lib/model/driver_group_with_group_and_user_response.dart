@@ -72,18 +72,20 @@ class DriverGroupWithGroupAndUserResponse {
   String toString() => 'DriverGroupWithGroupAndUserResponse[driverId=$driverId, groupId=$groupId, driver=$driver, group=$group, latestTrip=$latestTrip, permission=$permission, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'driverId'] = driverId;
-      _json[r'groupId'] = groupId;
-      _json[r'driver'] = driver;
-      _json[r'group'] = group;
-    if (latestTrip != null) {
-      _json[r'latestTrip'] = latestTrip;
+    final json = <String, dynamic>{};
+      json[r'driverId'] = this.driverId;
+      json[r'groupId'] = this.groupId;
+      json[r'driver'] = this.driver;
+      json[r'group'] = this.group;
+    if (this.latestTrip != null) {
+      json[r'latestTrip'] = this.latestTrip;
+    } else {
+      json[r'latestTrip'] = null;
     }
-      _json[r'permission'] = permission;
-      _json[r'createdAt'] = createdAt;
-      _json[r'updatedAt'] = updatedAt;
-    return _json;
+      json[r'permission'] = this.permission;
+      json[r'createdAt'] = this.createdAt;
+      json[r'updatedAt'] = this.updatedAt;
+    return json;
   }
 
   /// Returns a new [DriverGroupWithGroupAndUserResponse] instance and imports its values from

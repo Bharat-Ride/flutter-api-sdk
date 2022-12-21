@@ -67,17 +67,19 @@ class SchoolWithUserResponse {
   String toString() => 'SchoolWithUserResponse[id=$id, fullName=$fullName, createdBy=$createdBy, addressId=$addressId, updatedAt=$updatedAt, createdAt=$createdAt, creator=$creator]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'fullName'] = fullName;
-      _json[r'createdBy'] = createdBy;
-    if (addressId != null) {
-      _json[r'addressId'] = addressId;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'fullName'] = this.fullName;
+      json[r'createdBy'] = this.createdBy;
+    if (this.addressId != null) {
+      json[r'addressId'] = this.addressId;
+    } else {
+      json[r'addressId'] = null;
     }
-      _json[r'updatedAt'] = updatedAt;
-      _json[r'createdAt'] = createdAt;
-      _json[r'creator'] = creator;
-    return _json;
+      json[r'updatedAt'] = this.updatedAt;
+      json[r'createdAt'] = this.createdAt;
+      json[r'creator'] = this.creator;
+    return json;
   }
 
   /// Returns a new [SchoolWithUserResponse] instance and imports its values from

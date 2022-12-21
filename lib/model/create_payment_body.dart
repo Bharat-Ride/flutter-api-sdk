@@ -63,17 +63,21 @@ class CreatePaymentBody {
   String toString() => 'CreatePaymentBody[driverId=$driverId, childId=$childId, amount=$amount, dates=$dates, notes=$notes]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'driverId'] = driverId;
-      _json[r'childId'] = childId;
-    if (amount != null) {
-      _json[r'amount'] = amount;
+    final json = <String, dynamic>{};
+      json[r'driverId'] = this.driverId;
+      json[r'childId'] = this.childId;
+    if (this.amount != null) {
+      json[r'amount'] = this.amount;
+    } else {
+      json[r'amount'] = null;
     }
-      _json[r'dates'] = dates;
-    if (notes != null) {
-      _json[r'notes'] = notes;
+      json[r'dates'] = this.dates;
+    if (this.notes != null) {
+      json[r'notes'] = this.notes;
+    } else {
+      json[r'notes'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [CreatePaymentBody] instance and imports its values from

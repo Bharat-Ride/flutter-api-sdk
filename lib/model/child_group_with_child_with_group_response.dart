@@ -67,17 +67,19 @@ class ChildGroupWithChildWithGroupResponse {
   String toString() => 'ChildGroupWithChildWithGroupResponse[childId=$childId, groupId=$groupId, monthlyFees=$monthlyFees, child=$child, group=$group, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'childId'] = childId;
-      _json[r'groupId'] = groupId;
-    if (monthlyFees != null) {
-      _json[r'monthlyFees'] = monthlyFees;
+    final json = <String, dynamic>{};
+      json[r'childId'] = this.childId;
+      json[r'groupId'] = this.groupId;
+    if (this.monthlyFees != null) {
+      json[r'monthlyFees'] = this.monthlyFees;
+    } else {
+      json[r'monthlyFees'] = null;
     }
-      _json[r'child'] = child;
-      _json[r'group'] = group;
-      _json[r'createdAt'] = createdAt;
-      _json[r'updatedAt'] = updatedAt;
-    return _json;
+      json[r'child'] = this.child;
+      json[r'group'] = this.group;
+      json[r'createdAt'] = this.createdAt;
+      json[r'updatedAt'] = this.updatedAt;
+    return json;
   }
 
   /// Returns a new [ChildGroupWithChildWithGroupResponse] instance and imports its values from

@@ -66,16 +66,16 @@ class SchoolWithUserAndAddressResponse {
   String toString() => 'SchoolWithUserAndAddressResponse[id=$id, fullName=$fullName, createdBy=$createdBy, addressId=$addressId, updatedAt=$updatedAt, createdAt=$createdAt, address=$address, creator=$creator]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'fullName'] = fullName;
-      _json[r'createdBy'] = createdBy;
-      _json[r'addressId'] = addressId;
-      _json[r'updatedAt'] = updatedAt;
-      _json[r'createdAt'] = createdAt;
-      _json[r'address'] = address;
-      _json[r'creator'] = creator;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'fullName'] = this.fullName;
+      json[r'createdBy'] = this.createdBy;
+      json[r'addressId'] = this.addressId;
+      json[r'updatedAt'] = this.updatedAt;
+      json[r'createdAt'] = this.createdAt;
+      json[r'address'] = this.address;
+      json[r'creator'] = this.creator;
+    return json;
   }
 
   /// Returns a new [SchoolWithUserAndAddressResponse] instance and imports its values from

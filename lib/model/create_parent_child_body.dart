@@ -41,11 +41,11 @@ class CreateParentChildBody {
   String toString() => 'CreateParentChildBody[fullName=$fullName, parentFullName=$parentFullName, parentPhoneNumber=$parentPhoneNumber]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'fullName'] = fullName;
-      _json[r'parentFullName'] = parentFullName;
-      _json[r'parentPhoneNumber'] = parentPhoneNumber;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'fullName'] = this.fullName;
+      json[r'parentFullName'] = this.parentFullName;
+      json[r'parentPhoneNumber'] = this.parentPhoneNumber;
+    return json;
   }
 
   /// Returns a new [CreateParentChildBody] instance and imports its values from

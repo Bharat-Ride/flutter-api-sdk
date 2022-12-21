@@ -112,30 +112,42 @@ class DeviceWithUserResponse {
   String toString() => 'DeviceWithUserResponse[id=$id, uId=$uId, model=$model, make=$make, userId=$userId, fcmToken=$fcmToken, locale=$locale, user=$user, updatedAt=$updatedAt, createdAt=$createdAt]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'uId'] = uId;
-    if (model != null) {
-      _json[r'model'] = model;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'uId'] = this.uId;
+    if (this.model != null) {
+      json[r'model'] = this.model;
+    } else {
+      json[r'model'] = null;
     }
-    if (make != null) {
-      _json[r'make'] = make;
+    if (this.make != null) {
+      json[r'make'] = this.make;
+    } else {
+      json[r'make'] = null;
     }
-      _json[r'userId'] = userId;
-    if (fcmToken != null) {
-      _json[r'fcmToken'] = fcmToken;
+      json[r'userId'] = this.userId;
+    if (this.fcmToken != null) {
+      json[r'fcmToken'] = this.fcmToken;
+    } else {
+      json[r'fcmToken'] = null;
     }
-    if (locale != null) {
-      _json[r'locale'] = locale;
+    if (this.locale != null) {
+      json[r'locale'] = this.locale;
+    } else {
+      json[r'locale'] = null;
     }
-      _json[r'user'] = user;
-    if (updatedAt != null) {
-      _json[r'updatedAt'] = updatedAt;
+      json[r'user'] = this.user;
+    if (this.updatedAt != null) {
+      json[r'updatedAt'] = this.updatedAt;
+    } else {
+      json[r'updatedAt'] = null;
     }
-    if (createdAt != null) {
-      _json[r'createdAt'] = createdAt;
+    if (this.createdAt != null) {
+      json[r'createdAt'] = this.createdAt;
+    } else {
+      json[r'createdAt'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [DeviceWithUserResponse] instance and imports its values from

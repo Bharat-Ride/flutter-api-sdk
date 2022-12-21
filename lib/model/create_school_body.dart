@@ -36,10 +36,10 @@ class CreateSchoolBody {
   String toString() => 'CreateSchoolBody[fullName=$fullName, addressId=$addressId]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'fullName'] = fullName;
-      _json[r'addressId'] = addressId;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'fullName'] = this.fullName;
+      json[r'addressId'] = this.addressId;
+    return json;
   }
 
   /// Returns a new [CreateSchoolBody] instance and imports its values from

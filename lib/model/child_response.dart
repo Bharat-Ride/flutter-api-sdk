@@ -95,25 +95,33 @@ class ChildResponse {
   String toString() => 'ChildResponse[id=$id, fullName=$fullName, parentId=$parentId, profileImageUrl=$profileImageUrl, addressId=$addressId, createdAt=$createdAt, updatedAt=$updatedAt, parent=$parent, address=$address]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'fullName'] = fullName;
-      _json[r'parentId'] = parentId;
-    if (profileImageUrl != null) {
-      _json[r'profileImageUrl'] = profileImageUrl;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'fullName'] = this.fullName;
+      json[r'parentId'] = this.parentId;
+    if (this.profileImageUrl != null) {
+      json[r'profileImageUrl'] = this.profileImageUrl;
+    } else {
+      json[r'profileImageUrl'] = null;
     }
-    if (addressId != null) {
-      _json[r'addressId'] = addressId;
+    if (this.addressId != null) {
+      json[r'addressId'] = this.addressId;
+    } else {
+      json[r'addressId'] = null;
     }
-      _json[r'createdAt'] = createdAt;
-      _json[r'updatedAt'] = updatedAt;
-    if (parent != null) {
-      _json[r'parent'] = parent;
+      json[r'createdAt'] = this.createdAt;
+      json[r'updatedAt'] = this.updatedAt;
+    if (this.parent != null) {
+      json[r'parent'] = this.parent;
+    } else {
+      json[r'parent'] = null;
     }
-    if (address != null) {
-      _json[r'address'] = address;
+    if (this.address != null) {
+      json[r'address'] = this.address;
+    } else {
+      json[r'address'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [ChildResponse] instance and imports its values from

@@ -10,42 +10,36 @@
 
 part of openapi.api;
 
-class CreateAbsentBody {
-  /// Returns a new [CreateAbsentBody] instance.
-  CreateAbsentBody({
-    required this.tripId,
-    this.childIds = const [],
+class TransactionResponse {
+  /// Returns a new [TransactionResponse] instance.
+  TransactionResponse({
+    required this.txnToken,
   });
 
-  int tripId;
-
-  List<int> childIds;
+  String txnToken;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is CreateAbsentBody &&
-     other.tripId == tripId &&
-     other.childIds == childIds;
+  bool operator ==(Object other) => identical(this, other) || other is TransactionResponse &&
+     other.txnToken == txnToken;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (tripId.hashCode) +
-    (childIds.hashCode);
+    (txnToken.hashCode);
 
   @override
-  String toString() => 'CreateAbsentBody[tripId=$tripId, childIds=$childIds]';
+  String toString() => 'TransactionResponse[txnToken=$txnToken]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'tripId'] = this.tripId;
-      json[r'childIds'] = this.childIds;
+      json[r'txnToken'] = this.txnToken;
     return json;
   }
 
-  /// Returns a new [CreateAbsentBody] instance and imports its values from
+  /// Returns a new [TransactionResponse] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static CreateAbsentBody? fromJson(dynamic value) {
+  static TransactionResponse? fromJson(dynamic value) {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
 
@@ -54,27 +48,24 @@ class CreateAbsentBody {
       // Note 2: this code is stripped in release mode!
       assert(() {
         requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateAbsentBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateAbsentBody[$key]" has a null value in JSON.');
+          assert(json.containsKey(key), 'Required key "TransactionResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "TransactionResponse[$key]" has a null value in JSON.');
         });
         return true;
       }());
 
-      return CreateAbsentBody(
-        tripId: mapValueOfType<int>(json, r'tripId')!,
-        childIds: json[r'childIds'] is List
-            ? (json[r'childIds'] as List).cast<int>()
-            : const [],
+      return TransactionResponse(
+        txnToken: mapValueOfType<String>(json, r'txnToken')!,
       );
     }
     return null;
   }
 
-  static List<CreateAbsentBody>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <CreateAbsentBody>[];
+  static List<TransactionResponse>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <TransactionResponse>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
-        final value = CreateAbsentBody.fromJson(row);
+        final value = TransactionResponse.fromJson(row);
         if (value != null) {
           result.add(value);
         }
@@ -83,12 +74,12 @@ class CreateAbsentBody {
     return result.toList(growable: growable);
   }
 
-  static Map<String, CreateAbsentBody> mapFromJson(dynamic json) {
-    final map = <String, CreateAbsentBody>{};
+  static Map<String, TransactionResponse> mapFromJson(dynamic json) {
+    final map = <String, TransactionResponse>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = CreateAbsentBody.fromJson(entry.value);
+        final value = TransactionResponse.fromJson(entry.value);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -97,13 +88,13 @@ class CreateAbsentBody {
     return map;
   }
 
-  // maps a json object with a list of CreateAbsentBody-objects as value to a dart map
-  static Map<String, List<CreateAbsentBody>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<CreateAbsentBody>>{};
+  // maps a json object with a list of TransactionResponse-objects as value to a dart map
+  static Map<String, List<TransactionResponse>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<TransactionResponse>>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = CreateAbsentBody.listFromJson(entry.value, growable: growable,);
+        final value = TransactionResponse.listFromJson(entry.value, growable: growable,);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -114,8 +105,7 @@ class CreateAbsentBody {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'tripId',
-    'childIds',
+    'txnToken',
   };
 }
 

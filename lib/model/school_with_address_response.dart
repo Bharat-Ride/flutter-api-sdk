@@ -67,17 +67,19 @@ class SchoolWithAddressResponse {
   String toString() => 'SchoolWithAddressResponse[id=$id, fullName=$fullName, createdBy=$createdBy, addressId=$addressId, updatedAt=$updatedAt, createdAt=$createdAt, address=$address]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'fullName'] = fullName;
-    if (createdBy != null) {
-      _json[r'createdBy'] = createdBy;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'fullName'] = this.fullName;
+    if (this.createdBy != null) {
+      json[r'createdBy'] = this.createdBy;
+    } else {
+      json[r'createdBy'] = null;
     }
-      _json[r'addressId'] = addressId;
-      _json[r'updatedAt'] = updatedAt;
-      _json[r'createdAt'] = createdAt;
-      _json[r'address'] = address;
-    return _json;
+      json[r'addressId'] = this.addressId;
+      json[r'updatedAt'] = this.updatedAt;
+      json[r'createdAt'] = this.createdAt;
+      json[r'address'] = this.address;
+    return json;
   }
 
   /// Returns a new [SchoolWithAddressResponse] instance and imports its values from

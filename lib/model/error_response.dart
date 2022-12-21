@@ -90,24 +90,32 @@ class ErrorResponse {
   String toString() => 'ErrorResponse[requestId=$requestId, timestamp=$timestamp, status=$status, message=$message, source_=$source_, stack=$stack, code=$code, errorData=$errorData]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'requestId'] = requestId;
-    if (timestamp != null) {
-      _json[r'timestamp'] = timestamp;
+    final json = <String, dynamic>{};
+      json[r'requestId'] = this.requestId;
+    if (this.timestamp != null) {
+      json[r'timestamp'] = this.timestamp;
+    } else {
+      json[r'timestamp'] = null;
     }
-    if (status != null) {
-      _json[r'status'] = status;
+    if (this.status != null) {
+      json[r'status'] = this.status;
+    } else {
+      json[r'status'] = null;
     }
-      _json[r'message'] = message;
-      _json[r'source'] = source_;
-    if (stack != null) {
-      _json[r'stack'] = stack;
+      json[r'message'] = this.message;
+      json[r'source'] = this.source_;
+    if (this.stack != null) {
+      json[r'stack'] = this.stack;
+    } else {
+      json[r'stack'] = null;
     }
-      _json[r'code'] = code;
-    if (errorData != null) {
-      _json[r'errorData'] = errorData;
+      json[r'code'] = this.code;
+    if (this.errorData != null) {
+      json[r'errorData'] = this.errorData;
+    } else {
+      json[r'errorData'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [ErrorResponse] instance and imports its values from

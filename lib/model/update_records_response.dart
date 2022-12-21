@@ -31,9 +31,9 @@ class UpdateRecordsResponse {
   String toString() => 'UpdateRecordsResponse[updated=$updated]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'updated'] = updated;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'updated'] = this.updated;
+    return json;
   }
 
   /// Returns a new [UpdateRecordsResponse] instance and imports its values from

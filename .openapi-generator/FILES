@@ -23,6 +23,7 @@ doc/CreateParentChildBody.md
 doc/CreatePaymentBody.md
 doc/CreatePickupBody.md
 doc/CreateSchoolBody.md
+doc/CreateTransactionBody.md
 doc/CreateUserWithAddressBody.md
 doc/DeleteRecordsResponse.md
 doc/DeviceApi.md
@@ -49,6 +50,7 @@ doc/SchoolWithAddressResponse.md
 doc/SchoolWithUserAndAddressResponse.md
 doc/SchoolWithUserResponse.md
 doc/StartTripBody.md
+doc/TransactionResponse.md
 doc/TripApi.md
 doc/TripResponse.md
 doc/TripWithGroupAndDeviceAndUserResponse.md
@@ -106,6 +108,7 @@ lib/model/create_parent_child_body.dart
 lib/model/create_payment_body.dart
 lib/model/create_pickup_body.dart
 lib/model/create_school_body.dart
+lib/model/create_transaction_body.dart
 lib/model/create_user_with_address_body.dart
 lib/model/delete_records_response.dart
 lib/model/device_response.dart
@@ -126,6 +129,7 @@ lib/model/school_with_address_response.dart
 lib/model/school_with_user_and_address_response.dart
 lib/model/school_with_user_response.dart
 lib/model/start_trip_body.dart
+lib/model/transaction_response.dart
 lib/model/trip_response.dart
 lib/model/trip_with_group_and_device_and_user_response.dart
 lib/model/update_address_body.dart
@@ -162,6 +166,7 @@ test/create_parent_child_body_test.dart
 test/create_payment_body_test.dart
 test/create_pickup_body_test.dart
 test/create_school_body_test.dart
+test/create_transaction_body_test.dart
 test/create_user_with_address_body_test.dart
 test/delete_records_response_test.dart
 test/device_api_test.dart
@@ -188,6 +193,7 @@ test/school_with_address_response_test.dart
 test/school_with_user_and_address_response_test.dart
 test/school_with_user_response_test.dart
 test/start_trip_body_test.dart
+test/transaction_response_test.dart
 test/trip_api_test.dart
 test/trip_response_test.dart
 test/trip_with_group_and_device_and_user_response_test.dart

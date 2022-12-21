@@ -11,11 +11,13 @@
 part of openapi.api;
 
 class ApiClient {
-  ApiClient({this.basePath = 'https://staging.presentation-api.api.findnemo.in', this.authentication});
+  ApiClient({this.basePath = 'https://staging.presentation-api.api.findnemo.in', this.authentication,});
 
   final String basePath;
+  final Authentication? authentication;
 
   var _client = Client();
+  final _defaultHeaderMap = <String, String>{};
 
   /// Returns the current HTTP [Client] instance to use in this class.
   ///
@@ -27,14 +29,11 @@ class ApiClient {
     _client = newClient;
   }
 
-  final _defaultHeaderMap = <String, String>{};
-  final Authentication? authentication;
+  Map<String, String> get defaultHeaderMap => _defaultHeaderMap;
 
   void addDefaultHeader(String key, String value) {
      _defaultHeaderMap[key] = value;
   }
-
-  Map<String,String> get defaultHeaderMap => _defaultHeaderMap;
 
   // We don't use a Map<String, String> for queryParams.
   // If collectionFormat is 'multi', a key might appear multiple times.
@@ -47,7 +46,7 @@ class ApiClient {
     Map<String, String> formParams,
     String? contentType,
   ) async {
-    _updateParamsForAuth(queryParams, headerParams);
+    await authentication?.applyToParams(queryParams, headerParams);
 
     headerParams.addAll(_defaultHeaderMap);
     if (contentType != null) {
@@ -165,16 +164,6 @@ class ApiClient {
   @Deprecated('Scheduled for removal in OpenAPI Generator 6.x. Use serializeAsync() instead.')
   String serialize(Object? value) => value == null ? '' : json.encode(value);
 
-  /// Update query and header parameters based on authentication settings.
-  void _updateParamsForAuth(
-    List<QueryParam> queryParams,
-    Map<String, String> headerParams,
-  ) {
-    if (authentication != null) {
-      authentication!.applyToParams(queryParams, headerParams);
-    }
-  }
-
   static dynamic _deserialize(dynamic value, String targetType, {bool growable = false}) {
     try {
       switch (targetType) {
@@ -190,6 +179,8 @@ class ApiClient {
           }
           final valueString = '$value'.toLowerCase();
           return valueString == 'true' || valueString == '1';
+        case 'DateTime':
+          return value is DateTime ? value : DateTime.tryParse(value);
         case 'AddDriverToGroupBody':
           return AddDriverToGroupBody.fromJson(value);
         case 'AddressResponse':
@@ -226,6 +217,8 @@ class ApiClient {
           return CreatePickupBody.fromJson(value);
         case 'CreateSchoolBody':
           return CreateSchoolBody.fromJson(value);
+        case 'CreateTransactionBody':
+          return CreateTransactionBody.fromJson(value);
         case 'CreateUserWithAddressBody':
           return CreateUserWithAddressBody.fromJson(value);
         case 'DeleteRecordsResponse':
@@ -266,6 +259,8 @@ class ApiClient {
           return SchoolWithUserResponse.fromJson(value);
         case 'StartTripBody':
           return StartTripBody.fromJson(value);
+        case 'TransactionResponse':
+          return TransactionResponse.fromJson(value);
         case 'TripResponse':
           return TripResponse.fromJson(value);
         case 'TripWithGroupAndDeviceAndUserResponse':

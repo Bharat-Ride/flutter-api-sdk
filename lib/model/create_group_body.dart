@@ -69,19 +69,25 @@ class CreateGroupBody {
   String toString() => 'CreateGroupBody[name=$name, schoolId=$schoolId, toTime=$toTime, monthlyFees=$monthlyFees, fromTime=$fromTime]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'name'] = name;
-      _json[r'schoolId'] = schoolId;
-    if (toTime != null) {
-      _json[r'toTime'] = toTime;
+    final json = <String, dynamic>{};
+      json[r'name'] = this.name;
+      json[r'schoolId'] = this.schoolId;
+    if (this.toTime != null) {
+      json[r'toTime'] = this.toTime;
+    } else {
+      json[r'toTime'] = null;
     }
-    if (monthlyFees != null) {
-      _json[r'monthlyFees'] = monthlyFees;
+    if (this.monthlyFees != null) {
+      json[r'monthlyFees'] = this.monthlyFees;
+    } else {
+      json[r'monthlyFees'] = null;
     }
-    if (fromTime != null) {
-      _json[r'fromTime'] = fromTime;
+    if (this.fromTime != null) {
+      json[r'fromTime'] = this.fromTime;
+    } else {
+      json[r'fromTime'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [CreateGroupBody] instance and imports its values from

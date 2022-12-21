@@ -47,13 +47,15 @@ class ChildGroupMonthlyFeesBody {
   String toString() => 'ChildGroupMonthlyFeesBody[childId=$childId, groupId=$groupId, monthlyFees=$monthlyFees]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'childId'] = childId;
-      _json[r'groupId'] = groupId;
-    if (monthlyFees != null) {
-      _json[r'monthlyFees'] = monthlyFees;
+    final json = <String, dynamic>{};
+      json[r'childId'] = this.childId;
+      json[r'groupId'] = this.groupId;
+    if (this.monthlyFees != null) {
+      json[r'monthlyFees'] = this.monthlyFees;
+    } else {
+      json[r'monthlyFees'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [ChildGroupMonthlyFeesBody] instance and imports its values from

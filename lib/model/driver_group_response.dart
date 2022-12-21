@@ -51,13 +51,13 @@ class DriverGroupResponse {
   String toString() => 'DriverGroupResponse[driverId=$driverId, groupId=$groupId, permission=$permission, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'driverId'] = driverId;
-      _json[r'groupId'] = groupId;
-      _json[r'permission'] = permission;
-      _json[r'createdAt'] = createdAt;
-      _json[r'updatedAt'] = updatedAt;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'driverId'] = this.driverId;
+      json[r'groupId'] = this.groupId;
+      json[r'permission'] = this.permission;
+      json[r'createdAt'] = this.createdAt;
+      json[r'updatedAt'] = this.updatedAt;
+    return json;
   }
 
   /// Returns a new [DriverGroupResponse] instance and imports its values from

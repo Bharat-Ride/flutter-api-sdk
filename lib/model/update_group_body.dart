@@ -86,24 +86,34 @@ class UpdateGroupBody {
   String toString() => 'UpdateGroupBody[id=$id, name=$name, schoolId=$schoolId, monthlyFees=$monthlyFees, toTime=$toTime, fromTime=$fromTime]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-    if (name != null) {
-      _json[r'name'] = name;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (schoolId != null) {
-      _json[r'schoolId'] = schoolId;
+    if (this.schoolId != null) {
+      json[r'schoolId'] = this.schoolId;
+    } else {
+      json[r'schoolId'] = null;
     }
-    if (monthlyFees != null) {
-      _json[r'monthlyFees'] = monthlyFees;
+    if (this.monthlyFees != null) {
+      json[r'monthlyFees'] = this.monthlyFees;
+    } else {
+      json[r'monthlyFees'] = null;
     }
-    if (toTime != null) {
-      _json[r'toTime'] = toTime;
+    if (this.toTime != null) {
+      json[r'toTime'] = this.toTime;
+    } else {
+      json[r'toTime'] = null;
     }
-    if (fromTime != null) {
-      _json[r'fromTime'] = fromTime;
+    if (this.fromTime != null) {
+      json[r'fromTime'] = this.fromTime;
+    } else {
+      json[r'fromTime'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [UpdateGroupBody] instance and imports its values from

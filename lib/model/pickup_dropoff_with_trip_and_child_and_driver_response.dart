@@ -127,33 +127,45 @@ class PickupDropoffWithTripAndChildAndDriverResponse {
   String toString() => 'PickupDropoffWithTripAndChildAndDriverResponse[id=$id, driverId=$driverId, tripId=$tripId, childId=$childId, pickupTime=$pickupTime, dropoffTime=$dropoffTime, pickupLatitude=$pickupLatitude, pickupLongitude=$pickupLongitude, dropoffLatitude=$dropoffLatitude, dropoffLongitude=$dropoffLongitude, isAbsent=$isAbsent, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'driverId'] = driverId;
-      _json[r'tripId'] = tripId;
-      _json[r'childId'] = childId;
-    if (pickupTime != null) {
-      _json[r'pickupTime'] = pickupTime;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'driverId'] = this.driverId;
+      json[r'tripId'] = this.tripId;
+      json[r'childId'] = this.childId;
+    if (this.pickupTime != null) {
+      json[r'pickupTime'] = this.pickupTime;
+    } else {
+      json[r'pickupTime'] = null;
     }
-    if (dropoffTime != null) {
-      _json[r'dropoffTime'] = dropoffTime;
+    if (this.dropoffTime != null) {
+      json[r'dropoffTime'] = this.dropoffTime;
+    } else {
+      json[r'dropoffTime'] = null;
     }
-    if (pickupLatitude != null) {
-      _json[r'pickupLatitude'] = pickupLatitude;
+    if (this.pickupLatitude != null) {
+      json[r'pickupLatitude'] = this.pickupLatitude;
+    } else {
+      json[r'pickupLatitude'] = null;
     }
-    if (pickupLongitude != null) {
-      _json[r'pickupLongitude'] = pickupLongitude;
+    if (this.pickupLongitude != null) {
+      json[r'pickupLongitude'] = this.pickupLongitude;
+    } else {
+      json[r'pickupLongitude'] = null;
     }
-    if (dropoffLatitude != null) {
-      _json[r'dropoffLatitude'] = dropoffLatitude;
+    if (this.dropoffLatitude != null) {
+      json[r'dropoffLatitude'] = this.dropoffLatitude;
+    } else {
+      json[r'dropoffLatitude'] = null;
     }
-    if (dropoffLongitude != null) {
-      _json[r'dropoffLongitude'] = dropoffLongitude;
+    if (this.dropoffLongitude != null) {
+      json[r'dropoffLongitude'] = this.dropoffLongitude;
+    } else {
+      json[r'dropoffLongitude'] = null;
     }
-      _json[r'isAbsent'] = isAbsent;
-      _json[r'createdAt'] = createdAt;
-      _json[r'updatedAt'] = updatedAt;
-    return _json;
+      json[r'isAbsent'] = this.isAbsent;
+      json[r'createdAt'] = this.createdAt;
+      json[r'updatedAt'] = this.updatedAt;
+    return json;
   }
 
   /// Returns a new [PickupDropoffWithTripAndChildAndDriverResponse] instance and imports its values from

@@ -58,16 +58,20 @@ class UpdateChildBody {
   String toString() => 'UpdateChildBody[id=$id, fullName=$fullName, profileImageUrl=$profileImageUrl, addressId=$addressId]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'fullName'] = fullName;
-    if (profileImageUrl != null) {
-      _json[r'profileImageUrl'] = profileImageUrl;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'fullName'] = this.fullName;
+    if (this.profileImageUrl != null) {
+      json[r'profileImageUrl'] = this.profileImageUrl;
+    } else {
+      json[r'profileImageUrl'] = null;
     }
-    if (addressId != null) {
-      _json[r'addressId'] = addressId;
+    if (this.addressId != null) {
+      json[r'addressId'] = this.addressId;
+    } else {
+      json[r'addressId'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [UpdateChildBody] instance and imports its values from

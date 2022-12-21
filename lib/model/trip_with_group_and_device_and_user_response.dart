@@ -175,47 +175,67 @@ class TripWithGroupAndDeviceAndUserResponse {
   String toString() => 'TripWithGroupAndDeviceAndUserResponse[id=$id, driverId=$driverId, groupId=$groupId, deviceId=$deviceId, startTime=$startTime, endTime=$endTime, childId=$childId, startLatitude=$startLatitude, startLongitude=$startLongitude, endLatitude=$endLatitude, endLongitude=$endLongitude, driverCurrentLatitude=$driverCurrentLatitude, driverCurrentLongitude=$driverCurrentLongitude, type=$type, driver=$driver, group=$group, device=$device, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'driverId'] = driverId;
-      _json[r'groupId'] = groupId;
-      _json[r'deviceId'] = deviceId;
-    if (startTime != null) {
-      _json[r'startTime'] = startTime;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'driverId'] = this.driverId;
+      json[r'groupId'] = this.groupId;
+      json[r'deviceId'] = this.deviceId;
+    if (this.startTime != null) {
+      json[r'startTime'] = this.startTime;
+    } else {
+      json[r'startTime'] = null;
     }
-    if (endTime != null) {
-      _json[r'endTime'] = endTime;
+    if (this.endTime != null) {
+      json[r'endTime'] = this.endTime;
+    } else {
+      json[r'endTime'] = null;
     }
-    if (childId != null) {
-      _json[r'childId'] = childId;
+    if (this.childId != null) {
+      json[r'childId'] = this.childId;
+    } else {
+      json[r'childId'] = null;
     }
-    if (startLatitude != null) {
-      _json[r'startLatitude'] = startLatitude;
+    if (this.startLatitude != null) {
+      json[r'startLatitude'] = this.startLatitude;
+    } else {
+      json[r'startLatitude'] = null;
     }
-    if (startLongitude != null) {
-      _json[r'startLongitude'] = startLongitude;
+    if (this.startLongitude != null) {
+      json[r'startLongitude'] = this.startLongitude;
+    } else {
+      json[r'startLongitude'] = null;
     }
-    if (endLatitude != null) {
-      _json[r'endLatitude'] = endLatitude;
+    if (this.endLatitude != null) {
+      json[r'endLatitude'] = this.endLatitude;
+    } else {
+      json[r'endLatitude'] = null;
     }
-    if (endLongitude != null) {
-      _json[r'endLongitude'] = endLongitude;
+    if (this.endLongitude != null) {
+      json[r'endLongitude'] = this.endLongitude;
+    } else {
+      json[r'endLongitude'] = null;
     }
-    if (driverCurrentLatitude != null) {
-      _json[r'driverCurrentLatitude'] = driverCurrentLatitude;
+    if (this.driverCurrentLatitude != null) {
+      json[r'driverCurrentLatitude'] = this.driverCurrentLatitude;
+    } else {
+      json[r'driverCurrentLatitude'] = null;
     }
-    if (driverCurrentLongitude != null) {
-      _json[r'driverCurrentLongitude'] = driverCurrentLongitude;
+    if (this.driverCurrentLongitude != null) {
+      json[r'driverCurrentLongitude'] = this.driverCurrentLongitude;
+    } else {
+      json[r'driverCurrentLongitude'] = null;
     }
-    if (type != null) {
-      _json[r'type'] = type;
+    if (this.type != null) {
+      json[r'type'] = this.type;
+    } else {
+      json[r'type'] = null;
     }
-      _json[r'driver'] = driver;
-      _json[r'group'] = group;
-      _json[r'device'] = device;
-      _json[r'createdAt'] = createdAt;
-      _json[r'updatedAt'] = updatedAt;
-    return _json;
+      json[r'driver'] = this.driver;
+      json[r'group'] = this.group;
+      json[r'device'] = this.device;
+      json[r'createdAt'] = this.createdAt;
+      json[r'updatedAt'] = this.updatedAt;
+    return json;
   }
 
   /// Returns a new [TripWithGroupAndDeviceAndUserResponse] instance and imports its values from
@@ -386,7 +406,7 @@ class TripWithGroupAndDeviceAndUserResponseTypeEnumTypeTransformer {
   /// and users are still using an old app with the old code.
   TripWithGroupAndDeviceAndUserResponseTypeEnum? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
-      switch (data.toString()) {
+      switch (data) {
         case r'TOWARDS': return TripWithGroupAndDeviceAndUserResponseTypeEnum.TOWARDS;
         case r'FROMWARDS': return TripWithGroupAndDeviceAndUserResponseTypeEnum.FROMWARDS;
         default:

@@ -63,19 +63,25 @@ class StartTripBody {
   String toString() => 'StartTripBody[groupId=$groupId, uId=$uId, startLatitude=$startLatitude, startLongitude=$startLongitude, type=$type]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'groupId'] = groupId;
-      _json[r'uId'] = uId;
-    if (startLatitude != null) {
-      _json[r'startLatitude'] = startLatitude;
+    final json = <String, dynamic>{};
+      json[r'groupId'] = this.groupId;
+      json[r'uId'] = this.uId;
+    if (this.startLatitude != null) {
+      json[r'startLatitude'] = this.startLatitude;
+    } else {
+      json[r'startLatitude'] = null;
     }
-    if (startLongitude != null) {
-      _json[r'startLongitude'] = startLongitude;
+    if (this.startLongitude != null) {
+      json[r'startLongitude'] = this.startLongitude;
+    } else {
+      json[r'startLongitude'] = null;
     }
-    if (type != null) {
-      _json[r'type'] = type;
+    if (this.type != null) {
+      json[r'type'] = this.type;
+    } else {
+      json[r'type'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [StartTripBody] instance and imports its values from
@@ -217,7 +223,7 @@ class StartTripBodyTypeEnumTypeTransformer {
   /// and users are still using an old app with the old code.
   StartTripBodyTypeEnum? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
-      switch (data.toString()) {
+      switch (data) {
         case r'TOWARDS': return StartTripBodyTypeEnum.TOWARDS;
         case r'FROMWARDS': return StartTripBodyTypeEnum.FROMWARDS;
         default:

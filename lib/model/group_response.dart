@@ -99,25 +99,31 @@ class GroupResponse {
   String toString() => 'GroupResponse[id=$id, creatorId=$creatorId, schoolId=$schoolId, name=$name, isDeleted=$isDeleted, toTime=$toTime, publicId=$publicId, fromTime=$fromTime, monthlyFees=$monthlyFees, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'creatorId'] = creatorId;
-      _json[r'schoolId'] = schoolId;
-      _json[r'name'] = name;
-      _json[r'isDeleted'] = isDeleted;
-    if (toTime != null) {
-      _json[r'toTime'] = toTime;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'creatorId'] = this.creatorId;
+      json[r'schoolId'] = this.schoolId;
+      json[r'name'] = this.name;
+      json[r'isDeleted'] = this.isDeleted;
+    if (this.toTime != null) {
+      json[r'toTime'] = this.toTime;
+    } else {
+      json[r'toTime'] = null;
     }
-      _json[r'publicId'] = publicId;
-    if (fromTime != null) {
-      _json[r'fromTime'] = fromTime;
+      json[r'publicId'] = this.publicId;
+    if (this.fromTime != null) {
+      json[r'fromTime'] = this.fromTime;
+    } else {
+      json[r'fromTime'] = null;
     }
-    if (monthlyFees != null) {
-      _json[r'monthlyFees'] = monthlyFees;
+    if (this.monthlyFees != null) {
+      json[r'monthlyFees'] = this.monthlyFees;
+    } else {
+      json[r'monthlyFees'] = null;
     }
-      _json[r'createdAt'] = createdAt;
-      _json[r'updatedAt'] = updatedAt;
-    return _json;
+      json[r'createdAt'] = this.createdAt;
+      json[r'updatedAt'] = this.updatedAt;
+    return json;
   }
 
   /// Returns a new [GroupResponse] instance and imports its values from

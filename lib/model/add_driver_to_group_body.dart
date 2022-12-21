@@ -41,11 +41,11 @@ class AddDriverToGroupBody {
   String toString() => 'AddDriverToGroupBody[groupId=$groupId, driverFullName=$driverFullName, driverPhoneNumber=$driverPhoneNumber]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'groupId'] = groupId;
-      _json[r'driverFullName'] = driverFullName;
-      _json[r'driverPhoneNumber'] = driverPhoneNumber;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'groupId'] = this.groupId;
+      json[r'driverFullName'] = this.driverFullName;
+      json[r'driverPhoneNumber'] = this.driverPhoneNumber;
+    return json;
   }
 
   /// Returns a new [AddDriverToGroupBody] instance and imports its values from

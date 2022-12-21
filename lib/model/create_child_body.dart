@@ -64,18 +64,24 @@ class CreateChildBody {
   String toString() => 'CreateChildBody[fullName=$fullName, phoneNumber=$phoneNumber, profileImageUrl=$profileImageUrl, addressId=$addressId]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'fullName'] = fullName;
-    if (phoneNumber != null) {
-      _json[r'phoneNumber'] = phoneNumber;
+    final json = <String, dynamic>{};
+      json[r'fullName'] = this.fullName;
+    if (this.phoneNumber != null) {
+      json[r'phoneNumber'] = this.phoneNumber;
+    } else {
+      json[r'phoneNumber'] = null;
     }
-    if (profileImageUrl != null) {
-      _json[r'profileImageUrl'] = profileImageUrl;
+    if (this.profileImageUrl != null) {
+      json[r'profileImageUrl'] = this.profileImageUrl;
+    } else {
+      json[r'profileImageUrl'] = null;
     }
-    if (addressId != null) {
-      _json[r'addressId'] = addressId;
+    if (this.addressId != null) {
+      json[r'addressId'] = this.addressId;
+    } else {
+      json[r'addressId'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [CreateChildBody] instance and imports its values from

@@ -75,21 +75,29 @@ class CreateDeviceBody {
   String toString() => 'CreateDeviceBody[uId=$uId, model=$model, make=$make, fcmToken=$fcmToken, locale=$locale]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'uId'] = uId;
-    if (model != null) {
-      _json[r'model'] = model;
+    final json = <String, dynamic>{};
+      json[r'uId'] = this.uId;
+    if (this.model != null) {
+      json[r'model'] = this.model;
+    } else {
+      json[r'model'] = null;
     }
-    if (make != null) {
-      _json[r'make'] = make;
+    if (this.make != null) {
+      json[r'make'] = this.make;
+    } else {
+      json[r'make'] = null;
     }
-    if (fcmToken != null) {
-      _json[r'fcmToken'] = fcmToken;
+    if (this.fcmToken != null) {
+      json[r'fcmToken'] = this.fcmToken;
+    } else {
+      json[r'fcmToken'] = null;
     }
-    if (locale != null) {
-      _json[r'locale'] = locale;
+    if (this.locale != null) {
+      json[r'locale'] = this.locale;
+    } else {
+      json[r'locale'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [CreateDeviceBody] instance and imports its values from

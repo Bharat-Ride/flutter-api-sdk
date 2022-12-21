@@ -92,22 +92,24 @@ class PaymentResponse {
   String toString() => 'PaymentResponse[id=$id, uId=$uId, driverId=$driverId, childId=$childId, amount=$amount, hasDriverAccepted=$hasDriverAccepted, hasParentAccepted=$hasParentAccepted, dates=$dates, status=$status, creatorId=$creatorId, createdAt=$createdAt, notes=$notes]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'uId'] = uId;
-      _json[r'driverId'] = driverId;
-      _json[r'childId'] = childId;
-      _json[r'amount'] = amount;
-      _json[r'hasDriverAccepted'] = hasDriverAccepted;
-      _json[r'hasParentAccepted'] = hasParentAccepted;
-      _json[r'dates'] = dates;
-      _json[r'status'] = status;
-      _json[r'creatorId'] = creatorId;
-      _json[r'createdAt'] = createdAt;
-    if (notes != null) {
-      _json[r'notes'] = notes;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'uId'] = this.uId;
+      json[r'driverId'] = this.driverId;
+      json[r'childId'] = this.childId;
+      json[r'amount'] = this.amount;
+      json[r'hasDriverAccepted'] = this.hasDriverAccepted;
+      json[r'hasParentAccepted'] = this.hasParentAccepted;
+      json[r'dates'] = this.dates;
+      json[r'status'] = this.status;
+      json[r'creatorId'] = this.creatorId;
+      json[r'createdAt'] = this.createdAt;
+    if (this.notes != null) {
+      json[r'notes'] = this.notes;
+    } else {
+      json[r'notes'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [PaymentResponse] instance and imports its values from
@@ -263,7 +265,7 @@ class PaymentResponseStatusEnumTypeTransformer {
   /// and users are still using an old app with the old code.
   PaymentResponseStatusEnum? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
-      switch (data.toString()) {
+      switch (data) {
         case r'CREATED': return PaymentResponseStatusEnum.CREATED;
         case r'UPDATED': return PaymentResponseStatusEnum.UPDATED;
         case r'DELETED': return PaymentResponseStatusEnum.DELETED;

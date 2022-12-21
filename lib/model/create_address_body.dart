@@ -95,25 +95,33 @@ class CreateAddressBody {
   String toString() => 'CreateAddressBody[address1=$address1, address2=$address2, address3=$address3, city=$city, state=$state, country=$country, postalCode=$postalCode, latitude=$latitude, longitude=$longitude]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'address1'] = address1;
-    if (address2 != null) {
-      _json[r'address2'] = address2;
+    final json = <String, dynamic>{};
+      json[r'address1'] = this.address1;
+    if (this.address2 != null) {
+      json[r'address2'] = this.address2;
+    } else {
+      json[r'address2'] = null;
     }
-    if (address3 != null) {
-      _json[r'address3'] = address3;
+    if (this.address3 != null) {
+      json[r'address3'] = this.address3;
+    } else {
+      json[r'address3'] = null;
     }
-      _json[r'city'] = city;
-      _json[r'state'] = state;
-      _json[r'country'] = country;
-      _json[r'postalCode'] = postalCode;
-    if (latitude != null) {
-      _json[r'latitude'] = latitude;
+      json[r'city'] = this.city;
+      json[r'state'] = this.state;
+      json[r'country'] = this.country;
+      json[r'postalCode'] = this.postalCode;
+    if (this.latitude != null) {
+      json[r'latitude'] = this.latitude;
+    } else {
+      json[r'latitude'] = null;
     }
-    if (longitude != null) {
-      _json[r'longitude'] = longitude;
+    if (this.longitude != null) {
+      json[r'longitude'] = this.longitude;
+    } else {
+      json[r'longitude'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [CreateAddressBody] instance and imports its values from

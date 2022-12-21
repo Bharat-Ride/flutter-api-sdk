@@ -53,15 +53,19 @@ class DriverLocationUpdateTripBody {
   String toString() => 'DriverLocationUpdateTripBody[id=$id, driverCurrentLatitude=$driverCurrentLatitude, driverCurrentLongitude=$driverCurrentLongitude]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-    if (driverCurrentLatitude != null) {
-      _json[r'driverCurrentLatitude'] = driverCurrentLatitude;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+    if (this.driverCurrentLatitude != null) {
+      json[r'driverCurrentLatitude'] = this.driverCurrentLatitude;
+    } else {
+      json[r'driverCurrentLatitude'] = null;
     }
-    if (driverCurrentLongitude != null) {
-      _json[r'driverCurrentLongitude'] = driverCurrentLongitude;
+    if (this.driverCurrentLongitude != null) {
+      json[r'driverCurrentLongitude'] = this.driverCurrentLongitude;
+    } else {
+      json[r'driverCurrentLongitude'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [DriverLocationUpdateTripBody] instance and imports its values from

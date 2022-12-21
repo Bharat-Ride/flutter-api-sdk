@@ -36,10 +36,10 @@ class CreateNotAbsentBody {
   String toString() => 'CreateNotAbsentBody[tripId=$tripId, childIds=$childIds]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'tripId'] = tripId;
-      _json[r'childIds'] = childIds;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'tripId'] = this.tripId;
+      json[r'childIds'] = this.childIds;
+    return json;
   }
 
   /// Returns a new [CreateNotAbsentBody] instance and imports its values from

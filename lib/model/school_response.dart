@@ -90,24 +90,32 @@ class SchoolResponse {
   String toString() => 'SchoolResponse[id=$id, fullName=$fullName, createdBy=$createdBy, addressId=$addressId, updatedAt=$updatedAt, createdAt=$createdAt, address=$address, creator=$creator]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'fullName'] = fullName;
-    if (createdBy != null) {
-      _json[r'createdBy'] = createdBy;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'fullName'] = this.fullName;
+    if (this.createdBy != null) {
+      json[r'createdBy'] = this.createdBy;
+    } else {
+      json[r'createdBy'] = null;
     }
-    if (addressId != null) {
-      _json[r'addressId'] = addressId;
+    if (this.addressId != null) {
+      json[r'addressId'] = this.addressId;
+    } else {
+      json[r'addressId'] = null;
     }
-      _json[r'updatedAt'] = updatedAt;
-      _json[r'createdAt'] = createdAt;
-    if (address != null) {
-      _json[r'address'] = address;
+      json[r'updatedAt'] = this.updatedAt;
+      json[r'createdAt'] = this.createdAt;
+    if (this.address != null) {
+      json[r'address'] = this.address;
+    } else {
+      json[r'address'] = null;
     }
-    if (creator != null) {
-      _json[r'creator'] = creator;
+    if (this.creator != null) {
+      json[r'creator'] = this.creator;
+    } else {
+      json[r'creator'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [SchoolResponse] instance and imports its values from

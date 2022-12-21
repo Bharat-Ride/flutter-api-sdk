@@ -58,16 +58,20 @@ class CreatePickupBody {
   String toString() => 'CreatePickupBody[tripId=$tripId, pickupLatitude=$pickupLatitude, pickupLongitude=$pickupLongitude, childIds=$childIds]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'tripId'] = tripId;
-    if (pickupLatitude != null) {
-      _json[r'pickupLatitude'] = pickupLatitude;
+    final json = <String, dynamic>{};
+      json[r'tripId'] = this.tripId;
+    if (this.pickupLatitude != null) {
+      json[r'pickupLatitude'] = this.pickupLatitude;
+    } else {
+      json[r'pickupLatitude'] = null;
     }
-    if (pickupLongitude != null) {
-      _json[r'pickupLongitude'] = pickupLongitude;
+    if (this.pickupLongitude != null) {
+      json[r'pickupLongitude'] = this.pickupLongitude;
+    } else {
+      json[r'pickupLongitude'] = null;
     }
-      _json[r'childIds'] = childIds;
-    return _json;
+      json[r'childIds'] = this.childIds;
+    return json;
   }
 
   /// Returns a new [CreatePickupBody] instance and imports its values from

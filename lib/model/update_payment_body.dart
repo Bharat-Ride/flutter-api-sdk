@@ -64,18 +64,24 @@ class UpdatePaymentBody {
   String toString() => 'UpdatePaymentBody[uId=$uId, amount=$amount, dates=$dates, notes=$notes]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'uId'] = uId;
-    if (amount != null) {
-      _json[r'amount'] = amount;
+    final json = <String, dynamic>{};
+      json[r'uId'] = this.uId;
+    if (this.amount != null) {
+      json[r'amount'] = this.amount;
+    } else {
+      json[r'amount'] = null;
     }
-    if (dates != null) {
-      _json[r'dates'] = dates;
+    if (this.dates != null) {
+      json[r'dates'] = this.dates;
+    } else {
+      json[r'dates'] = null;
     }
-    if (notes != null) {
-      _json[r'notes'] = notes;
+    if (this.notes != null) {
+      json[r'notes'] = this.notes;
+    } else {
+      json[r'notes'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [UpdatePaymentBody] instance and imports its values from

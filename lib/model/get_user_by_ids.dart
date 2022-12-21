@@ -31,9 +31,9 @@ class GetUserByIds {
   String toString() => 'GetUserByIds[userIds=$userIds]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'userIds'] = userIds;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'userIds'] = this.userIds;
+    return json;
   }
 
   /// Returns a new [GetUserByIds] instance and imports its values from

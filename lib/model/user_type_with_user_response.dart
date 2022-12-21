@@ -61,15 +61,15 @@ class UserTypeWithUserResponse {
   String toString() => 'UserTypeWithUserResponse[id=$id, userId=$userId, isDriver=$isDriver, isParent=$isParent, user=$user, updatedAt=$updatedAt, createdAt=$createdAt]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'userId'] = userId;
-      _json[r'isDriver'] = isDriver;
-      _json[r'isParent'] = isParent;
-      _json[r'user'] = user;
-      _json[r'updatedAt'] = updatedAt;
-      _json[r'createdAt'] = createdAt;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'userId'] = this.userId;
+      json[r'isDriver'] = this.isDriver;
+      json[r'isParent'] = this.isParent;
+      json[r'user'] = this.user;
+      json[r'updatedAt'] = this.updatedAt;
+      json[r'createdAt'] = this.createdAt;
+    return json;
   }
 
   /// Returns a new [UserTypeWithUserResponse] instance and imports its values from

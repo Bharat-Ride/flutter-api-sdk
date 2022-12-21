@@ -125,35 +125,53 @@ class UpdateUserWithAddressBody {
   String toString() => 'UpdateUserWithAddressBody[id=$id, fullName=$fullName, phoneNumber=$phoneNumber, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, address=$address]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-    if (id != null) {
-      _json[r'id'] = id;
+    final json = <String, dynamic>{};
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
     }
-    if (fullName != null) {
-      _json[r'fullName'] = fullName;
+    if (this.fullName != null) {
+      json[r'fullName'] = this.fullName;
+    } else {
+      json[r'fullName'] = null;
     }
-    if (phoneNumber != null) {
-      _json[r'phoneNumber'] = phoneNumber;
+    if (this.phoneNumber != null) {
+      json[r'phoneNumber'] = this.phoneNumber;
+    } else {
+      json[r'phoneNumber'] = null;
     }
-    if (profileImageUrl != null) {
-      _json[r'profileImageUrl'] = profileImageUrl;
+    if (this.profileImageUrl != null) {
+      json[r'profileImageUrl'] = this.profileImageUrl;
+    } else {
+      json[r'profileImageUrl'] = null;
     }
-    if (photoIdUrl != null) {
-      _json[r'photoIdUrl'] = photoIdUrl;
+    if (this.photoIdUrl != null) {
+      json[r'photoIdUrl'] = this.photoIdUrl;
+    } else {
+      json[r'photoIdUrl'] = null;
     }
-    if (email != null) {
-      _json[r'email'] = email;
+    if (this.email != null) {
+      json[r'email'] = this.email;
+    } else {
+      json[r'email'] = null;
     }
-    if (dateOfBirth != null) {
-      _json[r'dateOfBirth'] = dateOfBirth;
+    if (this.dateOfBirth != null) {
+      json[r'dateOfBirth'] = this.dateOfBirth;
+    } else {
+      json[r'dateOfBirth'] = null;
     }
-    if (addressId != null) {
-      _json[r'addressId'] = addressId;
+    if (this.addressId != null) {
+      json[r'addressId'] = this.addressId;
+    } else {
+      json[r'addressId'] = null;
     }
-    if (address != null) {
-      _json[r'address'] = address;
+    if (this.address != null) {
+      json[r'address'] = this.address;
+    } else {
+      json[r'address'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [UpdateUserWithAddressBody] instance and imports its values from

@@ -31,9 +31,9 @@ class DeleteRecordsResponse {
   String toString() => 'DeleteRecordsResponse[deleted=$deleted]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'deleted'] = deleted;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'deleted'] = this.deleted;
+    return json;
   }
 
   /// Returns a new [DeleteRecordsResponse] instance and imports its values from

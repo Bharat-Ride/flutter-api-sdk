@@ -113,33 +113,49 @@ class CreateUserWithAddressBody {
   String toString() => 'CreateUserWithAddressBody[fullName=$fullName, phoneNumber=$phoneNumber, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, role=$role, address=$address]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'fullName'] = fullName;
-    if (phoneNumber != null) {
-      _json[r'phoneNumber'] = phoneNumber;
+    final json = <String, dynamic>{};
+      json[r'fullName'] = this.fullName;
+    if (this.phoneNumber != null) {
+      json[r'phoneNumber'] = this.phoneNumber;
+    } else {
+      json[r'phoneNumber'] = null;
     }
-    if (profileImageUrl != null) {
-      _json[r'profileImageUrl'] = profileImageUrl;
+    if (this.profileImageUrl != null) {
+      json[r'profileImageUrl'] = this.profileImageUrl;
+    } else {
+      json[r'profileImageUrl'] = null;
     }
-    if (photoIdUrl != null) {
-      _json[r'photoIdUrl'] = photoIdUrl;
+    if (this.photoIdUrl != null) {
+      json[r'photoIdUrl'] = this.photoIdUrl;
+    } else {
+      json[r'photoIdUrl'] = null;
     }
-    if (email != null) {
-      _json[r'email'] = email;
+    if (this.email != null) {
+      json[r'email'] = this.email;
+    } else {
+      json[r'email'] = null;
     }
-    if (dateOfBirth != null) {
-      _json[r'dateOfBirth'] = dateOfBirth;
+    if (this.dateOfBirth != null) {
+      json[r'dateOfBirth'] = this.dateOfBirth;
+    } else {
+      json[r'dateOfBirth'] = null;
     }
-    if (addressId != null) {
-      _json[r'addressId'] = addressId;
+    if (this.addressId != null) {
+      json[r'addressId'] = this.addressId;
+    } else {
+      json[r'addressId'] = null;
     }
-    if (role != null) {
-      _json[r'role'] = role;
+    if (this.role != null) {
+      json[r'role'] = this.role;
+    } else {
+      json[r'role'] = null;
     }
-    if (address != null) {
-      _json[r'address'] = address;
+    if (this.address != null) {
+      json[r'address'] = this.address;
+    } else {
+      json[r'address'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [CreateUserWithAddressBody] instance and imports its values from
@@ -282,7 +298,7 @@ class CreateUserWithAddressBodyRoleEnumTypeTransformer {
   /// and users are still using an old app with the old code.
   CreateUserWithAddressBodyRoleEnum? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
-      switch (data.toString()) {
+      switch (data) {
         case r'driver': return CreateUserWithAddressBodyRoleEnum.driver;
         case r'parent': return CreateUserWithAddressBodyRoleEnum.parent;
         case r'both': return CreateUserWithAddressBodyRoleEnum.both;

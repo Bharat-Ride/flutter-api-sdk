@@ -31,9 +31,9 @@ class ChildGroupChildIdsBody {
   String toString() => 'ChildGroupChildIdsBody[childIds=$childIds]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'childIds'] = childIds;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'childIds'] = this.childIds;
+    return json;
   }
 
   /// Returns a new [ChildGroupChildIdsBody] instance and imports its values from

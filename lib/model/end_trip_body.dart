@@ -53,15 +53,19 @@ class EndTripBody {
   String toString() => 'EndTripBody[id=$id, endLatitude=$endLatitude, endLongitude=$endLongitude]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-    if (endLatitude != null) {
-      _json[r'endLatitude'] = endLatitude;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+    if (this.endLatitude != null) {
+      json[r'endLatitude'] = this.endLatitude;
+    } else {
+      json[r'endLatitude'] = null;
     }
-    if (endLongitude != null) {
-      _json[r'endLongitude'] = endLongitude;
+    if (this.endLongitude != null) {
+      json[r'endLongitude'] = this.endLongitude;
+    } else {
+      json[r'endLongitude'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [EndTripBody] instance and imports its values from

@@ -58,16 +58,20 @@ class CreateDropoffBody {
   String toString() => 'CreateDropoffBody[tripId=$tripId, dropoffLatitude=$dropoffLatitude, dropoffLongitude=$dropoffLongitude, childIds=$childIds]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'tripId'] = tripId;
-    if (dropoffLatitude != null) {
-      _json[r'dropoffLatitude'] = dropoffLatitude;
+    final json = <String, dynamic>{};
+      json[r'tripId'] = this.tripId;
+    if (this.dropoffLatitude != null) {
+      json[r'dropoffLatitude'] = this.dropoffLatitude;
+    } else {
+      json[r'dropoffLatitude'] = null;
     }
-    if (dropoffLongitude != null) {
-      _json[r'dropoffLongitude'] = dropoffLongitude;
+    if (this.dropoffLongitude != null) {
+      json[r'dropoffLongitude'] = this.dropoffLongitude;
+    } else {
+      json[r'dropoffLongitude'] = null;
     }
-      _json[r'childIds'] = childIds;
-    return _json;
+      json[r'childIds'] = this.childIds;
+    return json;
   }
 
   /// Returns a new [CreateDropoffBody] instance and imports its values from

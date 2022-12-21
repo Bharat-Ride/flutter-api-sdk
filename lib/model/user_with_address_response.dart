@@ -117,31 +117,43 @@ class UserWithAddressResponse {
   String toString() => 'UserWithAddressResponse[id=$id, fullName=$fullName, phoneNumber=$phoneNumber, profileImageUrl=$profileImageUrl, photoIdUrl=$photoIdUrl, email=$email, dateOfBirth=$dateOfBirth, addressId=$addressId, address=$address, updatedAt=$updatedAt, createdAt=$createdAt]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'fullName'] = fullName;
-      _json[r'phoneNumber'] = phoneNumber;
-    if (profileImageUrl != null) {
-      _json[r'profileImageUrl'] = profileImageUrl;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'fullName'] = this.fullName;
+      json[r'phoneNumber'] = this.phoneNumber;
+    if (this.profileImageUrl != null) {
+      json[r'profileImageUrl'] = this.profileImageUrl;
+    } else {
+      json[r'profileImageUrl'] = null;
     }
-    if (photoIdUrl != null) {
-      _json[r'photoIdUrl'] = photoIdUrl;
+    if (this.photoIdUrl != null) {
+      json[r'photoIdUrl'] = this.photoIdUrl;
+    } else {
+      json[r'photoIdUrl'] = null;
     }
-    if (email != null) {
-      _json[r'email'] = email;
+    if (this.email != null) {
+      json[r'email'] = this.email;
+    } else {
+      json[r'email'] = null;
     }
-    if (dateOfBirth != null) {
-      _json[r'dateOfBirth'] = dateOfBirth;
+    if (this.dateOfBirth != null) {
+      json[r'dateOfBirth'] = this.dateOfBirth;
+    } else {
+      json[r'dateOfBirth'] = null;
     }
-    if (addressId != null) {
-      _json[r'addressId'] = addressId;
+    if (this.addressId != null) {
+      json[r'addressId'] = this.addressId;
+    } else {
+      json[r'addressId'] = null;
     }
-    if (address != null) {
-      _json[r'address'] = address;
+    if (this.address != null) {
+      json[r'address'] = this.address;
+    } else {
+      json[r'address'] = null;
     }
-      _json[r'updatedAt'] = updatedAt;
-      _json[r'createdAt'] = createdAt;
-    return _json;
+      json[r'updatedAt'] = this.updatedAt;
+      json[r'createdAt'] = this.createdAt;
+    return json;
   }
 
   /// Returns a new [UserWithAddressResponse] instance and imports its values from

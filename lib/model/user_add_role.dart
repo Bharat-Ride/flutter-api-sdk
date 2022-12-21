@@ -31,9 +31,9 @@ class UserAddRole {
   String toString() => 'UserAddRole[role=$role]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'role'] = role;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'role'] = this.role;
+    return json;
   }
 
   /// Returns a new [UserAddRole] instance and imports its values from
@@ -168,7 +168,7 @@ class UserAddRoleRoleEnumTypeTransformer {
   /// and users are still using an old app with the old code.
   UserAddRoleRoleEnum? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
-      switch (data.toString()) {
+      switch (data) {
         case r'driver': return UserAddRoleRoleEnum.driver;
         case r'parent': return UserAddRoleRoleEnum.parent;
         case r'both': return UserAddRoleRoleEnum.both;
