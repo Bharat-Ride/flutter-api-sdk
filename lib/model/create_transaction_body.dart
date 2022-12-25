@@ -15,36 +15,30 @@ class CreateTransactionBody {
   CreateTransactionBody({
     required this.amount,
     required this.orderId,
-    required this.parentId,
   });
 
   String amount;
 
   String orderId;
 
-  num parentId;
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateTransactionBody &&
      other.amount == amount &&
-     other.orderId == orderId &&
-     other.parentId == parentId;
+     other.orderId == orderId;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (amount.hashCode) +
-    (orderId.hashCode) +
-    (parentId.hashCode);
+    (orderId.hashCode);
 
   @override
-  String toString() => 'CreateTransactionBody[amount=$amount, orderId=$orderId, parentId=$parentId]';
+  String toString() => 'CreateTransactionBody[amount=$amount, orderId=$orderId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'amount'] = this.amount;
       json[r'orderId'] = this.orderId;
-      json[r'parentId'] = this.parentId;
     return json;
   }
 
@@ -69,9 +63,6 @@ class CreateTransactionBody {
       return CreateTransactionBody(
         amount: mapValueOfType<String>(json, r'amount')!,
         orderId: mapValueOfType<String>(json, r'orderId')!,
-        parentId: json[r'parentId'] == null
-            ? null
-            : num.parse(json[r'parentId'].toString()),
       );
     }
     return null;
@@ -123,7 +114,6 @@ class CreateTransactionBody {
   static const requiredKeys = <String>{
     'amount',
     'orderId',
-    'parentId',
   };
 }
 
