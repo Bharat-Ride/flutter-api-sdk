@@ -98,6 +98,7 @@ Class | Method | HTTP request | Description
 *PaymentApi* | [**paymentParentConfirmIdIdPatch**](doc//PaymentApi.md#paymentparentconfirmididpatch) | **PATCH** /payment/parent-confirm/id/{id}/ | Returns the number of records updated
 *PaymentApi* | [**paymentPost**](doc//PaymentApi.md#paymentpost) | **POST** /payment/ | Returns newly created payment record
 *PaymentApi* | [**paymentPut**](doc//PaymentApi.md#paymentput) | **PUT** /payment/ | Returns updated payment record
+*PaytmApi* | [**paytmInitTxnPost**](doc//PaytmApi.md#paytminittxnpost) | **POST** /paytm/initTxn | Returns transaction token to be used for completing payment
 *PickupDropoffApi* | [**pickupDropoffsTripsTripIdGet**](doc//PickupDropoffApi.md#pickupdropoffstripstripidget) | **GET** /pickup-dropoffs/trips/{tripId}/ | Returns array of pickup-dropoff by tripId
 *PickupDropoffApi* | [**tripsAbsentPost**](doc//PickupDropoffApi.md#tripsabsentpost) | **POST** /trips/absent/ | Returns array of pickupdropoff
 *PickupDropoffApi* | [**tripsDropoffPut**](doc//PickupDropoffApi.md#tripsdropoffput) | **PUT** /trips/dropoff/ | Returns number of children Dropoff

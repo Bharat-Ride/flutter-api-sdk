@@ -41,6 +41,7 @@ doc/GroupApi.md
 doc/GroupResponse.md
 doc/PaymentApi.md
 doc/PaymentResponse.md
+doc/PaytmApi.md
 doc/PickupDropoffApi.md
 doc/PickupDropoffResponse.md
 doc/PickupDropoffWithTripAndChildAndDriverResponse.md
@@ -77,6 +78,7 @@ lib/api/device_api.dart
 lib/api/driver_group_api.dart
 lib/api/group_api.dart
 lib/api/payment_api.dart
+lib/api/paytm_api.dart
 lib/api/pickup_dropoff_api.dart
 lib/api/school_api.dart
 lib/api/trip_api.dart
@@ -184,6 +186,7 @@ test/group_api_test.dart
 test/group_response_test.dart
 test/payment_api_test.dart
 test/payment_response_test.dart
+test/paytm_api_test.dart
 test/pickup_dropoff_api_test.dart
 test/pickup_dropoff_response_test.dart
 test/pickup_dropoff_with_trip_and_child_and_driver_response_test.dart
