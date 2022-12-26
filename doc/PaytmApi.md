@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **paytmInitTxnPost**
-> TransactionResponse paytmInitTxnPost(createTransactionBody)
+> Object paytmInitTxnPost(createTransactionBody)
 
 Returns transaction token to be used for completing payment
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TransactionResponse**](TransactionResponse.md)
+[**Object**](Object.md)
 
 ### Authorization
 
