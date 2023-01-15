@@ -172,7 +172,7 @@ class ChildGroupApi {
   ///
   /// * [ChildGroupMonthlyFeesBody] childGroupMonthlyFeesBody (required):
   ///   Child Group body
-  Future<List<UpdateRecordsResponse>?> childGroupsMonthlyFeesPut(ChildGroupMonthlyFeesBody childGroupMonthlyFeesBody,) async {
+  Future<UpdateRecordsResponse?> childGroupsMonthlyFeesPut(ChildGroupMonthlyFeesBody childGroupMonthlyFeesBody,) async {
     final response = await childGroupsMonthlyFeesPutWithHttpInfo(childGroupMonthlyFeesBody,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -181,11 +181,8 @@ class ChildGroupApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<UpdateRecordsResponse>') as List)
-        .cast<UpdateRecordsResponse>()
-        .toList();
-
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UpdateRecordsResponse',) as UpdateRecordsResponse;
+    
     }
     return null;
   }

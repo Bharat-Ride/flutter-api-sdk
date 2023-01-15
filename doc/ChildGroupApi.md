@@ -113,7 +113,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **childGroupsMonthlyFeesPut**
-> List<UpdateRecordsResponse> childGroupsMonthlyFeesPut(childGroupMonthlyFeesBody)
+> UpdateRecordsResponse childGroupsMonthlyFeesPut(childGroupMonthlyFeesBody)
 
 Returns number of child-group items updated
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<UpdateRecordsResponse>**](UpdateRecordsResponse.md)
+[**UpdateRecordsResponse**](UpdateRecordsResponse.md)
 
 ### Authorization
 
