@@ -16,9 +16,13 @@ class UpdateGroupBody {
     required this.id,
     this.name,
     this.schoolId,
-    this.monthlyFees,
+    this.monthFees,
+    this.threeMonthsFees,
+    this.sixMonthsFees,
+    this.twelveMonthsFees,
     this.toTime,
     this.fromTime,
+    this.updateChildFees,
   });
 
   int id;
@@ -45,7 +49,31 @@ class UpdateGroupBody {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  num? monthlyFees;
+  num? monthFees;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? threeMonthsFees;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? sixMonthsFees;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? twelveMonthsFees;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -63,14 +91,26 @@ class UpdateGroupBody {
   ///
   String? fromTime;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  bool? updateChildFees;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateGroupBody &&
      other.id == id &&
      other.name == name &&
      other.schoolId == schoolId &&
-     other.monthlyFees == monthlyFees &&
+     other.monthFees == monthFees &&
+     other.threeMonthsFees == threeMonthsFees &&
+     other.sixMonthsFees == sixMonthsFees &&
+     other.twelveMonthsFees == twelveMonthsFees &&
      other.toTime == toTime &&
-     other.fromTime == fromTime;
+     other.fromTime == fromTime &&
+     other.updateChildFees == updateChildFees;
 
   @override
   int get hashCode =>
@@ -78,12 +118,16 @@ class UpdateGroupBody {
     (id.hashCode) +
     (name == null ? 0 : name!.hashCode) +
     (schoolId == null ? 0 : schoolId!.hashCode) +
-    (monthlyFees == null ? 0 : monthlyFees!.hashCode) +
+    (monthFees == null ? 0 : monthFees!.hashCode) +
+    (threeMonthsFees == null ? 0 : threeMonthsFees!.hashCode) +
+    (sixMonthsFees == null ? 0 : sixMonthsFees!.hashCode) +
+    (twelveMonthsFees == null ? 0 : twelveMonthsFees!.hashCode) +
     (toTime == null ? 0 : toTime!.hashCode) +
-    (fromTime == null ? 0 : fromTime!.hashCode);
+    (fromTime == null ? 0 : fromTime!.hashCode) +
+    (updateChildFees == null ? 0 : updateChildFees!.hashCode);
 
   @override
-  String toString() => 'UpdateGroupBody[id=$id, name=$name, schoolId=$schoolId, monthlyFees=$monthlyFees, toTime=$toTime, fromTime=$fromTime]';
+  String toString() => 'UpdateGroupBody[id=$id, name=$name, schoolId=$schoolId, monthFees=$monthFees, threeMonthsFees=$threeMonthsFees, sixMonthsFees=$sixMonthsFees, twelveMonthsFees=$twelveMonthsFees, toTime=$toTime, fromTime=$fromTime, updateChildFees=$updateChildFees]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -98,10 +142,25 @@ class UpdateGroupBody {
     } else {
       json[r'schoolId'] = null;
     }
-    if (this.monthlyFees != null) {
-      json[r'monthlyFees'] = this.monthlyFees;
+    if (this.monthFees != null) {
+      json[r'monthFees'] = this.monthFees;
     } else {
-      json[r'monthlyFees'] = null;
+      json[r'monthFees'] = null;
+    }
+    if (this.threeMonthsFees != null) {
+      json[r'threeMonthsFees'] = this.threeMonthsFees;
+    } else {
+      json[r'threeMonthsFees'] = null;
+    }
+    if (this.sixMonthsFees != null) {
+      json[r'sixMonthsFees'] = this.sixMonthsFees;
+    } else {
+      json[r'sixMonthsFees'] = null;
+    }
+    if (this.twelveMonthsFees != null) {
+      json[r'twelveMonthsFees'] = this.twelveMonthsFees;
+    } else {
+      json[r'twelveMonthsFees'] = null;
     }
     if (this.toTime != null) {
       json[r'toTime'] = this.toTime;
@@ -112,6 +171,11 @@ class UpdateGroupBody {
       json[r'fromTime'] = this.fromTime;
     } else {
       json[r'fromTime'] = null;
+    }
+    if (this.updateChildFees != null) {
+      json[r'updateChildFees'] = this.updateChildFees;
+    } else {
+      json[r'updateChildFees'] = null;
     }
     return json;
   }
@@ -138,11 +202,21 @@ class UpdateGroupBody {
         id: mapValueOfType<int>(json, r'id')!,
         name: mapValueOfType<String>(json, r'name'),
         schoolId: mapValueOfType<int>(json, r'schoolId'),
-        monthlyFees: json[r'monthlyFees'] == null
+        monthFees: json[r'monthFees'] == null
             ? null
-            : num.parse(json[r'monthlyFees'].toString()),
+            : num.parse(json[r'monthFees'].toString()),
+        threeMonthsFees: json[r'threeMonthsFees'] == null
+            ? null
+            : num.parse(json[r'threeMonthsFees'].toString()),
+        sixMonthsFees: json[r'sixMonthsFees'] == null
+            ? null
+            : num.parse(json[r'sixMonthsFees'].toString()),
+        twelveMonthsFees: json[r'twelveMonthsFees'] == null
+            ? null
+            : num.parse(json[r'twelveMonthsFees'].toString()),
         toTime: mapValueOfType<String>(json, r'toTime'),
         fromTime: mapValueOfType<String>(json, r'fromTime'),
+        updateChildFees: mapValueOfType<bool>(json, r'updateChildFees'),
       );
     }
     return null;

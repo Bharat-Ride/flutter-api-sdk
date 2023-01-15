@@ -15,7 +15,10 @@ class ChildGroupMonthlyFeesBody {
   ChildGroupMonthlyFeesBody({
     required this.childId,
     required this.groupId,
-    this.monthlyFees,
+    this.monthFees,
+    this.threeMonthsFees,
+    this.sixMonthsFees,
+    this.twelveMonthsFees,
   });
 
   int childId;
@@ -28,32 +31,77 @@ class ChildGroupMonthlyFeesBody {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  num? monthlyFees;
+  num? monthFees;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? threeMonthsFees;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? sixMonthsFees;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? twelveMonthsFees;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ChildGroupMonthlyFeesBody &&
      other.childId == childId &&
      other.groupId == groupId &&
-     other.monthlyFees == monthlyFees;
+     other.monthFees == monthFees &&
+     other.threeMonthsFees == threeMonthsFees &&
+     other.sixMonthsFees == sixMonthsFees &&
+     other.twelveMonthsFees == twelveMonthsFees;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (childId.hashCode) +
     (groupId.hashCode) +
-    (monthlyFees == null ? 0 : monthlyFees!.hashCode);
+    (monthFees == null ? 0 : monthFees!.hashCode) +
+    (threeMonthsFees == null ? 0 : threeMonthsFees!.hashCode) +
+    (sixMonthsFees == null ? 0 : sixMonthsFees!.hashCode) +
+    (twelveMonthsFees == null ? 0 : twelveMonthsFees!.hashCode);
 
   @override
-  String toString() => 'ChildGroupMonthlyFeesBody[childId=$childId, groupId=$groupId, monthlyFees=$monthlyFees]';
+  String toString() => 'ChildGroupMonthlyFeesBody[childId=$childId, groupId=$groupId, monthFees=$monthFees, threeMonthsFees=$threeMonthsFees, sixMonthsFees=$sixMonthsFees, twelveMonthsFees=$twelveMonthsFees]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'childId'] = this.childId;
       json[r'groupId'] = this.groupId;
-    if (this.monthlyFees != null) {
-      json[r'monthlyFees'] = this.monthlyFees;
+    if (this.monthFees != null) {
+      json[r'monthFees'] = this.monthFees;
     } else {
-      json[r'monthlyFees'] = null;
+      json[r'monthFees'] = null;
+    }
+    if (this.threeMonthsFees != null) {
+      json[r'threeMonthsFees'] = this.threeMonthsFees;
+    } else {
+      json[r'threeMonthsFees'] = null;
+    }
+    if (this.sixMonthsFees != null) {
+      json[r'sixMonthsFees'] = this.sixMonthsFees;
+    } else {
+      json[r'sixMonthsFees'] = null;
+    }
+    if (this.twelveMonthsFees != null) {
+      json[r'twelveMonthsFees'] = this.twelveMonthsFees;
+    } else {
+      json[r'twelveMonthsFees'] = null;
     }
     return json;
   }
@@ -79,9 +127,18 @@ class ChildGroupMonthlyFeesBody {
       return ChildGroupMonthlyFeesBody(
         childId: mapValueOfType<int>(json, r'childId')!,
         groupId: mapValueOfType<int>(json, r'groupId')!,
-        monthlyFees: json[r'monthlyFees'] == null
+        monthFees: json[r'monthFees'] == null
             ? null
-            : num.parse(json[r'monthlyFees'].toString()),
+            : num.parse(json[r'monthFees'].toString()),
+        threeMonthsFees: json[r'threeMonthsFees'] == null
+            ? null
+            : num.parse(json[r'threeMonthsFees'].toString()),
+        sixMonthsFees: json[r'sixMonthsFees'] == null
+            ? null
+            : num.parse(json[r'sixMonthsFees'].toString()),
+        twelveMonthsFees: json[r'twelveMonthsFees'] == null
+            ? null
+            : num.parse(json[r'twelveMonthsFees'].toString()),
       );
     }
     return null;

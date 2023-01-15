@@ -15,7 +15,10 @@ class ChildGroupWithChildWithGroupResponse {
   ChildGroupWithChildWithGroupResponse({
     required this.childId,
     required this.groupId,
-    this.monthlyFees,
+    this.monthFees,
+    this.threeMonthsFees,
+    this.sixMonthsFees,
+    this.twelveMonthsFees,
     required this.child,
     required this.group,
     required this.createdAt,
@@ -32,7 +35,31 @@ class ChildGroupWithChildWithGroupResponse {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? monthlyFees;
+  num? monthFees;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? threeMonthsFees;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? sixMonthsFees;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? twelveMonthsFees;
 
   ChildResponse child;
 
@@ -46,7 +73,10 @@ class ChildGroupWithChildWithGroupResponse {
   bool operator ==(Object other) => identical(this, other) || other is ChildGroupWithChildWithGroupResponse &&
      other.childId == childId &&
      other.groupId == groupId &&
-     other.monthlyFees == monthlyFees &&
+     other.monthFees == monthFees &&
+     other.threeMonthsFees == threeMonthsFees &&
+     other.sixMonthsFees == sixMonthsFees &&
+     other.twelveMonthsFees == twelveMonthsFees &&
      other.child == child &&
      other.group == group &&
      other.createdAt == createdAt &&
@@ -57,23 +87,41 @@ class ChildGroupWithChildWithGroupResponse {
     // ignore: unnecessary_parenthesis
     (childId.hashCode) +
     (groupId.hashCode) +
-    (monthlyFees == null ? 0 : monthlyFees!.hashCode) +
+    (monthFees == null ? 0 : monthFees!.hashCode) +
+    (threeMonthsFees == null ? 0 : threeMonthsFees!.hashCode) +
+    (sixMonthsFees == null ? 0 : sixMonthsFees!.hashCode) +
+    (twelveMonthsFees == null ? 0 : twelveMonthsFees!.hashCode) +
     (child.hashCode) +
     (group.hashCode) +
     (createdAt.hashCode) +
     (updatedAt.hashCode);
 
   @override
-  String toString() => 'ChildGroupWithChildWithGroupResponse[childId=$childId, groupId=$groupId, monthlyFees=$monthlyFees, child=$child, group=$group, createdAt=$createdAt, updatedAt=$updatedAt]';
+  String toString() => 'ChildGroupWithChildWithGroupResponse[childId=$childId, groupId=$groupId, monthFees=$monthFees, threeMonthsFees=$threeMonthsFees, sixMonthsFees=$sixMonthsFees, twelveMonthsFees=$twelveMonthsFees, child=$child, group=$group, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'childId'] = this.childId;
       json[r'groupId'] = this.groupId;
-    if (this.monthlyFees != null) {
-      json[r'monthlyFees'] = this.monthlyFees;
+    if (this.monthFees != null) {
+      json[r'monthFees'] = this.monthFees;
     } else {
-      json[r'monthlyFees'] = null;
+      json[r'monthFees'] = null;
+    }
+    if (this.threeMonthsFees != null) {
+      json[r'threeMonthsFees'] = this.threeMonthsFees;
+    } else {
+      json[r'threeMonthsFees'] = null;
+    }
+    if (this.sixMonthsFees != null) {
+      json[r'sixMonthsFees'] = this.sixMonthsFees;
+    } else {
+      json[r'sixMonthsFees'] = null;
+    }
+    if (this.twelveMonthsFees != null) {
+      json[r'twelveMonthsFees'] = this.twelveMonthsFees;
+    } else {
+      json[r'twelveMonthsFees'] = null;
     }
       json[r'child'] = this.child;
       json[r'group'] = this.group;
@@ -103,7 +151,18 @@ class ChildGroupWithChildWithGroupResponse {
       return ChildGroupWithChildWithGroupResponse(
         childId: mapValueOfType<int>(json, r'childId')!,
         groupId: mapValueOfType<int>(json, r'groupId')!,
-        monthlyFees: mapValueOfType<String>(json, r'monthlyFees'),
+        monthFees: json[r'monthFees'] == null
+            ? null
+            : num.parse(json[r'monthFees'].toString()),
+        threeMonthsFees: json[r'threeMonthsFees'] == null
+            ? null
+            : num.parse(json[r'threeMonthsFees'].toString()),
+        sixMonthsFees: json[r'sixMonthsFees'] == null
+            ? null
+            : num.parse(json[r'sixMonthsFees'].toString()),
+        twelveMonthsFees: json[r'twelveMonthsFees'] == null
+            ? null
+            : num.parse(json[r'twelveMonthsFees'].toString()),
         child: ChildResponse.fromJson(json[r'child'])!,
         group: GroupResponse.fromJson(json[r'group'])!,
         createdAt: mapValueOfType<String>(json, r'createdAt')!,

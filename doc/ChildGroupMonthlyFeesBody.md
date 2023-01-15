@@ -10,7 +10,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **childId** | **int** |  | 
 **groupId** | **int** |  | 
-**monthlyFees** | **num** |  | [optional] 
+**monthFees** | **num** |  | [optional] 
+**threeMonthsFees** | **num** |  | [optional] 
+**sixMonthsFees** | **num** |  | [optional] 
+**twelveMonthsFees** | **num** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -16,7 +16,10 @@ Name | Type | Description | Notes
 **toTime** | **String** |  | [optional] 
 **publicId** | **String** |  | 
 **fromTime** | **String** |  | [optional] 
-**monthlyFees** | **String** |  | [optional] 
+**monthFees** | **num** |  | [optional] 
+**threeMonthsFees** | **num** |  | [optional] 
+**sixMonthsFees** | **num** |  | [optional] 
+**twelveMonthsFees** | **num** |  | [optional] 
 **createdAt** | **String** |  | 
 **updatedAt** | **String** |  | 
 

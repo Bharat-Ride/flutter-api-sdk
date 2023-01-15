@@ -11,7 +11,7 @@
 part of openapi.api;
 
 class ApiClient {
-  ApiClient({this.basePath = 'https://staging.presentation-api.api.findnemo.in', this.authentication,});
+  ApiClient({this.basePath = 'https://localhost', this.authentication,});
 
   final String basePath;
   final Authentication? authentication;
