@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **schoolId** | **int** |  | 
 **toTime** | **String** |  | [optional] 
-**monthFees** | **num** |  | [optional] 
-**threeMonthsFees** | **num** |  | [optional] 
-**sixMonthsFees** | **num** |  | [optional] 
-**twelveMonthsFees** | **num** |  | [optional] 
+**monthFees** | **int** |  | [optional] 
+**threeMonthsFees** | **int** |  | [optional] 
+**sixMonthsFees** | **int** |  | [optional] 
+**twelveMonthsFees** | **int** |  | [optional] 
 **fromTime** | **String** |  | [optional] 
 **updateChildFees** | **bool** |  | [optional] 
 

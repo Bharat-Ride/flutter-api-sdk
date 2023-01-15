@@ -42,7 +42,7 @@ class CreateGroupBody {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  num? monthFees;
+  int? monthFees;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -50,7 +50,7 @@ class CreateGroupBody {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  num? threeMonthsFees;
+  int? threeMonthsFees;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -58,7 +58,7 @@ class CreateGroupBody {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  num? sixMonthsFees;
+  int? sixMonthsFees;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -66,7 +66,7 @@ class CreateGroupBody {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  num? twelveMonthsFees;
+  int? twelveMonthsFees;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -176,18 +176,10 @@ class CreateGroupBody {
         name: mapValueOfType<String>(json, r'name')!,
         schoolId: mapValueOfType<int>(json, r'schoolId')!,
         toTime: mapValueOfType<String>(json, r'toTime'),
-        monthFees: json[r'monthFees'] == null
-            ? null
-            : num.parse(json[r'monthFees'].toString()),
-        threeMonthsFees: json[r'threeMonthsFees'] == null
-            ? null
-            : num.parse(json[r'threeMonthsFees'].toString()),
-        sixMonthsFees: json[r'sixMonthsFees'] == null
-            ? null
-            : num.parse(json[r'sixMonthsFees'].toString()),
-        twelveMonthsFees: json[r'twelveMonthsFees'] == null
-            ? null
-            : num.parse(json[r'twelveMonthsFees'].toString()),
+        monthFees: mapValueOfType<int>(json, r'monthFees'),
+        threeMonthsFees: mapValueOfType<int>(json, r'threeMonthsFees'),
+        sixMonthsFees: mapValueOfType<int>(json, r'sixMonthsFees'),
+        twelveMonthsFees: mapValueOfType<int>(json, r'twelveMonthsFees'),
         fromTime: mapValueOfType<String>(json, r'fromTime'),
         updateChildFees: mapValueOfType<bool>(json, r'updateChildFees'),
       );

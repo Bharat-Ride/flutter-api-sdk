@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **toTime** | **String** |  | [optional] 
 **publicId** | **String** |  | 
 **fromTime** | **String** |  | [optional] 
-**monthFees** | **num** |  | [optional] 
-**threeMonthsFees** | **num** |  | [optional] 
-**sixMonthsFees** | **num** |  | [optional] 
-**twelveMonthsFees** | **num** |  | [optional] 
+**monthFees** | **int** |  | [optional] 
+**threeMonthsFees** | **int** |  | [optional] 
+**sixMonthsFees** | **int** |  | [optional] 
+**twelveMonthsFees** | **int** |  | [optional] 
 **createdAt** | **String** |  | 
 **updatedAt** | **String** |  | 
 
