@@ -167,7 +167,6 @@ Class | Method | HTTP request | Description
  - [SchoolWithUserAndAddressResponse](doc//SchoolWithUserAndAddressResponse.md)
  - [SchoolWithUserResponse](doc//SchoolWithUserResponse.md)
  - [StartTripBody](doc//StartTripBody.md)
- - [TransactionResponse](doc//TransactionResponse.md)
  - [TripResponse](doc//TripResponse.md)
  - [TripWithGroupAndDeviceAndUserResponse](doc//TripWithGroupAndDeviceAndUserResponse.md)
  - [UpdateAddressBody](doc//UpdateAddressBody.md)

@@ -259,8 +259,6 @@ class ApiClient {
           return SchoolWithUserResponse.fromJson(value);
         case 'StartTripBody':
           return StartTripBody.fromJson(value);
-        case 'TransactionResponse':
-          return TransactionResponse.fromJson(value);
         case 'TripResponse':
           return TripResponse.fromJson(value);
         case 'TripWithGroupAndDeviceAndUserResponse':

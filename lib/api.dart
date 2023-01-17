@@ -80,7 +80,6 @@ part 'model/school_with_address_response.dart';
 part 'model/school_with_user_and_address_response.dart';
 part 'model/school_with_user_response.dart';
 part 'model/start_trip_body.dart';
-part 'model/transaction_response.dart';
 part 'model/trip_response.dart';
 part 'model/trip_with_group_and_device_and_user_response.dart';
 part 'model/update_address_body.dart';
