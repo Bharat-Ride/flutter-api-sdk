@@ -9,11 +9,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paytmInitTxnPost**](PaytmApi.md#paytminittxnpost) | **POST** /paytm/initTxn | Returns transaction token to be used for completing payment
+[**paytmInitiateTransactionPost**](PaytmApi.md#paytminitiatetransactionpost) | **POST** /paytm/initiateTransaction | Returns transaction token to be used for completing payment
 
 
-# **paytmInitTxnPost**
-> TransactionResponse paytmInitTxnPost(createTransactionBody)
+# **paytmInitiateTransactionPost**
+> Object paytmInitiateTransactionPost(createTransactionBody)
 
 Returns transaction token to be used for completing payment
 
@@ -33,10 +33,10 @@ final api_instance = PaytmApi();
 final createTransactionBody = CreateTransactionBody(); // CreateTransactionBody | Transaction body
 
 try {
-    final result = api_instance.paytmInitTxnPost(createTransactionBody);
+    final result = api_instance.paytmInitiateTransactionPost(createTransactionBody);
     print(result);
 } catch (e) {
-    print('Exception when calling PaytmApi->paytmInitTxnPost: $e\n');
+    print('Exception when calling PaytmApi->paytmInitiateTransactionPost: $e\n');
 }
 ```
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TransactionResponse**](TransactionResponse.md)
+[**Object**](Object.md)
 
 ### Authorization
 

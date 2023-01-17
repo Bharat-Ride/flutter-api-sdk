@@ -26,9 +26,9 @@ class PaytmApi {
   ///
   /// * [CreateTransactionBody] createTransactionBody (required):
   ///   Transaction body
-  Future<Response> paytmInitTxnPostWithHttpInfo(CreateTransactionBody createTransactionBody,) async {
+  Future<Response> paytmInitiateTransactionPostWithHttpInfo(CreateTransactionBody createTransactionBody,) async {
     // ignore: prefer_const_declarations
-    final path = r'/paytm/initTxn';
+    final path = r'/paytm/initiateTransaction';
 
     // ignore: prefer_final_locals
     Object? postBody = createTransactionBody;
@@ -59,8 +59,8 @@ class PaytmApi {
   ///
   /// * [CreateTransactionBody] createTransactionBody (required):
   ///   Transaction body
-  Future<TransactionResponse?> paytmInitTxnPost(CreateTransactionBody createTransactionBody,) async {
-    final response = await paytmInitTxnPostWithHttpInfo(createTransactionBody,);
+  Future<Object?> paytmInitiateTransactionPost(CreateTransactionBody createTransactionBody,) async {
+    final response = await paytmInitiateTransactionPostWithHttpInfo(createTransactionBody,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -68,7 +68,7 @@ class PaytmApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TransactionResponse',) as TransactionResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
     
     }
     return null;
