@@ -185,6 +185,8 @@ class ApiClient {
           return AddDriverToGroupBody.fromJson(value);
         case 'AddressResponse':
           return AddressResponse.fromJson(value);
+        case 'ChildAbsentResponse':
+          return ChildAbsentResponse.fromJson(value);
         case 'ChildGroupChildIdsBody':
           return ChildGroupChildIdsBody.fromJson(value);
         case 'ChildGroupMonthlyFeesBody':
@@ -199,6 +201,8 @@ class ApiClient {
           return CreateAbsentBody.fromJson(value);
         case 'CreateAddressBody':
           return CreateAddressBody.fromJson(value);
+        case 'CreateChildAbsentBody':
+          return CreateChildAbsentBody.fromJson(value);
         case 'CreateChildBody':
           return CreateChildBody.fromJson(value);
         case 'CreateDeviceBody':
@@ -265,6 +269,8 @@ class ApiClient {
           return TripWithGroupAndDeviceAndUserResponse.fromJson(value);
         case 'UpdateAddressBody':
           return UpdateAddressBody.fromJson(value);
+        case 'UpdateChildAbsentBody':
+          return UpdateChildAbsentBody.fromJson(value);
         case 'UpdateChildBody':
           return UpdateChildBody.fromJson(value);
         case 'UpdateGroupBody':

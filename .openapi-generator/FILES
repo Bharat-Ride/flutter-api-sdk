@@ -5,6 +5,8 @@ analysis_options.yaml
 doc/AddDriverToGroupBody.md
 doc/AddressApi.md
 doc/AddressResponse.md
+doc/ChildAbsentApi.md
+doc/ChildAbsentResponse.md
 doc/ChildApi.md
 doc/ChildGroupApi.md
 doc/ChildGroupChildIdsBody.md
@@ -14,6 +16,7 @@ doc/ChildGroupWithChildWithGroupResponse.md
 doc/ChildResponse.md
 doc/CreateAbsentBody.md
 doc/CreateAddressBody.md
+doc/CreateChildAbsentBody.md
 doc/CreateChildBody.md
 doc/CreateDeviceBody.md
 doc/CreateDropoffBody.md
@@ -55,6 +58,7 @@ doc/TripApi.md
 doc/TripResponse.md
 doc/TripWithGroupAndDeviceAndUserResponse.md
 doc/UpdateAddressBody.md
+doc/UpdateChildAbsentBody.md
 doc/UpdateChildBody.md
 doc/UpdateGroupBody.md
 doc/UpdatePaymentBody.md
@@ -71,6 +75,7 @@ doc/UserWithAddressResponse.md
 git_push.sh
 lib/api.dart
 lib/api/address_api.dart
+lib/api/child_absent_api.dart
 lib/api/child_api.dart
 lib/api/child_group_api.dart
 lib/api/device_api.dart
@@ -93,6 +98,7 @@ lib/auth/http_bearer_auth.dart
 lib/auth/oauth.dart
 lib/model/add_driver_to_group_body.dart
 lib/model/address_response.dart
+lib/model/child_absent_response.dart
 lib/model/child_group_child_ids_body.dart
 lib/model/child_group_monthly_fees_body.dart
 lib/model/child_group_response.dart
@@ -100,6 +106,7 @@ lib/model/child_group_with_child_with_group_response.dart
 lib/model/child_response.dart
 lib/model/create_absent_body.dart
 lib/model/create_address_body.dart
+lib/model/create_child_absent_body.dart
 lib/model/create_child_body.dart
 lib/model/create_device_body.dart
 lib/model/create_dropoff_body.dart
@@ -133,6 +140,7 @@ lib/model/start_trip_body.dart
 lib/model/trip_response.dart
 lib/model/trip_with_group_and_device_and_user_response.dart
 lib/model/update_address_body.dart
+lib/model/update_child_absent_body.dart
 lib/model/update_child_body.dart
 lib/model/update_group_body.dart
 lib/model/update_payment_body.dart
@@ -148,6 +156,8 @@ pubspec.yaml
 test/add_driver_to_group_body_test.dart
 test/address_api_test.dart
 test/address_response_test.dart
+test/child_absent_api_test.dart
+test/child_absent_response_test.dart
 test/child_api_test.dart
 test/child_group_api_test.dart
 test/child_group_child_ids_body_test.dart
@@ -157,6 +167,7 @@ test/child_group_with_child_with_group_response_test.dart
 test/child_response_test.dart
 test/create_absent_body_test.dart
 test/create_address_body_test.dart
+test/create_child_absent_body_test.dart
 test/create_child_body_test.dart
 test/create_device_body_test.dart
 test/create_dropoff_body_test.dart
@@ -198,6 +209,7 @@ test/trip_api_test.dart
 test/trip_response_test.dart
 test/trip_with_group_and_device_and_user_response_test.dart
 test/update_address_body_test.dart
+test/update_child_absent_body_test.dart
 test/update_child_body_test.dart
 test/update_group_body_test.dart
 test/update_payment_body_test.dart

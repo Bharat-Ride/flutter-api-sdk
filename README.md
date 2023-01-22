@@ -72,6 +72,11 @@ Class | Method | HTTP request | Description
 *ChildApi* | [**childPost**](doc//ChildApi.md#childpost) | **POST** /child/ | Returns newly created child
 *ChildApi* | [**childPut**](doc//ChildApi.md#childput) | **PUT** /child/ | Returns number of child updated
 *ChildApi* | [**childsGet**](doc//ChildApi.md#childsget) | **GET** /childs/ | Returns an array of child object by phone number
+*ChildAbsentApi* | [**childAbsentIdDelete**](doc//ChildAbsentApi.md#childabsentiddelete) | **DELETE** /child/absent/{id} | Returns number of record deleted
+*ChildAbsentApi* | [**childAbsentPost**](doc//ChildAbsentApi.md#childabsentpost) | **POST** /child/absent/ | Returns newly created child absent record
+*ChildAbsentApi* | [**childAbsentPut**](doc//ChildAbsentApi.md#childabsentput) | **PUT** /child/absent/ | Returns newly created child absent record
+*ChildAbsentApi* | [**childChildIdAbsentPastGet**](doc//ChildAbsentApi.md#childchildidabsentpastget) | **GET** /child/{childId}/absent/past/ | Returns list of child absent records for past days
+*ChildAbsentApi* | [**childChildIdAbsentUpcomingGet**](doc//ChildAbsentApi.md#childchildidabsentupcomingget) | **GET** /child/{childId}/absent/upcoming/ | Returns list of child absent records for upcoming days
 *ChildGroupApi* | [**childGroupsChildIdGet**](doc//ChildGroupApi.md#childgroupschildidget) | **GET** /child-groups/{childId}/ | Returns array of child-group by childId
 *ChildGroupApi* | [**childGroupsGet**](doc//ChildGroupApi.md#childgroupsget) | **GET** /child-groups/ | Returns array of child-group by user
 *ChildGroupApi* | [**childGroupsMonthlyFeesPut**](doc//ChildGroupApi.md#childgroupsmonthlyfeesput) | **PUT** /child-groups/monthly-fees/ | Returns number of child-group items updated
@@ -130,6 +135,7 @@ Class | Method | HTTP request | Description
 
  - [AddDriverToGroupBody](doc//AddDriverToGroupBody.md)
  - [AddressResponse](doc//AddressResponse.md)
+ - [ChildAbsentResponse](doc//ChildAbsentResponse.md)
  - [ChildGroupChildIdsBody](doc//ChildGroupChildIdsBody.md)
  - [ChildGroupMonthlyFeesBody](doc//ChildGroupMonthlyFeesBody.md)
  - [ChildGroupResponse](doc//ChildGroupResponse.md)
@@ -137,6 +143,7 @@ Class | Method | HTTP request | Description
  - [ChildResponse](doc//ChildResponse.md)
  - [CreateAbsentBody](doc//CreateAbsentBody.md)
  - [CreateAddressBody](doc//CreateAddressBody.md)
+ - [CreateChildAbsentBody](doc//CreateChildAbsentBody.md)
  - [CreateChildBody](doc//CreateChildBody.md)
  - [CreateDeviceBody](doc//CreateDeviceBody.md)
  - [CreateDropoffBody](doc//CreateDropoffBody.md)
@@ -170,6 +177,7 @@ Class | Method | HTTP request | Description
  - [TripResponse](doc//TripResponse.md)
  - [TripWithGroupAndDeviceAndUserResponse](doc//TripWithGroupAndDeviceAndUserResponse.md)
  - [UpdateAddressBody](doc//UpdateAddressBody.md)
+ - [UpdateChildAbsentBody](doc//UpdateChildAbsentBody.md)
  - [UpdateChildBody](doc//UpdateChildBody.md)
  - [UpdateGroupBody](doc//UpdateGroupBody.md)
  - [UpdatePaymentBody](doc//UpdatePaymentBody.md)
