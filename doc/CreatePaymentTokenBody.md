@@ -9,6 +9,7 @@ import 'package:openapi/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **String** |  | 
+**dates** | **String** |  | 
 **driverId** | **int** |  | 
 **childId** | **int** |  | 
 

@@ -14,11 +14,14 @@ class CreatePaymentTokenBody {
   /// Returns a new [CreatePaymentTokenBody] instance.
   CreatePaymentTokenBody({
     required this.amount,
+    required this.dates,
     required this.driverId,
     required this.childId,
   });
 
   String amount;
+
+  String dates;
 
   int driverId;
 
@@ -27,6 +30,7 @@ class CreatePaymentTokenBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreatePaymentTokenBody &&
      other.amount == amount &&
+     other.dates == dates &&
      other.driverId == driverId &&
      other.childId == childId;
 
@@ -34,15 +38,17 @@ class CreatePaymentTokenBody {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (amount.hashCode) +
+    (dates.hashCode) +
     (driverId.hashCode) +
     (childId.hashCode);
 
   @override
-  String toString() => 'CreatePaymentTokenBody[amount=$amount, driverId=$driverId, childId=$childId]';
+  String toString() => 'CreatePaymentTokenBody[amount=$amount, dates=$dates, driverId=$driverId, childId=$childId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'amount'] = this.amount;
+      json[r'dates'] = this.dates;
       json[r'driverId'] = this.driverId;
       json[r'childId'] = this.childId;
     return json;
@@ -68,6 +74,7 @@ class CreatePaymentTokenBody {
 
       return CreatePaymentTokenBody(
         amount: mapValueOfType<String>(json, r'amount')!,
+        dates: mapValueOfType<String>(json, r'dates')!,
         driverId: mapValueOfType<int>(json, r'driverId')!,
         childId: mapValueOfType<int>(json, r'childId')!,
       );
@@ -120,6 +127,7 @@ class CreatePaymentTokenBody {
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
     'amount',
+    'dates',
     'driverId',
     'childId',
   };
