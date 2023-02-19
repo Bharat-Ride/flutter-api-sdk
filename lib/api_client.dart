@@ -217,6 +217,12 @@ class ApiClient {
           return CreateParentChildBody.fromJson(value);
         case 'CreatePaymentBody':
           return CreatePaymentBody.fromJson(value);
+        case 'CreatePaymentTokenBody':
+          return CreatePaymentTokenBody.fromJson(value);
+        case 'CreatePaymentTokenResponse':
+          return CreatePaymentTokenResponse.fromJson(value);
+        case 'CreatePaymentTokenResponseCustomer':
+          return CreatePaymentTokenResponseCustomer.fromJson(value);
         case 'CreatePickupBody':
           return CreatePickupBody.fromJson(value);
         case 'CreateSchoolBody':

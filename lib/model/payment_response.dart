@@ -25,6 +25,7 @@ class PaymentResponse {
     required this.creatorId,
     required this.createdAt,
     this.notes,
+    required this.mode,
   });
 
   int id;
@@ -57,6 +58,8 @@ class PaymentResponse {
   ///
   String? notes;
 
+  String mode;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is PaymentResponse &&
      other.id == id &&
@@ -70,7 +73,8 @@ class PaymentResponse {
      other.status == status &&
      other.creatorId == creatorId &&
      other.createdAt == createdAt &&
-     other.notes == notes;
+     other.notes == notes &&
+     other.mode == mode;
 
   @override
   int get hashCode =>
@@ -86,10 +90,11 @@ class PaymentResponse {
     (status.hashCode) +
     (creatorId.hashCode) +
     (createdAt.hashCode) +
-    (notes == null ? 0 : notes!.hashCode);
+    (notes == null ? 0 : notes!.hashCode) +
+    (mode.hashCode);
 
   @override
-  String toString() => 'PaymentResponse[id=$id, uId=$uId, driverId=$driverId, childId=$childId, amount=$amount, hasDriverAccepted=$hasDriverAccepted, hasParentAccepted=$hasParentAccepted, dates=$dates, status=$status, creatorId=$creatorId, createdAt=$createdAt, notes=$notes]';
+  String toString() => 'PaymentResponse[id=$id, uId=$uId, driverId=$driverId, childId=$childId, amount=$amount, hasDriverAccepted=$hasDriverAccepted, hasParentAccepted=$hasParentAccepted, dates=$dates, status=$status, creatorId=$creatorId, createdAt=$createdAt, notes=$notes, mode=$mode]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -109,6 +114,7 @@ class PaymentResponse {
     } else {
       json[r'notes'] = null;
     }
+      json[r'mode'] = this.mode;
     return json;
   }
 
@@ -143,6 +149,7 @@ class PaymentResponse {
         creatorId: mapValueOfType<int>(json, r'creatorId')!,
         createdAt: mapValueOfType<String>(json, r'createdAt')!,
         notes: mapValueOfType<String>(json, r'notes'),
+        mode: mapValueOfType<String>(json, r'mode')!,
       );
     }
     return null;
@@ -203,6 +210,7 @@ class PaymentResponse {
     'status',
     'creatorId',
     'createdAt',
+    'mode',
   };
 }
 

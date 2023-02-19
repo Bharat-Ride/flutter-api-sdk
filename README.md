@@ -96,6 +96,7 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**groupPublicIdPublicIdGet**](doc//GroupApi.md#grouppublicidpublicidget) | **GET** /group/publicId/{publicId} | Returns a group by publicIp
 *GroupApi* | [**groupPut**](doc//GroupApi.md#groupput) | **PUT** /group/ | Returns updated group
 *GroupApi* | [**groupsPhoneNumberPhoneNumberGet**](doc//GroupApi.md#groupsphonenumberphonenumberget) | **GET** /groups/phoneNumber/{phoneNumber} | Returns a list of group by phoneNumber
+*OpenMoneyApi* | [**openmoneyCreatePaymentTokenPost**](doc//OpenMoneyApi.md#openmoneycreatepaymenttokenpost) | **POST** /openmoney/createPaymentToken | Return payment token
 *PaymentApi* | [**paymentChildChildIdGet**](doc//PaymentApi.md#paymentchildchildidget) | **GET** /payment/child/{childId}/ | Returns list of payment by child Id
 *PaymentApi* | [**paymentDelete**](doc//PaymentApi.md#paymentdelete) | **DELETE** /payment/ | Returns deleted payment record
 *PaymentApi* | [**paymentDriverConfirmIdIdPatch**](doc//PaymentApi.md#paymentdriverconfirmididpatch) | **PATCH** /payment/driver-confirm/id/{id}/ | Returns the number of records updated
@@ -151,6 +152,9 @@ Class | Method | HTTP request | Description
  - [CreateNotAbsentBody](doc//CreateNotAbsentBody.md)
  - [CreateParentChildBody](doc//CreateParentChildBody.md)
  - [CreatePaymentBody](doc//CreatePaymentBody.md)
+ - [CreatePaymentTokenBody](doc//CreatePaymentTokenBody.md)
+ - [CreatePaymentTokenResponse](doc//CreatePaymentTokenResponse.md)
+ - [CreatePaymentTokenResponseCustomer](doc//CreatePaymentTokenResponseCustomer.md)
  - [CreatePickupBody](doc//CreatePickupBody.md)
  - [CreateSchoolBody](doc//CreateSchoolBody.md)
  - [CreateTransactionBody](doc//CreateTransactionBody.md)
