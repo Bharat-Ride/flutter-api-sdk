@@ -16,7 +16,7 @@ class CreatePaymentTokenResponse {
     required this.amount,
     required this.currency,
     required this.mtx,
-    required this.attempts,
+    this.attempts,
     required this.id,
     required this.entity,
     required this.status,
@@ -29,7 +29,13 @@ class CreatePaymentTokenResponse {
 
   String mtx;
 
-  num attempts;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? attempts;
 
   String id;
 
@@ -56,7 +62,7 @@ class CreatePaymentTokenResponse {
     (amount.hashCode) +
     (currency.hashCode) +
     (mtx.hashCode) +
-    (attempts.hashCode) +
+    (attempts == null ? 0 : attempts!.hashCode) +
     (id.hashCode) +
     (entity.hashCode) +
     (status.hashCode) +
@@ -70,7 +76,11 @@ class CreatePaymentTokenResponse {
       json[r'amount'] = this.amount;
       json[r'currency'] = this.currency;
       json[r'mtx'] = this.mtx;
+    if (this.attempts != null) {
       json[r'attempts'] = this.attempts;
+    } else {
+      json[r'attempts'] = null;
+    }
       json[r'id'] = this.id;
       json[r'entity'] = this.entity;
       json[r'status'] = this.status;
@@ -159,7 +169,6 @@ class CreatePaymentTokenResponse {
     'amount',
     'currency',
     'mtx',
-    'attempts',
     'id',
     'entity',
     'status',

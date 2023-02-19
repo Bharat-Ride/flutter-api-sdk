@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **amount** | **String** |  | 
 **currency** | **String** |  | 
 **mtx** | **String** |  | 
-**attempts** | **num** |  | 
+**attempts** | **num** |  | [optional] 
 **id** | **String** |  | 
 **entity** | **String** |  | 
 **status** | **String** |  | 
