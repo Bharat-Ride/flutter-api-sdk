@@ -227,12 +227,14 @@ class PaymentResponseStatusEnum {
 
   String toJson() => value;
 
+  static const INITIATED = PaymentResponseStatusEnum._(r'INITIATED');
   static const CREATED = PaymentResponseStatusEnum._(r'CREATED');
   static const UPDATED = PaymentResponseStatusEnum._(r'UPDATED');
   static const DELETED = PaymentResponseStatusEnum._(r'DELETED');
 
   /// List of all possible values in this [enum][PaymentResponseStatusEnum].
   static const values = <PaymentResponseStatusEnum>[
+    INITIATED,
     CREATED,
     UPDATED,
     DELETED,
@@ -274,6 +276,7 @@ class PaymentResponseStatusEnumTypeTransformer {
   PaymentResponseStatusEnum? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
       switch (data) {
+        case r'INITIATED': return PaymentResponseStatusEnum.INITIATED;
         case r'CREATED': return PaymentResponseStatusEnum.CREATED;
         case r'UPDATED': return PaymentResponseStatusEnum.UPDATED;
         case r'DELETED': return PaymentResponseStatusEnum.DELETED;
