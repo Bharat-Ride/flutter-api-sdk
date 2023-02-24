@@ -1,4 +1,4 @@
-# openapi.model.PaymentResponse
+# openapi.model.InvoiceResponse
 
 ## Load the model package
 ```dart
@@ -9,7 +9,6 @@ import 'package:openapi/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**uId** | **String** |  | 
 **driverId** | **int** |  | 
 **childId** | **int** |  | 
 **groupId** | **int** |  | 
@@ -17,12 +16,8 @@ Name | Type | Description | Notes
 **amount** | **String** |  | 
 **dates** | **String** |  | 
 **status** | **String** |  | 
-**creatorId** | **int** |  | 
 **createdAt** | **String** |  | 
 **updatedAt** | **String** |  | 
-**deletedAt** | **String** |  | 
-**notes** | **String** |  | [optional] 
-**mode** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

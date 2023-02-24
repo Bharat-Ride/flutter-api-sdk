@@ -5,15 +5,15 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**openmoneyCreatePaymentTokenPost**](OpenMoneyApi.md#openmoneycreatepaymenttokenpost) | **POST** /openmoney/createPaymentToken | Return payment token
+[**paymentCreateOpenMoneyPaymentTokenPost**](OpenMoneyApi.md#paymentcreateopenmoneypaymenttokenpost) | **POST** /payment/createOpenMoneyPaymentToken | Return payment token
 
 
-# **openmoneyCreatePaymentTokenPost**
-> PaymentResponse openmoneyCreatePaymentTokenPost(createPaymentTokenBody)
+# **paymentCreateOpenMoneyPaymentTokenPost**
+> PaymentResponse paymentCreateOpenMoneyPaymentTokenPost(createOpenMoneyPaymentTokenBody)
 
 Return payment token
 
@@ -30,13 +30,13 @@ import 'package:openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = OpenMoneyApi();
-final createPaymentTokenBody = CreatePaymentTokenBody(); // CreatePaymentTokenBody | Create token payment body
+final createOpenMoneyPaymentTokenBody = CreateOpenMoneyPaymentTokenBody(); // CreateOpenMoneyPaymentTokenBody | Create token payment body
 
 try {
-    final result = api_instance.openmoneyCreatePaymentTokenPost(createPaymentTokenBody);
+    final result = api_instance.paymentCreateOpenMoneyPaymentTokenPost(createOpenMoneyPaymentTokenBody);
     print(result);
 } catch (e) {
-    print('Exception when calling OpenMoneyApi->openmoneyCreatePaymentTokenPost: $e\n');
+    print('Exception when calling OpenMoneyApi->paymentCreateOpenMoneyPaymentTokenPost: $e\n');
 }
 ```
 
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createPaymentTokenBody** | [**CreatePaymentTokenBody**](CreatePaymentTokenBody.md)| Create token payment body | 
+ **createOpenMoneyPaymentTokenBody** | [**CreateOpenMoneyPaymentTokenBody**](CreateOpenMoneyPaymentTokenBody.md)| Create token payment body | 
 
 ### Return type
 

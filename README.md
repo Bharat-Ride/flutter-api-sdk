@@ -60,7 +60,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -96,15 +96,15 @@ Class | Method | HTTP request | Description
 *GroupApi* | [**groupPublicIdPublicIdGet**](doc//GroupApi.md#grouppublicidpublicidget) | **GET** /group/publicId/{publicId} | Returns a group by publicIp
 *GroupApi* | [**groupPut**](doc//GroupApi.md#groupput) | **PUT** /group/ | Returns updated group
 *GroupApi* | [**groupsPhoneNumberPhoneNumberGet**](doc//GroupApi.md#groupsphonenumberphonenumberget) | **GET** /groups/phoneNumber/{phoneNumber} | Returns a list of group by phoneNumber
-*OpenMoneyApi* | [**openmoneyCreatePaymentTokenPost**](doc//OpenMoneyApi.md#openmoneycreatepaymenttokenpost) | **POST** /openmoney/createPaymentToken | Return payment token
+*InvoiceApi* | [**invoicesUnpaidChildChildIdGet**](doc//InvoiceApi.md#invoicesunpaidchildchildidget) | **GET** /invoices/unpaid/child/{childId}/ | Returns list of unpaid invoices by child Id
+*InvoiceApi* | [**invoicesUnpaidDriverDriverIdGet**](doc//InvoiceApi.md#invoicesunpaiddriverdriveridget) | **GET** /invoices/unpaid/driver/{driverId}/ | Returns list of unpaid invoices by driver Id
+*InvoiceApi* | [**invoicesUnpaidGroupGroupIdGet**](doc//InvoiceApi.md#invoicesunpaidgroupgroupidget) | **GET** /invoices/unpaid/group/{groupId}/ | Returns list of unpaid invoices by group Id
+*OpenMoneyApi* | [**paymentCreateOpenMoneyPaymentTokenPost**](doc//OpenMoneyApi.md#paymentcreateopenmoneypaymenttokenpost) | **POST** /payment/createOpenMoneyPaymentToken | Return payment token
 *PaymentApi* | [**paymentChildChildIdGet**](doc//PaymentApi.md#paymentchildchildidget) | **GET** /payment/child/{childId}/ | Returns list of payment by child Id
 *PaymentApi* | [**paymentDelete**](doc//PaymentApi.md#paymentdelete) | **DELETE** /payment/ | Returns deleted payment record
-*PaymentApi* | [**paymentDriverConfirmIdIdPatch**](doc//PaymentApi.md#paymentdriverconfirmididpatch) | **PATCH** /payment/driver-confirm/id/{id}/ | Returns the number of records updated
 *PaymentApi* | [**paymentDriverDriverIdGet**](doc//PaymentApi.md#paymentdriverdriveridget) | **GET** /payment/driver/{driverId}/ | Returns list of payment by driver Id
-*PaymentApi* | [**paymentParentConfirmIdIdPatch**](doc//PaymentApi.md#paymentparentconfirmididpatch) | **PATCH** /payment/parent-confirm/id/{id}/ | Returns the number of records updated
 *PaymentApi* | [**paymentPost**](doc//PaymentApi.md#paymentpost) | **POST** /payment/ | Returns newly created payment record
 *PaymentApi* | [**paymentPut**](doc//PaymentApi.md#paymentput) | **PUT** /payment/ | Returns updated payment record
-*PaytmApi* | [**paytmInitiateTransactionPost**](doc//PaytmApi.md#paytminitiatetransactionpost) | **POST** /paytm/initiateTransaction | Returns transaction token to be used for completing payment
 *PickupDropoffApi* | [**pickupDropoffsTripsTripIdGet**](doc//PickupDropoffApi.md#pickupdropoffstripstripidget) | **GET** /pickup-dropoffs/trips/{tripId}/ | Returns array of pickup-dropoff by tripId
 *PickupDropoffApi* | [**tripsAbsentPost**](doc//PickupDropoffApi.md#tripsabsentpost) | **POST** /trips/absent/ | Returns array of pickupdropoff
 *PickupDropoffApi* | [**tripsDropoffPut**](doc//PickupDropoffApi.md#tripsdropoffput) | **PUT** /trips/dropoff/ | Returns number of children Dropoff
@@ -150,11 +150,11 @@ Class | Method | HTTP request | Description
  - [CreateDropoffBody](doc//CreateDropoffBody.md)
  - [CreateGroupBody](doc//CreateGroupBody.md)
  - [CreateNotAbsentBody](doc//CreateNotAbsentBody.md)
+ - [CreateOpenMoneyPaymentTokenBody](doc//CreateOpenMoneyPaymentTokenBody.md)
+ - [CreateOpenMoneyPaymentTokenResponse](doc//CreateOpenMoneyPaymentTokenResponse.md)
+ - [CreateOpenMoneyPaymentTokenResponseCustomer](doc//CreateOpenMoneyPaymentTokenResponseCustomer.md)
  - [CreateParentChildBody](doc//CreateParentChildBody.md)
  - [CreatePaymentBody](doc//CreatePaymentBody.md)
- - [CreatePaymentTokenBody](doc//CreatePaymentTokenBody.md)
- - [CreatePaymentTokenResponse](doc//CreatePaymentTokenResponse.md)
- - [CreatePaymentTokenResponseCustomer](doc//CreatePaymentTokenResponseCustomer.md)
  - [CreatePickupBody](doc//CreatePickupBody.md)
  - [CreateSchoolBody](doc//CreateSchoolBody.md)
  - [CreateTransactionBody](doc//CreateTransactionBody.md)
@@ -170,6 +170,7 @@ Class | Method | HTTP request | Description
  - [ErrorResponse](doc//ErrorResponse.md)
  - [GetUserByIds](doc//GetUserByIds.md)
  - [GroupResponse](doc//GroupResponse.md)
+ - [InvoiceResponse](doc//InvoiceResponse.md)
  - [PaymentResponse](doc//PaymentResponse.md)
  - [PickupDropoffResponse](doc//PickupDropoffResponse.md)
  - [PickupDropoffWithTripAndChildAndDriverResponse](doc//PickupDropoffWithTripAndChildAndDriverResponse.md)

@@ -157,65 +157,6 @@ class PaymentApi {
     return null;
   }
 
-  /// Returns the number of records updated
-  ///
-  /// Confirm the payment from driver
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   id
-  Future<Response> paymentDriverConfirmIdIdPatchWithHttpInfo(int id,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/payment/driver-confirm/id/{id}/'
-      .replaceAll('{id}', id.toString());
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'PATCH',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
-  }
-
-  /// Returns the number of records updated
-  ///
-  /// Confirm the payment from driver
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   id
-  Future<UpdateRecordsResponse?> paymentDriverConfirmIdIdPatch(int id,) async {
-    final response = await paymentDriverConfirmIdIdPatchWithHttpInfo(id,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UpdateRecordsResponse',) as UpdateRecordsResponse;
-    
-    }
-    return null;
-  }
-
   /// Returns list of payment by driver Id
   ///
   /// Get record of payment by driver Id
@@ -293,65 +234,6 @@ class PaymentApi {
         .cast<PaymentResponse>()
         .toList();
 
-    }
-    return null;
-  }
-
-  /// Returns the number of records updated
-  ///
-  /// Confirm the payment from parent
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   id
-  Future<Response> paymentParentConfirmIdIdPatchWithHttpInfo(int id,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/payment/parent-confirm/id/{id}/'
-      .replaceAll('{id}', id.toString());
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'PATCH',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
-  }
-
-  /// Returns the number of records updated
-  ///
-  /// Confirm the payment from parent
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   id
-  Future<UpdateRecordsResponse?> paymentParentConfirmIdIdPatch(int id,) async {
-    final response = await paymentParentConfirmIdIdPatchWithHttpInfo(id,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UpdateRecordsResponse',) as UpdateRecordsResponse;
-    
     }
     return null;
   }

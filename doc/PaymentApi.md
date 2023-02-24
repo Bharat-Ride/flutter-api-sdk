@@ -5,15 +5,13 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**paymentChildChildIdGet**](PaymentApi.md#paymentchildchildidget) | **GET** /payment/child/{childId}/ | Returns list of payment by child Id
 [**paymentDelete**](PaymentApi.md#paymentdelete) | **DELETE** /payment/ | Returns deleted payment record
-[**paymentDriverConfirmIdIdPatch**](PaymentApi.md#paymentdriverconfirmididpatch) | **PATCH** /payment/driver-confirm/id/{id}/ | Returns the number of records updated
 [**paymentDriverDriverIdGet**](PaymentApi.md#paymentdriverdriveridget) | **GET** /payment/driver/{driverId}/ | Returns list of payment by driver Id
-[**paymentParentConfirmIdIdPatch**](PaymentApi.md#paymentparentconfirmididpatch) | **PATCH** /payment/parent-confirm/id/{id}/ | Returns the number of records updated
 [**paymentPost**](PaymentApi.md#paymentpost) | **POST** /payment/ | Returns newly created payment record
 [**paymentPut**](PaymentApi.md#paymentput) | **PUT** /payment/ | Returns updated payment record
 
@@ -120,55 +118,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **paymentDriverConfirmIdIdPatch**
-> UpdateRecordsResponse paymentDriverConfirmIdIdPatch(id)
-
-Returns the number of records updated
-
-Confirm the payment from driver
-
-### Example
-```dart
-import 'package:openapi/api.dart';
-// TODO Configure HTTP Bearer authorization: BearerAuth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
-
-final api_instance = PaymentApi();
-final id = 56; // int | id
-
-try {
-    final result = api_instance.paymentDriverConfirmIdIdPatch(id);
-    print(result);
-} catch (e) {
-    print('Exception when calling PaymentApi->paymentDriverConfirmIdIdPatch: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| id | 
-
-### Return type
-
-[**UpdateRecordsResponse**](UpdateRecordsResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **paymentDriverDriverIdGet**
 > List<PaymentResponse> paymentDriverDriverIdGet(driverId, limit, offset)
 
@@ -210,55 +159,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List<PaymentResponse>**](PaymentResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **paymentParentConfirmIdIdPatch**
-> UpdateRecordsResponse paymentParentConfirmIdIdPatch(id)
-
-Returns the number of records updated
-
-Confirm the payment from parent
-
-### Example
-```dart
-import 'package:openapi/api.dart';
-// TODO Configure HTTP Bearer authorization: BearerAuth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
-
-final api_instance = PaymentApi();
-final id = 56; // int | id
-
-try {
-    final result = api_instance.paymentParentConfirmIdIdPatch(id);
-    print(result);
-} catch (e) {
-    print('Exception when calling PaymentApi->paymentParentConfirmIdIdPatch: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| id | 
-
-### Return type
-
-[**UpdateRecordsResponse**](UpdateRecordsResponse.md)
 
 ### Authorization
 

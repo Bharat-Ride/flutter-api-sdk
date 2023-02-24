@@ -1,4 +1,4 @@
-# openapi.api.ChildApi
+# openapi.api.InvoiceApi
 
 ## Load the API package
 ```dart
@@ -9,18 +9,17 @@ All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**childIdDelete**](ChildApi.md#childiddelete) | **DELETE** /child/{id} | Returns number of child deleted
-[**childPost**](ChildApi.md#childpost) | **POST** /child/ | Returns newly created child
-[**childPut**](ChildApi.md#childput) | **PUT** /child/ | Returns number of child updated
-[**childsGet**](ChildApi.md#childsget) | **GET** /childs/ | Returns an array of child object by phone number
+[**invoicesUnpaidChildChildIdGet**](InvoiceApi.md#invoicesunpaidchildchildidget) | **GET** /invoices/unpaid/child/{childId}/ | Returns list of unpaid invoices by child Id
+[**invoicesUnpaidDriverDriverIdGet**](InvoiceApi.md#invoicesunpaiddriverdriveridget) | **GET** /invoices/unpaid/driver/{driverId}/ | Returns list of unpaid invoices by driver Id
+[**invoicesUnpaidGroupGroupIdGet**](InvoiceApi.md#invoicesunpaidgroupgroupidget) | **GET** /invoices/unpaid/group/{groupId}/ | Returns list of unpaid invoices by group Id
 
 
-# **childIdDelete**
-> DeleteRecordsResponse childIdDelete(id)
+# **invoicesUnpaidChildChildIdGet**
+> List<InvoiceResponse> invoicesUnpaidChildChildIdGet(childId)
 
-Returns number of child deleted
+Returns list of unpaid invoices by child Id
 
-Delete a child by id
+Get list of unpaid invoices by childId
 
 ### Example
 ```dart
@@ -32,14 +31,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildApi();
-final id = 8.14; // num | Child id
+final api_instance = InvoiceApi();
+final childId = 56; // int | Child Id
 
 try {
-    final result = api_instance.childIdDelete(id);
+    final result = api_instance.invoicesUnpaidChildChildIdGet(childId);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildApi->childIdDelete: $e\n');
+    print('Exception when calling InvoiceApi->invoicesUnpaidChildChildIdGet: $e\n');
 }
 ```
 
@@ -47,11 +46,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **num**| Child id | 
+ **childId** | **int**| Child Id | 
 
 ### Return type
 
-[**DeleteRecordsResponse**](DeleteRecordsResponse.md)
+[**List<InvoiceResponse>**](InvoiceResponse.md)
 
 ### Authorization
 
@@ -64,12 +63,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **childPost**
-> ChildResponse childPost(createChildBody)
+# **invoicesUnpaidDriverDriverIdGet**
+> List<InvoiceResponse> invoicesUnpaidDriverDriverIdGet(driverId)
 
-Returns newly created child
+Returns list of unpaid invoices by driver Id
 
-Create a child for a parent
+Get list of unpaid invoices by driverId
 
 ### Example
 ```dart
@@ -81,14 +80,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildApi();
-final createChildBody = CreateChildBody(); // CreateChildBody | Child body
+final api_instance = InvoiceApi();
+final driverId = 56; // int | Driver Id
 
 try {
-    final result = api_instance.childPost(createChildBody);
+    final result = api_instance.invoicesUnpaidDriverDriverIdGet(driverId);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildApi->childPost: $e\n');
+    print('Exception when calling InvoiceApi->invoicesUnpaidDriverDriverIdGet: $e\n');
 }
 ```
 
@@ -96,11 +95,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createChildBody** | [**CreateChildBody**](CreateChildBody.md)| Child body | 
+ **driverId** | **int**| Driver Id | 
 
 ### Return type
 
-[**ChildResponse**](ChildResponse.md)
+[**List<InvoiceResponse>**](InvoiceResponse.md)
 
 ### Authorization
 
@@ -108,17 +107,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **childPut**
-> UpdateRecordsResponse childPut(updateChildBody)
+# **invoicesUnpaidGroupGroupIdGet**
+> List<InvoiceResponse> invoicesUnpaidGroupGroupIdGet(groupId)
 
-Returns number of child updated
+Returns list of unpaid invoices by group Id
 
-Update a child for a parent
+Get list of unpaid invoices by groupId
 
 ### Example
 ```dart
@@ -130,14 +129,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = ChildApi();
-final updateChildBody = UpdateChildBody(); // UpdateChildBody | Child body
+final api_instance = InvoiceApi();
+final groupId = 56; // int | Group Id
 
 try {
-    final result = api_instance.childPut(updateChildBody);
+    final result = api_instance.invoicesUnpaidGroupGroupIdGet(groupId);
     print(result);
 } catch (e) {
-    print('Exception when calling ChildApi->childPut: $e\n');
+    print('Exception when calling InvoiceApi->invoicesUnpaidGroupGroupIdGet: $e\n');
 }
 ```
 
@@ -145,56 +144,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **updateChildBody** | [**UpdateChildBody**](UpdateChildBody.md)| Child body | 
+ **groupId** | **int**| Group Id | 
 
 ### Return type
 
-[**UpdateRecordsResponse**](UpdateRecordsResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **childsGet**
-> List<ChildResponse> childsGet()
-
-Returns an array of child object by phone number
-
-Get all the childs by phone number
-
-### Example
-```dart
-import 'package:openapi/api.dart';
-// TODO Configure HTTP Bearer authorization: BearerAuth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
-
-final api_instance = ChildApi();
-
-try {
-    final result = api_instance.childsGet();
-    print(result);
-} catch (e) {
-    print('Exception when calling ChildApi->childsGet: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List<ChildResponse>**](ChildResponse.md)
+[**List<InvoiceResponse>**](InvoiceResponse.md)
 
 ### Authorization
 

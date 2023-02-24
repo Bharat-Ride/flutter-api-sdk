@@ -11,7 +11,7 @@
 part of openapi.api;
 
 class ApiClient {
-  ApiClient({this.basePath = 'https://localhost', this.authentication,});
+  ApiClient({this.basePath = 'https://staging.presentation-api.api.findnemo.in', this.authentication,});
 
   final String basePath;
   final Authentication? authentication;
@@ -213,16 +213,16 @@ class ApiClient {
           return CreateGroupBody.fromJson(value);
         case 'CreateNotAbsentBody':
           return CreateNotAbsentBody.fromJson(value);
+        case 'CreateOpenMoneyPaymentTokenBody':
+          return CreateOpenMoneyPaymentTokenBody.fromJson(value);
+        case 'CreateOpenMoneyPaymentTokenResponse':
+          return CreateOpenMoneyPaymentTokenResponse.fromJson(value);
+        case 'CreateOpenMoneyPaymentTokenResponseCustomer':
+          return CreateOpenMoneyPaymentTokenResponseCustomer.fromJson(value);
         case 'CreateParentChildBody':
           return CreateParentChildBody.fromJson(value);
         case 'CreatePaymentBody':
           return CreatePaymentBody.fromJson(value);
-        case 'CreatePaymentTokenBody':
-          return CreatePaymentTokenBody.fromJson(value);
-        case 'CreatePaymentTokenResponse':
-          return CreatePaymentTokenResponse.fromJson(value);
-        case 'CreatePaymentTokenResponseCustomer':
-          return CreatePaymentTokenResponseCustomer.fromJson(value);
         case 'CreatePickupBody':
           return CreatePickupBody.fromJson(value);
         case 'CreateSchoolBody':
@@ -253,6 +253,8 @@ class ApiClient {
           return GetUserByIds.fromJson(value);
         case 'GroupResponse':
           return GroupResponse.fromJson(value);
+        case 'InvoiceResponse':
+          return InvoiceResponse.fromJson(value);
         case 'PaymentResponse':
           return PaymentResponse.fromJson(value);
         case 'PickupDropoffResponse':

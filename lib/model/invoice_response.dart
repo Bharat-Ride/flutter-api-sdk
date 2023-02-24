@@ -10,11 +10,10 @@
 
 part of openapi.api;
 
-class PaymentResponse {
-  /// Returns a new [PaymentResponse] instance.
-  PaymentResponse({
+class InvoiceResponse {
+  /// Returns a new [InvoiceResponse] instance.
+  InvoiceResponse({
     required this.id,
-    required this.uId,
     required this.driverId,
     required this.childId,
     required this.groupId,
@@ -22,17 +21,11 @@ class PaymentResponse {
     required this.amount,
     required this.dates,
     required this.status,
-    required this.creatorId,
     required this.createdAt,
     required this.updatedAt,
-    required this.deletedAt,
-    this.notes,
-    required this.mode,
   });
 
   int id;
-
-  String uId;
 
   int driverId;
 
@@ -52,30 +45,15 @@ class PaymentResponse {
 
   String dates;
 
-  PaymentResponseStatusEnum status;
-
-  int creatorId;
+  InvoiceResponseStatusEnum status;
 
   String createdAt;
 
   String updatedAt;
 
-  String deletedAt;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? notes;
-
-  String mode;
-
   @override
-  bool operator ==(Object other) => identical(this, other) || other is PaymentResponse &&
+  bool operator ==(Object other) => identical(this, other) || other is InvoiceResponse &&
      other.id == id &&
-     other.uId == uId &&
      other.driverId == driverId &&
      other.childId == childId &&
      other.groupId == groupId &&
@@ -83,18 +61,13 @@ class PaymentResponse {
      other.amount == amount &&
      other.dates == dates &&
      other.status == status &&
-     other.creatorId == creatorId &&
      other.createdAt == createdAt &&
-     other.updatedAt == updatedAt &&
-     other.deletedAt == deletedAt &&
-     other.notes == notes &&
-     other.mode == mode;
+     other.updatedAt == updatedAt;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (uId.hashCode) +
     (driverId.hashCode) +
     (childId.hashCode) +
     (groupId.hashCode) +
@@ -102,20 +75,15 @@ class PaymentResponse {
     (amount.hashCode) +
     (dates.hashCode) +
     (status.hashCode) +
-    (creatorId.hashCode) +
     (createdAt.hashCode) +
-    (updatedAt.hashCode) +
-    (deletedAt.hashCode) +
-    (notes == null ? 0 : notes!.hashCode) +
-    (mode.hashCode);
+    (updatedAt.hashCode);
 
   @override
-  String toString() => 'PaymentResponse[id=$id, uId=$uId, driverId=$driverId, childId=$childId, groupId=$groupId, invoiceId=$invoiceId, amount=$amount, dates=$dates, status=$status, creatorId=$creatorId, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, notes=$notes, mode=$mode]';
+  String toString() => 'InvoiceResponse[id=$id, driverId=$driverId, childId=$childId, groupId=$groupId, invoiceId=$invoiceId, amount=$amount, dates=$dates, status=$status, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'id'] = this.id;
-      json[r'uId'] = this.uId;
       json[r'driverId'] = this.driverId;
       json[r'childId'] = this.childId;
       json[r'groupId'] = this.groupId;
@@ -127,23 +95,15 @@ class PaymentResponse {
       json[r'amount'] = this.amount;
       json[r'dates'] = this.dates;
       json[r'status'] = this.status;
-      json[r'creatorId'] = this.creatorId;
       json[r'createdAt'] = this.createdAt;
       json[r'updatedAt'] = this.updatedAt;
-      json[r'deletedAt'] = this.deletedAt;
-    if (this.notes != null) {
-      json[r'notes'] = this.notes;
-    } else {
-      json[r'notes'] = null;
-    }
-      json[r'mode'] = this.mode;
     return json;
   }
 
-  /// Returns a new [PaymentResponse] instance and imports its values from
+  /// Returns a new [InvoiceResponse] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static PaymentResponse? fromJson(dynamic value) {
+  static InvoiceResponse? fromJson(dynamic value) {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
 
@@ -152,38 +112,33 @@ class PaymentResponse {
       // Note 2: this code is stripped in release mode!
       assert(() {
         requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PaymentResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PaymentResponse[$key]" has a null value in JSON.');
+          assert(json.containsKey(key), 'Required key "InvoiceResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "InvoiceResponse[$key]" has a null value in JSON.');
         });
         return true;
       }());
 
-      return PaymentResponse(
+      return InvoiceResponse(
         id: mapValueOfType<int>(json, r'id')!,
-        uId: mapValueOfType<String>(json, r'uId')!,
         driverId: mapValueOfType<int>(json, r'driverId')!,
         childId: mapValueOfType<int>(json, r'childId')!,
         groupId: mapValueOfType<int>(json, r'groupId')!,
         invoiceId: mapValueOfType<int>(json, r'invoiceId'),
         amount: mapValueOfType<String>(json, r'amount')!,
         dates: mapValueOfType<String>(json, r'dates')!,
-        status: PaymentResponseStatusEnum.fromJson(json[r'status'])!,
-        creatorId: mapValueOfType<int>(json, r'creatorId')!,
+        status: InvoiceResponseStatusEnum.fromJson(json[r'status'])!,
         createdAt: mapValueOfType<String>(json, r'createdAt')!,
         updatedAt: mapValueOfType<String>(json, r'updatedAt')!,
-        deletedAt: mapValueOfType<String>(json, r'deletedAt')!,
-        notes: mapValueOfType<String>(json, r'notes'),
-        mode: mapValueOfType<String>(json, r'mode')!,
       );
     }
     return null;
   }
 
-  static List<PaymentResponse>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <PaymentResponse>[];
+  static List<InvoiceResponse>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <InvoiceResponse>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
-        final value = PaymentResponse.fromJson(row);
+        final value = InvoiceResponse.fromJson(row);
         if (value != null) {
           result.add(value);
         }
@@ -192,12 +147,12 @@ class PaymentResponse {
     return result.toList(growable: growable);
   }
 
-  static Map<String, PaymentResponse> mapFromJson(dynamic json) {
-    final map = <String, PaymentResponse>{};
+  static Map<String, InvoiceResponse> mapFromJson(dynamic json) {
+    final map = <String, InvoiceResponse>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = PaymentResponse.fromJson(entry.value);
+        final value = InvoiceResponse.fromJson(entry.value);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -206,13 +161,13 @@ class PaymentResponse {
     return map;
   }
 
-  // maps a json object with a list of PaymentResponse-objects as value to a dart map
-  static Map<String, List<PaymentResponse>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<PaymentResponse>>{};
+  // maps a json object with a list of InvoiceResponse-objects as value to a dart map
+  static Map<String, List<InvoiceResponse>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<InvoiceResponse>>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = PaymentResponse.listFromJson(entry.value, growable: growable,);
+        final value = InvoiceResponse.listFromJson(entry.value, growable: growable,);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -224,25 +179,21 @@ class PaymentResponse {
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
     'id',
-    'uId',
     'driverId',
     'childId',
     'groupId',
     'amount',
     'dates',
     'status',
-    'creatorId',
     'createdAt',
     'updatedAt',
-    'deletedAt',
-    'mode',
   };
 }
 
 
-class PaymentResponseStatusEnum {
+class InvoiceResponseStatusEnum {
   /// Instantiate a new enum with the provided [value].
-  const PaymentResponseStatusEnum._(this.value);
+  const InvoiceResponseStatusEnum._(this.value);
 
   /// The underlying value of this enum member.
   final String value;
@@ -252,26 +203,22 @@ class PaymentResponseStatusEnum {
 
   String toJson() => value;
 
-  static const INITIATED = PaymentResponseStatusEnum._(r'INITIATED');
-  static const CREATED = PaymentResponseStatusEnum._(r'CREATED');
-  static const UPDATED = PaymentResponseStatusEnum._(r'UPDATED');
-  static const DELETED = PaymentResponseStatusEnum._(r'DELETED');
+  static const UNPAID = InvoiceResponseStatusEnum._(r'UNPAID');
+  static const PAID = InvoiceResponseStatusEnum._(r'PAID');
 
-  /// List of all possible values in this [enum][PaymentResponseStatusEnum].
-  static const values = <PaymentResponseStatusEnum>[
-    INITIATED,
-    CREATED,
-    UPDATED,
-    DELETED,
+  /// List of all possible values in this [enum][InvoiceResponseStatusEnum].
+  static const values = <InvoiceResponseStatusEnum>[
+    UNPAID,
+    PAID,
   ];
 
-  static PaymentResponseStatusEnum? fromJson(dynamic value) => PaymentResponseStatusEnumTypeTransformer().decode(value);
+  static InvoiceResponseStatusEnum? fromJson(dynamic value) => InvoiceResponseStatusEnumTypeTransformer().decode(value);
 
-  static List<PaymentResponseStatusEnum>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <PaymentResponseStatusEnum>[];
+  static List<InvoiceResponseStatusEnum>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <InvoiceResponseStatusEnum>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
-        final value = PaymentResponseStatusEnum.fromJson(row);
+        final value = InvoiceResponseStatusEnum.fromJson(row);
         if (value != null) {
           result.add(value);
         }
@@ -281,16 +228,16 @@ class PaymentResponseStatusEnum {
   }
 }
 
-/// Transformation class that can [encode] an instance of [PaymentResponseStatusEnum] to String,
-/// and [decode] dynamic data back to [PaymentResponseStatusEnum].
-class PaymentResponseStatusEnumTypeTransformer {
-  factory PaymentResponseStatusEnumTypeTransformer() => _instance ??= const PaymentResponseStatusEnumTypeTransformer._();
+/// Transformation class that can [encode] an instance of [InvoiceResponseStatusEnum] to String,
+/// and [decode] dynamic data back to [InvoiceResponseStatusEnum].
+class InvoiceResponseStatusEnumTypeTransformer {
+  factory InvoiceResponseStatusEnumTypeTransformer() => _instance ??= const InvoiceResponseStatusEnumTypeTransformer._();
 
-  const PaymentResponseStatusEnumTypeTransformer._();
+  const InvoiceResponseStatusEnumTypeTransformer._();
 
-  String encode(PaymentResponseStatusEnum data) => data.value;
+  String encode(InvoiceResponseStatusEnum data) => data.value;
 
-  /// Decodes a [dynamic value][data] to a PaymentResponseStatusEnum.
+  /// Decodes a [dynamic value][data] to a InvoiceResponseStatusEnum.
   ///
   /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
   /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
@@ -298,13 +245,11 @@ class PaymentResponseStatusEnumTypeTransformer {
   ///
   /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
   /// and users are still using an old app with the old code.
-  PaymentResponseStatusEnum? decode(dynamic data, {bool allowNull = true}) {
+  InvoiceResponseStatusEnum? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
       switch (data) {
-        case r'INITIATED': return PaymentResponseStatusEnum.INITIATED;
-        case r'CREATED': return PaymentResponseStatusEnum.CREATED;
-        case r'UPDATED': return PaymentResponseStatusEnum.UPDATED;
-        case r'DELETED': return PaymentResponseStatusEnum.DELETED;
+        case r'UNPAID': return InvoiceResponseStatusEnum.UNPAID;
+        case r'PAID': return InvoiceResponseStatusEnum.PAID;
         default:
           if (!allowNull) {
             throw ArgumentError('Unknown enum value to decode: $data');
@@ -314,8 +259,8 @@ class PaymentResponseStatusEnumTypeTransformer {
     return null;
   }
 
-  /// Singleton [PaymentResponseStatusEnumTypeTransformer] instance.
-  static PaymentResponseStatusEnumTypeTransformer? _instance;
+  /// Singleton [InvoiceResponseStatusEnumTypeTransformer] instance.
+  static InvoiceResponseStatusEnumTypeTransformer? _instance;
 }
 
 
