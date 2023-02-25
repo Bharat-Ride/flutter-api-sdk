@@ -5,7 +5,7 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
+All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **paymentCreateOpenMoneyPaymentTokenPost**
-> PaymentResponse paymentCreateOpenMoneyPaymentTokenPost(createOpenMoneyPaymentTokenBody)
+> PaymentResponse paymentCreateOpenMoneyPaymentTokenPost(createPaymentBody)
 
 Return payment token
 
@@ -30,10 +30,10 @@ import 'package:openapi/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = OpenMoneyApi();
-final createOpenMoneyPaymentTokenBody = CreateOpenMoneyPaymentTokenBody(); // CreateOpenMoneyPaymentTokenBody | Create token payment body
+final createPaymentBody = CreatePaymentBody(); // CreatePaymentBody | Create token payment body
 
 try {
-    final result = api_instance.paymentCreateOpenMoneyPaymentTokenPost(createOpenMoneyPaymentTokenBody);
+    final result = api_instance.paymentCreateOpenMoneyPaymentTokenPost(createPaymentBody);
     print(result);
 } catch (e) {
     print('Exception when calling OpenMoneyApi->paymentCreateOpenMoneyPaymentTokenPost: $e\n');
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createOpenMoneyPaymentTokenBody** | [**CreateOpenMoneyPaymentTokenBody**](CreateOpenMoneyPaymentTokenBody.md)| Create token payment body | 
+ **createPaymentBody** | [**CreatePaymentBody**](CreatePaymentBody.md)| Create token payment body | 
 
 ### Return type
 

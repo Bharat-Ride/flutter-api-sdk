@@ -14,13 +14,8 @@ class PaymentResponse {
   /// Returns a new [PaymentResponse] instance.
   PaymentResponse({
     required this.id,
-    required this.uId,
-    required this.driverId,
-    required this.childId,
-    required this.groupId,
+    this.tokenId,
     this.invoiceId,
-    required this.amount,
-    required this.dates,
     required this.status,
     required this.creatorId,
     required this.createdAt,
@@ -28,17 +23,18 @@ class PaymentResponse {
     required this.deletedAt,
     this.notes,
     required this.mode,
+    this.invoice,
   });
 
   int id;
 
-  String uId;
-
-  int driverId;
-
-  int childId;
-
-  int groupId;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? tokenId;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -47,10 +43,6 @@ class PaymentResponse {
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
   int? invoiceId;
-
-  String amount;
-
-  String dates;
 
   PaymentResponseStatusEnum status;
 
@@ -72,60 +64,59 @@ class PaymentResponse {
 
   String mode;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  InvoiceResponse? invoice;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is PaymentResponse &&
      other.id == id &&
-     other.uId == uId &&
-     other.driverId == driverId &&
-     other.childId == childId &&
-     other.groupId == groupId &&
+     other.tokenId == tokenId &&
      other.invoiceId == invoiceId &&
-     other.amount == amount &&
-     other.dates == dates &&
      other.status == status &&
      other.creatorId == creatorId &&
      other.createdAt == createdAt &&
      other.updatedAt == updatedAt &&
      other.deletedAt == deletedAt &&
      other.notes == notes &&
-     other.mode == mode;
+     other.mode == mode &&
+     other.invoice == invoice;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (uId.hashCode) +
-    (driverId.hashCode) +
-    (childId.hashCode) +
-    (groupId.hashCode) +
+    (tokenId == null ? 0 : tokenId!.hashCode) +
     (invoiceId == null ? 0 : invoiceId!.hashCode) +
-    (amount.hashCode) +
-    (dates.hashCode) +
     (status.hashCode) +
     (creatorId.hashCode) +
     (createdAt.hashCode) +
     (updatedAt.hashCode) +
     (deletedAt.hashCode) +
     (notes == null ? 0 : notes!.hashCode) +
-    (mode.hashCode);
+    (mode.hashCode) +
+    (invoice == null ? 0 : invoice!.hashCode);
 
   @override
-  String toString() => 'PaymentResponse[id=$id, uId=$uId, driverId=$driverId, childId=$childId, groupId=$groupId, invoiceId=$invoiceId, amount=$amount, dates=$dates, status=$status, creatorId=$creatorId, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, notes=$notes, mode=$mode]';
+  String toString() => 'PaymentResponse[id=$id, tokenId=$tokenId, invoiceId=$invoiceId, status=$status, creatorId=$creatorId, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, notes=$notes, mode=$mode, invoice=$invoice]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'id'] = this.id;
-      json[r'uId'] = this.uId;
-      json[r'driverId'] = this.driverId;
-      json[r'childId'] = this.childId;
-      json[r'groupId'] = this.groupId;
+    if (this.tokenId != null) {
+      json[r'tokenId'] = this.tokenId;
+    } else {
+      json[r'tokenId'] = null;
+    }
     if (this.invoiceId != null) {
       json[r'invoiceId'] = this.invoiceId;
     } else {
       json[r'invoiceId'] = null;
     }
-      json[r'amount'] = this.amount;
-      json[r'dates'] = this.dates;
       json[r'status'] = this.status;
       json[r'creatorId'] = this.creatorId;
       json[r'createdAt'] = this.createdAt;
@@ -137,6 +128,11 @@ class PaymentResponse {
       json[r'notes'] = null;
     }
       json[r'mode'] = this.mode;
+    if (this.invoice != null) {
+      json[r'invoice'] = this.invoice;
+    } else {
+      json[r'invoice'] = null;
+    }
     return json;
   }
 
@@ -160,13 +156,8 @@ class PaymentResponse {
 
       return PaymentResponse(
         id: mapValueOfType<int>(json, r'id')!,
-        uId: mapValueOfType<String>(json, r'uId')!,
-        driverId: mapValueOfType<int>(json, r'driverId')!,
-        childId: mapValueOfType<int>(json, r'childId')!,
-        groupId: mapValueOfType<int>(json, r'groupId')!,
+        tokenId: mapValueOfType<String>(json, r'tokenId'),
         invoiceId: mapValueOfType<int>(json, r'invoiceId'),
-        amount: mapValueOfType<String>(json, r'amount')!,
-        dates: mapValueOfType<String>(json, r'dates')!,
         status: PaymentResponseStatusEnum.fromJson(json[r'status'])!,
         creatorId: mapValueOfType<int>(json, r'creatorId')!,
         createdAt: mapValueOfType<String>(json, r'createdAt')!,
@@ -174,6 +165,7 @@ class PaymentResponse {
         deletedAt: mapValueOfType<String>(json, r'deletedAt')!,
         notes: mapValueOfType<String>(json, r'notes'),
         mode: mapValueOfType<String>(json, r'mode')!,
+        invoice: InvoiceResponse.fromJson(json[r'invoice']),
       );
     }
     return null;
@@ -224,12 +216,6 @@ class PaymentResponse {
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
     'id',
-    'uId',
-    'driverId',
-    'childId',
-    'groupId',
-    'amount',
-    'dates',
     'status',
     'creatorId',
     'createdAt',

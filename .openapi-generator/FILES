@@ -22,9 +22,6 @@ doc/CreateDeviceBody.md
 doc/CreateDropoffBody.md
 doc/CreateGroupBody.md
 doc/CreateNotAbsentBody.md
-doc/CreateOpenMoneyPaymentTokenBody.md
-doc/CreateOpenMoneyPaymentTokenResponse.md
-doc/CreateOpenMoneyPaymentTokenResponseCustomer.md
 doc/CreateParentChildBody.md
 doc/CreatePaymentBody.md
 doc/CreatePickupBody.md
@@ -66,7 +63,6 @@ doc/UpdateAddressBody.md
 doc/UpdateChildAbsentBody.md
 doc/UpdateChildBody.md
 doc/UpdateGroupBody.md
-doc/UpdatePaymentBody.md
 doc/UpdateRecordsResponse.md
 doc/UpdateUserWithAddressBody.md
 doc/UserAddRole.md
@@ -118,9 +114,6 @@ lib/model/create_device_body.dart
 lib/model/create_dropoff_body.dart
 lib/model/create_group_body.dart
 lib/model/create_not_absent_body.dart
-lib/model/create_open_money_payment_token_body.dart
-lib/model/create_open_money_payment_token_response.dart
-lib/model/create_open_money_payment_token_response_customer.dart
 lib/model/create_parent_child_body.dart
 lib/model/create_payment_body.dart
 lib/model/create_pickup_body.dart
@@ -153,7 +146,6 @@ lib/model/update_address_body.dart
 lib/model/update_child_absent_body.dart
 lib/model/update_child_body.dart
 lib/model/update_group_body.dart
-lib/model/update_payment_body.dart
 lib/model/update_records_response.dart
 lib/model/update_user_with_address_body.dart
 lib/model/user_add_role.dart
@@ -183,9 +175,6 @@ test/create_device_body_test.dart
 test/create_dropoff_body_test.dart
 test/create_group_body_test.dart
 test/create_not_absent_body_test.dart
-test/create_open_money_payment_token_body_test.dart
-test/create_open_money_payment_token_response_customer_test.dart
-test/create_open_money_payment_token_response_test.dart
 test/create_parent_child_body_test.dart
 test/create_payment_body_test.dart
 test/create_pickup_body_test.dart
@@ -227,7 +216,6 @@ test/update_address_body_test.dart
 test/update_child_absent_body_test.dart
 test/update_child_body_test.dart
 test/update_group_body_test.dart
-test/update_payment_body_test.dart
 test/update_records_response_test.dart
 test/update_user_with_address_body_test.dart
 test/user_add_role_test.dart

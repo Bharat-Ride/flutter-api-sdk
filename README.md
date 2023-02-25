@@ -60,7 +60,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
+All URIs are relative to *https://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -101,10 +101,8 @@ Class | Method | HTTP request | Description
 *InvoiceApi* | [**invoicesUnpaidGroupGroupIdGet**](doc//InvoiceApi.md#invoicesunpaidgroupgroupidget) | **GET** /invoices/unpaid/group/{groupId}/ | Returns list of unpaid invoices by group Id
 *OpenMoneyApi* | [**paymentCreateOpenMoneyPaymentTokenPost**](doc//OpenMoneyApi.md#paymentcreateopenmoneypaymenttokenpost) | **POST** /payment/createOpenMoneyPaymentToken | Return payment token
 *PaymentApi* | [**paymentChildChildIdGet**](doc//PaymentApi.md#paymentchildchildidget) | **GET** /payment/child/{childId}/ | Returns list of payment by child Id
-*PaymentApi* | [**paymentDelete**](doc//PaymentApi.md#paymentdelete) | **DELETE** /payment/ | Returns deleted payment record
 *PaymentApi* | [**paymentDriverDriverIdGet**](doc//PaymentApi.md#paymentdriverdriveridget) | **GET** /payment/driver/{driverId}/ | Returns list of payment by driver Id
-*PaymentApi* | [**paymentPost**](doc//PaymentApi.md#paymentpost) | **POST** /payment/ | Returns newly created payment record
-*PaymentApi* | [**paymentPut**](doc//PaymentApi.md#paymentput) | **PUT** /payment/ | Returns updated payment record
+*PaymentApi* | [**paymentPayByCashPost**](doc//PaymentApi.md#paymentpaybycashpost) | **POST** /payment/payByCash | Returns newly created payment record
 *PickupDropoffApi* | [**pickupDropoffsTripsTripIdGet**](doc//PickupDropoffApi.md#pickupdropoffstripstripidget) | **GET** /pickup-dropoffs/trips/{tripId}/ | Returns array of pickup-dropoff by tripId
 *PickupDropoffApi* | [**tripsAbsentPost**](doc//PickupDropoffApi.md#tripsabsentpost) | **POST** /trips/absent/ | Returns array of pickupdropoff
 *PickupDropoffApi* | [**tripsDropoffPut**](doc//PickupDropoffApi.md#tripsdropoffput) | **PUT** /trips/dropoff/ | Returns number of children Dropoff
@@ -150,9 +148,6 @@ Class | Method | HTTP request | Description
  - [CreateDropoffBody](doc//CreateDropoffBody.md)
  - [CreateGroupBody](doc//CreateGroupBody.md)
  - [CreateNotAbsentBody](doc//CreateNotAbsentBody.md)
- - [CreateOpenMoneyPaymentTokenBody](doc//CreateOpenMoneyPaymentTokenBody.md)
- - [CreateOpenMoneyPaymentTokenResponse](doc//CreateOpenMoneyPaymentTokenResponse.md)
- - [CreateOpenMoneyPaymentTokenResponseCustomer](doc//CreateOpenMoneyPaymentTokenResponseCustomer.md)
  - [CreateParentChildBody](doc//CreateParentChildBody.md)
  - [CreatePaymentBody](doc//CreatePaymentBody.md)
  - [CreatePickupBody](doc//CreatePickupBody.md)
@@ -185,7 +180,6 @@ Class | Method | HTTP request | Description
  - [UpdateChildAbsentBody](doc//UpdateChildAbsentBody.md)
  - [UpdateChildBody](doc//UpdateChildBody.md)
  - [UpdateGroupBody](doc//UpdateGroupBody.md)
- - [UpdatePaymentBody](doc//UpdatePaymentBody.md)
  - [UpdateRecordsResponse](doc//UpdateRecordsResponse.md)
  - [UpdateUserWithAddressBody](doc//UpdateUserWithAddressBody.md)
  - [UserAddRole](doc//UserAddRole.md)

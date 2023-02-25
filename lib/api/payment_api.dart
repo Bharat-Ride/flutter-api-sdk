@@ -97,66 +97,6 @@ class PaymentApi {
     return null;
   }
 
-  /// Returns deleted payment record
-  ///
-  /// Delete the payment record
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [String] uId (required):
-  ///   UId
-  Future<Response> paymentDeleteWithHttpInfo(String uId,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/payment/';
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-      queryParams.addAll(_queryParams('', 'uId', uId));
-
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'DELETE',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
-  }
-
-  /// Returns deleted payment record
-  ///
-  /// Delete the payment record
-  ///
-  /// Parameters:
-  ///
-  /// * [String] uId (required):
-  ///   UId
-  Future<PaymentResponse?> paymentDelete(String uId,) async {
-    final response = await paymentDeleteWithHttpInfo(uId,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'PaymentResponse',) as PaymentResponse;
-    
-    }
-    return null;
-  }
-
   /// Returns list of payment by driver Id
   ///
   /// Get record of payment by driver Id
@@ -248,9 +188,9 @@ class PaymentApi {
   ///
   /// * [CreatePaymentBody] createPaymentBody (required):
   ///   Payment body
-  Future<Response> paymentPostWithHttpInfo(CreatePaymentBody createPaymentBody,) async {
+  Future<Response> paymentPayByCashPostWithHttpInfo(CreatePaymentBody createPaymentBody,) async {
     // ignore: prefer_const_declarations
-    final path = r'/payment/';
+    final path = r'/payment/payByCash';
 
     // ignore: prefer_final_locals
     Object? postBody = createPaymentBody;
@@ -281,66 +221,8 @@ class PaymentApi {
   ///
   /// * [CreatePaymentBody] createPaymentBody (required):
   ///   Payment body
-  Future<PaymentResponse?> paymentPost(CreatePaymentBody createPaymentBody,) async {
-    final response = await paymentPostWithHttpInfo(createPaymentBody,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'PaymentResponse',) as PaymentResponse;
-    
-    }
-    return null;
-  }
-
-  /// Returns updated payment record
-  ///
-  /// Update the payment record
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [UpdatePaymentBody] updatePaymentBody (required):
-  ///   Payment body
-  Future<Response> paymentPutWithHttpInfo(UpdatePaymentBody updatePaymentBody,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/payment/';
-
-    // ignore: prefer_final_locals
-    Object? postBody = updatePaymentBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const contentTypes = <String>['application/json'];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'PUT',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
-  }
-
-  /// Returns updated payment record
-  ///
-  /// Update the payment record
-  ///
-  /// Parameters:
-  ///
-  /// * [UpdatePaymentBody] updatePaymentBody (required):
-  ///   Payment body
-  Future<PaymentResponse?> paymentPut(UpdatePaymentBody updatePaymentBody,) async {
-    final response = await paymentPutWithHttpInfo(updatePaymentBody,);
+  Future<PaymentResponse?> paymentPayByCashPost(CreatePaymentBody createPaymentBody,) async {
+    final response = await paymentPayByCashPostWithHttpInfo(createPaymentBody,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

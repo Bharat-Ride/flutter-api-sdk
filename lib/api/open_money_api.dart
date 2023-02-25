@@ -24,14 +24,14 @@ class OpenMoneyApi {
   ///
   /// Parameters:
   ///
-  /// * [CreateOpenMoneyPaymentTokenBody] createOpenMoneyPaymentTokenBody (required):
+  /// * [CreatePaymentBody] createPaymentBody (required):
   ///   Create token payment body
-  Future<Response> paymentCreateOpenMoneyPaymentTokenPostWithHttpInfo(CreateOpenMoneyPaymentTokenBody createOpenMoneyPaymentTokenBody,) async {
+  Future<Response> paymentCreateOpenMoneyPaymentTokenPostWithHttpInfo(CreatePaymentBody createPaymentBody,) async {
     // ignore: prefer_const_declarations
     final path = r'/payment/createOpenMoneyPaymentToken';
 
     // ignore: prefer_final_locals
-    Object? postBody = createOpenMoneyPaymentTokenBody;
+    Object? postBody = createPaymentBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -57,10 +57,10 @@ class OpenMoneyApi {
   ///
   /// Parameters:
   ///
-  /// * [CreateOpenMoneyPaymentTokenBody] createOpenMoneyPaymentTokenBody (required):
+  /// * [CreatePaymentBody] createPaymentBody (required):
   ///   Create token payment body
-  Future<PaymentResponse?> paymentCreateOpenMoneyPaymentTokenPost(CreateOpenMoneyPaymentTokenBody createOpenMoneyPaymentTokenBody,) async {
-    final response = await paymentCreateOpenMoneyPaymentTokenPostWithHttpInfo(createOpenMoneyPaymentTokenBody,);
+  Future<PaymentResponse?> paymentCreateOpenMoneyPaymentTokenPost(CreatePaymentBody createPaymentBody,) async {
+    final response = await paymentCreateOpenMoneyPaymentTokenPostWithHttpInfo(createPaymentBody,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

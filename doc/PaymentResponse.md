@@ -9,13 +9,8 @@ import 'package:openapi/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**uId** | **String** |  | 
-**driverId** | **int** |  | 
-**childId** | **int** |  | 
-**groupId** | **int** |  | 
+**tokenId** | **String** |  | [optional] 
 **invoiceId** | **int** |  | [optional] 
-**amount** | **String** |  | 
-**dates** | **String** |  | 
 **status** | **String** |  | 
 **creatorId** | **int** |  | 
 **createdAt** | **String** |  | 
@@ -23,6 +18,7 @@ Name | Type | Description | Notes
 **deletedAt** | **String** |  | 
 **notes** | **String** |  | [optional] 
 **mode** | **String** |  | 
+**invoice** | [**InvoiceResponse**](InvoiceResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

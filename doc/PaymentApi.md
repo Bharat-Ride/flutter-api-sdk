@@ -5,15 +5,13 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://staging.presentation-api.api.findnemo.in*
+All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**paymentChildChildIdGet**](PaymentApi.md#paymentchildchildidget) | **GET** /payment/child/{childId}/ | Returns list of payment by child Id
-[**paymentDelete**](PaymentApi.md#paymentdelete) | **DELETE** /payment/ | Returns deleted payment record
 [**paymentDriverDriverIdGet**](PaymentApi.md#paymentdriverdriveridget) | **GET** /payment/driver/{driverId}/ | Returns list of payment by driver Id
-[**paymentPost**](PaymentApi.md#paymentpost) | **POST** /payment/ | Returns newly created payment record
-[**paymentPut**](PaymentApi.md#paymentput) | **PUT** /payment/ | Returns updated payment record
+[**paymentPayByCashPost**](PaymentApi.md#paymentpaybycashpost) | **POST** /payment/payByCash | Returns newly created payment record
 
 
 # **paymentChildChildIdGet**
@@ -57,55 +55,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List<PaymentResponse>**](PaymentResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **paymentDelete**
-> PaymentResponse paymentDelete(uId)
-
-Returns deleted payment record
-
-Delete the payment record
-
-### Example
-```dart
-import 'package:openapi/api.dart';
-// TODO Configure HTTP Bearer authorization: BearerAuth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
-
-final api_instance = PaymentApi();
-final uId = uId_example; // String | UId
-
-try {
-    final result = api_instance.paymentDelete(uId);
-    print(result);
-} catch (e) {
-    print('Exception when calling PaymentApi->paymentDelete: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uId** | **String**| UId | 
-
-### Return type
-
-[**PaymentResponse**](PaymentResponse.md)
 
 ### Authorization
 
@@ -171,8 +120,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **paymentPost**
-> PaymentResponse paymentPost(createPaymentBody)
+# **paymentPayByCashPost**
+> PaymentResponse paymentPayByCashPost(createPaymentBody)
 
 Returns newly created payment record
 
@@ -192,10 +141,10 @@ final api_instance = PaymentApi();
 final createPaymentBody = CreatePaymentBody(); // CreatePaymentBody | Payment body
 
 try {
-    final result = api_instance.paymentPost(createPaymentBody);
+    final result = api_instance.paymentPayByCashPost(createPaymentBody);
     print(result);
 } catch (e) {
-    print('Exception when calling PaymentApi->paymentPost: $e\n');
+    print('Exception when calling PaymentApi->paymentPayByCashPost: $e\n');
 }
 ```
 
@@ -204,55 +153,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createPaymentBody** | [**CreatePaymentBody**](CreatePaymentBody.md)| Payment body | 
-
-### Return type
-
-[**PaymentResponse**](PaymentResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **paymentPut**
-> PaymentResponse paymentPut(updatePaymentBody)
-
-Returns updated payment record
-
-Update the payment record
-
-### Example
-```dart
-import 'package:openapi/api.dart';
-// TODO Configure HTTP Bearer authorization: BearerAuth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('BearerAuth').setAccessToken(yourTokenGeneratorFunction);
-
-final api_instance = PaymentApi();
-final updatePaymentBody = UpdatePaymentBody(); // UpdatePaymentBody | Payment body
-
-try {
-    final result = api_instance.paymentPut(updatePaymentBody);
-    print(result);
-} catch (e) {
-    print('Exception when calling PaymentApi->paymentPut: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updatePaymentBody** | [**UpdatePaymentBody**](UpdatePaymentBody.md)| Payment body | 
 
 ### Return type
 

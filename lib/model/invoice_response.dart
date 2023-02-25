@@ -19,10 +19,11 @@ class InvoiceResponse {
     required this.groupId,
     this.invoiceId,
     required this.amount,
-    required this.dates,
+    required this.months,
     required this.status,
     required this.createdAt,
     required this.updatedAt,
+    this.deletedAt,
   });
 
   int id;
@@ -43,13 +44,21 @@ class InvoiceResponse {
 
   String amount;
 
-  String dates;
+  String months;
 
   InvoiceResponseStatusEnum status;
 
   String createdAt;
 
   String updatedAt;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? deletedAt;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is InvoiceResponse &&
@@ -59,10 +68,11 @@ class InvoiceResponse {
      other.groupId == groupId &&
      other.invoiceId == invoiceId &&
      other.amount == amount &&
-     other.dates == dates &&
+     other.months == months &&
      other.status == status &&
      other.createdAt == createdAt &&
-     other.updatedAt == updatedAt;
+     other.updatedAt == updatedAt &&
+     other.deletedAt == deletedAt;
 
   @override
   int get hashCode =>
@@ -73,13 +83,14 @@ class InvoiceResponse {
     (groupId.hashCode) +
     (invoiceId == null ? 0 : invoiceId!.hashCode) +
     (amount.hashCode) +
-    (dates.hashCode) +
+    (months.hashCode) +
     (status.hashCode) +
     (createdAt.hashCode) +
-    (updatedAt.hashCode);
+    (updatedAt.hashCode) +
+    (deletedAt == null ? 0 : deletedAt!.hashCode);
 
   @override
-  String toString() => 'InvoiceResponse[id=$id, driverId=$driverId, childId=$childId, groupId=$groupId, invoiceId=$invoiceId, amount=$amount, dates=$dates, status=$status, createdAt=$createdAt, updatedAt=$updatedAt]';
+  String toString() => 'InvoiceResponse[id=$id, driverId=$driverId, childId=$childId, groupId=$groupId, invoiceId=$invoiceId, amount=$amount, months=$months, status=$status, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -93,10 +104,15 @@ class InvoiceResponse {
       json[r'invoiceId'] = null;
     }
       json[r'amount'] = this.amount;
-      json[r'dates'] = this.dates;
+      json[r'months'] = this.months;
       json[r'status'] = this.status;
       json[r'createdAt'] = this.createdAt;
       json[r'updatedAt'] = this.updatedAt;
+    if (this.deletedAt != null) {
+      json[r'deletedAt'] = this.deletedAt;
+    } else {
+      json[r'deletedAt'] = null;
+    }
     return json;
   }
 
@@ -125,10 +141,11 @@ class InvoiceResponse {
         groupId: mapValueOfType<int>(json, r'groupId')!,
         invoiceId: mapValueOfType<int>(json, r'invoiceId'),
         amount: mapValueOfType<String>(json, r'amount')!,
-        dates: mapValueOfType<String>(json, r'dates')!,
+        months: mapValueOfType<String>(json, r'months')!,
         status: InvoiceResponseStatusEnum.fromJson(json[r'status'])!,
         createdAt: mapValueOfType<String>(json, r'createdAt')!,
         updatedAt: mapValueOfType<String>(json, r'updatedAt')!,
+        deletedAt: mapValueOfType<String>(json, r'deletedAt'),
       );
     }
     return null;
@@ -183,7 +200,7 @@ class InvoiceResponse {
     'childId',
     'groupId',
     'amount',
-    'dates',
+    'months',
     'status',
     'createdAt',
     'updatedAt',

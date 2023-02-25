@@ -13,70 +13,26 @@ part of openapi.api;
 class CreatePaymentBody {
   /// Returns a new [CreatePaymentBody] instance.
   CreatePaymentBody({
-    required this.driverId,
-    required this.childId,
-    this.amount,
-    required this.dates,
-    this.notes,
+    required this.invoiceId,
   });
 
-  int driverId;
-
-  int childId;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? amount;
-
-  String dates;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? notes;
+  String invoiceId;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreatePaymentBody &&
-     other.driverId == driverId &&
-     other.childId == childId &&
-     other.amount == amount &&
-     other.dates == dates &&
-     other.notes == notes;
+     other.invoiceId == invoiceId;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (driverId.hashCode) +
-    (childId.hashCode) +
-    (amount == null ? 0 : amount!.hashCode) +
-    (dates.hashCode) +
-    (notes == null ? 0 : notes!.hashCode);
+    (invoiceId.hashCode);
 
   @override
-  String toString() => 'CreatePaymentBody[driverId=$driverId, childId=$childId, amount=$amount, dates=$dates, notes=$notes]';
+  String toString() => 'CreatePaymentBody[invoiceId=$invoiceId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'driverId'] = this.driverId;
-      json[r'childId'] = this.childId;
-    if (this.amount != null) {
-      json[r'amount'] = this.amount;
-    } else {
-      json[r'amount'] = null;
-    }
-      json[r'dates'] = this.dates;
-    if (this.notes != null) {
-      json[r'notes'] = this.notes;
-    } else {
-      json[r'notes'] = null;
-    }
+      json[r'invoiceId'] = this.invoiceId;
     return json;
   }
 
@@ -99,13 +55,7 @@ class CreatePaymentBody {
       }());
 
       return CreatePaymentBody(
-        driverId: mapValueOfType<int>(json, r'driverId')!,
-        childId: mapValueOfType<int>(json, r'childId')!,
-        amount: json[r'amount'] == null
-            ? null
-            : num.parse(json[r'amount'].toString()),
-        dates: mapValueOfType<String>(json, r'dates')!,
-        notes: mapValueOfType<String>(json, r'notes'),
+        invoiceId: mapValueOfType<String>(json, r'invoiceId')!,
       );
     }
     return null;
@@ -155,9 +105,7 @@ class CreatePaymentBody {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'driverId',
-    'childId',
-    'dates',
+    'invoiceId',
   };
 }
 

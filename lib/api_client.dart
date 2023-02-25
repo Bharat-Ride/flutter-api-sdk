@@ -11,7 +11,7 @@
 part of openapi.api;
 
 class ApiClient {
-  ApiClient({this.basePath = 'https://staging.presentation-api.api.findnemo.in', this.authentication,});
+  ApiClient({this.basePath = 'https://localhost', this.authentication,});
 
   final String basePath;
   final Authentication? authentication;
@@ -213,12 +213,6 @@ class ApiClient {
           return CreateGroupBody.fromJson(value);
         case 'CreateNotAbsentBody':
           return CreateNotAbsentBody.fromJson(value);
-        case 'CreateOpenMoneyPaymentTokenBody':
-          return CreateOpenMoneyPaymentTokenBody.fromJson(value);
-        case 'CreateOpenMoneyPaymentTokenResponse':
-          return CreateOpenMoneyPaymentTokenResponse.fromJson(value);
-        case 'CreateOpenMoneyPaymentTokenResponseCustomer':
-          return CreateOpenMoneyPaymentTokenResponseCustomer.fromJson(value);
         case 'CreateParentChildBody':
           return CreateParentChildBody.fromJson(value);
         case 'CreatePaymentBody':
@@ -283,8 +277,6 @@ class ApiClient {
           return UpdateChildBody.fromJson(value);
         case 'UpdateGroupBody':
           return UpdateGroupBody.fromJson(value);
-        case 'UpdatePaymentBody':
-          return UpdatePaymentBody.fromJson(value);
         case 'UpdateRecordsResponse':
           return UpdateRecordsResponse.fromJson(value);
         case 'UpdateUserWithAddressBody':
