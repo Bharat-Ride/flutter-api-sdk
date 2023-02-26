@@ -20,7 +20,7 @@ class PaymentResponse {
     required this.creatorId,
     required this.createdAt,
     required this.updatedAt,
-    required this.deletedAt,
+    this.deletedAt,
     this.notes,
     required this.mode,
     this.invoice,
@@ -52,7 +52,13 @@ class PaymentResponse {
 
   String updatedAt;
 
-  String deletedAt;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? deletedAt;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -96,7 +102,7 @@ class PaymentResponse {
     (creatorId.hashCode) +
     (createdAt.hashCode) +
     (updatedAt.hashCode) +
-    (deletedAt.hashCode) +
+    (deletedAt == null ? 0 : deletedAt!.hashCode) +
     (notes == null ? 0 : notes!.hashCode) +
     (mode.hashCode) +
     (invoice == null ? 0 : invoice!.hashCode);
@@ -121,7 +127,11 @@ class PaymentResponse {
       json[r'creatorId'] = this.creatorId;
       json[r'createdAt'] = this.createdAt;
       json[r'updatedAt'] = this.updatedAt;
+    if (this.deletedAt != null) {
       json[r'deletedAt'] = this.deletedAt;
+    } else {
+      json[r'deletedAt'] = null;
+    }
     if (this.notes != null) {
       json[r'notes'] = this.notes;
     } else {
@@ -162,7 +172,7 @@ class PaymentResponse {
         creatorId: mapValueOfType<int>(json, r'creatorId')!,
         createdAt: mapValueOfType<String>(json, r'createdAt')!,
         updatedAt: mapValueOfType<String>(json, r'updatedAt')!,
-        deletedAt: mapValueOfType<String>(json, r'deletedAt')!,
+        deletedAt: mapValueOfType<String>(json, r'deletedAt'),
         notes: mapValueOfType<String>(json, r'notes'),
         mode: mapValueOfType<String>(json, r'mode')!,
         invoice: InvoiceResponse.fromJson(json[r'invoice']),
@@ -220,7 +230,6 @@ class PaymentResponse {
     'creatorId',
     'createdAt',
     'updatedAt',
-    'deletedAt',
     'mode',
   };
 }

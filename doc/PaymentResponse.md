@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **creatorId** | **int** |  | 
 **createdAt** | **String** |  | 
 **updatedAt** | **String** |  | 
-**deletedAt** | **String** |  | 
+**deletedAt** | **String** |  | [optional] 
 **notes** | **String** |  | [optional] 
 **mode** | **String** |  | 
 **invoice** | [**InvoiceResponse**](InvoiceResponse.md) |  | [optional] 
