@@ -16,7 +16,7 @@ class CreatePaymentBody {
     required this.invoiceId,
   });
 
-  String invoiceId;
+  int invoiceId;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreatePaymentBody &&
@@ -55,7 +55,7 @@ class CreatePaymentBody {
       }());
 
       return CreatePaymentBody(
-        invoiceId: mapValueOfType<String>(json, r'invoiceId')!,
+        invoiceId: mapValueOfType<int>(json, r'invoiceId')!,
       );
     }
     return null;
