@@ -249,15 +249,11 @@ class PaymentResponseStatusEnum {
 
   static const INITIATED = PaymentResponseStatusEnum._(r'INITIATED');
   static const CREATED = PaymentResponseStatusEnum._(r'CREATED');
-  static const UPDATED = PaymentResponseStatusEnum._(r'UPDATED');
-  static const DELETED = PaymentResponseStatusEnum._(r'DELETED');
 
   /// List of all possible values in this [enum][PaymentResponseStatusEnum].
   static const values = <PaymentResponseStatusEnum>[
     INITIATED,
     CREATED,
-    UPDATED,
-    DELETED,
   ];
 
   static PaymentResponseStatusEnum? fromJson(dynamic value) => PaymentResponseStatusEnumTypeTransformer().decode(value);
@@ -298,8 +294,6 @@ class PaymentResponseStatusEnumTypeTransformer {
       switch (data) {
         case r'INITIATED': return PaymentResponseStatusEnum.INITIATED;
         case r'CREATED': return PaymentResponseStatusEnum.CREATED;
-        case r'UPDATED': return PaymentResponseStatusEnum.UPDATED;
-        case r'DELETED': return PaymentResponseStatusEnum.DELETED;
         default:
           if (!allowNull) {
             throw ArgumentError('Unknown enum value to decode: $data');
