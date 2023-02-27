@@ -16,7 +16,7 @@ class ProcessPaymentBody {
     required this.paymentToken,
   });
 
-  int paymentToken;
+  String paymentToken;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ProcessPaymentBody &&
@@ -55,7 +55,7 @@ class ProcessPaymentBody {
       }());
 
       return ProcessPaymentBody(
-        paymentToken: mapValueOfType<int>(json, r'paymentToken')!,
+        paymentToken: mapValueOfType<String>(json, r'paymentToken')!,
       );
     }
     return null;
