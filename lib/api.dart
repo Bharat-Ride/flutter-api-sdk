@@ -80,6 +80,7 @@ part 'model/invoice_response.dart';
 part 'model/payment_response.dart';
 part 'model/pickup_dropoff_response.dart';
 part 'model/pickup_dropoff_with_trip_and_child_and_driver_response.dart';
+part 'model/process_payment_body.dart';
 part 'model/school_response.dart';
 part 'model/school_with_address_response.dart';
 part 'model/school_with_user_and_address_response.dart';

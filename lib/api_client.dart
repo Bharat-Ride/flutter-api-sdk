@@ -255,6 +255,8 @@ class ApiClient {
           return PickupDropoffResponse.fromJson(value);
         case 'PickupDropoffWithTripAndChildAndDriverResponse':
           return PickupDropoffWithTripAndChildAndDriverResponse.fromJson(value);
+        case 'ProcessPaymentBody':
+          return ProcessPaymentBody.fromJson(value);
         case 'SchoolResponse':
           return SchoolResponse.fromJson(value);
         case 'SchoolWithAddressResponse':

@@ -16,6 +16,64 @@ class OpenMoneyApi {
 
   final ApiClient apiClient;
 
+  /// Returns newly created payment record
+  ///
+  /// Process and validate payment status
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [ProcessPaymentBody] processPaymentBody (required):
+  ///   Payment token body
+  Future<Response> openmoneyProcessPaymentPostWithHttpInfo(ProcessPaymentBody processPaymentBody,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/openmoney/processPayment';
+
+    // ignore: prefer_final_locals
+    Object? postBody = processPaymentBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Returns newly created payment record
+  ///
+  /// Process and validate payment status
+  ///
+  /// Parameters:
+  ///
+  /// * [ProcessPaymentBody] processPaymentBody (required):
+  ///   Payment token body
+  Future<PaymentResponse?> openmoneyProcessPaymentPost(ProcessPaymentBody processPaymentBody,) async {
+    final response = await openmoneyProcessPaymentPostWithHttpInfo(processPaymentBody,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'PaymentResponse',) as PaymentResponse;
+    
+    }
+    return null;
+  }
+
   /// Return payment token
   ///
   /// Create payment token

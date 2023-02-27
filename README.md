@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
 *InvoiceApi* | [**invoicesUnpaidChildChildIdGet**](doc//InvoiceApi.md#invoicesunpaidchildchildidget) | **GET** /invoices/unpaid/child/{childId}/ | Returns list of unpaid invoices by child Id
 *InvoiceApi* | [**invoicesUnpaidDriverDriverIdGet**](doc//InvoiceApi.md#invoicesunpaiddriverdriveridget) | **GET** /invoices/unpaid/driver/{driverId}/ | Returns list of unpaid invoices by driver Id
 *InvoiceApi* | [**invoicesUnpaidGroupGroupIdGet**](doc//InvoiceApi.md#invoicesunpaidgroupgroupidget) | **GET** /invoices/unpaid/group/{groupId}/ | Returns list of unpaid invoices by group Id
+*OpenMoneyApi* | [**openmoneyProcessPaymentPost**](doc//OpenMoneyApi.md#openmoneyprocesspaymentpost) | **POST** /openmoney/processPayment | Returns newly created payment record
 *OpenMoneyApi* | [**paymentCreateOpenMoneyPaymentTokenPost**](doc//OpenMoneyApi.md#paymentcreateopenmoneypaymenttokenpost) | **POST** /payment/createOpenMoneyPaymentToken | Return payment token
 *PaymentApi* | [**paymentChildChildIdGet**](doc//PaymentApi.md#paymentchildchildidget) | **GET** /payment/child/{childId}/ | Returns list of payment by child Id
 *PaymentApi* | [**paymentDriverDriverIdGet**](doc//PaymentApi.md#paymentdriverdriveridget) | **GET** /payment/driver/{driverId}/ | Returns list of payment by driver Id
@@ -169,6 +170,7 @@ Class | Method | HTTP request | Description
  - [PaymentResponse](doc//PaymentResponse.md)
  - [PickupDropoffResponse](doc//PickupDropoffResponse.md)
  - [PickupDropoffWithTripAndChildAndDriverResponse](doc//PickupDropoffWithTripAndChildAndDriverResponse.md)
+ - [ProcessPaymentBody](doc//ProcessPaymentBody.md)
  - [SchoolResponse](doc//SchoolResponse.md)
  - [SchoolWithAddressResponse](doc//SchoolWithAddressResponse.md)
  - [SchoolWithUserAndAddressResponse](doc//SchoolWithUserAndAddressResponse.md)

@@ -50,6 +50,7 @@ doc/PaymentResponse.md
 doc/PickupDropoffApi.md
 doc/PickupDropoffResponse.md
 doc/PickupDropoffWithTripAndChildAndDriverResponse.md
+doc/ProcessPaymentBody.md
 doc/SchoolApi.md
 doc/SchoolResponse.md
 doc/SchoolWithAddressResponse.md
@@ -135,6 +136,7 @@ lib/model/invoice_response.dart
 lib/model/payment_response.dart
 lib/model/pickup_dropoff_response.dart
 lib/model/pickup_dropoff_with_trip_and_child_and_driver_response.dart
+lib/model/process_payment_body.dart
 lib/model/school_response.dart
 lib/model/school_with_address_response.dart
 lib/model/school_with_user_and_address_response.dart
@@ -203,6 +205,7 @@ test/payment_response_test.dart
 test/pickup_dropoff_api_test.dart
 test/pickup_dropoff_response_test.dart
 test/pickup_dropoff_with_trip_and_child_and_driver_response_test.dart
+test/process_payment_body_test.dart
 test/school_api_test.dart
 test/school_response_test.dart
 test/school_with_address_response_test.dart
